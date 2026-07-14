@@ -1,0 +1,74 @@
+import Link from 'next/link';
+import Container from '@/components/common/Container';
+import Section from '@/components/common/Section';
+import Typography from '@/components/common/Typography';
+import { constructMetadata } from '@/utils/seo';
+import { CONTACT_DETAILS } from '@/constants';
+
+export const metadata = constructMetadata({
+  title: 'Delivery Coverage Areas Kochi & Trivandrum | Alakapuri',
+  description: 'View Alakapuri desk & doorstep healthy meal box transit boundaries: Kakkanad Infopark, Technopark Kazhakkoottam, Kaloor, Edappally, and Kowdiar.',
+});
+
+export default function DeliveryAreasPage() {
+  const whatsappCoverage = `${CONTACT_DETAILS.whatsapp}?text=${encodeURIComponent(
+    'Hi Alakapuri, I would like to check if my office/home address is covered for daily meal deliveries.'
+  )}`;
+
+  return (
+    <Section bg="white" className="py-16 md:py-24">
+      <Container className="max-w-3xl space-y-12">
+        <div className="space-y-4 text-center">
+          <Typography variant="badge-label">Active Transit</Typography>
+          <Typography variant="h1" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
+            Delivery Coverage Boundaries
+          </Typography>
+          <Typography variant="body-large" className="text-muted-foreground">
+            We drop clean diet boxes at office desks and doorsteps twice daily across Kochi and Trivandrum.
+          </Typography>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Kochi Coverage */}
+          <div className="rounded-2xl border border-border bg-card p-6 md:p-8 space-y-4">
+            <Typography variant="h3" className="text-base font-bold text-foreground">📍 Kochi Regions</Typography>
+            <ul className="text-xs text-muted-foreground space-y-2 font-medium">
+              <li>• Kakkanad Infopark Phase 1 & 2 offices</li>
+              <li>• SmartCity Kochi zone</li>
+              <li>• Edappally residential complexes</li>
+              <li>• Kaloor & Palarivattom transit points</li>
+              <li>• Vytila & Kadavanthra areas</li>
+            </ul>
+          </div>
+
+          {/* Trivandrum Coverage */}
+          <div className="rounded-2xl border border-border bg-card p-6 md:p-8 space-y-4">
+            <Typography variant="h3" className="text-base font-bold text-foreground">📍 Trivandrum Regions</Typography>
+            <ul className="text-xs text-muted-foreground space-y-2 font-medium">
+              <li>• Technopark Phase 1, 2 & 3 campuses</li>
+              <li>• Kazhakkoottam neighborhood</li>
+              <li>• Kowdiar & Pattom residential slots</li>
+              <li>• Vazhuthacaud & Vellayambalam</li>
+              <li>• Technocity Mangalapuram zone</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="rounded-2xl border border-border bg-secondary/15 p-6 text-center space-y-4 text-xs">
+          <h4 className="font-bold text-foreground">Out of bounds?</h4>
+          <p className="text-muted-foreground">
+            If your locality is not listed, ping our routing managers on WhatsApp. We accommodate route extensions for multi-box office orders.
+          </p>
+          <a
+            href={whatsappCoverage}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-10 items-center justify-center rounded-full bg-primary px-6 font-bold text-primary-foreground hover:bg-primary/95 transition-colors shadow"
+          >
+            Check Address on WhatsApp
+          </a>
+        </div>
+      </Container>
+    </Section>
+  );
+}
