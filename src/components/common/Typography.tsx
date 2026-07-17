@@ -7,7 +7,7 @@ interface TypographyProps extends React.HTMLAttributes<HTMLHeadingElement | HTML
 }
 
 export default function Typography({ variant, as, children, className, ...props }: TypographyProps) {
-  const Component = as || (variant.startsWith('h') ? (variant as any) : 'p');
+  const Component = as || (variant.startsWith('h') ? (variant as 'h1' | 'h2' | 'h3') : 'p');
 
   const variantClasses = {
     h1: 'text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl sm:leading-none leading-tight',

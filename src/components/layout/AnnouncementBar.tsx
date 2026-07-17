@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function AnnouncementBar() {
   const [isVisible, setIsVisible] = useState(true);
@@ -14,9 +15,9 @@ export default function AnnouncementBar() {
           New
         </span>
         <span>Launch Offer: Calorie-Mapped Healthy Meal Boxes starting at only ₹69.</span>
-        <a href="/plans" className="underline hover:opacity-90 ml-1">
+        <Link href="/meal-plans" className="underline hover:opacity-90 ml-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-offset-1 focus-visible:ring-white">
           Explore Plans →
-        </a>
+        </Link>
       </div>
       <button
         onClick={() => setIsVisible(false)}

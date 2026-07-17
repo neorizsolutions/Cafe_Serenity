@@ -5,6 +5,8 @@ import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
 
+import Link from 'next/link';
+
 export default function Error({
   error,
   reset,
@@ -34,12 +36,12 @@ export default function Error({
           >
             Try Again
           </button>
-          <a
+          <Link
             href="/"
             className="flex h-10 items-center justify-center rounded-full border border-border bg-background px-6 text-sm font-semibold text-foreground hover:bg-secondary transition-colors"
           >
             Go Back Home
-          </a>
+          </Link>
         </div>
       </Container>
     </Section>

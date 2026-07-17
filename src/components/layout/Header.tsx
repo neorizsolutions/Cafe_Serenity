@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { NAVIGATION_LINKS, BUSINESS_NAME } from '@/constants';
+import { motion, AnimatePresence } from 'framer-motion';
+import { NAVIGATION_LINKS, BUSINESS_NAME, CONTACT_DETAILS } from '@/constants';
 import { cn } from '@/lib/utils';
 
 export default function Header() {
@@ -14,37 +15,53 @@ export default function Header() {
   // Monitor scroll height to adjust glass background opacity
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Lock body scroll when mobile drawer is open
+  useEffect(() => {
+    if (isMobileOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileOpen]);
+
+  const whatsappLink = `${CONTACT_DETAILS.whatsapp}?text=${encodeURIComponent(
+    "Hi Alakapuri, I'd like to learn more about your daily healthy meal box subscriptions."
+  )}`;
 
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full border-b border-transparent bg-background/0 transition-all duration-200',
-        isScrolled && 'border-border/60 bg-background/80 backdrop-blur-md shadow-sm'
+        'sticky top-0 z-50 w-full border-b border-transparent bg-background/0 transition-all duration-300',
+        isScrolled && 'border-border/60 bg-background/80 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.015)]'
       )}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        {/* Logo Section */}
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
+        {/* Logo Section (Custom Leaf & Bowl Wellness SVG) */}
         <Link
           href="/"
-          className="flex items-center gap-2 font-sans text-xl font-bold tracking-tight text-primary transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+          className="flex items-center gap-2 font-sans text-xl font-bold tracking-tight text-primary transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg"
+          aria-label={`${BUSINESS_NAME} Home`}
         >
-          <svg className="h-6 w-6 fill-current text-primary" viewBox="0 0 24 24">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15.5h-2v-2h2v2zm0-4.5h-2V7h2v6z" />
-          </svg>
-          <span className="text-foreground">{BUSINESS_NAME.split(' ')[0]}</span>
+          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-primary/10 text-primary">
+            <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2c-.83 0-1.5.67-1.5 1.5v.35C7.38 4.22 5 6.83 5 10c0 3.87 3.13 7 7 7s7-3.13 7-7c0-3.17-2.38-5.78-5.5-6.15V3.5c0-.83-.67-1.5-1.5-1.5zm0 13c-2.76 0-5-2.24-5-5 0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5c0 1.1.9 2 2 2s2-.9 2-2c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5c0 2.76-2.24 5-5 5z" />
+              <path d="M4 19c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2H4z" />
+            </svg>
+          </div>
+          <span className="text-foreground font-black tracking-tight">{BUSINESS_NAME.split(' ')[0]}</span>
         </Link>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center gap-6 md:flex" aria-label="Desktop Main Navigation">
           {NAVIGATION_LINKS.map((link) => {
             const isActive = pathname === link.href;
 
@@ -53,13 +70,17 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'relative text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
-                  isActive && 'text-foreground font-semibold'
+                  'relative text-sm font-semibold tracking-wide text-muted-foreground hover:text-foreground transition-colors py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md px-1',
+                  isActive && 'text-foreground font-extrabold'
                 )}
               >
                 {link.label}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full bg-primary" />
+                  <motion.span
+                    layoutId="activeHeaderUnderline"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full bg-primary"
+                    transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                  />
                 )}
               </Link>
             );
@@ -68,32 +89,36 @@ export default function Header() {
 
         {/* Right Area: Search Placeholder & WhatsApp CTA */}
         <div className="hidden items-center gap-4 lg:flex">
-          {/* Future-Ready Search Input */}
-          <div className="relative w-40 xl:w-48">
+          {/* Elegant Search Input */}
+          <div className="relative w-40 xl:w-48 group">
             <input
               type="text"
               placeholder="Search meals..."
               aria-label="Search meals"
               disabled
-              className="w-full h-8 px-3 rounded-full border border-border bg-secondary/35 text-xs text-muted-foreground cursor-not-allowed opacity-75 focus:outline-none"
+              className="w-full h-9 px-3 pr-8 rounded-full border border-border bg-secondary/20 text-xs text-muted-foreground cursor-not-allowed opacity-75 focus-visible:outline-none"
             />
             <svg
-              className="absolute right-3 top-2.5 h-3.5 w-3.5 stroke-current text-muted-foreground"
+              className="absolute right-3 top-2.5 h-4 w-4 stroke-current text-muted-foreground transition-colors group-hover:text-foreground"
               fill="none"
               strokeWidth="2.5"
               viewBox="0 0 24 24"
+              aria-hidden="true"
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </div>
 
           <a
-            href="https://wa.me/919876543210?text=Hi%20Alakapuri%2C%20I'd%20like%20to%20learn%20more%20about%20your%20meal%20subscriptions."
+            href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-9 items-center justify-center gap-2 rounded-full bg-primary px-5 text-xs font-bold text-primary-foreground transition-colors hover:bg-primary/95 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            className="group inline-flex h-9 items-center justify-center gap-1.5 rounded-full bg-primary px-5 text-xs font-bold text-primary-foreground shadow-sm hover:shadow transition-all duration-300 hover:bg-primary/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 active:scale-95 hover:-translate-y-0.5"
           >
-            WhatsApp Subscription
+            <span>Subscribe on WhatsApp</span>
+            <svg className="h-3.5 w-3.5 fill-current transition-transform duration-300 group-hover:translate-x-0.5" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 10h3l-4 4-4-4h3V8h2v4z" />
+            </svg>
           </a>
         </div>
 
@@ -101,75 +126,107 @@ export default function Header() {
         <div className="flex items-center gap-2 md:hidden">
           <button
             onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-foreground hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-xl border border-border bg-background text-foreground hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-all duration-200"
             aria-expanded={isMobileOpen}
             aria-label="Toggle mobile navigation menu"
           >
-            {isMobileOpen ? (
-              <svg className="h-5 w-5 stroke-current" fill="none" strokeWidth="2.5" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="h-5 w-5 stroke-current" fill="none" strokeWidth="2.5" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
+            <span
+              className={cn(
+                'h-0.5 w-5 rounded bg-foreground transition-all duration-300',
+                isMobileOpen && 'translate-y-2 rotate-45 bg-primary'
+              )}
+            />
+            <span
+              className={cn(
+                'h-0.5 w-5 rounded bg-foreground transition-all duration-300',
+                isMobileOpen && 'opacity-0'
+              )}
+            />
+            <span
+              className={cn(
+                'h-0.5 w-5 rounded bg-foreground transition-all duration-300',
+                isMobileOpen && '-translate-y-2 -rotate-45 bg-primary'
+              )}
+            />
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
-      {isMobileOpen && (
-        <>
-          {/* Overlay background */}
-          <div
-            onClick={() => setIsMobileOpen(false)}
-            className="fixed inset-0 top-16 z-40 bg-black/20 backdrop-blur-sm md:hidden animate-fade"
-          />
-          {/* Drawer container */}
-          <div className="fixed inset-x-0 top-16 z-50 border-b border-border bg-background px-6 py-8 md:hidden shadow-lg transition-all animate-fade">
-            <nav className="flex flex-col gap-5">
-              {NAVIGATION_LINKS.map((link) => {
-                const isActive = pathname === link.href;
+      {/* Mobile Drawer (with AnimatePresence) */}
+      <AnimatePresence>
+        {isMobileOpen && (
+          <>
+            {/* Backdrop Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMobileOpen(false)}
+              className="fixed inset-0 top-16 z-40 bg-black/15 backdrop-blur-sm md:hidden"
+            />
+            {/* Drawer Container Panel */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+              className="fixed inset-x-0 top-16 z-50 border-b border-border bg-background px-6 py-8 md:hidden shadow-xl max-h-[calc(100vh-4rem)] overflow-y-auto"
+            >
+              <nav className="flex flex-col gap-5" aria-label="Mobile Main Navigation">
+                {NAVIGATION_LINKS.map((link) => {
+                  const isActive = pathname === link.href;
 
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setIsMobileOpen(false)}
-                    className={cn(
-                      'text-base font-semibold text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
-                      isActive && 'text-primary'
-                    )}
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setIsMobileOpen(false)}
+                      className={cn(
+                        'text-base font-bold text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary px-2 py-1 rounded-md',
+                        isActive && 'text-primary bg-primary/5 font-extrabold'
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  );
+                })}
+
+                {/* Mobile Search Placeholder */}
+                <div className="relative mt-2">
+                  <input
+                    type="text"
+                    placeholder="Search menu..."
+                    aria-label="Search menu"
+                    disabled
+                    className="w-full h-11 px-4 pr-10 rounded-xl border border-border bg-secondary/20 text-sm text-muted-foreground cursor-not-allowed opacity-75 focus:outline-none"
+                  />
+                  <svg
+                    className="absolute right-3.5 top-3.5 h-4 w-4 stroke-current text-muted-foreground"
+                    fill="none"
+                    strokeWidth="2.5"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
                   >
-                    {link.label}
-                  </Link>
-                );
-              })}
-              
-              {/* Mobile Search Placeholder */}
-              <div className="relative mt-2">
-                <input
-                  type="text"
-                  placeholder="Search menu..."
-                  aria-label="Search menu"
-                  disabled
-                  className="w-full h-10 px-4 rounded-xl border border-border bg-secondary/35 text-sm text-muted-foreground cursor-not-allowed opacity-75"
-                />
-              </div>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
 
-              <a
-                href="https://wa.me/919876543210?text=Hi%20Alakapuri%2C%20I'd%20like%20to%20learn%20more%20about%20your%20meal%20subscriptions."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-primary text-sm font-bold text-primary-foreground hover:bg-primary/95 transition-colors"
-              >
-                Chat with Nutritionist on WhatsApp
-              </a>
-            </nav>
-          </div>
-        </>
-      )}
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-flex h-12 items-center justify-center gap-2.5 rounded-xl bg-primary text-sm font-bold text-primary-foreground hover:bg-primary/95 transition-all shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary active:scale-95"
+                >
+                  <svg className="h-4.5 w-4.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.02-5.11-2.881-6.974-1.86-1.865-4.343-2.891-6.985-2.892-5.442 0-9.866 4.42-9.87 9.86-.001 1.67.457 3.303 1.32 4.757l-.995 3.635 3.722-.973zm11.587-7.504c-.3-.15-1.77-.875-2.046-.975-.276-.1-.477-.15-.677.15-.2.3-.778.975-.953 1.175-.177.2-.353.225-.653.075-1.207-.6-2.054-.997-2.86-2.38-.21-.363.21-.337.603-1.125.074-.15.037-.282-.018-.382-.056-.1-.478-1.15-.654-1.575-.172-.413-.344-.356-.478-.363-.124-.006-.267-.007-.409-.007-.143 0-.376.054-.572.27-.197.216-.75.733-.75 1.79 0 1.056.768 2.074.875 2.22.107.147 1.512 2.31 3.664 3.24.512.22 1.096.353 1.61.353.606 0 1.155-.075 1.59-.14.484-.07 1.477-.6 1.684-1.18.208-.58.208-1.08.146-1.18-.06-.1-.237-.15-.537-.3z" />
+                  </svg>
+                  <span>Chat on WhatsApp</span>
+                </a>
+              </nav>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

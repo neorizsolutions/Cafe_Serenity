@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
@@ -9,7 +10,8 @@ export default function CookieBanner() {
     // Check local storage for consent
     const consent = localStorage.getItem('cookie-consent');
     if (!consent) {
-      setIsVisible(true);
+      const timer = setTimeout(() => setIsVisible(true), 50);
+      return () => clearTimeout(timer);
     }
   }, []);
 
@@ -34,12 +36,12 @@ export default function CookieBanner() {
           >
             Accept
           </button>
-          <a
-            href="/privacy"
+          <Link
+            href="/privacy-policy"
             className="flex h-9 items-center justify-center rounded-full border border-border bg-background px-5 text-xs font-semibold text-foreground hover:bg-secondary transition-colors"
           >
             Read Privacy
-          </a>
+          </Link>
         </div>
       </div>
     </div>
