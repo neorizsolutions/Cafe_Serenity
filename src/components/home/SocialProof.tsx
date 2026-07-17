@@ -94,7 +94,7 @@ export default function SocialProof() {
             Trusted by Busy Professionals & Athletes
           </Typography>
           <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium opacity-90">
-            See how our clean diet boxes are helping local communities manage weight, fuel workouts, and eat healthy daily.
+            How our clean diet boxes help professionals and athletes stay healthy.
           </Typography>
         </div>
 
@@ -102,7 +102,7 @@ export default function SocialProof() {
         <div className="rounded-3xl border border-primary/10 bg-white/70 dark:bg-card/75 backdrop-blur-md overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.015)] hover:shadow-[0_8px_30px_rgb(16,185,129,0.03)] hover:border-emerald-500/20 transition-all duration-500 grid grid-cols-1 lg:grid-cols-12 lg:items-stretch group relative">
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-emerald-500/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
 
-          {/* Left Visual: Placeholder Profile Photo block */}
+          {/* Left Visual */}
           <div className="relative aspect-video lg:aspect-auto lg:col-span-5 bg-secondary/15 flex flex-col items-center justify-center p-8 text-center border-b lg:border-b-0 lg:border-r border-border/60">
             <div className="h-16 w-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl font-black mb-4 border border-primary/5 shadow-sm transition-transform duration-300 group-hover:scale-105">
               RN
@@ -125,7 +125,7 @@ export default function SocialProof() {
               Lost 12 Kilograms & Resolved Post-Lunch Fatigue
             </h3>
             <p className="text-sm leading-relaxed text-muted-foreground font-medium">
-              &quot;As an IT professional sitting 9 hours daily, my weight peaked and my focus dropped after heavy rice lunches. Subscribing to Alakapuri deficit plans resolved my portion control. The food is clean, coconut oil is portioned, and the convenience is absolute.&quot;
+              &quot;Alakapuri plans resolved my post-lunch fatigue and helped me lose weight. Extremely convenient.&quot;
             </p>
 
             <div className="grid grid-cols-3 gap-4 py-4 border-y border-border/60 max-w-md text-xs font-semibold">
@@ -150,7 +150,7 @@ export default function SocialProof() {
                 rel="noopener noreferrer"
                 className="group inline-flex h-11 items-center justify-center gap-2 rounded-full bg-primary px-6 text-xs font-bold text-primary-foreground shadow-[0_4px_14px_rgba(26,79,53,0.25)] hover:shadow-[0_6px_20px_rgba(26,79,53,0.35)] hover:bg-primary/95 transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
               >
-                <span>Explore Transformation Plans</span>
+                <span>Explore Plans</span>
                 <svg className="h-3.5 w-3.5 fill-current transition-transform duration-300 group-hover:translate-x-0.5" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.02-5.11-2.881-6.974-1.86-1.865-4.343-2.891-6.985-2.892-5.442 0-9.866 4.42-9.87 9.86-.001 1.67.457 3.303 1.32 4.757l-.995 3.635 3.722-.973zm11.587-7.504c-.3-.15-1.77-.875-2.046-.975-.276-.1-.477-.15-.677.15-.2.3-.778.975-.953 1.175-.177.2-.353.225-.653.075-1.207-.6-2.054-.997-2.86-2.38-.21-.363.21-.337.603-1.125.074-.15.037-.282-.018-.382-.056-.1-.478-1.15-.654-1.575-.172-.413-.344-.356-.478-.363-.124-.006-.267-.007-.409-.007-.143 0-.376.054-.572.27-.197.216-.75.733-.75 1.79 0 1.056.768 2.074.875 2.22.107.147 1.512 2.31 3.664 3.24.512.22 1.096.353 1.61.353.606 0 1.155-.075 1.59-.14.484-.07 1.477-.6 1.684-1.18.208-.58.208-1.08.146-1.18-.06-.1-.237-.15-.537-.3z" />
                 </svg>
@@ -178,7 +178,7 @@ export default function SocialProof() {
                 role="Gym Trainer"
                 plan="High Protein Plan"
                 rating={5}
-                text="Cooking clean proteins at home was consuming 2 hours daily. Alakapuri high-protein boxes deliver 45g+ clean protein. Portions are weighed exactly as dietitian mapped."
+                text="Alakapuri high-protein boxes deliver 45g+ clean protein weighed exactly to plan."
               />
             </MotionWrapper>
 
@@ -189,7 +189,7 @@ export default function SocialProof() {
                 role="Clinical Doctor"
                 plan="Diabetic Friendly"
                 rating={5}
-                text="Diabetic management requires strict low-GI grain controls and zero refined sugars. I recommend Alakapuri care boxes to patients searching for consistent clean food."
+                text="I recommend Alakapuri care boxes for consistent, low-glycemic, sugar-free nutrition."
               />
             </MotionWrapper>
 
@@ -200,7 +200,7 @@ export default function SocialProof() {
                 role="Senior Citizen"
                 plan="₹69 Budget Box"
                 rating={5}
-                text="Our home requires low-oil, easy-to-digest healthy lunches. The ₹69 budget box is clean, delivered consistently, and helps us avoid heavy kitchen prep."
+                text="The ₹69 budget box is clean, low-oil, and avoids heavy kitchen prep."
               />
             </MotionWrapper>
           </div>
@@ -215,7 +215,7 @@ export default function SocialProof() {
                 Partner Hubs & Nutrition Experts (Placeholders)
               </h4>
               <p className="text-xs leading-relaxed text-muted-foreground font-medium">
-                We collaborate with premier local fitness studios and health consultants to offer tailored meal integrations.
+                We collaborate with local fitness studios and experts to offer tailored meals.
               </p>
             </div>
             
@@ -242,7 +242,7 @@ export default function SocialProof() {
                 Kitchen Standards & Certifications (Verified)
               </h4>
               <p className="text-xs leading-relaxed text-muted-foreground font-medium">
-                Our central culinary hubs undergo sanitation checks to guarantee hygienic portion scaling.
+                Our kitchens undergo regular sanitization checks to guarantee portion safety.
               </p>
             </div>
             
@@ -252,7 +252,7 @@ export default function SocialProof() {
                   text: 'FSSAI Certified',
                   icon: (
                     <svg className="h-3.5 w-3.5 text-primary shrink-0 animate-pulse" fill="none" strokeWidth="3.0" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                      <path d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
                     </svg>
                   )
                 },
@@ -260,7 +260,7 @@ export default function SocialProof() {
                   text: 'RO Water Preps',
                   icon: (
                     <svg className="h-3.5 w-3.5 text-primary shrink-0 animate-pulse" fill="none" strokeWidth="3.0" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75" />
+                      <path d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75" />
                     </svg>
                   )
                 },
@@ -268,8 +268,8 @@ export default function SocialProof() {
                   text: 'Dietitian Checked',
                   icon: (
                     <svg className="h-3.5 w-3.5 text-primary shrink-0 animate-pulse" fill="none" strokeWidth="3.0" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M10.125 2.25h3.75a.75.75 0 01.75.75v1.125c0 .414.336.75.75.75h1.125a.75.75 0 01.75.75v3.75a.75.75 0 01-.75.75H16.5a.75.75 0 01-.75-.75V7.875a.75.75 0 00-.75-.75H9c-.414 0-.75-.336-.75-.75V5.25a.75.75 0 01.75-.75h1.125a.75.75 0 00.75-.75V3a.75.75 0 01.75-.75z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9.776c.112-.03.23-.046.352-.046h15.796c.122 0 .24.016.352.046M3.75 9.776V19.5a2.25 2.25 0 002.25 2.25h12a2.25 2.25 0 002.25-2.25V9.776M3.75 9.776a2.25 2.25 0 012.25-2.25h12a2.25 2.25 0 012.25 2.25m-16.5 0h16.5" />
+                      <path d="M10.125 2.25h3.75a.75.75 0 01.75.75v1.125c0 .414.336.75.75.75h1.125a.75.75 0 01.75.75v3.75a.75.75 0 01-.75.75H16.5a.75.75 0 01-.75-.75V7.875a.75.75 0 00-.75-.75H9c-.414 0-.75-.336-.75-.75V5.25a.75.75 0 01.75-.75h1.125a.75.75 0 00.75-.75V3a.75.75 0 01.75-.75z" />
+                      <path d="M3.75 9.776c.112-.03.23-.046.352-.046h15.796c.122 0 .24.016.352.046M3.75 9.776V19.5a2.25 2.25 0 002.25 2.25h12a2.25 2.25 0 002.25-2.25V9.776M3.75 9.776a2.25 2.25 0 012.25-2.25h12a2.25 2.25 0 012.25 2.25m-16.5 0h16.5" />
                     </svg>
                   )
                 }
@@ -294,7 +294,7 @@ export default function SocialProof() {
             Experience verified, clean daily nutrition.
           </Typography>
           <p className="text-xs leading-relaxed text-muted-foreground max-w-lg mx-auto font-medium">
-            Choose your health goal and configure a weekly or monthly subscription. Rollover credits on travel days via WhatsApp.
+            Select a plan and subscribe. Pause or reschedule anytime via WhatsApp.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2">
             <a

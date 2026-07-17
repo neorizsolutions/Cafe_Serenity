@@ -56,7 +56,7 @@ export default function WhyChooseUs() {
             Why Choose Alakapuri Healthy Meals?
           </Typography>
           <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium opacity-90">
-            We are not a restaurant. We are a specialized wellness platform combining clinical dietary principles with fresh local ingredients.
+            Clinical dietary guidelines and fresh ingredients, delivered daily.
           </Typography>
         </div>
 
@@ -72,7 +72,7 @@ export default function WhyChooseUs() {
                   </svg>
                 }
                 title="Portion-Weighed Macros"
-                description="Every meal box has calories, protein, carbs, and fats printed directly on the box. No guesswork, just clean numbers."
+                description="Calories and macros printed directly on every box. Zero guesswork."
               />
             </MotionWrapper>
             
@@ -84,7 +84,7 @@ export default function WhyChooseUs() {
                   </svg>
                 }
                 title="Cold-Pressed Oils Only"
-                description="We cook exclusively using portion-regulated local coconut oil, olive oil, and sesame oil. We never reuse cooking oils."
+                description="Cooked with portion-regulated coconut, olive, or sesame oil. Never reused."
               />
             </MotionWrapper>
             
@@ -96,7 +96,7 @@ export default function WhyChooseUs() {
                   </svg>
                 }
                 title="12-Hour Flexi-Freeze"
-                description="Going out of town? Just alert us on WhatsApp 12 hours prior to freeze your delivery and rollover your subscription credits."
+                description="Pause deliveries and roll over credits with a 12-hour WhatsApp notice."
               />
             </MotionWrapper>
             
@@ -108,7 +108,7 @@ export default function WhyChooseUs() {
                   </svg>
                 }
                 title="FSSAI Hygienic Cooking"
-                description="Our central kitchens enforce absolute glove-wearing policies, water-filtration systems, and clean metal packing standards."
+                description="Glove-wearing policies, RO water filtration, and sterile packing standards."
               />
             </MotionWrapper>
           </div>
@@ -117,7 +117,7 @@ export default function WhyChooseUs() {
           <div className="lg:col-span-5 flex items-stretch">
             <MotionWrapper animation="scale" className="relative w-full rounded-2xl overflow-hidden shadow-lg border border-border/80 min-h-[320px] flex flex-col justify-end p-6 bg-muted group">
               <Image
-                src="/images/premium-meal-prep.png"
+                src="/images/why_choose_prep.png"
                 alt="Dietitian portion-controlled healthy meal prep with fresh organic vegetables"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
@@ -135,7 +135,7 @@ export default function WhyChooseUs() {
                   Premium Ingredients, Locally Sourced
                 </h3>
                 <p className="text-xs text-white/80 leading-relaxed font-medium">
-                  We use fresh farm vegetables, quality lean proteins, and cold-pressed oils. Prepared daily in sterile environments for active fitness lifestyles.
+                  Fresh greens, lean proteins, and cold-pressed oils. Prepared daily.
                 </p>
               </div>
             </MotionWrapper>
@@ -149,7 +149,7 @@ export default function WhyChooseUs() {
               Visual Platform Comparison
             </Typography>
             <Typography variant="body-regular" className="text-xs text-muted-foreground font-medium">
-              How Alakapuri healthy subscriptions differ from typical restaurant takeaway delivery.
+              How Alakapuri healthy subscriptions differ from typical takeout.
             </Typography>
           </div>
 
@@ -176,14 +176,14 @@ export default function WhyChooseUs() {
                     <svg className="h-4 w-4 shrink-0 text-red-500" fill="none" strokeWidth="3" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
-                    Generous palm/hydrogenated oil, reused batches.
+                    Reused fats and palm oil.
                   </td>
                   <td className="p-4 sm:p-5 text-primary bg-primary/[0.03] border-x border-primary/10 font-bold">
                     <span className="flex items-center gap-2 text-emerald-800 dark:text-emerald-300">
                       <svg className="h-4 w-4 shrink-0 text-primary" fill="none" strokeWidth="3" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
-                      Measured portion of cold-pressed local coconut, sesame, or olive oils.
+                      Measured cold-pressed oils.
                     </span>
                   </td>
                 </tr>
@@ -193,14 +193,14 @@ export default function WhyChooseUs() {
                     <svg className="h-4 w-4 shrink-0 text-red-500" fill="none" strokeWidth="3" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
-                    High sodium, refined sugar, MSG, chemical thickeners.
+                    High sodium and MSG.
                   </td>
                   <td className="p-4 sm:p-5 text-primary bg-primary/[0.03] border-x border-primary/10 font-bold">
                     <span className="flex items-center gap-2 text-emerald-800 dark:text-emerald-300">
                       <svg className="h-4 w-4 shrink-0 text-primary" fill="none" strokeWidth="3" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
-                      Clean low-sodium recipes, zero MSG or artificial colors, low-GI sweeteners.
+                      Low-sodium, natural ingredients.
                     </span>
                   </td>
                 </tr>
@@ -210,14 +210,14 @@ export default function WhyChooseUs() {
                     <svg className="h-4 w-4 shrink-0 text-red-500" fill="none" strokeWidth="3" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
-                    On-demand fluctuations, delayed delivery riders.
+                    Unreliable transit drops.
                   </td>
                   <td className="p-4 sm:p-5 text-primary bg-primary/[0.03] border-x border-primary/10 font-bold">
                     <span className="flex items-center gap-2 text-emerald-800 dark:text-emerald-300">
                       <svg className="h-4 w-4 shrink-0 text-primary" fill="none" strokeWidth="3" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
-                      Flexible 12-hour freeze notice. Rolling transit drops boxes directly at work/home hubs.
+                      12-hour pause notice.
                     </span>
                   </td>
                 </tr>
@@ -227,14 +227,14 @@ export default function WhyChooseUs() {
                     <svg className="h-4 w-4 shrink-0 text-red-500" fill="none" strokeWidth="3" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
-                    Varied taste profiles, expensive orders (₹200+ per meal).
+                    High delivery fees.
                   </td>
                   <td className="p-4 sm:p-5 text-primary bg-primary/[0.03] border-x border-primary/10 font-bold">
                     <span className="flex items-center gap-2 text-emerald-800 dark:text-emerald-300">
                       <svg className="h-4 w-4 shrink-0 text-primary" fill="none" strokeWidth="3" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
-                      Dietitian-reviewed menu rotations starting at just ₹69 / meal box.
+                      Dietitian-approved from ₹69.
                     </span>
                   </td>
                 </tr>
@@ -254,7 +254,7 @@ export default function WhyChooseUs() {
               Ready to take control of your daily nutrition?
             </Typography>
             <Typography variant="body-regular" className="text-sm text-muted-foreground leading-relaxed font-medium">
-              Join thousands of office employees, gym-goers, and healthy families in Kochi and Trivandrum subscribing to dietitian-designed meals.
+              Join active professionals across Kochi and Trivandrum eating healthy.
             </Typography>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 shrink-0 w-full sm:w-auto z-10">
@@ -273,7 +273,7 @@ export default function WhyChooseUs() {
               href="/meal-plans"
               className="flex h-11 items-center justify-center rounded-full border border-border bg-background px-6 text-xs font-semibold text-foreground hover:bg-secondary transition-all hover:-translate-y-0.5 active:scale-98"
             >
-              See Pricing Plans
+              Explore Plans
             </Link>
           </div>
         </div>

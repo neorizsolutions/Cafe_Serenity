@@ -96,7 +96,7 @@ export default function MealExperience() {
             Dietitian Designed. Chef Crafted.
           </Typography>
           <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium opacity-90">
-            Experience food that fuels your goals. Standardized portion control cooked fresh daily, balancing calories, fiber, and macronutrients.
+            Portion-controlled, dietitian-approved daily nutrition mapped to your goals.
           </Typography>
         </div>
 
@@ -126,7 +126,7 @@ export default function MealExperience() {
                 The ₹69 Healthy Meal Box
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground font-medium">
-                Healthy daily meals shouldn&apos;t drain your wallet. Our flagship ₹69 box is portion-scaled, clean-ingredient nutrition designed for daily corporate employees, students, and busy families in Kochi and Trivandrum.
+                Portion-scaled, fresh daily nutrition designed for busy professionals and families.
               </p>
             </div>
 
@@ -154,7 +154,7 @@ export default function MealExperience() {
                 rel="noopener noreferrer"
                 className="group flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-8 text-xs font-bold text-primary-foreground shadow-[0_4px_14px_rgba(26,79,53,0.25)] hover:shadow-[0_6px_20px_rgba(26,79,53,0.35)] hover:bg-primary/95 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98]"
               >
-                <span>Order ₹69 Box on WhatsApp</span>
+                <span>Subscribe on WhatsApp</span>
                 <svg className="h-4 w-4 fill-current transition-transform duration-300 group-hover:translate-x-0.5" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.02-5.11-2.881-6.974-1.86-1.865-4.343-2.891-6.985-2.892-5.442 0-9.866 4.42-9.87 9.86-.001 1.67.457 3.303 1.32 4.757l-.995 3.635 3.722-.973zm11.587-7.504c-.3-.15-1.77-.875-2.046-.975-.276-.1-.477-.15-.677.15-.2.3-.778.975-.953 1.175-.177.2-.353.225-.653.075-1.207-.6-2.054-.997-2.86-2.38-.21-.363.21-.337.603-1.125.074-.15.037-.282-.018-.382-.056-.1-.478-1.15-.654-1.575-.172-.413-.344-.356-.478-.363-.124-.006-.267-.007-.409-.007-.143 0-.376.054-.572.27-.197.216-.75.733-.75 1.79 0 1.056.768 2.074.875 2.22.107.147 1.512 2.31 3.664 3.24.512.22 1.096.353 1.61.353.606 0 1.155-.075 1.59-.14.484-.07 1.477-.6 1.684-1.18.208-.58.208-1.08.146-1.18-.06-.1-.237-.15-.537-.3z" />
                 </svg>
@@ -163,7 +163,7 @@ export default function MealExperience() {
                 href="/meal-plans"
                 className="flex h-12 items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur-sm px-8 text-xs font-semibold text-foreground hover:bg-secondary transition-all hover:-translate-y-0.5 active:scale-[0.98]"
               >
-                View Plans Configuration
+                Explore Plans
               </Link>
             </div>
           </div>
@@ -183,9 +183,9 @@ export default function MealExperience() {
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             <MotionWrapper animation="fade-up">
               <CategoryCard
-                imageSrc="/images/premium-meal-prep.png"
+                imageSrc="/images/category_weight_loss.png"
                 title="Weight Loss Plan"
-                description="Low carb, calorie deficit meal programs designed to burn stubborn body fat while keeping lean mass intact."
+                description="Calorie-deficit menu formulated to burn fat and maintain muscle."
                 calories="350 kcal"
                 protein="24g Prot"
                 price="₹199 / Meal"
@@ -195,9 +195,9 @@ export default function MealExperience() {
             
             <MotionWrapper animation="fade-up">
               <CategoryCard
-                imageSrc="/images/premium-meal-prep.png"
+                imageSrc="/images/category_high_protein.png"
                 title="High Protein & Gym"
-                description="High-protein, dietitian-weighed diet boxes supporting rapid muscle synthesis, athletic training, and physical recovery."
+                description="High-protein boxes to support muscle growth and recovery."
                 calories="600 kcal"
                 protein="45g Prot"
                 price="₹249 / Meal"
@@ -207,9 +207,9 @@ export default function MealExperience() {
             
             <MotionWrapper animation="fade-up">
               <CategoryCard
-                imageSrc="/images/premium-meal-prep.png"
+                imageSrc="/images/category_diabetic.png"
                 title="Diabetic Friendly"
-                description="Low glycemic index (Low GI) formulations avoiding simple sugars, protecting insulin response, and managing glucose levels."
+                description="Low-glycemic meals designed to prevent insulin spikes."
                 calories="400 kcal"
                 protein="26g Prot"
                 price="₹219 / Meal"
@@ -219,9 +219,9 @@ export default function MealExperience() {
             
             <MotionWrapper animation="fade-up">
               <CategoryCard
-                imageSrc="/images/premium-meal-prep.png"
+                imageSrc="/images/category_corporate.png"
                 title="Corporate Lunch"
-                description="Healthy, portion-regulated energy lunches delivered directly to Infopark and Technopark reception areas."
+                description="Portion-regulated energy lunches delivered to your office desk."
                 calories="450 kcal"
                 protein="30g Prot"
                 price="₹199 / Meal"
@@ -242,7 +242,7 @@ export default function MealExperience() {
                 Clean ingredients mean clean energy.
               </h3>
               <p className="text-xs leading-relaxed text-muted-foreground font-medium">
-                We source fresh, organic greens, premium lean chicken breasts, wild brown rice, and healthy oils daily. Our clinical cooking guidelines forbid MSG, palm oil, refined flour, and artificial chemical flavorings.
+                Fresh organic greens, premium proteins, and local cold-pressed oils. Zero preservatives.
               </p>
             </div>
             
@@ -271,7 +271,7 @@ export default function MealExperience() {
           <div className="relative aspect-video bg-muted rounded-2xl overflow-hidden shadow-lg border border-border/80 p-2 bg-gradient-to-b from-white to-secondary/35 dark:from-card dark:to-card/20">
             <div className="relative w-full h-full rounded-xl overflow-hidden">
               <Image
-                src="/images/premium-meal-prep.png"
+                src="/images/ingredient_integrity.png"
                 alt="Alakapuri dietitian raw fresh clean ingredient sourcing details"
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"

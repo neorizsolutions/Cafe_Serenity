@@ -53,7 +53,7 @@ export default function Footer() {
               <span className="text-foreground font-black tracking-tight">{BUSINESS_NAME.split(' ')[0]}</span>
             </Link>
             <p className="text-xs sm:text-[13px] leading-relaxed text-muted-foreground/90 font-medium">
-              Our mission is to make clean, portion-controlled daily nutrition accessible, helping individuals fuel their active lifestyles without kitchen fatigue.
+              Portion-controlled daily nutrition designed for active lifestyles.
             </p>
             <div className="text-[10px] font-bold uppercase tracking-widest text-foreground/90 bg-secondary/35 px-2.5 py-1 rounded w-fit border border-border/60">
               FSSAI Lic: <span className="font-extrabold">{CONTACT_DETAILS.fssaiNumber}</span>
@@ -114,7 +114,7 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Column 5: Locations, Contacts & Hours (SEO Structured Address) */}
+          {/* Column 5: Locations, Contacts & Hours */}
           <div className="flex flex-col gap-4 text-xs sm:text-[13px]">
             <div className="space-y-2">
               <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-foreground">Active Service Cities</h4>
@@ -163,7 +163,7 @@ export default function Footer() {
           <div className="lg:col-span-6 space-y-2">
             <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-foreground">Weekly Nutrition Newsletter</h4>
             <p className="text-xs leading-relaxed text-muted-foreground max-w-sm font-medium">
-              Subscribe to get clean local recipes, dietitian macros guides, and daily menu schedules.
+              Subscribe for clean recipes, macro guides, and menu schedules.
             </p>
             
             {subscribed ? (

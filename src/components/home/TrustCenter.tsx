@@ -17,91 +17,91 @@ const FAQ_BY_CATEGORY: Record<string, FAQItem[]> = {
   general: [
     {
       question: 'Is Alakapuri a restaurant?',
-      answer: 'No. We are a dedicated Healthy Meal Subscription platform. All meals are designed by clinical dietitians and cooked in FSSAI-certified central hubs using portioned ingredients.'
+      answer: 'No. We are a dietitian-designed healthy meal subscription platform operating FSSAI hubs.'
     },
     {
       question: 'Are there long-term contracts?',
-      answer: 'No. You can subscribe weekly (6 days) or monthly (24 days). You can cancel, freeze, or resume your plan anytime via our WhatsApp support line.'
+      answer: 'No. Subscribe weekly or monthly. Pause, resume, or cancel anytime via WhatsApp.'
     }
   ],
   ordering: [
     {
       question: '[Policy Placeholder] What is the daily cutoff time for order changes?',
-      answer: 'This is a placeholder for our ordering cutoff policies. Standard modifications or daily route pauses require a 12-hour advanced notice before the scheduled dispatch slot.'
+      answer: 'Standard pauses require a 12-hour notice prior to delivery.'
     },
     {
       question: '[Policy Placeholder] How do I place an order?',
-      answer: 'This is a placeholder for our order booking pipeline. Subscriptions are initiated on our website plans page and configured directly via our WhatsApp support gateway.'
+      answer: 'Choose a plan online and coordinate onboarding via WhatsApp.'
     }
   ],
   subscriptions: [
     {
       question: 'Can I swap menu items during my subscription?',
-      answer: 'Yes. Review our weekly menu on the Pricing page, and ping our WhatsApp support line before 6 PM to swap tomorrow\'s meal with another active dish.'
+      answer: 'Yes. Check the menu and contact support before 6 PM to swap.'
     },
     {
       question: '[Policy Placeholder] How do weekly and monthly subscription extensions work?',
-      answer: 'This is a placeholder for subscription durations. If you pause your deliveries, your credits are locked and the subscription validity duration is automatically extended by the paused days.'
+      answer: 'Pausing locks your delivery credits and extends your plan duration.'
     }
   ],
   payments: [
     {
       question: 'Which payment methods are accepted?',
-      answer: 'We accept all UPI applications (Google Pay, PhonePe, Paytm), net banking channels, and local card networks. Billing is verified during onboarding.'
+      answer: 'We accept UPI (Google Pay, PhonePe, Paytm), net banking, and card networks.'
     },
     {
       question: '[Policy Placeholder] Are auto-renewals enabled?',
-      answer: 'This is a placeholder for subscription renewals. Auto-renewal is disabled by default. You will receive renewal alerts on WhatsApp 2 days prior to plan completion.'
+      answer: 'Auto-renewals are disabled. Renewal alerts are sent via WhatsApp 2 days prior.'
     }
   ],
   delivery: [
     {
       question: 'Do you deliver to Infopark and Technopark?',
-      answer: 'Yes. Our delivery riders drop off fresh lunch boxes directly at office receptions, security gates, or coordinated hubs across Kochi Kakkanad and Trivandrum Kazhakkoottam.'
+      answer: 'Yes. We drop lunch boxes at office receptions and park gates.'
     },
     {
       question: 'What are the daily delivery hours?',
-      answer: 'Lunch boxes are dispatched between 11:30 AM and 1:15 PM daily. Dinner boxes are delivered between 6:30 PM and 8:15 PM.'
+      answer: 'Lunch is delivered 11:30 AM - 1:15 PM; dinner 6:30 PM - 8:15 PM.'
     }
   ],
   meal_plans: [
     {
       question: 'Can I choose a specific diet plan?',
-      answer: 'Yes. We offer target configurations: ₹69 Budget Box, Weight Loss, Gym Protein, and Diabetic-Friendly plans.'
+      answer: 'Yes. Select the ₹69 Value Box, Weight Loss, Gym, or Diabetic plans.'
     },
     {
       question: '[Policy Placeholder] Can I swap meal plan categories mid-month?',
-      answer: 'This is a placeholder for category swaps. Subscriptions can be migrated between plans mid-cycle by coordinating with our dietitian support team.'
+      answer: 'Yes. Subscriptions can be migrated mid-cycle by messaging our dietitian team.'
     }
   ],
   nutrition: [
     {
       question: 'How are calories and macros verified?',
-      answer: 'Every recipe is weighed and scaled according to standards verified in dietitian software. Macros (Protein, Carbs, Fats, Calories) are printed directly on every box label.'
+      answer: 'Recipes are portion-weighed. Macros and calories are printed on every label.'
     },
     {
       question: 'What oils do you use in preparation?',
-      answer: 'We strictly use only cold-pressed local coconut oil, olive oil, and sesame oil in portion-regulated weights. We never reuse cooking oils.'
+      answer: 'Cooked exclusively using portion-regulated cold-pressed local oils. Never reused.'
     }
   ],
   corporate: [
     {
       question: '[Policy Placeholder] Do you provide bulk meal plans for office teams?',
-      answer: 'This is a placeholder for corporate bulk pricing. We configure customized discount brackets and consolidated billing profiles for companies ordering 10+ daily boxes.'
+      answer: 'We offer discount brackets and unified billing for corporate teams.'
     },
     {
       question: '[Policy Placeholder] How do corporate trial weeks work?',
-      answer: 'This is a placeholder for trial sessions. Office teams can book a single-day or 3-day corporate lunch trial to test menu quality before establishing subscriptions.'
+      answer: 'Corporate teams can book a 1-day or 3-day menu trial.'
     }
   ],
   support: [
     {
       question: 'How do I reach customer support?',
-      answer: 'You can reach our support concierge via WhatsApp chat, voice calls, or email. The active help desk operates Monday through Saturday from 8 AM to 8 PM.'
+      answer: 'Reach support via WhatsApp, call, or email. Open Mon - Sat.'
     },
     {
       question: '[Policy Placeholder] What is the support response time SLA?',
-      answer: 'This is a placeholder for support responses. We target WhatsApp replies within 10 minutes and email responses within 12 hours during active schedule windows.'
+      answer: 'WhatsApp replies are sent within 10 minutes; emails within 12 hours.'
     }
   ]
 };
@@ -131,7 +131,7 @@ export default function TrustCenter() {
             Alakapuri Trust & Safety Center
           </Typography>
           <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium opacity-90">
-            Review our kitchen sanitation guidelines, dietitian-approved parameters, and flexible subscription policies.
+            Review kitchen sanitation guidelines, dietitian-approved parameters, and flexible policies.
           </Typography>
         </div>
 
@@ -221,7 +221,7 @@ export default function TrustCenter() {
                   </div>
                   <Typography variant="h3" className="text-base font-bold text-foreground tracking-tight">Hygienic Preparation</Typography>
                   <p className="text-xs text-muted-foreground leading-relaxed font-medium">
-                    Strict glove-wearing rules, filtered RO water preps, FSSAI certified central prep hubs, and daily kitchen sanitizations.
+                    Glove-wearing policies, RO filtration, and daily kitchen sanitization.
                   </p>
                 </div>
               </div>
@@ -237,7 +237,7 @@ export default function TrustCenter() {
                   </div>
                   <Typography variant="h3" className="text-base font-bold text-foreground tracking-tight">Ingredient Quality</Typography>
                   <p className="text-xs text-muted-foreground leading-relaxed font-medium">
-                    We procure fresh farm vegetables, whole grains, and lean proteins daily. Zero artificial thickeners or MSG chemicals.
+                    Fresh local vegetables, lean proteins, complex carbs, and zero preservatives.
                   </p>
                 </div>
               </div>
@@ -253,7 +253,7 @@ export default function TrustCenter() {
                   </div>
                   <Typography variant="h3" className="text-base font-bold text-foreground tracking-tight">Leak-Proof Packaging</Typography>
                   <p className="text-xs text-muted-foreground leading-relaxed font-medium">
-                    Safe, food-grade, leak-proof packaging blocks to retain meal freshness and support secure transit.
+                    Food-grade, leak-proof packaging to retain freshness and transit safety.
                   </p>
                 </div>
               </div>
@@ -269,7 +269,7 @@ export default function TrustCenter() {
                   </div>
                   <Typography variant="h3" className="text-base font-bold text-foreground tracking-tight">Nutrition Standards</Typography>
                   <p className="text-xs text-muted-foreground leading-relaxed font-medium">
-                    Clinical dietitian balanced kcal verification, verified fiber ratios, and custom macro tracking.
+                    Dietitian-balanced calories, custom macros, and rich fiber ratios.
                   </p>
                 </div>
               </div>
@@ -285,7 +285,7 @@ export default function TrustCenter() {
                   </div>
                   <Typography variant="h3" className="text-base font-bold text-foreground tracking-tight">Transit Delivery</Typography>
                   <p className="text-xs text-muted-foreground leading-relaxed font-medium">
-                    Strict delivery routing schedules, office desk drops, and temperature control box packaging.
+                    Coordinated routes, office desk drops, and temperature-controlled packaging.
                   </p>
                 </div>
               </div>
@@ -301,7 +301,7 @@ export default function TrustCenter() {
                   </div>
                   <Typography variant="h3" className="text-base font-bold text-foreground tracking-tight">Flexible Subscriptions</Typography>
                   <p className="text-xs text-muted-foreground leading-relaxed font-medium">
-                    Freeze delivery credits on travel days. Manage your active subscription schedule directly via text message.
+                    Pause deliveries on travel days and roll over credits instantly.
                   </p>
                 </div>
               </div>
@@ -317,17 +317,17 @@ export default function TrustCenter() {
             Licensed Safety Standards
           </h4>
           <p className="text-xs leading-relaxed text-muted-foreground max-w-md mx-auto font-medium">
-            Alakapuri operates under standardized safety registrations. (FSSAI License registration verified in constants).
+            FSSAI certified operations and safety-registered kitchen guidelines.
           </p>
           <div className="inline-flex items-center gap-2 rounded-xl bg-background px-5 py-2 text-xs font-extrabold text-foreground border border-border/80 shadow-sm mt-2">
             <svg className="h-4 w-4 text-primary shrink-0 animate-pulse" fill="none" strokeWidth="3.0" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+              <path d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
             </svg>
             <span>FSSAI License: {CONTACT_DETAILS.fssaiNumber}</span>
           </div>
         </div>
 
-        {/* 4. Support Channels Grid including Live Chat Placeholder */}
+        {/* 4. Support Channels Grid */}
         <div className="space-y-8">
           <div className="text-center space-y-2">
             <Typography variant="h3" className="text-lg font-bold text-foreground tracking-tight">
@@ -353,7 +353,7 @@ export default function TrustCenter() {
                 </svg>
               </div>
               <h4 className="text-xs font-bold text-foreground">WhatsApp Chat</h4>
-              <p className="text-[10px] text-muted-foreground leading-normal font-medium">Response: 5-10 mins (G-Pay setup)</p>
+              <p className="text-[10px] text-muted-foreground leading-normal font-medium">Response: 5-10 mins</p>
             </a>
             
             <a
@@ -368,7 +368,7 @@ export default function TrustCenter() {
                 </svg>
               </div>
               <h4 className="text-xs font-bold text-foreground">Call Support</h4>
-              <p className="text-[10px] text-muted-foreground leading-normal font-medium">Schedule: Mon – Sat, 8 AM – 8 PM</p>
+              <p className="text-[10px] text-muted-foreground leading-normal font-medium">Mon – Sat, 8 AM – 8 PM</p>
             </a>
             
             <a
@@ -383,7 +383,7 @@ export default function TrustCenter() {
                 </svg>
               </div>
               <h4 className="text-xs font-bold text-foreground">Email Support</h4>
-              <p className="text-[10px] text-muted-foreground leading-normal font-medium">Response: 12-24 hours (Corporate trials)</p>
+              <p className="text-[10px] text-muted-foreground leading-normal font-medium">Response: 12-24 hours</p>
             </a>
 
             <div className="relative p-6 rounded-2xl border border-dashed border-border/80 bg-card/60 space-y-3 flex flex-col justify-center items-center min-h-[140px]">
@@ -393,7 +393,7 @@ export default function TrustCenter() {
                 </svg>
               </div>
               <h4 className="text-xs font-bold text-muted-foreground/80">Live Web Chat</h4>
-              <p className="text-[10px] text-muted-foreground/60 leading-normal font-medium">[Future Integration Placeholder]</p>
+              <p className="text-[10px] text-muted-foreground/60 leading-normal font-medium">[Future Integration]</p>
             </div>
           </div>
         </div>
