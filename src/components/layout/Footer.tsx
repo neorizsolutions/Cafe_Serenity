@@ -119,7 +119,13 @@ export default function Footer() {
             <div className="space-y-2">
               <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-foreground">Active Service Areas</h4>
               <p className="leading-relaxed font-semibold">
-                <span className="font-bold text-foreground">Kochi:</span> Kakkanad, Infopark, SmartCity, Edappally, Vytila, Kaloor, Palarivattom, Kadavanthra
+                <span className="font-bold text-foreground">Kochi:</span> Kakkanad, Infopark, SmartCity, Edappally, Vyttila, Kaloor, Kadavanthra, Panampilly Nagar
+              </p>
+            </div>
+            <div className="space-y-1">
+              <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-foreground">Expanding Soon</h4>
+              <p className="leading-relaxed text-[11px] font-semibold text-muted-foreground/80">
+                Trivandrum, Kozhikode, Thrissur, Kannur
               </p>
             </div>
             
@@ -145,12 +151,12 @@ export default function Footer() {
 
             {/* Google Map Link */}
             <a
-              href="https://maps.google.com/?q=Alakapuri+Restaurant+Kakkanad+Kochi"
+              href={`https://maps.google.com/?q=${CONTACT_DETAILS.geo.lat},${CONTACT_DETAILS.geo.lng}`}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[10px] font-extrabold text-primary hover:underline hover:text-emerald-700 transition-colors w-fit focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5"
             >
-              📍 View Restaurant Map Coordinates →
+              📍 View Kitchen Map Coordinates →
             </a>
           </div>
 

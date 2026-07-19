@@ -26,7 +26,7 @@ export default function DeliveryPartners() {
     {
       id: 'swiggy',
       name: 'Swiggy',
-      description: 'Lightning-fast delivery of hot Kerala delicacies straight to your doorstep in Kakkanad.',
+      description: 'Lightning-fast delivery of portion-controlled healthy meals and diet boxes straight to your doorstep.',
       rating: 4.4,
       reviewsCount: '1,200+ reviews',
       ctaText: 'Order on Swiggy',
@@ -128,7 +128,7 @@ export default function DeliveryPartners() {
             Our Delivery Partners
           </Typography>
           <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium opacity-90">
-            Enjoy authentic Kerala food from home. Have hot, delicious Alakapuri traditional meals delivered directly to your doorstep.
+            Enjoy fresh, calorie-mapped diet boxes delivered daily. Get your portion-controlled healthy meals sent straight to your doorstep.
           </Typography>
         </div>
 

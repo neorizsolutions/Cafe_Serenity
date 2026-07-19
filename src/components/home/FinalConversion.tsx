@@ -1,15 +1,18 @@
 'use client';
 
 import { useState } from 'react';
+
 import Link from 'next/link';
 import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
+import { useCheckout } from '@/context/CheckoutContext';
 import { CONTACT_DETAILS } from '@/constants';
 
 export default function FinalConversion() {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const { openCheckout } = useCheckout();
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,10 +23,6 @@ export default function FinalConversion() {
     }
   };
 
-  const whatsappAcquisition = `${CONTACT_DETAILS.whatsapp}?text=${encodeURIComponent(
-    "Hi Alakapuri, I'd like to check subscription plans and delivery schedules for my location. Let's get started."
-  )}`;
-
   return (
     <Section bg="brand-light" className="relative border-t border-border overflow-hidden">
       {/* Background ambient blurs */}
@@ -31,7 +30,7 @@ export default function FinalConversion() {
       <div className="absolute bottom-0 right-0 -z-10 h-[300px] w-[300px] rounded-full bg-emerald-600/5 blur-3xl" />
 
       <Container className="space-y-20">
-
+        
         {/* 1. Main Conversion CTA Header Block */}
         <div className="text-center max-w-3xl mx-auto space-y-6">
           <Typography variant="badge-label" className="tracking-widest text-[11px]">
@@ -46,17 +45,12 @@ export default function FinalConversion() {
           </Typography>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <a
-              href={whatsappAcquisition}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-8 text-sm font-bold text-primary-foreground shadow-[0_4px_14px_rgba(26,79,53,0.25)] hover:shadow-[0_6px_20px_rgba(26,79,53,0.35)] hover:bg-primary/95 transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+            <button
+              onClick={() => openCheckout()}
+              className="group flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-8 text-sm font-bold text-primary-foreground shadow-[0_4px_14px_rgba(26,79,53,0.25)] hover:shadow-[0_6px_20px_rgba(26,79,53,0.35)] hover:bg-primary/95 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
             >
-              <span>Order on WhatsApp</span>
-              <svg className="h-4 w-4 fill-current transition-transform duration-300 group-hover:translate-x-0.5" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.02-5.11-2.881-6.974-1.86-1.865-4.343-2.891-6.985-2.892-5.442 0-9.866 4.42-9.87 9.86-.001 1.67.457 3.303 1.32 4.757l-.995 3.635 3.722-.973zm11.587-7.504c-.3-.15-1.77-.875-2.046-.975-.276-.1-.477-.15-.677.15-.2.3-.778.975-.953 1.175-.177.2-.353.225-.653.075-1.207-.6-2.054-.997-2.86-2.38-.21-.363.21-.337.603-1.125.074-.15.037-.282-.018-.382-.056-.1-.478-1.15-.654-1.575-.172-.413-.344-.356-.478-.363-.124-.006-.267-.007-.409-.007-.143 0-.376.054-.572.27-.197.216-.75.733-.75 1.79 0 1.056.768 2.074.875 2.22.107.147 1.512 2.31 3.664 3.24.512.22 1.096.353 1.61.353.606 0 1.155-.075 1.59-.14.484-.07 1.477-.6 1.684-1.18.208-.58.208-1.08.146-1.18-.06-.1-.237-.15-.537-.3z" />
-              </svg>
-            </a>
+              <span>Order Now</span>
+            </button>
             <Link
               href="/meal-plans"
               className="flex h-12 items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur-sm px-8 text-sm font-semibold text-foreground hover:bg-secondary transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
@@ -78,9 +72,9 @@ export default function FinalConversion() {
               Daily Desk & Doorstep Delivery
             </h3>
             <p className="text-xs leading-relaxed text-muted-foreground font-medium">
-              We deliver fresh healthy meal boxes twice daily to all primary IT parks, corporate offices, gyms, and residential neighborhoods across Kochi.
+              We deliver fresh healthy meal boxes twice daily to all primary IT parks, corporate offices, gyms, and residential neighborhoods across Kochi, with other regions coming soon.
             </p>
-
+            
             {/* Visual Coverage List */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
               <div className="space-y-3">
@@ -97,6 +91,19 @@ export default function FinalConversion() {
                   <li className="flex items-center gap-1.5">• Vytila & Ernakulam Central</li>
                 </ul>
               </div>
+              <div className="space-y-3">
+                <span className="flex items-center gap-1.5 text-xs font-extrabold text-foreground opacity-85">
+                  <svg className="h-4 w-4 text-primary/85 shrink-0" fill="none" strokeWidth="2.5" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Expanding Soon
+                </span>
+                <ul className="text-[10px] text-muted-foreground space-y-2 font-medium">
+                  <li className="flex items-center gap-1.5">• Trivandrum (Technopark)</li>
+                  <li className="flex items-center gap-1.5">• Kozhikode (Cyberpark)</li>
+                  <li className="flex items-center gap-1.5">• Thrissur & Kannur Zones</li>
+                </ul>
+              </div>
             </div>
           </div>
 
@@ -111,7 +118,7 @@ export default function FinalConversion() {
                 <circle cx="70" cy="70" r="3" className="fill-primary animate-ping" />
               </svg>
             </div>
-
+            
             <div className="z-10 space-y-2">
               <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mx-auto shadow-sm transition-transform duration-300 group-hover/map:scale-105">
                 <svg className="h-5 w-5 stroke-current fill-none" strokeWidth="2.0" viewBox="0 0 24 24" aria-hidden="true">
@@ -120,7 +127,7 @@ export default function FinalConversion() {
               </div>
               <Typography variant="h3" className="text-sm font-bold text-foreground">Interactive Transit Radar</Typography>
               <p className="text-[10px] text-muted-foreground max-w-xs mt-1 leading-relaxed font-medium">
-                Expansion plans underway for secondary cities in Kerala (Thrissur, Calicut). Map interface will load here.
+                Expansion plans underway for other cities in Kerala (Trivandrum, Kozhikode, Thrissur). Map interface will load here.
               </p>
             </div>
           </div>
@@ -128,7 +135,7 @@ export default function FinalConversion() {
 
         {/* 3. Support & Contact channels + Trust Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-
+          
           {/* Quick Support Contacts */}
           <div className="space-y-4 md:col-span-2">
             <h4 className="text-xs font-extrabold uppercase tracking-widest text-foreground">
@@ -137,16 +144,16 @@ export default function FinalConversion() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="group/item p-5 rounded-2xl border border-border/60 bg-card hover:bg-secondary/35 transition-all duration-300 hover:border-primary/20 hover:-translate-y-0.5">
                 <div className="h-8 w-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shadow-sm mb-3 group-hover/item:scale-105 transition-transform duration-300">
-                  <svg className="h-4.5 w-4.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.02-5.11-2.881-6.974-1.86-1.865-4.343-2.891-6.985-2.892-5.442 0-9.866 4.42-9.87 9.86-.001 1.67.457 3.303 1.32 4.757l-.995 3.635 3.722-.973zm11.587-7.504c-.3-.15-1.77-.875-2.046-.975-.276-.1-.477-.15-.677.15-.2.3-.778.975-.953 1.175-.177.2-.353.225-.653.075-1.207-.6-2.054-.997-2.86-2.38-.21-.363.21-.337.603-1.125.074-.15.037-.282-.018-.382-.056-.1-.478-1.15-.654-1.575-.172-.413-.344-.356-.478-.363-.124-.006-.267-.007-.409-.007-.143 0-.376.054-.572.27-.197.216-.75.733-.75 1.79 0 1.056.768 2.074.875 2.22.107.147 1.512 2.31 3.664 3.24.512.22 1.096.353 1.61.353.606 0 1.155-.075 1.59-.14.484-.07 1.477-.6 1.684-1.18.208-.58.208-1.08.146-1.18-.06-.1-.237-.15-.537-.3z" />
+                  <svg className="h-4.5 w-4.5 stroke-current fill-none" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.47-5.112-3.758-6.58-6.58l1.293-.97c.362-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H3.5A2.25 2.25 0 001.25 4.5v2.25z" />
                   </svg>
                 </div>
-                <span className="text-xs font-extrabold text-foreground block">WhatsApp Setup</span>
-                <a href={CONTACT_DETAILS.whatsapp} className="text-[10px] text-primary hover:underline block mt-1.5 font-bold">
+                <span className="text-xs font-extrabold text-foreground block">Support Hotline</span>
+                <a href={`tel:${CONTACT_DETAILS.phone}`} className="text-[10px] text-primary hover:underline block mt-1.5 font-bold">
                   {CONTACT_DETAILS.phone}
                 </a>
               </div>
-
+              
               <div className="group/item p-5 rounded-2xl border border-border/60 bg-card hover:bg-secondary/35 transition-all duration-300 hover:border-primary/20 hover:-translate-y-0.5">
                 <div className="h-8 w-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shadow-sm mb-3 group-hover/item:scale-105 transition-transform duration-300">
                   <svg className="h-4.5 w-4.5 stroke-current fill-none" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
@@ -158,7 +165,7 @@ export default function FinalConversion() {
                   {CONTACT_DETAILS.email}
                 </a>
               </div>
-
+              
               <div className="group/item p-5 rounded-2xl border border-border/60 bg-card hover:bg-secondary/35 transition-all duration-300 hover:border-primary/20 hover:-translate-y-0.5">
                 <div className="h-8 w-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shadow-sm mb-3 group-hover/item:scale-105 transition-transform duration-300">
                   <svg className="h-4.5 w-4.5 stroke-current fill-none" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
@@ -195,7 +202,7 @@ export default function FinalConversion() {
               Get clean diet recipes, macro charts, and menu updates directly in your inbox.
             </p>
           </div>
-
+          
           {subscribed ? (
             <div className="text-xs font-extrabold text-primary bg-primary/10 px-4 py-2.5 rounded-full border border-primary/20 animate-pulse w-full max-w-sm text-center">
               ✓ Thank you! You have successfully subscribed.

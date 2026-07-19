@@ -6,7 +6,7 @@ import { CONTACT_DETAILS } from '@/constants';
 
 export const metadata = constructMetadata({
   title: 'Contact Alakapuri Healthy Meals | Support Concierge Kerala',
-  description: 'Reach our healthy subscription support desk via WhatsApp, email, or calls. Kitchen details for Kochi.',
+  description: 'Reach our healthy subscription support desk via WhatsApp, email, or calls. Kitchen details for Kakkanad, Kochi.',
 });
 
 export default function ContactPage() {

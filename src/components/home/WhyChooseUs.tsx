@@ -1,10 +1,12 @@
+'use client';
+
 import Link from 'next/link';
-import Image from 'next/image';
 import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
 import MotionWrapper from '@/components/common/MotionWrapper';
-import { CONTACT_DETAILS } from '@/constants';
+import { cn } from '@/lib/utils';
+import { useCheckout } from '@/context/CheckoutContext';
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -35,9 +37,7 @@ function FeatureCard({ icon, title, description }: FeatureCardProps) {
 }
 
 export default function WhyChooseUs() {
-  const whatsappLink = `${CONTACT_DETAILS.whatsapp}?text=${encodeURIComponent(
-    "Hi Alakapuri Restaurant Kakkanad, I'd like to ask about your traditional menu and delivery options."
-  )}`;
+  const { openCheckout } = useCheckout();
 
   return (
     <Section bg="muted" className="relative border-t border-border overflow-hidden">
@@ -53,10 +53,10 @@ export default function WhyChooseUs() {
             The Alakapuri Difference
           </Typography>
           <Typography variant="h2" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
-            Why Choose Alakapuri Restaurant?
+            Why Choose Alakapuri Healthy Meals?
           </Typography>
           <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium opacity-90">
-            Authentic traditional Kerala recipes and fresh ingredients, prepared daily since 1970.
+            Clinical dietary guidelines and fresh ingredients, delivered daily.
           </Typography>
         </div>
 
@@ -71,8 +71,8 @@ export default function WhyChooseUs() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 }
-                title="Authentic Traditional Recipes"
-                description="Time-tested recipes handed down since 1970 for genuine, uncompromising Kerala flavor."
+                title="Portion-Weighed Macros"
+                description="Calories and macros printed directly on every box. Zero guesswork."
               />
             </MotionWrapper>
             
@@ -83,8 +83,8 @@ export default function WhyChooseUs() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 006.1 1.908z" />
                   </svg>
                 }
-                title="100% Cold-Pressed Oils"
-                description="Prepared using measured amounts of pure coconut oil, sesame oil, or ghee. Never reused."
+                title="Cold-Pressed Oils Only"
+                description="Cooked with portion-regulated coconut, olive, or sesame oil. Never reused."
               />
             </MotionWrapper>
             
@@ -95,8 +95,8 @@ export default function WhyChooseUs() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008z" />
                   </svg>
                 }
-                title="Flexible Office Desk Drops"
-                description="Convenient hot lunch box drop-offs directly to tech park receptions across Kakkanad."
+                title="12-Hour Flexi-Freeze"
+                description="Pause deliveries and roll over credits with a 12-hour WhatsApp notice."
               />
             </MotionWrapper>
             
@@ -107,8 +107,8 @@ export default function WhyChooseUs() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
                   </svg>
                 }
-                title="FSSAI Certified Hygiene"
-                description="Strict sanitization protocols, premium quality ingredients, and state-of-the-art kitchen safety."
+                title="FSSAI Hygienic Cooking"
+                description="Glove-wearing policies, RO water filtration, and sterile packing standards."
               />
             </MotionWrapper>
           </div>
@@ -116,13 +116,9 @@ export default function WhyChooseUs() {
           {/* Right Column: Visual Storytelling Box (Linear/Apple style) */}
           <div className="lg:col-span-5 flex items-stretch">
             <MotionWrapper animation="scale" className="relative w-full rounded-2xl overflow-hidden shadow-lg border border-border/80 min-h-[320px] flex flex-col justify-end p-6 bg-muted group">
-              <Image
-                src="/images/why_choose_prep.png"
-                alt="Family dining at Alakapuri Restaurant enjoying authentic Kerala banana leaf Sadya"
-                fill
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-              />
+              <div className="absolute inset-0 bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-900 flex flex-col items-center justify-center p-6 text-center select-none border border-border/40 rounded-2xl">
+                <span className="text-xs text-muted-foreground/60 font-bold tracking-wider">Culinary Standards Visual Placeholder</span>
+              </div>
               {/* Gradient dark overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent z-10" />
               
@@ -135,7 +131,7 @@ export default function WhyChooseUs() {
                   Premium Ingredients, Locally Sourced
                 </h3>
                 <p className="text-xs text-white/80 leading-relaxed font-medium">
-                  Traditional recipes, local farm-fresh spices, and warm Kerala hospitality.
+                  Fresh greens, lean proteins, and cold-pressed oils. Prepared daily.
                 </p>
               </div>
             </MotionWrapper>
@@ -149,7 +145,7 @@ export default function WhyChooseUs() {
               Visual Platform Comparison
             </Typography>
             <Typography variant="body-regular" className="text-xs text-muted-foreground font-medium">
-              How Alakapuri Restaurant standards compare to ordinary dining.
+              How Alakapuri healthy subscriptions differ from typical takeout.
             </Typography>
           </div>
 
@@ -161,7 +157,7 @@ export default function WhyChooseUs() {
                   <th scope="col" className="p-4 sm:p-5">Typical Restaurant Delivery</th>
                   <th scope="col" className="p-4 sm:p-5 text-primary bg-primary/[0.03] border-x border-primary/10">
                     <span className="flex items-center gap-2">
-                      Alakapuri Restaurant Standard
+                      Alakapuri Healthy Subscriptions
                       <span className="inline-flex rounded-full bg-primary/15 px-2 py-0.5 text-[8px] font-black text-primary tracking-widest normal-case">
                         RECOMMENDED
                       </span>
@@ -234,7 +230,7 @@ export default function WhyChooseUs() {
                       <svg className="h-4 w-4 shrink-0 text-primary" fill="none" strokeWidth="3" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
-                      Since 1970 traditional quality from ₹69.
+                      Dietitian-approved from ₹69.
                     </span>
                   </td>
                 </tr>
@@ -254,26 +250,24 @@ export default function WhyChooseUs() {
               Ready to take control of your daily nutrition?
             </Typography>
             <Typography variant="body-regular" className="text-sm text-muted-foreground leading-relaxed font-medium">
-              Join thousands of satisfied diners in Kakkanad, Kochi, experiencing traditional taste.
+              Join active professionals across Kochi eating healthy.
             </Typography>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 shrink-0 w-full sm:w-auto z-10">
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex h-11 items-center justify-center gap-2 rounded-full bg-primary px-6 text-xs font-bold text-primary-foreground shadow hover:bg-primary/95 transition-all hover:-translate-y-0.5 active:scale-98"
+            <button
+              onClick={() => openCheckout()}
+              className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-8 text-sm font-bold text-primary-foreground shadow-md hover:shadow-lg transition-all duration-300 hover:bg-primary/95 active:scale-95 hover:-translate-y-0.5 cursor-pointer"
             >
-              <span>Order on WhatsApp</span>
-              <svg className="h-3.5 w-3.5 fill-current transition-transform duration-300 group-hover:translate-x-0.5" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.02-5.11-2.881-6.974-1.86-1.865-4.343-2.891-6.985-2.892-5.442 0-9.866 4.42-9.87 9.86-.001 1.67.457 3.303 1.32 4.757l-.995 3.635 3.722-.973zm11.587-7.504c-.3-.15-1.77-.875-2.046-.975-.276-.1-.477-.15-.677.15-.2.3-.778.975-.953 1.175-.177.2-.353.225-.653.075-1.207-.6-2.054-.997-2.86-2.38-.21-.363.21-.337.603-1.125.074-.15.037-.282-.018-.382-.056-.1-.478-1.15-.654-1.575-.172-.413-.344-.356-.478-.363-.124-.006-.267-.007-.409-.007-.143 0-.376.054-.572.27-.197.216-.75.733-.75 1.79 0 1.056.768 2.074.875 2.22.107.147 1.512 2.31 3.664 3.24.512.22 1.096.353 1.61.353.606 0 1.155-.075 1.59-.14.484-.07 1.477-.6 1.684-1.18.208-.58.208-1.08.146-1.18-.06-.1-.237-.15-.537-.3z" />
+              <span>Order Now</span>
+              <svg className="h-4 w-4 fill-current transition-transform duration-300 group-hover:translate-x-0.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 10h3l-4 4-4-4h3V8h2v4z" />
               </svg>
-            </a>
+            </button>
             <Link
-              href="/pricing"
+              href="/meal-plans"
               className="flex h-11 items-center justify-center rounded-full border border-border bg-background px-6 text-xs font-semibold text-foreground hover:bg-secondary transition-all hover:-translate-y-0.5 active:scale-98"
             >
-              View Full Menu
+              Explore Plans
             </Link>
           </div>
         </div>

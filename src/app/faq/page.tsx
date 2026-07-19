@@ -6,7 +6,7 @@ import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
   title: 'Alakapuri Help Center & Frequently Asked Questions (FAQ)',
-  description: 'Find answers about our UPI onboarding, delivery areas in Kakkanad Kochi, 12h freeze credit policy, and traditional kitchen parameters.',
+  description: 'Find answers about our UPI onboarding, delivery areas in Kochi, 12h freeze credit policy, and dietician-approved parameters.',
 });
 
 export default function FAQPage() {

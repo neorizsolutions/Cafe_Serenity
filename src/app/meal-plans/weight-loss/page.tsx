@@ -7,7 +7,7 @@ import { CONTACT_DETAILS } from '@/constants';
 
 export const metadata = constructMetadata({
   title: 'Weight Loss & Calorie Deficit Meal Plans | Alakapuri',
-  description: 'Clean, weighed low-carb diet plans cooked fresh daily to manage calorie deficits cleanly. Starts from ₹199/meal. Kochi & TVM desk drops.',
+  description: 'Clean, weighed low-carb diet plans cooked fresh daily to manage calorie deficits cleanly. Starts from ₹199/meal. Kochi desk and doorstep drops.',
 });
 
 export default function WeightLossPlans() {

@@ -12,11 +12,11 @@ export default function AnnouncementBar() {
     <div className="w-full bg-primary text-primary-foreground py-2.5 px-6 flex items-center justify-between text-xs font-bold leading-none tracking-wide text-center">
       <div className="flex-grow flex items-center justify-center gap-2">
         <span className="inline-flex rounded-full bg-white/20 px-2 py-0.5 text-[10px] uppercase font-black tracking-wider">
-          Since 1970
+          New
         </span>
-        <span>A Taste of Traditional Kerala in Kakkanad, Kochi. Order on WhatsApp or Swiggy/Zomato!</span>
-        <Link href="/pricing" className="underline hover:opacity-90 ml-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-offset-1 focus-visible:ring-white">
-          View Menu →
+        <span>Launch Offer: Calorie-Mapped Healthy Meal Boxes starting at only ₹69.</span>
+        <Link href="/meal-plans" className="underline hover:opacity-90 ml-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-offset-1 focus-visible:ring-white">
+          Explore Plans →
         </Link>
       </div>
       <button

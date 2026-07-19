@@ -1,8 +1,10 @@
+'use client';
+
 import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
 import MotionWrapper from '@/components/common/MotionWrapper';
-import { CONTACT_DETAILS } from '@/constants';
+import { useCheckout } from '@/context/CheckoutContext';
 
 interface StepCardProps {
   number: string;
@@ -33,9 +35,7 @@ function StepCard({ number, title, description }: StepCardProps) {
 }
 
 export default function HowItWorks() {
-  const whatsappCTA = `${CONTACT_DETAILS.whatsapp}?text=${encodeURIComponent(
-    "Hi Alakapuri Restaurant Kakkanad, I'd like to manage/freeze my lunch box delivery."
-  )}`;
+  const { openCheckout } = useCheckout();
 
   return (
     <Section bg="muted" className="relative border-t border-border overflow-hidden">
@@ -47,10 +47,10 @@ export default function HowItWorks() {
             Your Nutrition Path
           </Typography>
           <Typography variant="h2" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
-            Delicious Dining, Convenient Desk Drops
+            Simple Subscriptions, Effortless Daily Delivery
           </Typography>
           <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium opacity-90">
-            Dine in at Kakkanad, or subscribe to daily traditional lunch drops at your office.
+            No checkout forms or long-term contracts. Manage your diet flexibly.
           </Typography>
         </div>
 
@@ -59,32 +59,32 @@ export default function HowItWorks() {
           <MotionWrapper animation="fade-up">
             <StepCard
               number="01"
-              title="Browse Specialties & Meals"
-              description="Choose our traditional Kerala meals, Porotta & Beef, or Malabar Biriyani."
+              title="Select Your Wellness Goal"
+              description="Choose our ₹69 Value Box or target specialized plans."
             />
           </MotionWrapper>
 
           <MotionWrapper animation="fade-up">
             <StepCard
               number="02"
-              title="Set Up Your Schedule"
-              description="Select dine-in reservations or daily office lunch box delivery drop-offs."
+              title="Coordinate Onboarding Setup"
+              description="We coordinate delivery locations, times, and digital billing."
             />
           </MotionWrapper>
 
           <MotionWrapper animation="fade-up">
             <StepCard
               number="03"
-              title="Traditional Chef Prep"
-              description="Meals are cooked using hand-ground spices and traditional clay pots since 1970."
+              title="Daily Kitchen Preparation"
+              description="Meals are portion-scaled, prepared fresh daily, and macro-labeled."
             />
           </MotionWrapper>
 
           <MotionWrapper animation="fade-up">
             <StepCard
               number="04"
-              title="Prompt Hot Delivery"
-              description="Lunches are delivered hot directly to your office desk at Infopark or Kakkanad."
+              title="Contactless Office Dispatch"
+              description="Fresh meal boxes are delivered directly to your desk."
             />
           </MotionWrapper>
         </div>
@@ -97,23 +97,18 @@ export default function HowItWorks() {
             100% Subscription Protection
           </span>
           <Typography variant="h3" className="text-xl font-bold text-foreground tracking-tight">
-            The Alakapuri Delivery Guarantee
+            The Alakapuri Flexi-Freeze Guarantee
           </Typography>
           <p className="text-xs leading-relaxed text-muted-foreground max-w-lg mx-auto font-medium">
-            Message us 12 hours prior to freeze your daily office lunch box or update your delivery drop location.
+            Manage your delivery schedules, pause subscriptions, and roll over credits dynamically.
           </p>
           <div className="pt-2 z-10 relative">
-            <a
-              href={whatsappCTA}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex h-10 items-center justify-center gap-2 rounded-full bg-primary px-6 text-xs font-bold text-primary-foreground shadow hover:bg-primary/95 transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+            <button
+              onClick={() => openCheckout()}
+              className="group inline-flex h-10 items-center justify-center gap-2 rounded-full bg-primary px-6 text-xs font-bold text-primary-foreground shadow hover:bg-primary/95 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
             >
-              <span>Manage on WhatsApp</span>
-              <svg className="h-3.5 w-3.5 fill-current transition-transform duration-300 group-hover:translate-x-0.5" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.02-5.11-2.881-6.974-1.86-1.865-4.343-2.891-6.985-2.892-5.442 0-9.866 4.42-9.87 9.86-.001 1.67.457 3.303 1.32 4.757l-.995 3.635 3.722-.973zm11.587-7.504c-.3-.15-1.77-.875-2.046-.975-.276-.1-.477-.15-.677.15-.2.3-.778.975-.953 1.175-.177.2-.353.225-.653.075-1.207-.6-2.054-.997-2.86-2.38-.21-.363.21-.337.603-1.125.074-.15.037-.282-.018-.382-.056-.1-.478-1.15-.654-1.575-.172-.413-.344-.356-.478-.363-.124-.006-.267-.007-.409-.007-.143 0-.376.054-.572.27-.197.216-.75.733-.75 1.79 0 1.056.768 2.074.875 2.22.107.147 1.512 2.31 3.664 3.24.512.22 1.096.353 1.61.353.606 0 1.155-.075 1.59-.14.484-.07 1.477-.6 1.684-1.18.208-.58.208-1.08.146-1.18-.06-.1-.237-.15-.537-.3z" />
-              </svg>
-            </a>
+              <span>Get Started</span>
+            </button>
           </div>
         </div>
 
@@ -121,23 +116,23 @@ export default function HowItWorks() {
         <div className="space-y-8">
           <div className="text-center space-y-2">
             <Typography variant="h3" className="text-xl font-bold text-foreground tracking-tight">
-              Traditional Culinary Styles
+              Pre-Configured Dietary Presets
             </Typography>
             <Typography variant="body-regular" className="text-xs text-muted-foreground font-medium">
-              We prepare authentic recipes matching traditional standards and tastes.
+              We scale nutrition variables matching specific lifestyles and metabolic requirements.
             </Typography>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto text-center font-bold text-xs">
             {[
-              { title: 'Office Corporate Teams', desc: 'Infopark & SmartCity drops.' },
-              { title: 'Diabetic Friendly Options', desc: 'Low-GI grain diabetic care.' },
-              { title: 'Traditional Kerala Sadya', desc: 'Authentic banana leaf meals.' },
-              { title: 'Malabar Spiced Biriyanis', desc: 'Aromatic ghee roasted dum rice.' },
-              { title: 'Lacy Appams & Stew', desc: 'Creamy coconut milk stew breakfasts.' },
-              { title: 'Claypot Fish Curries', desc: 'Tangy Kudampuli red fish gravy.' },
-              { title: 'Family Special Platters', desc: 'Legendary Porotta and Beef fry.' },
-              { title: 'Flexible Catering Packages', desc: 'Custom catering routes in Kochi.' }
+              { title: 'Office Corporate Teams', desc: 'Infopark & Technopark drops.' },
+              { title: 'Low Glycemic Sugar Control', desc: 'Insulin-friendly glycemic plans.' },
+              { title: 'Calorie Deficit Weight Loss', desc: 'Portion-controlled deficit weight-loss.' },
+              { title: 'Athletic High Protein Grains', desc: 'High-protein recovery boxes.' },
+              { title: 'Kids Balanced Growth Box', desc: 'Nutrient-rich growth boxes for kids.' },
+              { title: 'Senior Heart Healthy', desc: 'Easy-to-digest wholesome nutrients.' },
+              { title: 'Wholesome Healthy Family', desc: 'Balanced meals for whole families.' },
+              { title: 'Flexible Custom Custom Presets', desc: 'Custom schedules and routes.' }
             ].map((preset, idx) => (
               <div 
                 key={idx} 

@@ -1,15 +1,14 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { motion, AnimatePresence, MotionProps } from 'framer-motion';
-import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
 import MotionWrapper from '@/components/common/MotionWrapper';
-import { CONTACT_DETAILS } from '@/constants';
 import { cn } from '@/lib/utils';
+import { useCheckout } from '@/context/CheckoutContext';
 
 interface MacroStats {
   protein: string;
@@ -40,117 +39,114 @@ interface Slide {
 
 const SLIDES: Slide[] = [
   {
-    id: 'kerala-sadya',
-    title: 'Traditional Kerala Sadya',
-    image: '/images/slide_kerala_sadya.png',
-    alt: 'Authentic Kerala Sadya served on a banana leaf with red rice, avial, sambar, and payasam',
-    kcal: 'Authentic Feast',
-    tag: 'Banana Leaf Meal',
-    subTag: 'Heritage Recipe',
-    macros: { protein: 'Fresh', carbs: 'Clay Pot', fat: '0% MSG' },
+    id: 'salad-bowl',
+    title: 'Fresh Salad Bowl',
+    image: '/images/slide_salad_bowl.png',
+    alt: 'Vibrant gourmet fresh salad bowl filled with raw nutrients, avocado, and leafy greens',
+    kcal: '320 kcal',
+    tag: 'Rich in Fiber',
+    subTag: 'Gut Friendly',
+    macros: { protein: '8g', carbs: '22g', fat: '12g' },
     bgColor: 'from-emerald-500/10 to-teal-500/10 dark:from-emerald-500/5 dark:to-teal-500/5',
     floatCards: [
-      { text: 'Heritage Recipe', sub: 'Since 1970', position: '-top-4 -right-4 md:-right-8', delay: 0, iconType: 'organic' },
-      { text: 'Wood-Fired', sub: 'Traditional Taste', position: '-bottom-6 -left-6', delay: 1.5, iconType: 'fresh' }
+      { text: 'Rich in Fiber', sub: 'Gut Friendly', position: '-top-4 -right-4 md:-right-8', delay: 0, iconType: 'fiber' },
+      { text: 'Low Oil', sub: 'Heart Healthy', position: '-bottom-6 -left-6', delay: 1.5, iconType: 'oil' }
     ]
   },
   {
-    id: 'porotta-beef',
-    title: 'Porotta & Beef Fry',
-    image: '/images/slide_porotta_beef.png',
-    alt: 'Layered Malabar Porotta served with slow-cooked spicy beef fry and coconut slices',
-    kcal: 'Legendary Taste',
-    tag: 'Malabar Special',
-    subTag: 'Slow-Cooked',
-    macros: { protein: 'Spicy', carbs: 'Coconut Oil', fat: '0% MSG' },
+    id: 'high-protein',
+    title: 'High Protein Meal',
+    image: '/images/slide_high_protein.png',
+    alt: 'High protein meal box featuring grilled chicken breast, quinoa, and steamed broccoli',
+    kcal: '480 kcal',
+    tag: 'High Protein',
+    subTag: 'Muscle Recovery',
+    macros: { protein: '42g', carbs: '35g', fat: '10g' },
     bgColor: 'from-emerald-500/15 to-primary/10 dark:from-emerald-500/5 dark:to-primary/5',
     floatCards: [
-      { text: 'Slow Cooked', sub: 'Rich Gravy', position: '-top-4 -right-4 md:-right-8', delay: 0.5, iconType: 'oil' },
-      { text: 'Hand-Tossed', sub: 'Flaky Layers', position: '-bottom-6 -left-6', delay: 2, iconType: 'protein' }
+      { text: 'High Protein', sub: '42g Protein', position: '-top-4 -right-4 md:-right-8', delay: 0.5, iconType: 'protein' },
+      { text: 'Dietitian Approved', sub: 'Verified Macros', position: '-bottom-6 -left-6', delay: 2, iconType: 'organic' }
     ]
   },
   {
-    id: 'fish-curry',
-    title: 'Claypot Fish Curry',
-    image: '/images/slide_fish_curry.png',
-    alt: 'Spicy red Kerala Fish Curry cooked in claypot, served with steamed tapioca kappa',
-    kcal: 'Claypot Cook',
-    tag: 'Seafood Special',
-    subTag: 'Kochi Backwaters',
-    macros: { protein: 'Fresh Catch', carbs: 'Traditional', fat: '0% MSG' },
+    id: 'balanced-meal',
+    title: 'Balanced Meal',
+    image: '/images/slide_balanced_meal.png',
+    alt: 'Balanced nutrition meal box with roasted salmon, brown rice, and asparagus',
+    kcal: '450 kcal',
+    tag: 'Balanced Nutrition',
+    subTag: 'Everyday Energy',
+    macros: { protein: '32g', carbs: '40g', fat: '14g' },
     bgColor: 'from-primary/15 to-teal-500/10 dark:from-primary/5 dark:to-teal-500/5',
     floatCards: [
-      { text: 'Spicy Kudampuli', sub: 'Claypot Gravy', position: '-top-4 -right-4 md:-right-8', delay: 0.8, iconType: 'kcal' },
-      { text: 'Fresh Tapioca', sub: 'Traditional Kappa', position: '-bottom-6 -left-6', delay: 2.3, iconType: 'fiber' }
+      { text: 'Balanced Nutrition', sub: 'Calorie Mapped', position: '-top-4 -right-4 md:-right-8', delay: 0.8, iconType: 'kcal' },
+      { text: 'Healthy Fats', sub: 'Cold-Pressed Oils', position: '-bottom-6 -left-6', delay: 2.3, iconType: 'oil' }
     ]
   },
   {
-    id: 'kerala-biriyani',
-    title: 'Malabar Chicken Biriyani',
-    image: '/images/slide_kerala_biriyani.png',
-    alt: 'Aromatic chicken biriyani with long-grain rice, fried onions, cashews, and a boiled egg',
-    kcal: 'Khaima Rice',
-    tag: 'Aromatic Dum',
-    subTag: 'Ghee Roasted',
-    macros: { protein: 'Tender', carbs: 'Pure Ghee', fat: '0% MSG' },
+    id: 'lunch-box',
+    title: 'Healthy Lunch Box',
+    image: '/images/slide_lunch_box.png',
+    alt: 'Freshly packed healthy lunch box with mixed sprouts, hummus, whole wheat flatbread and crudites',
+    kcal: '390 kcal',
+    tag: 'Fresh Today',
+    subTag: 'Office Lunch',
+    macros: { protein: '14g', carbs: '55g', fat: '9g' },
     bgColor: 'from-emerald-500/10 to-amber-500/10 dark:from-emerald-500/5 dark:to-amber-500/5',
     floatCards: [
-      { text: 'Dum Biriyani', sub: 'Traditional Blend', position: '-top-4 -right-4 md:-right-8', delay: 1.1, iconType: 'organic' },
-      { text: 'Ghee Roasted', sub: 'Rich Flavor', position: '-bottom-6 -left-6', delay: 1.8, iconType: 'oil' }
+      { text: 'Fresh Today', sub: 'Delivered Daily', position: '-top-4 -right-4 md:-right-8', delay: 1.1, iconType: 'fresh' },
+      { text: 'Low Sodium', sub: 'Light & Clean', position: '-bottom-6 -left-6', delay: 1.8, iconType: 'fiber' }
     ]
   },
   {
-    id: 'kerala-breakfast',
-    title: 'Appam & Creamy Stew',
-    image: '/images/slide_kerala_breakfast.png',
-    alt: 'Fluffy white Appams served with rich coconut milk vegetable and chicken stew',
-    kcal: 'Morning Classic',
-    tag: 'Lacy Appams',
-    subTag: 'Coconut Milk',
-    macros: { protein: 'Fluffy', carbs: 'Fermented', fat: '0% MSG' },
-    bgColor: 'from-green-500/10 to-emerald-500/10 dark:from-green-500/5 dark:to-green-500/5',
+    id: 'fresh-ingredients',
+    title: 'Fresh Ingredients',
+    image: '/images/slide_fresh_ingredients.png',
+    alt: 'Close-up of premium fresh organic kitchen ingredients including olive oil, garlic, and fresh herbs',
+    kcal: '100% Clean',
+    tag: 'Natural Ingredients',
+    subTag: 'Zero Additives',
+    macros: { protein: 'Clean', carbs: 'Pure', fat: 'Natural' },
+    bgColor: 'from-green-500/10 to-emerald-500/10 dark:from-green-500/5 dark:to-emerald-500/5',
     floatCards: [
-      { text: 'Fermented Batter', sub: 'Stone Ground', position: '-top-4 -right-4 md:-right-8', delay: 0.3, iconType: 'fresh' },
-      { text: 'Creamy Stew', sub: 'Coconut Milk Base', position: '-bottom-6 -left-6', delay: 1.2, iconType: 'organic' }
+      { text: 'Natural Ingredients', sub: 'Zero Additives', position: '-top-4 -right-4 md:-right-8', delay: 0.3, iconType: 'organic' },
+      { text: '100% Organic', sub: 'Farm Sourced', position: '-bottom-6 -left-6', delay: 1.2, iconType: 'fresh' }
     ]
   },
   {
-    id: 'dining-ambience',
-    title: 'Cozy Family Dining',
-    image: '/images/slide_dining_ambience.png',
-    alt: 'Premium, warm lit traditional dining room of Alakapuri Restaurant in Kakkanad Kochi',
-    kcal: 'Comfort Seating',
-    tag: 'Family Ambience',
-    subTag: 'Hospitality First',
-    macros: { protein: 'Elegant', carbs: 'Spacious', fat: 'Since 1970' },
+    id: 'seasonal-veg',
+    title: 'Seasonal Vegetables',
+    image: '/images/slide_seasonal_veg.png',
+    alt: 'Vibrant assortment of roasted and raw seasonal vegetables showing healthy plant diversity',
+    kcal: '210 kcal',
+    tag: 'Seasonal Veggies',
+    subTag: 'Vitamins Rich',
+    macros: { protein: '6g', carbs: '38g', fat: '3g' },
     bgColor: 'from-teal-500/10 to-emerald-500/10 dark:from-teal-500/5 dark:to-emerald-500/5',
     floatCards: [
-      { text: 'Premium Dining', sub: 'Traditional Decor', position: '-top-4 -right-4 md:-right-8', delay: 0.9, iconType: 'kcal' },
-      { text: 'Warm Welcome', sub: 'Traditional Greeting', position: '-bottom-6 -left-6', delay: 2.1, iconType: 'fresh' }
+      { text: 'Vitamins Rich', sub: 'Seasonal Harvest', position: '-top-4 -right-4 md:-right-8', delay: 0.9, iconType: 'fiber' },
+      { text: 'No Preservatives', sub: 'Cooked Daily', position: '-bottom-6 -left-6', delay: 2.1, iconType: 'organic' }
     ]
   },
   {
-    id: 'kitchen-heritage',
-    title: 'Stone Ground Spices',
-    image: '/images/slide_kitchen_heritage.png',
-    alt: 'Close-up of premium fresh local spices being prepared on a traditional stone grinder ammikallu',
-    kcal: '100% Natural',
-    tag: 'Fresh Ground',
-    subTag: 'Zero Additives',
-    macros: { protein: 'Authentic', carbs: 'No Additives', fat: 'Pure Spice' },
+    id: 'fruit-bowl',
+    title: 'Fruit Bowl',
+    image: '/images/slide_fruit_bowl.png',
+    alt: 'Colorful fresh fruit bowl with berries, kiwi, oranges, and mint leaves, high in antioxidants',
+    kcal: '180 kcal',
+    tag: 'Antioxidant Rich',
+    subTag: 'Natural Sweetness',
+    macros: { protein: '3g', carbs: '42g', fat: '1g' },
     bgColor: 'from-emerald-500/10 to-pink-500/10 dark:from-emerald-500/5 dark:to-pink-500/5',
     floatCards: [
-      { text: 'Stone Ground', sub: 'Ammikallu Grind', position: '-top-4 -right-4 md:-right-8', delay: 0.6, iconType: 'organic' },
-      { text: 'Zero Chemicals', sub: 'Pure Spices', position: '-bottom-6 -left-6', delay: 1.7, iconType: 'sugar' }
+      { text: 'Antioxidant Rich', sub: 'Fresh Fruits', position: '-top-4 -right-4 md:-right-8', delay: 0.6, iconType: 'fresh' },
+      { text: 'No Added Sugar', sub: '100% Natural', position: '-bottom-6 -left-6', delay: 1.7, iconType: 'sugar' }
     ]
   }
 ];
 
 export default function Hero() {
-  const whatsappLink = `${CONTACT_DETAILS.whatsapp}?text=${encodeURIComponent(
-    "Hi Alakapuri, I'd like to check meal box subscription options for my location. Please share onboarding details."
-  )}`;
-
+  const { openCheckout } = useCheckout();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [progress, setProgress] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -164,7 +160,6 @@ export default function Hero() {
     if (typeof window === 'undefined') return;
 
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setReducedMotion(mediaQuery.matches);
     const motionListener = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
     mediaQuery.addEventListener('change', motionListener);
@@ -244,7 +239,7 @@ export default function Hero() {
 
   // Auto transition timer logic
   useEffect(() => {
-    const activePause = isPaused || isHovered;
+    const activePause = true; // Temporarily disable auto-slide in cleanup phase
     if (activePause) return;
 
     const intervalTime = 30;
@@ -265,7 +260,7 @@ export default function Hero() {
   }, [isPaused, isHovered, nextSlide, currentIndex]);
 
   // Floating animation configuration
-  const floatAnimation = (delay: number, prefersReduced: boolean): MotionProps => {
+  const floatAnimation = (delay: number, prefersReduced: boolean): any => {
     if (prefersReduced) return {};
     return {
       animate: {
@@ -361,10 +356,10 @@ export default function Hero() {
 
       {/* Responsive layout structuring: flex-col on mobile, grid on desktop. Direct children ordered using Tailwind order classes. */}
       <Container className="flex flex-col lg:grid lg:grid-cols-12 gap-10 lg:gap-12 lg:items-center">
-
+        
         {/* Left Column Wrapper (uses display: contents on mobile so that H1 and Description stack with the Image in between) */}
         <div className="contents lg:block lg:col-span-5 lg:space-y-8">
-
+          
           {/* Headline block (order-1 stacks it at the very top on mobile) */}
           <div className="order-1 space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start">
             {/* Small Trust Badge */}
@@ -374,7 +369,7 @@ export default function Hero() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
-                Serving Authentic Kerala Heritage Since 1970
+                Trusted by 5,000+ Health Enthusiasts in Kochi
               </span>
             </MotionWrapper>
 
@@ -384,9 +379,9 @@ export default function Hero() {
                 variant="h1"
                 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl leading-[1.08] text-foreground font-sans"
               >
-                Authentic Kerala. <br />
+                Clean Eating. <br />
                 <span className="text-primary font-black bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">
-                  Dine & Deliver.
+                  Delivered Daily.
                 </span>
               </Typography>
             </MotionWrapper>
@@ -400,29 +395,24 @@ export default function Hero() {
                 variant="body-large"
                 className="text-base sm:text-lg leading-relaxed text-muted-foreground max-w-xl font-normal opacity-95 mx-auto lg:mx-0"
               >
-                Enjoy legendary Kerala delicacies prepared with traditional recipes and hand-ground spices. Dine-in at Kakkanad, Kochi, or order delivery straight to your desk.
+                FSSAI-certified portion-controlled healthy meal boxes cooked fresh and delivered daily across Kochi. Experience the best diet meal delivery in Kochi with home and office desk drops.
               </Typography>
 
               {/* Spacing and CTA Button Hierarchy */}
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2 w-full max-w-md mx-auto lg:mx-0">
                 {/* Primary CTA */}
-                <a
-                  href={whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex h-12 w-full sm:w-auto items-center justify-center gap-2.5 rounded-full bg-primary px-8 text-sm font-bold text-primary-foreground shadow-[0_4px_14px_rgba(26,79,53,0.25)] hover:shadow-[0_6px_20px_rgba(26,79,53,0.35)] hover:bg-primary/95 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 touch-manipulation active:scale-[0.98] hover:-translate-y-0.5"
+                <button
+                  onClick={() => openCheckout()}
+                  className="group flex h-12 w-full sm:w-auto items-center justify-center gap-2.5 rounded-full bg-primary px-8 text-sm font-bold text-primary-foreground shadow-[0_4px_14px_rgba(26,79,53,0.25)] hover:shadow-[0_6px_20px_rgba(26,79,53,0.35)] hover:bg-primary/95 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 touch-manipulation active:scale-[0.98] hover:-translate-y-0.5 cursor-pointer"
                 >
-                  <svg className="h-5 w-5 fill-current transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.02-5.11-2.881-6.974-1.86-1.865-4.343-2.891-6.985-2.892-5.442 0-9.866 4.42-9.87 9.86-.001 1.67.457 3.303 1.32 4.757l-.995 3.635 3.722-.973zm11.587-7.504c-.3-.15-1.77-.875-2.046-.975-.276-.1-.477-.15-.677.15-.2.3-.778.975-.953 1.175-.177.2-.353.225-.653.075-1.207-.6-2.054-.997-2.86-2.38-.21-.363.21-.337.603-1.125.074-.15.037-.282-.018-.382-.056-.1-.478-1.15-.654-1.575-.172-.413-.344-.356-.478-.363-.124-.006-.267-.007-.409-.007-.143 0-.376.054-.572.27-.197.216-.75.733-.75 1.79 0 1.056.768 2.074.875 2.22.107.147 1.512 2.31 3.664 3.24.512.22 1.096.353 1.61.353.606 0 1.155-.075 1.59-.14.484-.07 1.477-.6 1.684-1.18.208-.58.208-1.08.146-1.18-.06-.1-.237-.15-.537-.3z" />
-                  </svg>
-                  Order on WhatsApp
-                </a>
+                  Order Now
+                </button>
                 {/* Secondary CTA */}
                 <Link
-                  href="/pricing"
+                  href="/meal-plans"
                   className="flex h-12 w-full sm:w-auto items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur-sm px-8 text-sm font-semibold text-foreground hover:bg-secondary hover:text-foreground transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 touch-manipulation hover:-translate-y-0.5 active:scale-[0.98]"
                 >
-                  Browse Our Menu
+                  Explore Meal Plans
                 </Link>
               </div>
             </MotionWrapper>
@@ -436,8 +426,8 @@ export default function Hero() {
           <div
             ref={sliderRef}
             tabIndex={0}
-            role="region"
-            aria-roledescription="carousel"
+            role="region" 
+            aria-roledescription="carousel" 
             aria-label="Premium healthy meals showcase"
             onKeyDown={handleKeyDown}
             onMouseEnter={() => setIsHovered(true)}
@@ -451,7 +441,7 @@ export default function Hero() {
               "absolute inset-0 -z-10 rounded-[2.5rem] bg-gradient-to-tr transition-all duration-1000 blur-2xl opacity-80 group-hover:scale-105",
               SLIDES[currentIndex].bgColor
             )} />
-
+            
             {/* Main Visual Image Frame */}
             <div className="w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl border border-border/80 bg-muted relative p-2 bg-gradient-to-b from-white to-secondary/35 dark:from-card dark:to-card/20 transition-colors duration-500">
               <div className="w-full h-full rounded-[2rem] overflow-hidden relative bg-neutral-100 dark:bg-neutral-900">
@@ -464,15 +454,10 @@ export default function Hero() {
                     transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1.0] }}
                     className="absolute inset-0 w-full h-full"
                   >
-                    <Image
-                      src={SLIDES[currentIndex].image}
-                      alt={SLIDES[currentIndex].alt}
-                      fill
-                      priority={currentIndex === 0}
-                      loading={currentIndex === 0 ? undefined : "lazy"}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
-                      className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
-                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-900 flex flex-col items-center justify-center p-6 text-center select-none">
+                      <span className="text-xl font-bold text-foreground/85 tracking-tight mb-1">{SLIDES[currentIndex].title}</span>
+                      <span className="text-xs text-muted-foreground/60 font-bold uppercase tracking-wider">{SLIDES[currentIndex].tag}</span>
+                    </div>
                   </motion.div>
                 </AnimatePresence>
               </div>
@@ -513,40 +498,40 @@ export default function Hero() {
             >
               <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[9px] font-black text-emerald-800 dark:text-emerald-300 uppercase tracking-widest">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
-                Authentic Recipe
+                Dietitian Verified
               </span>
               <div className="space-y-1">
                 <span className="block text-xs font-extrabold text-foreground tracking-tight">
                   {SLIDES[currentIndex].title}
                 </span>
                 <span className="block text-[10px] text-muted-foreground font-semibold">
-                  Standard: {SLIDES[currentIndex].kcal}
+                  Calories: {SLIDES[currentIndex].kcal}
                 </span>
               </div>
-
+              
               {/* Macro elements grid */}
               <div className="grid grid-cols-3 gap-2 text-center text-[10px] font-black border-t border-border/80 pt-2.5">
                 <div>
                   <span className="block text-muted-foreground text-[8px] font-medium uppercase tracking-wider mb-0.5">
-                    Prep
+                    Prot
                   </span>
-                  <span className="inline-flex rounded-full bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 px-1.5 py-0.5 text-[8px] tracking-tight">
+                  <span className="inline-flex rounded-full bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 px-1.5 py-0.5">
                     {SLIDES[currentIndex].macros.protein}
                   </span>
                 </div>
                 <div>
                   <span className="block text-muted-foreground text-[8px] font-medium uppercase tracking-wider mb-0.5">
-                    Oils
+                    Carb
                   </span>
-                  <span className="inline-flex rounded-full bg-amber-500/15 text-amber-800 dark:text-amber-300 px-1.5 py-0.5 text-[8px] tracking-tight">
+                  <span className="inline-flex rounded-full bg-amber-500/15 text-amber-800 dark:text-amber-300 px-1.5 py-0.5">
                     {SLIDES[currentIndex].macros.carbs}
                   </span>
                 </div>
                 <div>
                   <span className="block text-muted-foreground text-[8px] font-medium uppercase tracking-wider mb-0.5">
-                    MSG
+                    Fat
                   </span>
-                  <span className="inline-flex rounded-full bg-blue-500/15 text-blue-800 dark:text-blue-300 px-1.5 py-0.5 text-[8px] tracking-tight">
+                  <span className="inline-flex rounded-full bg-blue-500/15 text-blue-800 dark:text-blue-300 px-1.5 py-0.5">
                     {SLIDES[currentIndex].macros.fat}
                   </span>
                 </div>

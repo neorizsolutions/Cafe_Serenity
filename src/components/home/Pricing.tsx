@@ -1,8 +1,11 @@
+'use client';
+
 import Link from 'next/link';
 import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
 import MotionWrapper from '@/components/common/MotionWrapper';
+import { useCheckout } from '@/context/CheckoutContext';
 import { CONTACT_DETAILS } from '@/constants';
 
 interface PricingCardProps {
@@ -15,10 +18,7 @@ interface PricingCardProps {
 }
 
 function PricingCard({ title, price, description, features, link, popular }: PricingCardProps) {
-  const whatsappSubscription = `${CONTACT_DETAILS.whatsapp}?text=${encodeURIComponent(
-    `Hi Alakapuri, I'd like to configure my subscription plan: ${title}. Please assist.`
-  )}`;
-
+  const { openCheckout } = useCheckout();
   return (
     <div 
       className={`group relative rounded-3xl border p-6 flex flex-col justify-between h-full gap-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${
@@ -62,17 +62,12 @@ function PricingCard({ title, price, description, features, link, popular }: Pri
       </div>
 
       <div className="space-y-2.5 pt-4 border-t border-border/40">
-        <a
-          href={whatsappSubscription}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group/btn flex h-11 items-center justify-center gap-2 rounded-full bg-primary px-4 text-xs font-bold text-primary-foreground shadow hover:bg-primary/95 transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+        <button
+          onClick={() => openCheckout(title)}
+          className="group/btn flex h-11 items-center justify-center gap-2 rounded-full bg-primary px-4 text-xs font-bold text-primary-foreground shadow hover:bg-primary/95 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
         >
-          <span>Order on WhatsApp</span>
-          <svg className="h-3.5 w-3.5 fill-current transition-transform duration-300 group-hover/btn:translate-x-0.5" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.02-5.11-2.881-6.974-1.86-1.865-4.343-2.891-6.985-2.892-5.442 0-9.866 4.42-9.87 9.86-.001 1.67.457 3.303 1.32 4.757l-.995 3.635 3.722-.973zm11.587-7.504c-.3-.15-1.77-.875-2.046-.975-.276-.1-.477-.15-.677.15-.2.3-.778.975-.953 1.175-.177.2-.353.225-.653.075-1.207-.6-2.054-.997-2.86-2.38-.21-.363.21-.337.603-1.125.074-.15.037-.282-.018-.382-.056-.1-.478-1.15-.654-1.575-.172-.413-.344-.356-.478-.363-.124-.006-.267-.007-.409-.007-.143 0-.376.054-.572.27-.197.216-.75.733-.75 1.79 0 1.056.768 2.074.875 2.22.107.147 1.512 2.31 3.664 3.24.512.22 1.096.353 1.61.353.606 0 1.155-.075 1.59-.14.484-.07 1.477-.6 1.684-1.18.208-.58.208-1.08.146-1.18-.06-.1-.237-.15-.537-.3z" />
-          </svg>
-        </a>
+          <span>Choose Plan</span>
+        </button>
         <Link
           href={link}
           className="flex h-11 items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur-sm px-4 text-xs font-semibold text-foreground hover:bg-secondary transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
@@ -85,9 +80,7 @@ function PricingCard({ title, price, description, features, link, popular }: Pri
 }
 
 export default function Pricing() {
-  const whatsappBudgetCTA = `${CONTACT_DETAILS.whatsapp}?text=${encodeURIComponent(
-    "Hi Alakapuri, I want to book the ₹69 budget box. Please confirm menu schedules."
-  )}`;
+  const { openCheckout } = useCheckout();
 
   return (
     <Section bg="white" className="relative border-t border-border overflow-hidden">
@@ -121,7 +114,7 @@ export default function Pricing() {
                   <span className="text-[10px] text-muted-foreground font-bold uppercase tracking-wider">/ Meal</span>
                 </div>
                 <p className="text-[11px] leading-relaxed text-muted-foreground/90 mt-2.5 font-medium">
-                  Portion-weighed, low-oil everyday lunches delivered across Kakkanad & Kochi.
+                  Portion-weighed, low-oil everyday lunches delivered across Kochi.
                 </p>
               </div>
 
@@ -143,17 +136,12 @@ export default function Pricing() {
             </div>
 
             <div className="space-y-2.5 pt-4 border-t border-border/40">
-              <a
-                href={whatsappBudgetCTA}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group/btn flex h-11 items-center justify-center gap-2 rounded-full bg-primary px-4 text-xs font-bold text-primary-foreground shadow-[0_4px_14px_rgba(26,79,53,0.15)] hover:bg-primary/95 transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+              <button
+                onClick={() => openCheckout('Weight Loss Plan')}
+                className="group/btn flex h-11 items-center justify-center gap-2 rounded-full bg-primary px-4 text-xs font-bold text-primary-foreground shadow-[0_4px_14px_rgba(26,79,53,0.15)] hover:bg-primary/95 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
               >
-                <span>Order on WhatsApp</span>
-                <svg className="h-3.5 w-3.5 fill-current transition-transform duration-300 group-hover/btn:translate-x-0.5" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.02-5.11-2.881-6.974-1.86-1.865-4.343-2.891-6.985-2.892-5.442 0-9.866 4.42-9.87 9.86-.001 1.67.457 3.303 1.32 4.757l-.995 3.635 3.722-.973zm11.587-7.504c-.3-.15-1.77-.875-2.046-.975-.276-.1-.477-.15-.677.15-.2.3-.778.975-.953 1.175-.177.2-.353.225-.653.075-1.207-.6-2.054-.997-2.86-2.38-.21-.363.21-.337.603-1.125.074-.15.037-.282-.018-.382-.056-.1-.478-1.15-.654-1.575-.172-.413-.344-.356-.478-.363-.124-.006-.267-.007-.409-.007-.143 0-.376.054-.572.27-.197.216-.75.733-.75 1.79 0 1.056.768 2.074.875 2.22.107.147 1.512 2.31 3.664 3.24.512.22 1.096.353 1.61.353.606 0 1.155-.075 1.59-.14.484-.07 1.477-.6 1.684-1.18.208-.58.208-1.08.146-1.18-.06-.1-.237-.15-.537-.3z" />
-                </svg>
-              </a>
+                <span>Choose Plan</span>
+              </button>
               <Link
                 href="/meal-plans"
                 className="flex h-11 items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur-sm px-4 text-xs font-semibold text-foreground hover:bg-secondary transition-all duration-300 hover:-translate-y-0.5 active:scale-95"

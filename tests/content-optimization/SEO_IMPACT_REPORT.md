@@ -36,5 +36,5 @@ All JSON-LD schemas injected dynamically into home page layout files remain unch
 
 All page routing metadata defined under `/src/app/` remains fully compatible. Meta tags, OG page cards, Twitter templates, canonical URLs, and robots indexing configurations are verified:
 - **Title Tag**: `Alakapuri Healthy Meals | Clean Eating Delivered Daily`
-- **Description**: `FSSAI-certified portion-controlled healthy diet boxes cooked fresh and delivered to your office desk or home across Kochi.`
+- **Description**: `FSSAI-certified portion-controlled healthy diet boxes cooked fresh and delivered to your office desk or home across Kochi & Trivandrum.`
 - **Indexing status**: Fully indexable (no `noindex` blocks added).

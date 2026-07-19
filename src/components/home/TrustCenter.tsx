@@ -7,6 +7,7 @@ import Typography from '@/components/common/Typography';
 import MotionWrapper from '@/components/common/MotionWrapper';
 import { CONTACT_DETAILS } from '@/constants';
 import { getFAQSchema } from '@/utils/seo';
+import { useCheckout } from '@/context/CheckoutContext';
 
 interface FAQItem {
   question: string;
@@ -56,7 +57,7 @@ const FAQ_BY_CATEGORY: Record<string, FAQItem[]> = {
   ],
   delivery: [
     {
-      question: 'Do you deliver to Infopark and SmartCity?',
+      question: 'Do you deliver to Infopark and Technopark?',
       answer: 'Yes. We drop lunch boxes at office receptions and park gates.'
     },
     {
@@ -107,6 +108,7 @@ const FAQ_BY_CATEGORY: Record<string, FAQItem[]> = {
 };
 
 export default function TrustCenter() {
+  const { openCheckout } = useCheckout();
   const [activeCategory, setActiveCategory] = useState<string>('general');
   const activeFAQs = FAQ_BY_CATEGORY[activeCategory] || [];
 
@@ -339,22 +341,20 @@ export default function TrustCenter() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto text-center z-10">
-            <a
-              href="https://wa.me/919876543210?text=Hi%20Alakapuri%2C%20I'd%20like%20to%20consult%20on%20my%20weekly%20meal%20diet."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group/channel relative p-6 rounded-2xl border border-border/60 bg-card hover:bg-secondary/35 hover:-translate-y-1 transition-all duration-300 space-y-3 block hover:border-primary/20"
+            <button
+              onClick={() => openCheckout()}
+              className="group/channel relative p-6 rounded-2xl border border-border/60 bg-card hover:bg-secondary/35 hover:-translate-y-1 transition-all duration-300 space-y-3 block hover:border-primary/20 cursor-pointer w-full text-center"
             >
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-emerald-500/5 opacity-0 group-hover/channel:opacity-100 transition-opacity duration-300 pointer-events-none -z-10" />
               
               <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mx-auto shadow-sm transition-transform duration-300 group-hover/channel:scale-105">
-                <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.02-5.11-2.881-6.974-1.86-1.865-4.343-2.891-6.985-2.892-5.442 0-9.866 4.42-9.87 9.86-.001 1.67.457 3.303 1.32 4.757l-.995 3.635 3.722-.973zm11.587-7.504c-.3-.15-1.77-.875-2.046-.975-.276-.1-.477-.15-.677.15-.2.3-.778.975-.953 1.175-.177.2-.353.225-.653.075-1.207-.6-2.054-.997-2.86-2.38-.21-.363.21-.337.603-1.125.074-.15.037-.282-.018-.382-.056-.1-.478-1.15-.654-1.575-.172-.413-.344-.356-.478-.363-.124-.006-.267-.007-.409-.007-.143 0-.376.054-.572.27-.197.216-.75.733-.75 1.79 0 1.056.768 2.074.875 2.22.107.147 1.512 2.31 3.664 3.24.512.22 1.096.353 1.61.353.606 0 1.155-.075 1.59-.14.484-.07 1.477-.6 1.684-1.18.208-.58.208-1.08.146-1.18-.06-.1-.237-.15-.537-.3z" />
+                <svg className="h-5 w-5 stroke-current fill-none" strokeWidth="2.0" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h4 className="text-xs font-bold text-foreground">WhatsApp Chat</h4>
-              <p className="text-[10px] text-muted-foreground leading-normal font-medium">Response: 5-10 mins</p>
-            </a>
+              <h4 className="text-xs font-bold text-foreground">Diet Consultation</h4>
+              <p className="text-[10px] text-muted-foreground leading-normal font-medium">Configure Weekly Program</p>
+            </button>
             
             <a
               href="tel:+919876543210"

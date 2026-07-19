@@ -7,7 +7,7 @@ import { CONTACT_DETAILS } from '@/constants';
 
 export const metadata = constructMetadata({
   title: 'High Protein & Gym Workout Subscriptions | Alakapuri',
-  description: 'Clean workout fuel and muscle synthesis recovery boxes cooked fresh. 45g+ protein per box. Starts from ₹249/meal. Kochi & TVM desk drops.',
+  description: 'Clean workout fuel and muscle synthesis recovery boxes cooked fresh. 45g+ protein per box. Starts from ₹249/meal. Kochi desk and doorstep drops.',
 });
 
 export default function HighProteinPlans() {

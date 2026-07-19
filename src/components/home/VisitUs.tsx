@@ -6,12 +6,14 @@ import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
 import MotionWrapper from '@/components/common/MotionWrapper';
 import { CONTACT_DETAILS } from '@/constants';
-import { MapPin, Clock, Phone, Navigation } from 'lucide-react';
+import { MapPin, Clock, Phone, Navigation, ShoppingBag } from 'lucide-react';
+import { useCheckout } from '@/context/CheckoutContext';
 
 export default function VisitUs() {
-  const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=Alakapuri+Restaurant+Kakkanad+Kochi`;
-  const mapViewUrl = `https://maps.google.com/?q=Alakapuri+Restaurant+Kakkanad+Kochi`;
-  const embedUrl = `https://maps.google.com/maps?q=Alakapuri%20Restaurant,%20Kakkanad,%20Kochi&t=&z=16&ie=UTF8&iwloc=&output=embed`;
+  const { openCheckout } = useCheckout();
+  const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${CONTACT_DETAILS.geo.lat},${CONTACT_DETAILS.geo.lng}`;
+  const mapViewUrl = `https://maps.google.com/?q=${CONTACT_DETAILS.geo.lat},${CONTACT_DETAILS.geo.lng}`;
+  const embedUrl = `https://maps.google.com/maps?q=${CONTACT_DETAILS.geo.lat},${CONTACT_DETAILS.geo.lng}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
 
   return (
     <Section
@@ -20,10 +22,10 @@ export default function VisitUs() {
       id="visit-us"
       aria-label="Visit Alakapuri"
       itemScope
-      itemType="http://schema.org/Restaurant"
+      itemType="http://schema.org/FoodEstablishment"
     >
       {/* Hidden SEO schema metadata */}
-      <meta itemProp="name" content="Alakapuri Restaurant" />
+      <meta itemProp="name" content="Alakapuri Healthy Meals" />
       <meta itemProp="telephone" content={CONTACT_DETAILS.phone} />
       <meta itemProp="priceRange" content="₹₹" />
 
@@ -38,10 +40,10 @@ export default function VisitUs() {
             Visit Us
           </Typography>
           <Typography variant="h2" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
-            Visit Alakapuri
+            Visit Our Central Kitchen
           </Typography>
           <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium opacity-90">
-            Come experience the culinary heritage of Kerala. Find our central kitchen and restaurant location in Kakkanad.
+            See where the wellness magic happens. Find our central preparation hub coordinates and contact details.
           </Typography>
         </div>
 
@@ -54,11 +56,11 @@ export default function VisitUs() {
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/[0.02] to-primary/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none -z-10" />
 
               <div className="space-y-8">
-                {/* Brand / Restaurant Name */}
+                {/* Brand / Hub Name */}
                 <div className="space-y-1">
-                  <Typography variant="badge-label" className="text-[10px] tracking-widest">Kochi Flagship</Typography>
+                  <Typography variant="badge-label" className="text-[10px] tracking-widest">Central Kitchen Hub</Typography>
                   <Typography variant="h3" className="text-2xl font-black text-foreground tracking-tight" itemProp="name">
-                    Alakapuri Restaurant
+                    Alakapuri Healthy Meals
                   </Typography>
                 </div>
 
@@ -73,12 +75,12 @@ export default function VisitUs() {
                     <div className="space-y-1">
                       <h4 className="text-xs font-extrabold uppercase tracking-widest text-foreground">Full Address</h4>
                       <address className="not-italic text-xs sm:text-[13px] leading-relaxed text-muted-foreground font-semibold">
-                        <span itemProp="streetAddress" className="block">Infopark Road, Near Civil Station, Echamuku</span>
+                        <span itemProp="streetAddress" className="block">{CONTACT_DETAILS.address.street}</span>
                         <span className="block">
-                          <span itemProp="addressLocality">Kakkanad</span>, <span itemProp="addressRegion">Kochi</span>
+                          <span itemProp="addressLocality">{CONTACT_DETAILS.address.locality}</span>, <span itemProp="addressRegion">{CONTACT_DETAILS.address.city}</span>
                         </span>
                         <span className="block">
-                          Kerala – <span itemProp="postalCode">682030</span>
+                          {CONTACT_DETAILS.address.state} – <span itemProp="postalCode">{CONTACT_DETAILS.address.zipCode}</span>
                         </span>
                       </address>
                     </div>
@@ -92,8 +94,8 @@ export default function VisitUs() {
                     <div className="space-y-1">
                       <h4 className="text-xs font-extrabold uppercase tracking-widest text-foreground">Business Hours</h4>
                       <div className="text-xs sm:text-[13px] text-muted-foreground font-semibold space-y-0.5">
-                        <span className="block text-primary font-bold">Open Daily</span>
-                        <span className="block">08:00 AM – 08:00 PM</span>
+                        <span className="block text-primary font-bold">Delivery Hours</span>
+                        <span className="block">07:00 AM – 08:00 PM</span>
                       </div>
                     </div>
                   </div>
@@ -120,17 +122,13 @@ export default function VisitUs() {
 
               {/* Call to action buttons */}
               <div className="flex flex-col sm:flex-row gap-3 pt-8 w-full">
-                <a
-                  href={CONTACT_DETAILS.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex-1 flex h-11 items-center justify-center gap-2 rounded-xl bg-[#25D366] text-white hover:bg-[#20BA5A] text-xs font-extrabold shadow-sm transition-all duration-300 hover:-translate-y-0.5 active:scale-98"
+                <button
+                  onClick={() => openCheckout()}
+                  className="group flex-1 flex h-11 items-center justify-center gap-2 rounded-xl bg-primary text-white hover:bg-primary/95 text-xs font-extrabold shadow-sm transition-all duration-300 hover:-translate-y-0.5 active:scale-98 cursor-pointer"
                 >
-                  <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.02-5.11-2.881-6.974-1.86-1.865-4.343-2.891-6.985-2.892-5.442 0-9.866 4.42-9.87 9.86-.001 1.67.457 3.303 1.32 4.757l-.995 3.635 3.722-.973zm11.587-7.504c-.3-.15-1.77-.875-2.046-.975-.276-.1-.477-.15-.677.15-.2.3-.778.975-.953 1.175-.177.2-.353.225-.653.075-1.207-.6-2.054-.997-2.86-2.38-.21-.363.21-.337.603-1.125.074-.15.037-.282-.018-.382-.056-.1-.478-1.15-.654-1.575-.172-.413-.344-.356-.478-.363-.124-.006-.267-.007-.409-.007-.143 0-.376.054-.572.27-.197.216-.75.733-.75 1.79 0 1.056.768 2.074.875 2.22.107.147 1.512 2.31 3.664 3.24.512.22 1.096.353 1.61.353.606 0 1.155-.075 1.59-.14.484-.07 1.477-.6 1.684-1.18.208-.58.208-1.08.146-1.18-.06-.1-.237-.15-.537-.3z" />
-                  </svg>
-                  <span>WhatsApp</span>
-                </a>
+                  <ShoppingBag className="h-4 w-4" />
+                  <span>Order Now</span>
+                </button>
                 <a
                   href={`tel:${CONTACT_DETAILS.phone}`}
                   className="flex-1 flex h-11 items-center justify-center gap-2 rounded-xl border border-border bg-background hover:bg-secondary text-foreground text-xs font-bold transition-all duration-300 hover:-translate-y-0.5 active:scale-98"
@@ -168,7 +166,7 @@ export default function VisitUs() {
 
               {/* Map Iframe */}
               <iframe
-                title="Alakapuri Restaurant Kakkanad Kochi Location Map"
+                title="Alakapuri Healthy Meals Location Map"
                 src={embedUrl}
                 width="100%"
                 height="100%"

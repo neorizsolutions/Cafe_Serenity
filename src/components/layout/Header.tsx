@@ -4,10 +4,12 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { NAVIGATION_LINKS, BUSINESS_NAME, CONTACT_DETAILS } from '@/constants';
+import { NAVIGATION_LINKS, BUSINESS_NAME } from '@/constants';
 import { cn } from '@/lib/utils';
+import { useCheckout } from '@/context/CheckoutContext';
 
 export default function Header() {
+  const { openCheckout } = useCheckout();
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -32,10 +34,6 @@ export default function Header() {
       document.body.style.overflow = '';
     };
   }, [isMobileOpen]);
-
-  const whatsappLink = `${CONTACT_DETAILS.whatsapp}?text=${encodeURIComponent(
-    "Hi Alakapuri Restaurant Kakkanad, I'd like to reserve a table / order delivery."
-  )}`;
 
   return (
     <header
@@ -109,17 +107,15 @@ export default function Header() {
             </svg>
           </div>
 
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex h-9 items-center justify-center gap-1.5 rounded-full bg-primary px-5 text-xs font-bold text-primary-foreground shadow-sm hover:shadow transition-all duration-300 hover:bg-primary/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 active:scale-95 hover:-translate-y-0.5"
+          <button
+            onClick={() => openCheckout()}
+            className="group inline-flex h-9 items-center justify-center gap-1.5 rounded-full bg-primary px-5 text-xs font-bold text-primary-foreground shadow-sm hover:shadow transition-all duration-300 hover:bg-primary/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 active:scale-95 hover:-translate-y-0.5 cursor-pointer"
           >
-            <span>Subscribe on WhatsApp</span>
+            <span>Order Now</span>
             <svg className="h-3.5 w-3.5 fill-current transition-transform duration-300 group-hover:translate-x-0.5" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 10h3l-4 4-4-4h3V8h2v4z" />
             </svg>
-          </a>
+          </button>
         </div>
 
         {/* Mobile Nav Toggle */}
@@ -211,17 +207,15 @@ export default function Header() {
                   </svg>
                 </div>
 
-                <a
-                  href={whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 inline-flex h-12 items-center justify-center gap-2.5 rounded-xl bg-primary text-sm font-bold text-primary-foreground hover:bg-primary/95 transition-all shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary active:scale-95"
+                <button
+                  onClick={() => {
+                    setIsMobileOpen(false);
+                    openCheckout();
+                  }}
+                  className="mt-2 inline-flex h-12 items-center justify-center gap-2.5 rounded-xl bg-primary text-sm font-bold text-primary-foreground hover:bg-primary/95 transition-all shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary active:scale-95 cursor-pointer"
                 >
-                  <svg className="h-4.5 w-4.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.02-5.11-2.881-6.974-1.86-1.865-4.343-2.891-6.985-2.892-5.442 0-9.866 4.42-9.87 9.86-.001 1.67.457 3.303 1.32 4.757l-.995 3.635 3.722-.973zm11.587-7.504c-.3-.15-1.77-.875-2.046-.975-.276-.1-.477-.15-.677.15-.2.3-.778.975-.953 1.175-.177.2-.353.225-.653.075-1.207-.6-2.054-.997-2.86-2.38-.21-.363.21-.337.603-1.125.074-.15.037-.282-.018-.382-.056-.1-.478-1.15-.654-1.575-.172-.413-.344-.356-.478-.363-.124-.006-.267-.007-.409-.007-.143 0-.376.054-.572.27-.197.216-.75.733-.75 1.79 0 1.056.768 2.074.875 2.22.107.147 1.512 2.31 3.664 3.24.512.22 1.096.353 1.61.353.606 0 1.155-.075 1.59-.14.484-.07 1.477-.6 1.684-1.18.208-.58.208-1.08.146-1.18-.06-.1-.237-.15-.537-.3z" />
-                  </svg>
-                  <span>Chat on WhatsApp</span>
-                </a>
+                  <span>Order Now</span>
+                </button>
               </nav>
             </motion.div>
           </>

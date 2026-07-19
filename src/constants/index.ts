@@ -1,23 +1,23 @@
 import { NavigationItem, FooterSection, ContactDetails, SocialLinks } from '../types';
 
-export const BUSINESS_NAME = 'Alakapuri Restaurant';
+export const BUSINESS_NAME = 'Alakapuri Healthy Meals';
 
 export const NAVIGATION_LINKS: NavigationItem[] = [
-  { label: 'Menu & Pricing', href: '/pricing' },
-  { label: 'Meal Subscriptions', href: '/meal-plans' },
-  { label: 'Corporate IT Catering', href: '/meal-plans/corporate' },
+  { label: 'Weekly Menu', href: '/pricing' },
+  { label: 'Subscription Plans', href: '/meal-plans' },
+  { label: 'Corporate Meals', href: '/meal-plans/corporate' },
   { label: 'Our Story', href: '/about' },
   { label: 'Help & FAQ', href: '/faq' },
 ];
 
 export const FOOTER_SECTIONS: FooterSection[] = [
   {
-    title: 'Culinary Offerings',
+    title: 'Meal Programs',
     items: [
-      { label: 'Traditional Kerala Meals', href: '/meal-plans/weight-loss' },
-      { label: 'Legendary Beef & Porotta', href: '/meal-plans/high-protein' },
-      { label: 'Claypot Fish Curry & Tapioca', href: '/meal-plans/balanced' },
-      { label: 'Malabar Biriyani Special', href: '/meal-plans/diabetic' },
+      { label: 'Weight Loss Plan', href: '/meal-plans/weight-loss' },
+      { label: 'High Protein & Gym Plan', href: '/meal-plans/high-protein' },
+      { label: 'Balanced Diet Box', href: '/meal-plans/balanced' },
+      { label: 'Diabetic Care Program', href: '/meal-plans/diabetic' },
     ],
   },
   {
@@ -29,17 +29,17 @@ export const FOOTER_SECTIONS: FooterSection[] = [
 ];
 
 export const SOCIAL_LINKS: SocialLinks = {
-  instagram: 'https://instagram.com/alakapurirestaurant',
-  facebook: 'https://facebook.com/alakapurirestaurant',
+  instagram: 'https://instagram.com/alakapurihealthy',
+  facebook: 'https://facebook.com/alakapurihealthy',
   whatsapp: 'https://wa.me/919876543210',
 };
 
 export const CONTACT_DETAILS: ContactDetails = {
   phone: '+919876543210',
   whatsapp: 'https://wa.me/919876543210',
-  email: 'hello@alakapurirestaurant.com',
+  email: 'support@alakapurimeals.com',
   address: {
-    street: 'Infopark Road, Near Civil Station, Echamuku',
+    street: 'Alakapuri Hub, Infopark Road, Near Civil Station, Echamuku',
     locality: 'Kakkanad',
     city: 'Kochi',
     state: 'Kerala',
@@ -53,10 +53,10 @@ export const CONTACT_DETAILS: ContactDetails = {
 };
 
 export const SEO_DEFAULTS = {
-  title: 'Alakapuri Restaurant | Authentic Kerala Dining & Delivery Kakkanad',
-  description: 'Experience the finest traditional Kerala cuisine since 1970. Alakapuri Restaurant in Kakkanad, Kochi, offers authentic Sadya, Porotta, Beef Fry, Fish Curry, and Chicken Biriyani. Dine-in or order delivery.',
+  title: 'Alakapuri Healthy Meals | Calorie-Mapped Diet Box Delivery Kochi',
+  description: 'Hygienic, dietician-designed, portion-controlled healthy meal boxes delivered daily across Kochi. Starts at ₹69. Subscribe on WhatsApp.',
   baseUrl: 'https://alakapurimeals.com',
-  siteName: 'Alakapuri Restaurant',
+  siteName: 'Alakapuri Healthy Meals',
   ogImage: '/images/og-default.jpg',
   twitterCard: 'summary_large_image',
   robots: 'index, follow',
