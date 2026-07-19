@@ -43,19 +43,27 @@ export default function Header() {
       )}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
-        {/* Logo Section (Custom Leaf & Bowl Wellness SVG) */}
+        {/* Logo Section (Custom Vector Logo) */}
         <Link
           href="/"
-          className="flex items-center gap-2 font-sans text-xl font-bold tracking-tight text-primary transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg"
+          className="flex items-center transition-opacity hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg py-1 text-foreground"
           aria-label={`${BUSINESS_NAME} Home`}
         >
-          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-primary/10 text-primary">
-            <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 2c-.83 0-1.5.67-1.5 1.5v.35C7.38 4.22 5 6.83 5 10c0 3.87 3.13 7 7 7s7-3.13 7-7c0-3.17-2.38-5.78-5.5-6.15V3.5c0-.83-.67-1.5-1.5-1.5zm0 13c-2.76 0-5-2.24-5-5 0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5c0 1.1.9 2 2 2s2-.9 2-2c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5c0 2.76-2.24 5-5 5z" />
-              <path d="M4 19c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2H4z" />
-            </svg>
-          </div>
-          <span className="text-foreground font-black tracking-tight">{BUSINESS_NAME.split(' ')[0]}</span>
+          <svg className="h-9 w-auto fill-current" viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(10, 10)">
+              <circle cx="40" cy="40" r="38" stroke="#10B981" strokeWidth="4" fill="none"/>
+              <path d="M40 12 C25 25, 25 55, 40 68 C55 55, 55 25, 40 12 Z" fill="#10B981"/>
+              <path d="M40 22 C30 32, 30 50, 40 60 L40 22" fill="#34D399" opacity="0.8"/>
+              <path d="M40 12 L40 68" stroke="#FFFFFF" strokeWidth="2"/>
+              <path d="M40 30 L48 24" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round"/>
+              <path d="M40 42 L48 36" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round"/>
+              <path d="M40 54 L46 50" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round"/>
+              <path d="M40 35 L32 29" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round"/>
+              <path d="M40 47 L32 41" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round"/>
+            </g>
+            <text x="110" y="48" fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" fontWeight="900" fontSize="28" fill="currentColor" letterSpacing="1">ALAKAPURI</text>
+            <text x="110" y="78" fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" fontWeight="700" fontSize="14" fill="#10B981" letterSpacing="4">HEALTHY MEALS</text>
+          </svg>
         </Link>
 
         {/* Desktop Nav Links */}

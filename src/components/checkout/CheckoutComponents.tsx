@@ -462,9 +462,22 @@ export function InvoicePreview({
       </div>
 
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-border/80">
-        <div>
-          <span className="text-xs font-black tracking-widest text-primary block">ALAKAPURI HEALTHY MEALS</span>
-          <span className="text-[10px] text-muted-foreground block font-bold mt-0.5">Central Kitchen Hub Kakkanad, Kochi</span>
+        <div className="flex items-center gap-3">
+          <svg className="h-8 w-auto shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="46" stroke="#10B981" strokeWidth="4.5" fill="none"/>
+            <path d="M50 16 C32 30, 32 68, 50 84 C68 68, 68 30, 50 16 Z" fill="#10B981"/>
+            <path d="M50 28 C38 40, 38 62, 50 74 L50 28" fill="#34D399" opacity="0.8"/>
+            <path d="M50 16 L50 84" stroke="#FFFFFF" strokeWidth="2.5"/>
+            <path d="M50 36 L60 28" stroke="#FFFFFF" stroke-width="2.5" strokeLinecap="round"/>
+            <path d="M50 50 L60 42" stroke="#FFFFFF" stroke-width="2.5" strokeLinecap="round"/>
+            <path d="M50 64 L58 58" stroke="#FFFFFF" stroke-width="2.5" strokeLinecap="round"/>
+            <path d="M50 42 L40 34" stroke="#FFFFFF" stroke-width="2.5" strokeLinecap="round"/>
+            <path d="M50 56 L40 48" stroke="#FFFFFF" stroke-width="2.5" strokeLinecap="round"/>
+          </svg>
+          <div>
+            <span className="text-xs font-black tracking-widest text-primary block">ALAKAPURI HEALTHY MEALS</span>
+            <span className="text-[10px] text-muted-foreground block font-bold mt-0.5">Central Kitchen Hub Kakkanad, Kochi</span>
+          </div>
         </div>
         <div className="text-left sm:text-right">
           <span className="inline-flex rounded-full bg-emerald-500/10 px-3 py-0.5 text-[8px] font-black text-emerald-600 uppercase tracking-widest border border-emerald-500/20">
