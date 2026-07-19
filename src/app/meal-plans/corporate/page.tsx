@@ -3,7 +3,6 @@ import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
 import { constructMetadata } from '@/utils/seo';
-import { CONTACT_DETAILS } from '@/constants';
 
 export const metadata = constructMetadata({
   title: 'Corporate Healthy Meal Subscriptions Kakkanad, Kochi | Alakapuri',
@@ -11,9 +10,6 @@ export const metadata = constructMetadata({
 });
 
 export default function CorporatePlans() {
-  const whatsappCorporate = `${CONTACT_DETAILS.whatsapp}?text=${encodeURIComponent(
-    'Hi Alakapuri, I would like to learn more about corporate meal subscriptions for my team. Please share the pricing.'
-  )}`;
 
   return (
     <Section bg="white" className="py-16 md:py-24">
@@ -63,14 +59,12 @@ export default function CorporatePlans() {
         </div>
 
         <div className="flex gap-4 justify-center pt-4">
-          <a
-            href={whatsappCorporate}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/checkout?plan=Corporate Lunch"
             className="flex h-11 items-center justify-center rounded-full bg-primary px-8 text-xs font-bold text-primary-foreground shadow hover:bg-primary/95"
           >
-            Inquire for Teams
-          </a>
+            Choose Plan
+          </Link>
           <Link
             href="/meal-plans"
             className="flex h-11 items-center justify-center rounded-full border border-border bg-background px-8 text-xs font-semibold text-foreground hover:bg-secondary"

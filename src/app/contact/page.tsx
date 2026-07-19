@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
@@ -10,10 +11,6 @@ export const metadata = constructMetadata({
 });
 
 export default function ContactPage() {
-  const whatsappContact = `${CONTACT_DETAILS.whatsapp}?text=${encodeURIComponent(
-    'Hi Alakapuri, I would like to consult on my health goals and schedule a trial meal subscription.'
-  )}`;
-
   return (
     <Section bg="white" className="py-16 md:py-24">
       <Container className="max-w-3xl space-y-12">
@@ -29,16 +26,14 @@ export default function ContactPage() {
 
         {/* Contact Info Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-          <a
-            href={whatsappContact}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/checkout"
             className="p-6 rounded-2xl border border-border bg-card hover:bg-secondary/35 transition-colors space-y-2 block"
           >
-            <span className="text-2xl block">💬</span>
-            <span className="text-xs font-bold text-foreground block">WhatsApp Support</span>
-            <span className="text-[10px] text-primary font-bold block">{CONTACT_DETAILS.phone}</span>
-          </a>
+            <span className="text-2xl block">🥗</span>
+            <span className="text-xs font-bold text-foreground block">Diet Consultation</span>
+            <span className="text-[10px] text-primary font-bold block">Configure Meal Plan</span>
+          </Link>
           <a
             href={`tel:${CONTACT_DETAILS.phone}`}
             className="p-6 rounded-2xl border border-border bg-card hover:bg-secondary/35 transition-colors space-y-2 block"

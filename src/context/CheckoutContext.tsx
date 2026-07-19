@@ -1,6 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 interface CheckoutContextType {
   isOpen: boolean;
@@ -15,12 +16,12 @@ const CheckoutContext = createContext<CheckoutContextType | undefined>(undefined
 export function CheckoutProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState('');
+  const router = useRouter();
 
   const openCheckout = (planName?: string) => {
-    if (planName) {
-      setSelectedPlan(planName);
-    }
-    setIsOpen(true);
+    const target = planName || 'value-box';
+    setSelectedPlan(target);
+    router.push(`/checkout?plan=${encodeURIComponent(target)}`);
   };
 
   const closeCheckout = () => {

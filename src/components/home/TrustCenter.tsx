@@ -22,7 +22,7 @@ const FAQ_BY_CATEGORY: Record<string, FAQItem[]> = {
     },
     {
       question: 'Are there long-term contracts?',
-      answer: 'No. Subscribe weekly or monthly. Pause, resume, or cancel anytime via WhatsApp.'
+      answer: 'No. Subscribe weekly or monthly. Pause, resume, or cancel anytime via support call or email.'
     }
   ],
   ordering: [
@@ -32,7 +32,7 @@ const FAQ_BY_CATEGORY: Record<string, FAQItem[]> = {
     },
     {
       question: '[Policy Placeholder] How do I place an order?',
-      answer: 'Choose a plan online and coordinate onboarding via WhatsApp.'
+      answer: 'Choose a plan online and complete configurations via our checkout system.'
     }
   ],
   subscriptions: [
@@ -52,7 +52,7 @@ const FAQ_BY_CATEGORY: Record<string, FAQItem[]> = {
     },
     {
       question: '[Policy Placeholder] Are auto-renewals enabled?',
-      answer: 'Auto-renewals are disabled. Renewal alerts are sent via WhatsApp 2 days prior.'
+      answer: 'Auto-renewals are disabled. Renewal alerts are sent via SMS 2 days prior.'
     }
   ],
   delivery: [
@@ -98,11 +98,11 @@ const FAQ_BY_CATEGORY: Record<string, FAQItem[]> = {
   support: [
     {
       question: 'How do I reach customer support?',
-      answer: 'Reach support via WhatsApp, call, or email. Open Mon - Sat.'
+      answer: 'Reach support via call or email. Open Mon - Sat.'
     },
     {
       question: '[Policy Placeholder] What is the support response time SLA?',
-      answer: 'WhatsApp replies are sent within 10 minutes; emails within 12 hours.'
+      answer: 'Phone replies are immediate; emails within 12 hours.'
     }
   ]
 };

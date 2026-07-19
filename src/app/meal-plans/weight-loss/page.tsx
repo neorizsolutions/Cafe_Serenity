@@ -3,7 +3,6 @@ import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
 import { constructMetadata } from '@/utils/seo';
-import { CONTACT_DETAILS } from '@/constants';
 
 export const metadata = constructMetadata({
   title: 'Weight Loss & Calorie Deficit Meal Plans | Alakapuri',
@@ -11,9 +10,6 @@ export const metadata = constructMetadata({
 });
 
 export default function WeightLossPlans() {
-  const whatsappDeficit = `${CONTACT_DETAILS.whatsapp}?text=${encodeURIComponent(
-    'Hi Alakapuri, I would like to subscribe to the Weight Loss deficit plan. Please share the details.'
-  )}`;
 
   return (
     <Section bg="white" className="py-16 md:py-24">
@@ -63,14 +59,12 @@ export default function WeightLossPlans() {
         </div>
 
         <div className="flex gap-4 justify-center pt-4">
-          <a
-            href={whatsappDeficit}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/checkout?plan=Weight Loss Plan"
             className="flex h-11 items-center justify-center rounded-full bg-primary px-8 text-xs font-bold text-primary-foreground shadow hover:bg-primary/95"
           >
-            Order on WhatsApp
-          </a>
+            Choose Plan
+          </Link>
           <Link
             href="/meal-plans"
             className="flex h-11 items-center justify-center rounded-full border border-border bg-background px-8 text-xs font-semibold text-foreground hover:bg-secondary"

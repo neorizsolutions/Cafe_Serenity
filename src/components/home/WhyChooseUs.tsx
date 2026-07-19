@@ -96,7 +96,7 @@ export default function WhyChooseUs() {
                   </svg>
                 }
                 title="12-Hour Flexi-Freeze"
-                description="Pause deliveries and roll over credits with a 12-hour WhatsApp notice."
+                description="Pause deliveries and roll over credits with a 12-hour support notice."
               />
             </MotionWrapper>
             

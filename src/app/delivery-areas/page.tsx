@@ -10,10 +10,6 @@ export const metadata = constructMetadata({
 });
 
 export default function DeliveryAreasPage() {
-  const whatsappCoverage = `${CONTACT_DETAILS.whatsapp}?text=${encodeURIComponent(
-    'Hi Alakapuri, I would like to check if my office/home address is covered for daily meal deliveries.'
-  )}`;
-
   return (
     <Section bg="white" className="py-16 md:py-24">
       <Container className="max-w-3xl space-y-12">
@@ -55,15 +51,13 @@ export default function DeliveryAreasPage() {
         <div className="rounded-2xl border border-border bg-secondary/15 p-6 text-center space-y-4 text-xs">
           <h4 className="font-bold text-foreground">Out of bounds?</h4>
           <p className="text-muted-foreground">
-            If your locality is not listed, ping our routing managers on WhatsApp. We accommodate route extensions for multi-box office orders.
+            If your locality is not listed, contact our routing managers. We accommodate route extensions for multi-box office orders.
           </p>
           <a
-            href={whatsappCoverage}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`tel:${CONTACT_DETAILS.phone}`}
             className="inline-flex h-10 items-center justify-center rounded-full bg-primary px-6 font-bold text-primary-foreground hover:bg-primary/95 transition-colors shadow"
           >
-            Check Address on WhatsApp
+            Check Address via Call
           </a>
         </div>
       </Container>

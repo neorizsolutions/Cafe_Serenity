@@ -19,7 +19,7 @@ export default function PricingPage() {
             Plan Subscriptions & Pricing
           </Typography>
           <Typography variant="body-large" className="text-sm text-muted-foreground max-w-lg mx-auto">
-            Choose from our flagship budget box or configure a tailored program with our nutritionists on WhatsApp.
+            Choose from our flagship budget box or configure a tailored program using our in-website checkout system.
           </Typography>
         </Container>
       </Section>

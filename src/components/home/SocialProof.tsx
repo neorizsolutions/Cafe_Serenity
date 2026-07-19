@@ -290,7 +290,7 @@ export default function SocialProof() {
             Experience verified, clean daily nutrition.
           </Typography>
           <p className="text-xs leading-relaxed text-muted-foreground max-w-lg mx-auto font-medium">
-            Select a plan and subscribe. Pause or reschedule anytime via WhatsApp.
+            Select a plan and subscribe. Pause or reschedule anytime via our support.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2">
             <button

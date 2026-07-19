@@ -137,7 +137,7 @@ export default function Pricing() {
 
             <div className="space-y-2.5 pt-4 border-t border-border/40">
               <button
-                onClick={() => openCheckout('Weight Loss Plan')}
+                onClick={() => openCheckout('value-box')}
                 className="group/btn flex h-11 items-center justify-center gap-2 rounded-full bg-primary px-4 text-xs font-bold text-primary-foreground shadow-[0_4px_14px_rgba(26,79,53,0.15)] hover:bg-primary/95 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
               >
                 <span>Choose Plan</span>

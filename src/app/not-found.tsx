@@ -2,13 +2,8 @@ import Link from 'next/link';
 import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
-import { CONTACT_DETAILS } from '@/constants';
 
 export default function NotFound() {
-  const whatsappHelp = `${CONTACT_DETAILS.whatsapp}?text=${encodeURIComponent(
-    'Hi Alakapuri, I ended up on a missing page on the website. Can you help me find the current menu or plans?'
-  )}`;
-
   return (
     <Section bg="muted" className="min-h-[80vh] flex items-center justify-center py-16">
       <Container className="max-w-xl text-center space-y-8">
@@ -44,14 +39,12 @@ export default function NotFound() {
           >
             Explore Meal Plans
           </Link>
-          <a
-            href={whatsappHelp}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/contact"
             className="flex h-11 items-center justify-center rounded-full border border-primary/20 bg-primary/5 px-6 text-xs font-semibold text-primary hover:bg-primary/10 transition-colors"
           >
             Chat Support
-          </a>
+          </Link>
         </div>
 
         {/* Future Search Placement Indicator */}

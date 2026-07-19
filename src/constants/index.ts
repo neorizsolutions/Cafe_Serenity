@@ -54,7 +54,7 @@ export const CONTACT_DETAILS: ContactDetails = {
 
 export const SEO_DEFAULTS = {
   title: 'Alakapuri Healthy Meals | Calorie-Mapped Diet Box Delivery Kochi',
-  description: 'Hygienic, dietician-designed, portion-controlled healthy meal boxes delivered daily across Kochi. Starts at ₹69. Subscribe on WhatsApp.',
+  description: 'Hygienic, dietician-designed, portion-controlled healthy meal boxes delivered daily across Kochi. Starts at ₹69. Order online today.',
   baseUrl: 'https://alakapurimeals.com',
   siteName: 'Alakapuri Healthy Meals',
   ogImage: '/images/og-default.jpg',
