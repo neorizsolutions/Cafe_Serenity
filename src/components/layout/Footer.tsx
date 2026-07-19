@@ -117,10 +117,9 @@ export default function Footer() {
           {/* Column 5: Locations, Contacts & Hours */}
           <div className="flex flex-col gap-4 text-xs sm:text-[13px]">
             <div className="space-y-2">
-              <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-foreground">Active Service Cities</h4>
+              <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-foreground">Active Service Areas</h4>
               <p className="leading-relaxed font-semibold">
-                <span className="font-bold text-foreground">Kochi:</span> Infopark, Kakkanad, Vytila, Edappally <br />
-                <span className="font-bold text-foreground">Trivandrum:</span> Technopark, Kazhakkoottam, Kowdiar
+                <span className="font-bold text-foreground">Kochi:</span> Kakkanad, Infopark, SmartCity, Edappally, Vytila, Kaloor, Palarivattom, Kadavanthra
               </p>
             </div>
             
@@ -146,12 +145,12 @@ export default function Footer() {
 
             {/* Google Map Link */}
             <a
-              href="https://maps.google.com"
+              href="https://maps.google.com/?q=Alakapuri+Restaurant+Kakkanad+Kochi"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[10px] font-extrabold text-primary hover:underline hover:text-emerald-700 transition-colors w-fit focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5"
             >
-              📍 View Kitchen Map Coordinates →
+              📍 View Restaurant Map Coordinates →
             </a>
           </div>
 

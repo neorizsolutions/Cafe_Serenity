@@ -121,7 +121,7 @@ export default function Pricing() {
                   <span className="text-[10px] text-muted-foreground font-bold uppercase tracking-wider">/ Meal</span>
                 </div>
                 <p className="text-[11px] leading-relaxed text-muted-foreground/90 mt-2.5 font-medium">
-                  Portion-weighed, low-oil everyday lunches delivered across Kochi & TVM.
+                  Portion-weighed, low-oil everyday lunches delivered across Kakkanad & Kochi.
                 </p>
               </div>
 

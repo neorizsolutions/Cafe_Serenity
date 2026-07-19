@@ -35,7 +35,7 @@ export default function ShippingPolicyPage() {
         <div className="space-y-4">
           <Typography variant="h3" className="text-sm font-bold text-foreground">2. Office & Tech Park Delivery Guidelines</Typography>
           <p>
-            Our riders carry clearance credentials for major tech hubs (Infopark Kakkanad, Technopark Kazhakkoottam). Boxes are left at coordinates designated by tech park administrations (recep desk, security drop boxes).
+            Our riders carry clearance credentials for major tech hubs (Infopark Kakkanad, SmartCity Kochi). Boxes are left at coordinates designated by tech park administrations (reception desk, security drop boxes).
           </p>
         </div>
 

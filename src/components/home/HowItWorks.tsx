@@ -34,7 +34,7 @@ function StepCard({ number, title, description }: StepCardProps) {
 
 export default function HowItWorks() {
   const whatsappCTA = `${CONTACT_DETAILS.whatsapp}?text=${encodeURIComponent(
-    "Hi Alakapuri, I'd like to check how to freeze my subscription delivery next week. Please assist."
+    "Hi Alakapuri Restaurant Kakkanad, I'd like to manage/freeze my lunch box delivery."
   )}`;
 
   return (
@@ -47,10 +47,10 @@ export default function HowItWorks() {
             Your Nutrition Path
           </Typography>
           <Typography variant="h2" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
-            Simple Subscriptions, Effortless Daily Delivery
+            Delicious Dining, Convenient Desk Drops
           </Typography>
           <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium opacity-90">
-            No checkout forms or long-term contracts. Manage your diet flexibly.
+            Dine in at Kakkanad, or subscribe to daily traditional lunch drops at your office.
           </Typography>
         </div>
 
@@ -59,32 +59,32 @@ export default function HowItWorks() {
           <MotionWrapper animation="fade-up">
             <StepCard
               number="01"
-              title="Select Your Wellness Goal"
-              description="Choose our ₹69 Value Box or target specialized plans."
+              title="Browse Specialties & Meals"
+              description="Choose our traditional Kerala meals, Porotta & Beef, or Malabar Biriyani."
             />
           </MotionWrapper>
 
           <MotionWrapper animation="fade-up">
             <StepCard
               number="02"
-              title="Coordinate Onboarding Setup"
-              description="We coordinate delivery locations, times, and digital billing."
+              title="Set Up Your Schedule"
+              description="Select dine-in reservations or daily office lunch box delivery drop-offs."
             />
           </MotionWrapper>
 
           <MotionWrapper animation="fade-up">
             <StepCard
               number="03"
-              title="Daily Kitchen Preparation"
-              description="Meals are portion-scaled, prepared fresh daily, and macro-labeled."
+              title="Traditional Chef Prep"
+              description="Meals are cooked using hand-ground spices and traditional clay pots since 1970."
             />
           </MotionWrapper>
 
           <MotionWrapper animation="fade-up">
             <StepCard
               number="04"
-              title="Contactless Office Dispatch"
-              description="Fresh meal boxes are delivered directly to your desk."
+              title="Prompt Hot Delivery"
+              description="Lunches are delivered hot directly to your office desk at Infopark or Kakkanad."
             />
           </MotionWrapper>
         </div>
@@ -97,10 +97,10 @@ export default function HowItWorks() {
             100% Subscription Protection
           </span>
           <Typography variant="h3" className="text-xl font-bold text-foreground tracking-tight">
-            The Alakapuri Flexi-Freeze Guarantee
+            The Alakapuri Delivery Guarantee
           </Typography>
           <p className="text-xs leading-relaxed text-muted-foreground max-w-lg mx-auto font-medium">
-            Message us 12 hours prior to freeze your delivery and roll over credits.
+            Message us 12 hours prior to freeze your daily office lunch box or update your delivery drop location.
           </p>
           <div className="pt-2 z-10 relative">
             <a
@@ -121,23 +121,23 @@ export default function HowItWorks() {
         <div className="space-y-8">
           <div className="text-center space-y-2">
             <Typography variant="h3" className="text-xl font-bold text-foreground tracking-tight">
-              Pre-Configured Dietary Presets
+              Traditional Culinary Styles
             </Typography>
             <Typography variant="body-regular" className="text-xs text-muted-foreground font-medium">
-              We scale nutrition variables matching specific lifestyles and metabolic requirements.
+              We prepare authentic recipes matching traditional standards and tastes.
             </Typography>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto text-center font-bold text-xs">
             {[
-              { title: 'Office Corporate Teams', desc: 'Infopark & Technopark drops.' },
-              { title: 'Low Glycemic Sugar Control', desc: 'Insulin-friendly glycemic plans.' },
-              { title: 'Calorie Deficit Weight Loss', desc: 'Portion-controlled deficit weight-loss.' },
-              { title: 'Athletic High Protein Grains', desc: 'High-protein recovery boxes.' },
-              { title: 'Kids Balanced Growth Box', desc: 'Nutrient-rich growth boxes for kids.' },
-              { title: 'Senior Heart Healthy', desc: 'Easy-to-digest wholesome nutrients.' },
-              { title: 'Wholesome Healthy Family', desc: 'Balanced meals for whole families.' },
-              { title: 'Flexible Custom Custom Presets', desc: 'Custom schedules and routes.' }
+              { title: 'Office Corporate Teams', desc: 'Infopark & SmartCity drops.' },
+              { title: 'Diabetic Friendly Options', desc: 'Low-GI grain diabetic care.' },
+              { title: 'Traditional Kerala Sadya', desc: 'Authentic banana leaf meals.' },
+              { title: 'Malabar Spiced Biriyanis', desc: 'Aromatic ghee roasted dum rice.' },
+              { title: 'Lacy Appams & Stew', desc: 'Creamy coconut milk stew breakfasts.' },
+              { title: 'Claypot Fish Curries', desc: 'Tangy Kudampuli red fish gravy.' },
+              { title: 'Family Special Platters', desc: 'Legendary Porotta and Beef fry.' },
+              { title: 'Flexible Catering Packages', desc: 'Custom catering routes in Kochi.' }
             ].map((preset, idx) => (
               <div 
                 key={idx} 

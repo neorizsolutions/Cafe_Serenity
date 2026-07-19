@@ -80,7 +80,7 @@ function CategoryCard({ imageSrc, title, description, calories, protein, price, 
 
 export default function MealExperience() {
   const whatsappLink = `${CONTACT_DETAILS.whatsapp}?text=${encodeURIComponent(
-    "Hi Alakapuri, I'd like to subscribe to the ₹69 budget healthy box. Please share onboarding details."
+    "Hi Alakapuri Restaurant Kakkanad, I'd like to order the ₹69 budget box delivery."
   )}`;
 
   return (
@@ -93,10 +93,10 @@ export default function MealExperience() {
             Our Culinary Philosophy
           </Typography>
           <Typography variant="h2" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
-            Dietitian Designed. Chef Crafted.
+            Heritage Cooking. Traditional Taste.
           </Typography>
           <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium opacity-90">
-            Portion-controlled, dietitian-approved daily nutrition mapped to your goals.
+            Traditional Kerala meals cooked in claypots and wood fires since 1970.
           </Typography>
         </div>
 
@@ -123,18 +123,18 @@ export default function MealExperience() {
                 Daily Budget Meal Gateway
               </Typography>
               <h3 className="text-2xl font-black text-foreground tracking-tight sm:text-3xl">
-                The ₹69 Healthy Meal Box
+                The ₹69 Budget Rice Box
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground font-medium">
-                Portion-scaled, fresh daily nutrition designed for busy professionals and families.
+                Traditional red rice, curries, and local vegetables delivered fresh daily.
               </p>
             </div>
 
             {/* Structured Macro Badges Block */}
             <div className="grid grid-cols-3 gap-4 border-y border-border/60 py-5 max-w-lg text-center text-xs font-semibold">
               <div className="space-y-1">
-                <span className="block text-muted-foreground text-[9px] uppercase tracking-wider font-extrabold">Macros</span>
-                <span className="block text-foreground text-sm font-extrabold tracking-tight">Balanced 450 kcal</span>
+                <span className="block text-muted-foreground text-[9px] uppercase tracking-wider font-extrabold">Heritage</span>
+                <span className="block text-foreground text-sm font-extrabold tracking-tight">Since 1970</span>
               </div>
               <div className="space-y-1">
                 <span className="block text-muted-foreground text-[9px] uppercase tracking-wider font-extrabold">Oils</span>
@@ -154,16 +154,16 @@ export default function MealExperience() {
                 rel="noopener noreferrer"
                 className="group flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-8 text-xs font-bold text-primary-foreground shadow-[0_4px_14px_rgba(26,79,53,0.25)] hover:shadow-[0_6px_20px_rgba(26,79,53,0.35)] hover:bg-primary/95 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98]"
               >
-                <span>Subscribe on WhatsApp</span>
+                <span>Order on WhatsApp</span>
                 <svg className="h-4 w-4 fill-current transition-transform duration-300 group-hover:translate-x-0.5" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.02-5.11-2.881-6.974-1.86-1.865-4.343-2.891-6.985-2.892-5.442 0-9.866 4.42-9.87 9.86-.001 1.67.457 3.303 1.32 4.757l-.995 3.635 3.722-.973zm11.587-7.504c-.3-.15-1.77-.875-2.046-.975-.276-.1-.477-.15-.677.15-.2.3-.778.975-.953 1.175-.177.2-.353.225-.653.075-1.207-.6-2.054-.997-2.86-2.38-.21-.363.21-.337.603-1.125.074-.15.037-.282-.018-.382-.056-.1-.478-1.15-.654-1.575-.172-.413-.344-.356-.478-.363-.124-.006-.267-.007-.409-.007-.143 0-.376.054-.572.27-.197.216-.75.733-.75 1.79 0 1.056.768 2.074.875 2.22.107.147 1.512 2.31 3.664 3.24.512.22 1.096.353 1.61.353.606 0 1.155-.075 1.59-.14.484-.07 1.477-.6 1.684-1.18.208-.58.208-1.08.146-1.18-.06-.1-.237-.15-.537-.3z" />
                 </svg>
               </a>
               <Link
-                href="/meal-plans"
+                href="/pricing"
                 className="flex h-12 items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur-sm px-8 text-xs font-semibold text-foreground hover:bg-secondary transition-all hover:-translate-y-0.5 active:scale-[0.98]"
               >
-                Explore Plans
+                View Full Menu
               </Link>
             </div>
           </div>
@@ -173,10 +173,10 @@ export default function MealExperience() {
         <div className="space-y-8">
           <div className="text-center space-y-2">
             <Typography variant="h3" className="text-xl font-bold text-foreground tracking-tight">
-              Explore Targeted Wellness Programs
+              Explore Our Culinary Specialties
             </Typography>
             <Typography variant="body-regular" className="text-xs text-muted-foreground font-medium">
-              Select a clinical diet path designed for your specific physical goals starting from ₹199 / meal.
+              Select from our legendary traditional delicacies cooked fresh daily starting from ₹169.
             </Typography>
           </div>
 
@@ -184,11 +184,11 @@ export default function MealExperience() {
             <MotionWrapper animation="fade-up">
               <CategoryCard
                 imageSrc="/images/category_weight_loss.png"
-                title="Weight Loss Plan"
-                description="Calorie-deficit menu formulated to burn fat and maintain muscle."
-                calories="350 kcal"
-                protein="24g Prot"
-                price="₹199 / Meal"
+                title="Traditional Kerala Meals"
+                description="Traditional banana-leaf meals with parippu, sambar, avial, and payasam."
+                calories="Claypot Cook"
+                protein="Wood Fired"
+                price="₹169 / Tray"
                 link="/meal-plans/weight-loss"
               />
             </MotionWrapper>
@@ -196,11 +196,11 @@ export default function MealExperience() {
             <MotionWrapper animation="fade-up">
               <CategoryCard
                 imageSrc="/images/category_high_protein.png"
-                title="High Protein & Gym"
-                description="High-protein boxes to support muscle growth and recovery."
-                calories="600 kcal"
-                protein="45g Prot"
-                price="₹249 / Meal"
+                title="Legendary Beef & Porotta"
+                description="Flaky, golden-layered parotta served with slow-cooked spicy beef fry."
+                calories="Slow Cook"
+                protein="Spicy Fry"
+                price="₹249 / Set"
                 link="/meal-plans/high-protein"
               />
             </MotionWrapper>
@@ -208,23 +208,23 @@ export default function MealExperience() {
             <MotionWrapper animation="fade-up">
               <CategoryCard
                 imageSrc="/images/category_diabetic.png"
-                title="Diabetic Friendly"
-                description="Low-glycemic meals designed to prevent insulin spikes."
-                calories="400 kcal"
-                protein="26g Prot"
-                price="₹219 / Meal"
-                link="/meal-plans/diabetic"
+                title="Claypot Fish Curry & Tapioca"
+                description="Tangy Kudampuli red fish curry served with steamed tapioca (kappa)."
+                calories="Kudampuli"
+                protein="Fresh Catch"
+                price="₹219 / Set"
+                link="/meal-plans/balanced"
               />
             </MotionWrapper>
             
             <MotionWrapper animation="fade-up">
               <CategoryCard
                 imageSrc="/images/category_corporate.png"
-                title="Corporate Lunch"
-                description="Portion-regulated energy lunches delivered to your office desk."
-                calories="450 kcal"
-                protein="30g Prot"
-                price="₹199 / Meal"
+                title="Malabar Biriyani Special"
+                description="Fragrant Dum chicken biriyani with long-grain rice and ghee-roasted spices."
+                calories="Dum Biriyani"
+                protein="Pure Ghee"
+                price="₹199 / Plate"
                 link="/meal-plans/corporate"
               />
             </MotionWrapper>
@@ -239,20 +239,20 @@ export default function MealExperience() {
                 Ingredient Integrity
               </Typography>
               <h3 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl">
-                Clean ingredients mean clean energy.
+                Pure ingredients, uncompromising heritage.
               </h3>
               <p className="text-xs leading-relaxed text-muted-foreground font-medium">
-                Fresh organic greens, premium proteins, and local cold-pressed oils. Zero preservatives.
+                Fresh ground spices, organic coconut oil, and zero artificial coloring or MSG.
               </p>
             </div>
             
             {/* Visual Check Badges */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs font-semibold text-foreground/90">
               {[
-                'Organic Leafy Greens',
-                'Premium Lean Chicken',
-                'Cold-Pressed Oils Only',
-                'Low-GI Complex Carbs'
+                'No MSG or Coloring',
+                '100% Coconut Oil',
+                'Traditional Claypots',
+                'Hand-Ground Spices'
               ].map((text, i) => (
                 <div
                   key={i}
@@ -272,7 +272,7 @@ export default function MealExperience() {
             <div className="relative w-full h-full rounded-xl overflow-hidden">
               <Image
                 src="/images/ingredient_integrity.png"
-                alt="Alakapuri dietitian raw fresh clean ingredient sourcing details"
+                alt="Traditional stone grinder spices at Alakapuri Restaurant"
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"

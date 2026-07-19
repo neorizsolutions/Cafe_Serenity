@@ -56,7 +56,7 @@ const FAQ_BY_CATEGORY: Record<string, FAQItem[]> = {
   ],
   delivery: [
     {
-      question: 'Do you deliver to Infopark and Technopark?',
+      question: 'Do you deliver to Infopark and SmartCity?',
       answer: 'Yes. We drop lunch boxes at office receptions and park gates.'
     },
     {

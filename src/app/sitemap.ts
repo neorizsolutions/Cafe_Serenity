@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
   
   // Localized directories
-  const localRoutes = ['kochi', 'trivandrum'].map((city) => ({
+  const localRoutes = ['kochi'].map((city) => ({
     url: `${baseUrl}/delivery/${city}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,

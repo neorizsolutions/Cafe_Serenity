@@ -221,9 +221,9 @@ export default function SocialProof() {
             
             <div className="grid grid-cols-3 gap-3 text-center text-[10px] font-black text-muted-foreground/60">
               {[
-                'Partner Gym TVM',
+                'Partner Gym Kakkanad',
                 'Fitness Studio Kochi',
-                'Diet Clinic Kerala'
+                'Food Safety Clinic'
               ].map((partner, i) => (
                 <div 
                   key={i} 

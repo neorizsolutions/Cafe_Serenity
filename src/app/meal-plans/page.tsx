@@ -46,7 +46,7 @@ export default function MealPlansPage() {
     {
       title: 'Corporate IT Lunches',
       path: '/meal-plans/corporate',
-      desc: 'On-time tech park drops at Technopark and Infopark desks.',
+      desc: 'On-time tech park drops at Infopark Kakkanad desks.',
       price: '₹199 / meal',
       calories: '450 kcal',
       color: 'bg-orange-500/10 text-orange-700 border-orange-500/20'

@@ -34,7 +34,7 @@ export default function Header() {
   }, [isMobileOpen]);
 
   const whatsappLink = `${CONTACT_DETAILS.whatsapp}?text=${encodeURIComponent(
-    "Hi Alakapuri, I'd like to learn more about your daily healthy meal box subscriptions."
+    "Hi Alakapuri Restaurant Kakkanad, I'd like to reserve a table / order delivery."
   )}`;
 
   return (

@@ -5,8 +5,8 @@ import { constructMetadata } from '@/utils/seo';
 import { CONTACT_DETAILS } from '@/constants';
 
 export const metadata = constructMetadata({
-  title: 'Delivery Coverage Areas Kochi & Trivandrum | Alakapuri',
-  description: 'View Alakapuri desk & doorstep healthy meal box transit boundaries: Kakkanad Infopark, Technopark Kazhakkoottam, Kaloor, Edappally, and Kowdiar.',
+  title: 'Delivery Coverage Areas Kochi | Alakapuri',
+  description: 'View Alakapuri desk & doorstep hot meal box transit boundaries: Kakkanad Infopark, SmartCity, Kaloor, Edappally, and other Kochi hubs.',
 });
 
 export default function DeliveryAreasPage() {
@@ -23,7 +23,7 @@ export default function DeliveryAreasPage() {
             Delivery Coverage Boundaries
           </Typography>
           <Typography variant="body-large" className="text-muted-foreground">
-            We drop clean diet boxes at office desks and doorsteps twice daily across Kochi and Trivandrum.
+            We drop clean diet boxes at office desks and doorsteps twice daily across Kochi.
           </Typography>
         </div>
 
@@ -37,18 +37,6 @@ export default function DeliveryAreasPage() {
               <li>• Edappally residential complexes</li>
               <li>• Kaloor & Palarivattom transit points</li>
               <li>• Vytila & Kadavanthra areas</li>
-            </ul>
-          </div>
-
-          {/* Trivandrum Coverage */}
-          <div className="rounded-2xl border border-border bg-card p-6 md:p-8 space-y-4">
-            <Typography variant="h3" className="text-base font-bold text-foreground">📍 Trivandrum Regions</Typography>
-            <ul className="text-xs text-muted-foreground space-y-2 font-medium">
-              <li>• Technopark Phase 1, 2 & 3 campuses</li>
-              <li>• Kazhakkoottam neighborhood</li>
-              <li>• Kowdiar & Pattom residential slots</li>
-              <li>• Vazhuthacaud & Vellayambalam</li>
-              <li>• Technocity Mangalapuram zone</li>
             </ul>
           </div>
         </div>

@@ -31,7 +31,7 @@ export default function FinalConversion() {
       <div className="absolute bottom-0 right-0 -z-10 h-[300px] w-[300px] rounded-full bg-emerald-600/5 blur-3xl" />
 
       <Container className="space-y-20">
-        
+
         {/* 1. Main Conversion CTA Header Block */}
         <div className="text-center max-w-3xl mx-auto space-y-6">
           <Typography variant="badge-label" className="tracking-widest text-[11px]">
@@ -78,9 +78,9 @@ export default function FinalConversion() {
               Daily Desk & Doorstep Delivery
             </h3>
             <p className="text-xs leading-relaxed text-muted-foreground font-medium">
-              We deliver fresh healthy meal boxes twice daily to all primary IT parks, corporate offices, gyms, and residential neighborhoods across Kochi and Trivandrum.
+              We deliver fresh healthy meal boxes twice daily to all primary IT parks, corporate offices, gyms, and residential neighborhoods across Kochi.
             </p>
-            
+
             {/* Visual Coverage List */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
               <div className="space-y-3">
@@ -97,20 +97,6 @@ export default function FinalConversion() {
                   <li className="flex items-center gap-1.5">• Vytila & Ernakulam Central</li>
                 </ul>
               </div>
-              <div className="space-y-3">
-                <span className="flex items-center gap-1.5 text-xs font-extrabold text-foreground">
-                  <svg className="h-4 w-4 text-primary shrink-0" fill="none" strokeWidth="2.5" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25s-7.5-4.108-7.5-11.25C4.5 6.358 7.858 3 12 3c4.142 0 7.5 3.358 7.5 7.5z" />
-                  </svg>
-                  Trivandrum Hubs
-                </span>
-                <ul className="text-[10px] text-muted-foreground space-y-2 font-medium">
-                  <li className="flex items-center gap-1.5">• Technopark Phase 1, 2 & 3</li>
-                  <li className="flex items-center gap-1.5">• Kazhakkoottam & Pattom</li>
-                  <li className="flex items-center gap-1.5">• Kowdiar & Vazhuthacaud</li>
-                </ul>
-              </div>
             </div>
           </div>
 
@@ -125,7 +111,7 @@ export default function FinalConversion() {
                 <circle cx="70" cy="70" r="3" className="fill-primary animate-ping" />
               </svg>
             </div>
-            
+
             <div className="z-10 space-y-2">
               <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mx-auto shadow-sm transition-transform duration-300 group-hover/map:scale-105">
                 <svg className="h-5 w-5 stroke-current fill-none" strokeWidth="2.0" viewBox="0 0 24 24" aria-hidden="true">
@@ -142,7 +128,7 @@ export default function FinalConversion() {
 
         {/* 3. Support & Contact channels + Trust Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          
+
           {/* Quick Support Contacts */}
           <div className="space-y-4 md:col-span-2">
             <h4 className="text-xs font-extrabold uppercase tracking-widest text-foreground">
@@ -160,7 +146,7 @@ export default function FinalConversion() {
                   {CONTACT_DETAILS.phone}
                 </a>
               </div>
-              
+
               <div className="group/item p-5 rounded-2xl border border-border/60 bg-card hover:bg-secondary/35 transition-all duration-300 hover:border-primary/20 hover:-translate-y-0.5">
                 <div className="h-8 w-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shadow-sm mb-3 group-hover/item:scale-105 transition-transform duration-300">
                   <svg className="h-4.5 w-4.5 stroke-current fill-none" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
@@ -172,7 +158,7 @@ export default function FinalConversion() {
                   {CONTACT_DETAILS.email}
                 </a>
               </div>
-              
+
               <div className="group/item p-5 rounded-2xl border border-border/60 bg-card hover:bg-secondary/35 transition-all duration-300 hover:border-primary/20 hover:-translate-y-0.5">
                 <div className="h-8 w-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shadow-sm mb-3 group-hover/item:scale-105 transition-transform duration-300">
                   <svg className="h-4.5 w-4.5 stroke-current fill-none" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
@@ -209,7 +195,7 @@ export default function FinalConversion() {
               Get clean diet recipes, macro charts, and menu updates directly in your inbox.
             </p>
           </div>
-          
+
           {subscribed ? (
             <div className="text-xs font-extrabold text-primary bg-primary/10 px-4 py-2.5 rounded-full border border-primary/20 animate-pulse w-full max-w-sm text-center">
               ✓ Thank you! You have successfully subscribed.

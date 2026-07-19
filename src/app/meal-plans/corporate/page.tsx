@@ -6,8 +6,8 @@ import { constructMetadata } from '@/utils/seo';
 import { CONTACT_DETAILS } from '@/constants';
 
 export const metadata = constructMetadata({
-  title: 'Corporate Healthy Meal Subscriptions Kakkanad & TVM | Alakapuri',
-  description: 'Clean, portion-regulated energy lunches delivered directly to Technopark and Infopark desks. Starts from ₹199/meal. Unified corporate billings.',
+  title: 'Corporate Healthy Meal Subscriptions Kakkanad | Alakapuri',
+  description: 'Clean, portion-regulated energy lunches delivered directly to Infopark and SmartCity Kochi desks. Starts from ₹199/meal. Unified corporate billings.',
 });
 
 export default function CorporatePlans() {
@@ -58,7 +58,7 @@ export default function CorporatePlans() {
             Oily fast food and high-sodium canteen lunches cause afternoon fatigue and decrease team performance. Alakapuri provides companies with clean, dietitian-checked lunches delivered fresh.
           </p>
           <p>
-            We manage bulk tech park drop schedules (Infopark Kakkanad, Technopark Kazhakkoottam) with customized label systems containing employee names, calories, and allergies.
+            We manage bulk tech park drop schedules (Infopark Kakkanad, SmartCity Kochi) with customized label systems containing employee names, calories, and allergies.
           </p>
         </div>
 
