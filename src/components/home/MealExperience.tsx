@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
@@ -22,11 +23,15 @@ function CategoryCard({ imageSrc, title, description, calories, protein, price }
   return (
     <div className="group rounded-2xl border border-border/60 bg-card overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full hover:-translate-y-1">
       {/* Visual Frame */}
-      <div className="relative aspect-[4/3] w-full bg-muted overflow-hidden flex items-center justify-center bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-900">
-        <div className="text-center p-4 select-none">
-          <span className="text-xs font-extrabold text-foreground/80 tracking-tight block mb-1">{title}</span>
-          <span className="text-[9px] text-muted-foreground/50 font-bold uppercase tracking-widest">Image Placeholder</span>
-        </div>
+      <div className="relative aspect-[4/3] w-full bg-muted overflow-hidden">
+        <Image
+          src={imageSrc}
+          alt={title}
+          fill
+          sizes="(max-w-md) 100vw, 300px"
+          loading="lazy"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
         {/* Modern Custom SVG Nutrition Badges */}
         <div className="absolute top-3 left-3 flex gap-1.5 flex-wrap">
           <span className="inline-flex items-center gap-1 rounded-full bg-white/90 dark:bg-card/90 backdrop-blur-sm px-2.5 py-0.5 text-[9px] font-extrabold text-foreground uppercase tracking-wider border border-border/40 shadow-sm">
@@ -100,12 +105,16 @@ export default function MealExperience() {
         {/* 1. Signature Spotlight Card (₹69 Budget Box - Apple Style) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 rounded-3xl border border-primary/10 bg-white/70 dark:bg-card/75 backdrop-blur-md overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.015)] hover:shadow-[0_8px_30px_rgb(16,185,129,0.03)] hover:border-emerald-500/20 transition-all duration-500 lg:items-stretch group">
           {/* Left Visual: Image representation with scale hover */}
-          <div className="relative aspect-video lg:aspect-auto lg:col-span-5 bg-muted min-h-[300px] overflow-hidden flex items-center justify-center bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-900">
-            <div className="text-center p-6 select-none">
-              <span className="text-sm font-black text-foreground/80 tracking-tight block mb-1">₹69 Flagship Value Box</span>
-              <span className="text-[9px] text-muted-foreground/50 font-bold uppercase tracking-widest">Product Photo Placeholder</span>
-            </div>
-            <div className="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-wider border border-emerald-500/20 shadow-sm animate-pulse">
+          <div className="relative aspect-video lg:aspect-auto lg:col-span-5 bg-muted min-h-[300px] overflow-hidden">
+            <Image
+              src="/images/hero_meal_box.png"
+              alt="Alakapuri ₹69 Flagship Value Box"
+              fill
+              sizes="(max-w-md) 100vw, 500px"
+              priority
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-wider border border-emerald-500/20 shadow-sm animate-pulse z-10">
               Flagship Value Box
             </div>
           </div>
@@ -254,11 +263,15 @@ export default function MealExperience() {
 
           {/* Right Image element with custom double border */}
           <div className="relative aspect-video bg-muted rounded-2xl overflow-hidden shadow-lg border border-border/80 p-2 bg-gradient-to-b from-white to-secondary/35 dark:from-card dark:to-card/20">
-            <div className="relative w-full h-full rounded-xl overflow-hidden flex items-center justify-center bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-900">
-              <div className="text-center p-6 select-none">
-                <span className="text-xs font-extrabold text-foreground/75 tracking-tight block mb-1">Ingredient Sourcing Standards</span>
-                <span className="text-[9px] text-muted-foreground/50 font-bold uppercase tracking-widest">Visual Placeholder</span>
-              </div>
+            <div className="relative w-full h-full rounded-xl overflow-hidden">
+              <Image
+                src="/images/ingredient_integrity.png"
+                alt="Alakapuri Raw Organic Ingredient Integrity"
+                fill
+                sizes="(max-w-md) 100vw, 500px"
+                loading="lazy"
+                className="object-cover transition-transform duration-500"
+              />
             </div>
           </div>
         </div>

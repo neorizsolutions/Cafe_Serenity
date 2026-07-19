@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
@@ -116,9 +117,14 @@ export default function WhyChooseUs() {
           {/* Right Column: Visual Storytelling Box (Linear/Apple style) */}
           <div className="lg:col-span-5 flex items-stretch">
             <MotionWrapper animation="scale" className="relative w-full rounded-2xl overflow-hidden shadow-lg border border-border/80 min-h-[320px] flex flex-col justify-end p-6 bg-muted group">
-              <div className="absolute inset-0 bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-900 flex flex-col items-center justify-center p-6 text-center select-none border border-border/40 rounded-2xl">
-                <span className="text-xs text-muted-foreground/60 font-bold tracking-wider">Culinary Standards Visual Placeholder</span>
-              </div>
+              <Image
+                src="/images/why_choose_prep.png"
+                alt="Professional FSSAI culinary standards kitchen meal prep"
+                fill
+                sizes="(max-w-md) 100vw, 500px"
+                loading="lazy"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
               {/* Gradient dark overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent z-10" />
               

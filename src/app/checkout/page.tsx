@@ -3,6 +3,7 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   ChevronLeft, User, Phone, Mail, MapPin, Loader2, ShoppingBag, Utensils
 } from 'lucide-react';
@@ -23,7 +24,8 @@ const PLAN_OPTIONS = [
     protein: '22g Prot',
     carbs: '55g Carbs',
     fat: '12g Fat',
-    isFlagship: true
+    isFlagship: true,
+    imageSrc: '/images/hero_meal_box.png'
   },
   {
     id: 'Weight Loss Plan',
@@ -34,7 +36,8 @@ const PLAN_OPTIONS = [
     calories: '350 kcal',
     protein: '24g Prot',
     carbs: '35g Carbs',
-    fat: '10g Fat'
+    fat: '10g Fat',
+    imageSrc: '/images/category_weight_loss.png'
   },
   {
     id: 'High Protein & Gym',
@@ -45,7 +48,8 @@ const PLAN_OPTIONS = [
     calories: '600 kcal',
     protein: '45g Prot',
     carbs: '65g Carbs',
-    fat: '14g Fat'
+    fat: '14g Fat',
+    imageSrc: '/images/category_high_protein.png'
   },
   {
     id: 'Diabetic Friendly',
@@ -56,7 +60,8 @@ const PLAN_OPTIONS = [
     calories: '400 kcal',
     protein: '26g Prot',
     carbs: '40g Carbs',
-    fat: '11g Fat'
+    fat: '11g Fat',
+    imageSrc: '/images/category_diabetic.png'
   },
   {
     id: 'Corporate Lunch',
@@ -67,7 +72,8 @@ const PLAN_OPTIONS = [
     calories: '450 kcal',
     protein: '30g Prot',
     carbs: '50g Carbs',
-    fat: '12g Fat'
+    fat: '12g Fat',
+    imageSrc: '/images/category_corporate.png'
   },
   {
     id: 'Family Meal Plan',
@@ -78,7 +84,8 @@ const PLAN_OPTIONS = [
     calories: '550 kcal',
     protein: '28g Prot',
     carbs: '60g Carbs',
-    fat: '13g Fat'
+    fat: '13g Fat',
+    imageSrc: '/images/category_family.png'
   },
   {
     id: 'Balanced Diet Box',
@@ -89,7 +96,8 @@ const PLAN_OPTIONS = [
     calories: '450 kcal',
     protein: '26g Prot',
     carbs: '55g Carbs',
-    fat: '12g Fat'
+    fat: '12g Fat',
+    imageSrc: '/images/category_balanced.png'
   },
   {
     id: 'Kids Meal Plan',
@@ -100,7 +108,8 @@ const PLAN_OPTIONS = [
     calories: '400 kcal',
     protein: '20g Prot',
     carbs: '50g Carbs',
-    fat: '10g Fat'
+    fat: '10g Fat',
+    imageSrc: '/images/category_kids.png'
   },
   {
     id: 'Custom Plan',
@@ -111,7 +120,8 @@ const PLAN_OPTIONS = [
     calories: 'Dynamic kcal',
     protein: 'Dynamic Prot',
     carbs: 'Dynamic Carbs',
-    fat: 'Dynamic Fat'
+    fat: 'Dynamic Fat',
+    imageSrc: '/images/category_custom.png'
   }
 ];
 
@@ -418,8 +428,14 @@ function CheckoutContent() {
           </h3>
 
           <div className="flex items-start gap-4 pb-4 border-b border-border">
-            <div className="h-14 w-16 rounded-xl bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-900 border border-border flex items-center justify-center shrink-0">
-              <Utensils className="h-5 w-5 text-muted-foreground/60" />
+            <div className="h-14 w-16 rounded-xl border border-border overflow-hidden relative shrink-0">
+              <Image
+                src={activePlanObj.imageSrc || '/images/hero_meal_box.png'}
+                alt={activePlanObj.title}
+                fill
+                sizes="64px"
+                className="object-cover"
+              />
             </div>
             <div className="space-y-1">
               <span className="inline-flex rounded-full bg-primary/10 px-2 py-0.5 text-[8px] font-black uppercase text-primary tracking-wider">

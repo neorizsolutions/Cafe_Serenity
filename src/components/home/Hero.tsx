@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
@@ -454,10 +455,14 @@ export default function Hero() {
                     transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1.0] }}
                     className="absolute inset-0 w-full h-full"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-900 flex flex-col items-center justify-center p-6 text-center select-none">
-                      <span className="text-xl font-bold text-foreground/85 tracking-tight mb-1">{SLIDES[currentIndex].title}</span>
-                      <span className="text-xs text-muted-foreground/60 font-bold uppercase tracking-wider">{SLIDES[currentIndex].tag}</span>
-                    </div>
+                    <Image
+                      src={SLIDES[currentIndex].image}
+                      alt={SLIDES[currentIndex].alt}
+                      fill
+                      sizes="(max-w-md) 100vw, 500px"
+                      priority={currentIndex === 0}
+                      className="object-cover transition-transform duration-500"
+                    />
                   </motion.div>
                 </AnimatePresence>
               </div>
