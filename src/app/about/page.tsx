@@ -11,13 +11,13 @@ export default function AboutPage() {
           Democratizing Clean Nutrition in Kerala
         </h1>
         <p className="text-lg text-muted-foreground leading-relaxed">
-          At Alakapuri, we believe healthy eating shouldn&apos;t be a luxury or a stressful daily struggle. We combine culinary expertise with nutrition science to cook clean, portion-controlled meals that support your lifestyle.
+          At Café Serenity, we believe healthy eating shouldn&apos;t be a luxury or a stressful daily struggle. We combine culinary expertise with nutrition science to cook clean, portion-controlled meals that support your lifestyle.
         </p>
       </div>
 
       {/* Standards Section */}
       <div className="space-y-8">
-        <h2 className="text-2xl font-bold tracking-tight text-foreground text-center">The Alakapuri Standards</h2>
+        <h2 className="text-2xl font-bold tracking-tight text-foreground text-center">The Café Serenity Standards</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="border border-border p-6 rounded-2xl bg-card space-y-3">
             <span className="block text-3xl font-extrabold text-primary">0%</span>

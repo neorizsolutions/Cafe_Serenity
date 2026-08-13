@@ -1,10 +1,10 @@
 'use client';
 
+import Link from 'next/link';
 import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
 import MotionWrapper from '@/components/common/MotionWrapper';
-import { useCheckout } from '@/context/CheckoutContext';
 
 interface StepCardProps {
   number: string;
@@ -14,13 +14,13 @@ interface StepCardProps {
 
 function StepCard({ number, title, description }: StepCardProps) {
   return (
-    <div className="group relative rounded-2xl border border-border/60 bg-card p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 flex flex-col justify-between h-full space-y-4">
+    <div className="group relative rounded-2xl border border-border/60 bg-card p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-brand-gold/25 flex flex-col justify-between h-full space-y-4">
       {/* Dynamic card highlight on hover */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none -z-10" />
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none -z-10" />
       
       <div className="space-y-4">
         {/* Crisp circular indicator */}
-        <div className="h-8 w-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-black shadow-sm border border-primary/5 transition-transform duration-300 group-hover:scale-105">
+        <div className="h-8 w-8 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xs font-black shadow-sm border border-brand-gold/5 transition-transform duration-300 group-hover:scale-105">
           {number}
         </div>
         <Typography variant="h3" className="text-sm font-bold text-foreground tracking-tight">
@@ -35,8 +35,6 @@ function StepCard({ number, title, description }: StepCardProps) {
 }
 
 export default function HowItWorks() {
-  const { openCheckout } = useCheckout();
-
   return (
     <Section bg="muted" className="relative border-t border-border overflow-hidden">
       <Container className="space-y-24">
@@ -89,30 +87,30 @@ export default function HowItWorks() {
           </MotionWrapper>
         </div>
 
-        {/* Flexi-Freeze Guarantee Panel (Linear style banner) */}
-        <div className="rounded-3xl border border-primary/10 bg-white/70 dark:bg-card/75 p-8 text-center space-y-5 max-w-3xl mx-auto shadow-sm group relative overflow-hidden">
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-emerald-500/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+        {/* Flexi-Freeze Guarantee Panel */}
+        <div className="rounded-3xl border border-brand-gold/15 bg-white/70 dark:bg-card/75 p-8 text-center space-y-5 max-w-3xl mx-auto shadow-sm group relative overflow-hidden">
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-brand-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
           
-          <span className="inline-flex rounded-full bg-emerald-600/10 px-3 py-1 text-[9px] font-black text-emerald-800 dark:text-emerald-300 uppercase tracking-widest border border-emerald-600/20 shadow-sm">
+          <span className="inline-flex rounded-full bg-brand-gold/10 px-3 py-1 text-[9px] font-black text-brand-gold uppercase tracking-widest border border-brand-gold/20 shadow-sm">
             100% Subscription Protection
           </span>
           <Typography variant="h3" className="text-xl font-bold text-foreground tracking-tight">
-            The Alakapuri Flexi-Freeze Guarantee
+            The Café Serenity Flexi-Freeze Guarantee
           </Typography>
           <p className="text-xs leading-relaxed text-muted-foreground max-w-lg mx-auto font-medium">
             Manage your delivery schedules, pause subscriptions, and roll over credits dynamically.
           </p>
           <div className="pt-2 z-10 relative">
-            <button
-              onClick={() => openCheckout()}
-              className="group inline-flex h-10 items-center justify-center gap-2 rounded-full bg-primary px-6 text-xs font-bold text-primary-foreground shadow hover:bg-primary/95 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+            <Link
+              href="/how-flexi-freeze-works"
+              className="group inline-flex h-10 items-center justify-center gap-2 rounded-full bg-brand-gold px-6 text-xs font-bold text-brand-dark shadow hover:bg-brand-gold/90 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
             >
-              <span>Get Started</span>
-            </button>
+              <span>Learn More</span>
+            </Link>
           </div>
         </div>
 
-        {/* Personalized Routine Presets (Pills Grid) */}
+        {/* Personalized Routine Presets */}
         <div className="space-y-8">
           <div className="text-center space-y-2">
             <Typography variant="h3" className="text-xl font-bold text-foreground tracking-tight">
@@ -136,7 +134,7 @@ export default function HowItWorks() {
             ].map((preset, idx) => (
               <div 
                 key={idx} 
-                className="group/preset p-4 border border-border/60 rounded-2xl bg-card shadow-sm hover:shadow-md transition-all duration-300 hover:border-primary/20 hover:-translate-y-0.5 flex flex-col justify-center gap-1"
+                className="group/preset p-4 border border-border/60 rounded-2xl bg-card shadow-sm hover:shadow-md transition-all duration-300 hover:border-brand-gold/25 hover:-translate-y-0.5 flex flex-col justify-center gap-1"
               >
                 <span className="block text-[11px] font-black text-foreground">{preset.title.split(' ').slice(1).join(' ') || preset.title}</span>
                 <span className="block text-[9px] text-muted-foreground font-medium">{preset.desc}</span>

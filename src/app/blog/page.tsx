@@ -5,7 +5,7 @@ import Typography from '@/components/common/Typography';
 import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
-  title: 'Alakapuri Healthy Living Blog | Nutrition & Diet Tips',
+  title: 'Café Serenity Living Blog | Nutrition & Diet Tips',
   description: 'Read health updates, balanced calorie charts, weight loss recipes, and healthy lifestyle tips from our clinical dietitians.',
 });
 
@@ -17,7 +17,7 @@ export default function BlogPage() {
           Coming Soon
         </span>
         <Typography variant="h1" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
-          Alakapuri Nutrition Blog
+          Café Serenity Blog
         </Typography>
         <Typography variant="body-large" className="text-sm text-muted-foreground leading-relaxed">
           Our in-house clinical dietitians are assembling a catalog of clean local recipes, metabolic health guides, and workout nutrition advice. Stay tuned!

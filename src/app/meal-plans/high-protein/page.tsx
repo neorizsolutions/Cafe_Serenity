@@ -5,8 +5,8 @@ import Typography from '@/components/common/Typography';
 import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
-  title: 'High Protein & Gym Workout Subscriptions | Alakapuri',
-  description: 'Clean workout fuel and muscle synthesis recovery boxes cooked fresh. 45g+ protein per box. Starts from ₹249/meal. Kochi desk and doorstep drops.',
+  title: 'High Protein & Gym Workout Subscriptions | Café Serenity',
+  description: 'Clean workout fuel and muscle synthesis recovery boxes cooked fresh. 45g+ protein per box. Starts from ₹249/meal. Kakkanad desk and doorstep drops.',
 });
 
 export default function HighProteinPlans() {

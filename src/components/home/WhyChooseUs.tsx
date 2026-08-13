@@ -17,11 +17,11 @@ interface FeatureCardProps {
 
 function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
-    <div className="group relative rounded-2xl border border-border/60 bg-card p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 flex flex-col gap-4">
+    <div className="group relative rounded-2xl border border-border/60 bg-card p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-brand-gold/20 flex flex-col gap-4">
       {/* Subtle card glow on hover */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none -z-10" />
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none -z-10" />
       
-      <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105">
+      <div className="h-10 w-10 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105">
         {icon}
       </div>
       
@@ -43,21 +43,21 @@ export default function WhyChooseUs() {
   return (
     <Section bg="muted" className="relative border-t border-border overflow-hidden">
       {/* Background ambient highlights */}
-      <div className="absolute top-[20%] right-[-10%] -z-10 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,_oklch(0.42_0.13_145_/_0.03)_0%,transparent_70%)] blur-3xl" />
-      <div className="absolute bottom-[20%] left-[-10%] -z-10 h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,_oklch(0.55_0.14_145_/_0.03)_0%,transparent_70%)] blur-3xl" />
+      <div className="absolute top-[20%] right-[-10%] -z-10 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,_oklch(0.77_0.17_76_/_0.03)_0%,transparent_70%)] blur-3xl" />
+      <div className="absolute bottom-[20%] left-[-10%] -z-10 h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,_oklch(0.77_0.17_76_/_0.03)_0%,transparent_70%)] blur-3xl" />
 
       <Container className="space-y-24">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <Typography variant="badge-label" className="tracking-widest text-[11px]">
-            The Alakapuri Difference
+            The Serenity Standard
           </Typography>
           <Typography variant="h2" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
-            Why Choose Alakapuri Healthy Meals?
+            Why Choose Café Serenity?
           </Typography>
           <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium opacity-90">
-            Clinical dietary guidelines and fresh ingredients, delivered daily.
+            Hygienic prep, local fresh ingredients, and dietitian-approved meal plans.
           </Typography>
         </div>
 
@@ -129,8 +129,8 @@ export default function WhyChooseUs() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent z-10" />
               
               <div className="relative z-20 space-y-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/95 px-2.5 py-0.5 text-[9px] font-black text-white uppercase tracking-widest">
-                  <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" />
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-gold px-2.5 py-0.5 text-[9px] font-black text-brand-dark uppercase tracking-widest">
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-dark animate-pulse" />
                   Natural Cooking Standard
                 </span>
                 <h3 className="text-lg font-bold text-white tracking-tight">
@@ -151,7 +151,7 @@ export default function WhyChooseUs() {
               Visual Platform Comparison
             </Typography>
             <Typography variant="body-regular" className="text-xs text-muted-foreground font-medium">
-              How Alakapuri healthy subscriptions differ from typical takeout.
+              How Café Serenity healthy subscriptions differ from typical takeout.
             </Typography>
           </div>
 
@@ -161,10 +161,10 @@ export default function WhyChooseUs() {
                 <tr className="border-b border-border bg-secondary/10 text-foreground font-extrabold uppercase tracking-wider text-[10px] sm:text-[11px]">
                   <th scope="col" className="p-4 sm:p-5">Dietary Metric</th>
                   <th scope="col" className="p-4 sm:p-5">Typical Restaurant Delivery</th>
-                  <th scope="col" className="p-4 sm:p-5 text-primary bg-primary/[0.03] border-x border-primary/10">
+                  <th scope="col" className="p-4 sm:p-5 text-brand-gold bg-brand-gold/[0.03] border-x border-brand-gold/15">
                     <span className="flex items-center gap-2">
-                      Alakapuri Healthy Subscriptions
-                      <span className="inline-flex rounded-full bg-primary/15 px-2 py-0.5 text-[8px] font-black text-primary tracking-widest normal-case">
+                      Café Serenity Subscriptions
+                      <span className="inline-flex rounded-full bg-brand-gold/15 px-2 py-0.5 text-[8px] font-black text-brand-gold tracking-widest normal-case">
                         RECOMMENDED
                       </span>
                     </span>
@@ -180,9 +180,9 @@ export default function WhyChooseUs() {
                     </svg>
                     Reused fats and palm oil.
                   </td>
-                  <td className="p-4 sm:p-5 text-primary bg-primary/[0.03] border-x border-primary/10 font-bold">
-                    <span className="flex items-center gap-2 text-emerald-800 dark:text-emerald-300">
-                      <svg className="h-4 w-4 shrink-0 text-primary" fill="none" strokeWidth="3" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <td className="p-4 sm:p-5 text-brand-gold bg-brand-gold/[0.03] border-x border-brand-gold/15 font-bold">
+                    <span className="flex items-center gap-2 text-brand-gold">
+                      <svg className="h-4 w-4 shrink-0 text-brand-gold" fill="none" strokeWidth="3" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
                       Measured cold-pressed oils.
@@ -197,9 +197,9 @@ export default function WhyChooseUs() {
                     </svg>
                     High sodium and MSG.
                   </td>
-                  <td className="p-4 sm:p-5 text-primary bg-primary/[0.03] border-x border-primary/10 font-bold">
-                    <span className="flex items-center gap-2 text-emerald-800 dark:text-emerald-300">
-                      <svg className="h-4 w-4 shrink-0 text-primary" fill="none" strokeWidth="3" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <td className="p-4 sm:p-5 text-brand-gold bg-brand-gold/[0.03] border-x border-brand-gold/15 font-bold">
+                    <span className="flex items-center gap-2 text-brand-gold">
+                      <svg className="h-4 w-4 shrink-0 text-brand-gold" fill="none" strokeWidth="3" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
                       Low-sodium, natural ingredients.
@@ -214,9 +214,9 @@ export default function WhyChooseUs() {
                     </svg>
                     Unreliable transit drops.
                   </td>
-                  <td className="p-4 sm:p-5 text-primary bg-primary/[0.03] border-x border-primary/10 font-bold">
-                    <span className="flex items-center gap-2 text-emerald-800 dark:text-emerald-300">
-                      <svg className="h-4 w-4 shrink-0 text-primary" fill="none" strokeWidth="3" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <td className="p-4 sm:p-5 text-brand-gold bg-brand-gold/[0.03] border-x border-brand-gold/15 font-bold">
+                    <span className="flex items-center gap-2 text-brand-gold">
+                      <svg className="h-4 w-4 shrink-0 text-brand-gold" fill="none" strokeWidth="3" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
                       12-hour pause notice.
@@ -231,9 +231,9 @@ export default function WhyChooseUs() {
                     </svg>
                     High delivery fees.
                   </td>
-                  <td className="p-4 sm:p-5 text-primary bg-primary/[0.03] border-x border-primary/10 font-bold">
-                    <span className="flex items-center gap-2 text-emerald-800 dark:text-emerald-300">
-                      <svg className="h-4 w-4 shrink-0 text-primary" fill="none" strokeWidth="3" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <td className="p-4 sm:p-5 text-brand-gold bg-brand-gold/[0.03] border-x border-brand-gold/15 font-bold">
+                    <span className="flex items-center gap-2 text-brand-gold">
+                      <svg className="h-4 w-4 shrink-0 text-brand-gold" fill="none" strokeWidth="3" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
                       Dietitian-approved from ₹69.
@@ -246,10 +246,10 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Micro-Stats / Conversion Block (Glassmorphism layout) */}
-        <div className="relative rounded-3xl border border-primary/10 bg-white/70 dark:bg-card/75 backdrop-blur-md p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm group overflow-hidden">
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-emerald-500/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+        <div className="relative rounded-3xl border border-brand-gold/10 bg-white/70 dark:bg-card/75 backdrop-blur-md p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm group overflow-hidden">
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-brand-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
           <div className="max-w-xl space-y-4 text-left">
-            <Typography variant="badge-label" className="text-[11px] tracking-widest text-emerald-800 dark:text-emerald-300">
+            <Typography variant="badge-label" className="text-[11px] tracking-widest text-brand-gold">
               Start Your Journey
             </Typography>
             <Typography variant="h3" className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
@@ -260,15 +260,6 @@ export default function WhyChooseUs() {
             </Typography>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 shrink-0 w-full sm:w-auto z-10">
-            <button
-              onClick={() => openCheckout()}
-              className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-8 text-sm font-bold text-primary-foreground shadow-md hover:shadow-lg transition-all duration-300 hover:bg-primary/95 active:scale-95 hover:-translate-y-0.5 cursor-pointer"
-            >
-              <span>Order Now</span>
-              <svg className="h-4 w-4 fill-current transition-transform duration-300 group-hover:translate-x-0.5" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 10h3l-4 4-4-4h3V8h2v4z" />
-              </svg>
-            </button>
             <Link
               href="/meal-plans"
               className="flex h-11 items-center justify-center rounded-full border border-border bg-background px-6 text-xs font-semibold text-foreground hover:bg-secondary transition-all hover:-translate-y-0.5 active:scale-98"

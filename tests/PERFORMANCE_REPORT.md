@@ -6,7 +6,7 @@ Evaluates bundle footprint, image loading configurations, largest contentful pai
 
 | Test Name | Description / Observations | Status |
 | :--- | :--- | :--- |
-| Image Optimization & Rendering | Audited 7 images. Missing alternate text labels: 0. LCP optimized: false. | ✔ PASS |
+| Image Optimization & Rendering | Audited 8 images. Missing alternate text labels: 0. LCP optimized: false. | ✔ PASS |
 | Cumulative Layout Shift (CLS) | Sticky headers set fixed height parameters, preventing unexpected content shifting on render. | ✔ PASS |
 | Asset compression | Images utilize next/image optimizations, serving WebP layouts based on client viewports. | ✔ PASS |
 

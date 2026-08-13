@@ -5,7 +5,7 @@ import Typography from '@/components/common/Typography';
 import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
-  title: 'Corporate Healthy Meal Subscriptions Kakkanad, Kochi | Alakapuri',
+  title: 'Corporate Healthy Meal Subscriptions Kakkanad, Kochi | Café Serenity',
   description: 'Clean, portion-regulated energy lunches delivered directly to Infopark Kakkanad desks. Starts from ₹199/meal. Unified corporate billings.',
 });
 
@@ -49,9 +49,9 @@ export default function CorporatePlans() {
         </div>
 
         <div className="space-y-4 text-xs text-muted-foreground leading-relaxed">
-          <Typography variant="h3" className="text-base font-bold text-foreground">Why choose Alakapuri Corporate?</Typography>
+          <Typography variant="h3" className="text-base font-bold text-foreground">Why choose Café Serenity Corporate?</Typography>
           <p>
-            Oily fast food and high-sodium canteen lunches cause afternoon fatigue and decrease team performance. Alakapuri provides companies with clean, dietitian-checked lunches delivered fresh.
+            Oily fast food and high-sodium canteen lunches cause afternoon fatigue and decrease team performance. Café Serenity provides companies with clean, dietitian-checked lunches delivered fresh.
           </p>
           <p>
             We manage bulk tech park drop schedules (Infopark Kakkanad and SmartCity Kochi) with customized label systems containing employee names, calories, and allergies.

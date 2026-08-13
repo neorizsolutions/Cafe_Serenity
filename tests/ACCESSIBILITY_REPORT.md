@@ -8,7 +8,7 @@ Verify WCAG 2.1 compliance standards, keyboard accessibility, screen reader conf
 | :--- | :--- | :--- |
 | HTML5 Semantic Landmarks | Landmarks found: header=true, nav=true, footer=true, main=true. | ✔ PASS |
 | Mobile Toggle Button ARIA Attributes | Toggle button correctly implements aria-expanded=true and aria-label=true. | ✔ PASS |
-| SVG Vector Accessibility | Detected 7 SVG graphics missing aria-hidden="true" or equivalent labels. | ❌ FAIL |
+| SVG Vector Accessibility | Detected 8 SVG graphics missing aria-hidden="true" or equivalent labels. | ❌ FAIL |
 | Keyboard Focus Rings | Interactive buttons, inputs, and links render prominent `focus-visible:ring-2` green borders. | ✔ PASS |
 | Backdrop Blur A11y | Clicking the mobile drawer backdrop overlay dismisses the menu panel. | ✔ PASS |
 | Safe Area Boundaries | Menu items fit comfortably outside hardware notches and safe boundary areas. | ✔ PASS |

@@ -4,8 +4,8 @@ import Typography from '@/components/common/Typography';
 import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
-  title: 'Terms & Conditions | Alakapuri Healthy Meals',
-  description: 'Understand the terms of service of Alakapuri Healthy Meals subscription structures, pause credit rollouts, and office delivery gates.',
+  title: 'Terms & Conditions | Café Serenity',
+  description: 'Understand the terms of service of Café Serenity subscription structures, pause credit rollouts, and office delivery gates.',
 });
 
 export default function TermsAndConditionsPage() {
@@ -17,7 +17,7 @@ export default function TermsAndConditionsPage() {
             Terms & Conditions
           </Typography>
           <Typography variant="body-large" className="text-muted-foreground">
-            Last updated: July 2026
+            Last updated: August 2026
           </Typography>
         </div>
 
@@ -31,7 +31,7 @@ export default function TermsAndConditionsPage() {
         <div className="space-y-4">
           <Typography variant="h3" className="text-sm font-bold text-foreground">2. Delivery Coordination</Typography>
           <p>
-            Meals are dropped at office receptions, security gates, or doorstep hubs. The subscriber is responsible for coordinating with building gate rules. Alakapuri is not responsible for boxes lost after hub hand-off.
+            Meals are dropped at office receptions, security gates, or doorstep hubs. The subscriber is responsible for coordinating with building gate rules. Café Serenity is not responsible for boxes lost after hub hand-off.
           </p>
         </div>
 

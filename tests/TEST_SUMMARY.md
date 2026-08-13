@@ -1,6 +1,6 @@
 # Final Test Summary - Navigation & Layout QA
 
-A consolidated summary of all verification tests completed on the Alakapuri Healthy Meals global navigation elements.
+A consolidated summary of all verification tests completed on the Café Serenity global navigation elements.
 
 ## Execution Summary Table
 

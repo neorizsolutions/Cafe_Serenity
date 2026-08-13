@@ -20,7 +20,7 @@ export default function Footer() {
 
   return (
     <footer 
-      className="w-full border-t border-border/60 bg-secondary/15 text-muted-foreground py-16 md:py-24 relative overflow-hidden"
+      className="w-full border-t border-stone-800 bg-brand-dark text-stone-300 py-16 md:py-24 relative overflow-hidden"
       aria-label="Site Footer"
       itemScope
       itemType="http://schema.org/FoodEstablishment"
@@ -28,7 +28,7 @@ export default function Footer() {
       {/* Hidden SEO Metadata */}
       <meta itemProp="name" content={BUSINESS_NAME} />
       <meta itemProp="telephone" content={CONTACT_DETAILS.phone} />
-      <meta itemProp="email" content={CONTACT_DETAILS.email} />
+      {CONTACT_DETAILS.email && <meta itemProp="email" content={CONTACT_DETAILS.email} />}
       <meta itemProp="priceRange" content="₹₹" />
       <meta itemProp="fssaiNumber" content={CONTACT_DETAILS.fssaiNumber} />
 
@@ -37,36 +37,38 @@ export default function Footer() {
         {/* Main 5-Column Grid */}
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5">
           
-          {/* Column 1: Business Overview & Mission */}
+          {/* Column 1: Business Overview */}
           <div className="flex flex-col gap-4">
             <Link
               href="/"
-              className="flex items-center gap-2 font-sans text-xl font-bold tracking-tight text-primary transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg w-fit"
+              className="flex items-center gap-2.5 font-sans text-xl font-bold tracking-tight text-brand-gold transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 rounded-lg w-fit"
               aria-label={`${BUSINESS_NAME} Home`}
             >
-              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                <svg className="h-4.5 w-4.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 2c-.83 0-1.5.67-1.5 1.5v.35C7.38 4.22 5 6.83 5 10c0 3.87 3.13 7 7 7s7-3.13 7-7c0-3.17-2.38-5.78-5.5-6.15V3.5c0-.83-.67-1.5-1.5-1.5zm0 13c-2.76 0-5-2.24-5-5 0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5c0 1.1.9 2 2 2s2-.9 2-2c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5c0 2.76-2.24 5-5 5z" />
-                  <path d="M4 19c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2H4z" />
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-gold/10 text-brand-gold">
+                <svg className="h-5 w-5 fill-current" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="50" cy="50" r="46" stroke="currentColor" strokeWidth="4.5" fill="none" />
+                  <path d="M33 52 C33 66, 67 66, 67 52 L67 47 L33 47 Z" fill="currentColor" />
+                  <path d="M67 49 C72 49, 74 52, 74 55 C74 58, 72 61, 67 61" stroke="currentColor" strokeWidth="3" fill="none" />
+                  <path d="M50 22 C44 32, 56 42, 48 46 C58 39, 48 30, 50 22 Z" fill="currentColor" />
                 </svg>
               </div>
-              <span className="text-foreground font-black tracking-tight">{BUSINESS_NAME.split(' ')[0]}</span>
+              <span className="text-brand-gold font-black tracking-tight">CAFÉ SERENITY</span>
             </Link>
-            <p className="text-xs sm:text-[13px] leading-relaxed text-muted-foreground/90 font-medium">
-              Portion-controlled daily nutrition designed for active lifestyles.
+            <p className="text-xs sm:text-[13px] leading-relaxed text-stone-300 font-medium">
+              Healthy meals & affordable everyday café food served fresh daily in Kakkanad.
             </p>
-            <div className="text-[10px] font-bold uppercase tracking-widest text-foreground/90 bg-secondary/35 px-2.5 py-1 rounded w-fit border border-border/60">
+            <div className="text-[10px] font-bold uppercase tracking-widest text-stone-300 bg-stone-900/60 px-2.5 py-1 rounded w-fit border border-stone-800">
               FSSAI Lic: <span className="font-extrabold">{CONTACT_DETAILS.fssaiNumber}</span>
             </div>
 
             {/* Mobile App Placeholders */}
             <div className="pt-2 space-y-2.5">
-              <span className="block text-[10px] font-extrabold uppercase tracking-widest text-foreground">Mobile App (Soon)</span>
+              <span className="block text-[10px] font-extrabold uppercase tracking-widest text-brand-gold">Mobile App (Soon)</span>
               <div className="flex gap-2">
-                <span className="inline-flex h-8 items-center justify-center rounded-lg bg-background border border-border/80 px-3 text-[10px] font-bold text-muted-foreground/60 select-none cursor-not-allowed">
+                <span className="inline-flex h-8 items-center justify-center rounded-lg bg-stone-900 border border-stone-800 px-3 text-[10px] font-bold text-stone-500 select-none cursor-not-allowed">
                   App Store
                 </span>
-                <span className="inline-flex h-8 items-center justify-center rounded-lg bg-background border border-border/80 px-3 text-[10px] font-bold text-muted-foreground/60 select-none cursor-not-allowed">
+                <span className="inline-flex h-8 items-center justify-center rounded-lg bg-stone-900 border border-stone-800 px-3 text-[10px] font-bold text-stone-500 select-none cursor-not-allowed">
                   Google Play
                 </span>
               </div>
@@ -75,78 +77,72 @@ export default function Footer() {
 
           {/* Column 2: Quick Navigation */}
           <div className="flex flex-col gap-4">
-            <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-foreground">Quick Navigation</h4>
+            <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-brand-gold">Quick Navigation</h4>
             <nav className="flex flex-col gap-3 text-xs sm:text-[13px] font-semibold" aria-label="Footer Quick Links">
-              <Link href="/" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5">Home Landing</Link>
-              <Link href="/pricing" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5">Weekly Menu</Link>
-              <Link href="/meal-plans" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5">Subscription Plans</Link>
-              <Link href="/meal-plans/corporate" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5">Corporate Meals</Link>
-              <Link href="/about" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5">About Our Story</Link>
-              <Link href="/faq" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5">Help Center & FAQ</Link>
-              <Link href="/delivery-areas" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5">Delivery Areas</Link>
+              <Link href="/" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Home Landing</Link>
+              <Link href="/pricing" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Weekly Menu</Link>
+              <Link href="/meal-plans" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Subscription Plans</Link>
+              <Link href="/meal-plans/corporate" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Corporate Meals</Link>
+              <Link href="/about" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">About Our Story</Link>
+              <Link href="/faq" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Help Center & FAQ</Link>
+              <Link href="/delivery-areas" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Delivery Areas</Link>
             </nav>
           </div>
 
           {/* Column 3: Meal Categories */}
           <div className="flex flex-col gap-4">
-            <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-foreground">Meal Categories</h4>
+            <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-brand-gold">Meal Categories</h4>
             <nav className="flex flex-col gap-3 text-xs sm:text-[13px] font-semibold" aria-label="Footer Meal Links">
-              <Link href="/meal-plans/weight-loss" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5">Weight Loss Deficit</Link>
-              <Link href="/meal-plans/high-protein" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5">High Protein & Gym</Link>
-              <Link href="/meal-plans/balanced" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5">Balanced Diet Boxes</Link>
-              <Link href="/meal-plans/diabetic" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5">Diabetic Friendly</Link>
-              <Link href="/meal-plans/corporate" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5">Corporate Lunches</Link>
-              <Link href="/meal-plans" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5">Family Nutrition</Link>
-              <Link href="/meal-plans" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5">Kids Healthy Grains</Link>
+              <Link href="/meal-plans/weight-loss" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Weight Loss Deficit</Link>
+              <Link href="/meal-plans/high-protein" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">High Protein & Gym</Link>
+              <Link href="/meal-plans/balanced" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Balanced Diet Boxes</Link>
+              <Link href="/meal-plans/diabetic" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Diabetic Friendly</Link>
+              <Link href="/meal-plans/corporate" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Corporate Lunches</Link>
+              <Link href="/meal-plans" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Family Nutrition</Link>
+              <Link href="/meal-plans" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Kids Healthy Grains</Link>
             </nav>
           </div>
 
           {/* Column 4: Support & Policy */}
           <div className="flex flex-col gap-4">
-            <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-foreground">Support & Policy</h4>
+            <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-brand-gold">Support & Policy</h4>
             <nav className="flex flex-col gap-3 text-xs sm:text-[13px] font-semibold" aria-label="Footer Policy Links">
-              <Link href="/faq" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5">Concierge Desk</Link>
-              <Link href="/faq" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5">Billing & UPI</Link>
-              <Link href="/privacy-policy" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5">Privacy Policy</Link>
-              <Link href="/terms-and-conditions" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5">Terms of Service</Link>
-              <Link href="/refund-policy" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5">Refund & Freeze Policy</Link>
-              <Link href="/shipping-policy" className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5">Shipping & Food Safety</Link>
+              <Link href="/faq" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Concierge Desk</Link>
+              <Link href="/faq" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Billing & UPI</Link>
+              <Link href="/privacy-policy" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Privacy Policy</Link>
+              <Link href="/terms-and-conditions" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Terms of Service</Link>
+              <Link href="/refund-policy" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Refund & Freeze Policy</Link>
+              <Link href="/shipping-policy" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Shipping & Food Safety</Link>
             </nav>
           </div>
 
-          {/* Column 5: Locations, Contacts & Hours */}
+          {/* Column 5: Location Details */}
           <div className="flex flex-col gap-4 text-xs sm:text-[13px]">
             <div className="space-y-2">
-              <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-foreground">Active Service Areas</h4>
+              <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-brand-gold">Active Service Areas</h4>
               <p className="leading-relaxed font-semibold">
-                <span className="font-bold text-foreground">Kochi:</span> Kakkanad, Infopark, SmartCity, Edappally, Vyttila, Kaloor, Kadavanthra, Panampilly Nagar
-              </p>
-            </div>
-            <div className="space-y-1">
-              <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-foreground">Expanding Soon</h4>
-              <p className="leading-relaxed text-[11px] font-semibold text-muted-foreground/80">
-                Trivandrum, Kozhikode, Thrissur, Kannur
+                <span className="font-bold text-stone-100">Kochi:</span> Kakkanad, Infopark, SmartCity, Echamuku, Kunnumpuram, and nearby Civil Station areas
               </p>
             </div>
             
             <div className="space-y-1 font-semibold">
-              <span className="block font-bold text-foreground">Kitchen Hours:</span>
-              <span className="block font-semibold">Mon – Sat: 6:00 AM – 9:00 PM</span>
-              <span className="block text-primary font-bold">Sunday: Maintenance Closed</span>
+              <span className="block font-bold text-stone-100">Kitchen & Café Hours:</span>
+              <span className="block font-semibold text-stone-300">Daily: 5:00 AM – 3:00 PM</span>
+              <span className="block text-brand-gold font-bold">Open early for fresh morning tiffin</span>
             </div>
 
-            {/* Structured PostalAddress */}
+            {/* Structured Address */}
             <div 
               itemProp="address" 
               itemScope 
               itemType="http://schema.org/PostalAddress" 
-              className="text-[11px] font-semibold text-muted-foreground/80 leading-relaxed border-t border-border/60 pt-3"
+              className="text-[11px] font-semibold text-stone-400 leading-relaxed border-t border-stone-850 pt-3"
             >
               <span itemProp="streetAddress" className="block">{CONTACT_DETAILS.address.street}</span>
               <span className="block">
                 <span itemProp="addressLocality">{CONTACT_DETAILS.address.locality}</span>, <span itemProp="addressRegion">{CONTACT_DETAILS.address.state}</span>
               </span>
-              <span itemProp="postalCode" className="block font-bold text-foreground/75">PIN {CONTACT_DETAILS.address.zipCode}</span>
+              <span itemProp="postalCode" className="block font-bold text-stone-300">PIN {CONTACT_DETAILS.address.zipCode}</span>
             </div>
 
             {/* Google Map Link */}
@@ -154,7 +150,7 @@ export default function Footer() {
               href={`https://maps.google.com/?q=${CONTACT_DETAILS.geo.lat},${CONTACT_DETAILS.geo.lng}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[10px] font-extrabold text-primary hover:underline hover:text-emerald-700 transition-colors w-fit focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5"
+              className="text-[10px] font-extrabold text-brand-gold hover:underline hover:text-brand-gold/80 transition-colors w-fit focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5"
             >
               📍 View Kitchen Map Coordinates →
             </a>
@@ -162,17 +158,16 @@ export default function Footer() {
 
         </div>
 
-        {/* Newsletter & Trust Badges Row */}
-        <div className="pt-10 border-t border-border/60 grid grid-cols-1 gap-8 lg:grid-cols-12 items-center">
-          {/* Newsletter subscription form */}
+        {/* Newsletter & Badges Row */}
+        <div className="pt-10 border-t border-stone-800 grid grid-cols-1 gap-8 lg:grid-cols-12 items-center">
           <div className="lg:col-span-6 space-y-2">
-            <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-foreground">Weekly Nutrition Newsletter</h4>
-            <p className="text-xs leading-relaxed text-muted-foreground max-w-sm font-medium">
+            <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-brand-gold">Weekly Nutrition Newsletter</h4>
+            <p className="text-xs leading-relaxed text-stone-300 max-w-sm font-medium">
               Subscribe for clean recipes, macro guides, and menu schedules.
             </p>
             
             {subscribed ? (
-              <div className="text-xs font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-lg border border-primary/20 animate-pulse w-full max-w-sm text-center">
+              <div className="text-xs font-extrabold text-brand-gold bg-brand-gold/10 px-4 py-2 rounded-lg border border-brand-gold/20 animate-pulse w-full max-w-sm text-center">
                 ✓ Successfully subscribed!
               </div>
             ) : (
@@ -184,11 +179,11 @@ export default function Footer() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter email address..."
                   aria-label="Newsletter email subscription"
-                  className="flex-grow h-9 px-3 rounded-lg border border-border/80 bg-background text-xs font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20"
+                  className="flex-grow h-9 px-3 rounded-lg border border-stone-800 bg-stone-900/60 text-xs font-medium text-stone-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold/20"
                 />
                 <button
                   type="submit"
-                  className="h-9 px-4 rounded-lg bg-primary text-xs font-bold text-primary-foreground hover:bg-primary/95 transition-all shadow-[0_4px_12px_rgba(26,79,53,0.15)] hover:-translate-y-0.5 active:scale-95"
+                  className="h-9 px-4 rounded-lg bg-brand-gold text-xs font-bold text-brand-dark hover:bg-brand-gold/90 transition-all shadow-md hover:-translate-y-0.5 active:scale-95"
                 >
                   Join
                 </button>
@@ -196,16 +191,16 @@ export default function Footer() {
             )}
           </div>
 
-          {/* Trust Badges pills */}
-          <div className="lg:col-span-6 grid grid-cols-3 gap-2.5 text-center text-[10px] font-extrabold uppercase tracking-widest text-foreground/90">
-            <div className="p-3 border border-border/80 rounded-xl bg-card/50 shadow-sm hover:border-primary/20 transition-all duration-300">✓ Fresh Daily</div>
-            <div className="p-3 border border-border/80 rounded-xl bg-card/50 shadow-sm hover:border-primary/20 transition-all duration-300">✓ Portion Weighed</div>
-            <div className="p-3 border border-border/80 rounded-xl bg-card/50 shadow-sm hover:border-primary/20 transition-all duration-300">✓ FSSAI Kitchen</div>
+          {/* Trust Badges */}
+          <div className="lg:col-span-6 grid grid-cols-3 gap-2.5 text-center text-[10px] font-extrabold uppercase tracking-widest text-stone-300">
+            <div className="p-3 border border-stone-800 rounded-xl bg-stone-900/40 shadow-sm hover:border-brand-gold/20 transition-all duration-300">✓ Fresh Daily</div>
+            <div className="p-3 border border-stone-800 rounded-xl bg-stone-900/40 shadow-sm hover:border-brand-gold/20 transition-all duration-300">✓ Weighed Macros</div>
+            <div className="p-3 border border-stone-800 rounded-xl bg-stone-900/40 shadow-sm hover:border-brand-gold/20 transition-all duration-300">✓ FSSAI Kitchen</div>
           </div>
         </div>
 
-        {/* Copyright & Social SVGs Base */}
-        <div className="pt-8 border-t border-border/60 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-[11px] font-semibold">
+        {/* Copyright */}
+        <div className="pt-8 border-t border-stone-800 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-[11px] font-semibold text-stone-400">
           <p>© {currentYear} {BUSINESS_NAME}. All rights reserved.</p>
           
           <div className="flex flex-wrap gap-x-5 gap-y-2 items-center" aria-label="Social Media Links">
@@ -213,7 +208,7 @@ export default function Footer() {
               href={SOCIAL_LINKS.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-primary transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5"
+              className="hover:text-brand-gold transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5"
               aria-label="Follow us on Instagram"
             >
               <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
@@ -225,7 +220,7 @@ export default function Footer() {
               href={SOCIAL_LINKS.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-primary transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5"
+              className="hover:text-brand-gold transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5"
               aria-label="Follow us on Facebook"
             >
               <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
@@ -237,7 +232,7 @@ export default function Footer() {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-primary transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5"
+              className="hover:text-brand-gold transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5"
               aria-label="Follow us on LinkedIn"
             >
               <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
@@ -249,7 +244,7 @@ export default function Footer() {
               href="https://youtube.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-primary transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-0.5"
+              className="hover:text-brand-gold transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5"
               aria-label="Follow us on YouTube"
             >
               <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">

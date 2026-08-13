@@ -40,6 +40,36 @@ interface Slide {
 
 const SLIDES: Slide[] = [
   {
+    id: 'cafe-breakfast',
+    title: 'Morning Favourites',
+    image: '/images/slide_cafe_breakfast.png',
+    alt: 'Traditional early-morning breakfast with soft steaming idli and crispy vada',
+    kcal: 'Served Warm Daily',
+    tag: 'Breakfast / Tiffin',
+    subTag: 'Served from 5:00 AM',
+    macros: { protein: 'Idli', carbs: 'Vada', fat: 'Sambar' },
+    bgColor: 'from-brand-gold/15 to-orange-500/5',
+    floatCards: [
+      { text: 'Fresh Morning Food', sub: 'Served Warm Daily', position: '-top-4 -right-4 md:-right-8', delay: 0.2, iconType: 'fresh' },
+      { text: 'Affordable Pricing', sub: 'Kakkanad Local Spot', position: '-bottom-6 -left-6', delay: 1.4, iconType: 'organic' }
+    ]
+  },
+  {
+    id: 'cafe-coffee',
+    title: 'Filter Coffee & Tea',
+    image: '/images/slide_cafe_coffee.png',
+    alt: 'Steaming glass tumbler of authentic filter coffee and tea',
+    kcal: 'Brewed Fresh',
+    tag: 'Tea & Coffee',
+    subTag: 'Morning Energy Boost',
+    macros: { protein: 'Coffee', carbs: 'Tea', fat: 'Brewed' },
+    bgColor: 'from-brand-gold/20 to-brand-gold/5',
+    floatCards: [
+      { text: 'Steaming Hot Tea', sub: 'Everyday Comfort', position: '-top-4 -right-4 md:-right-8', delay: 0.6, iconType: 'fresh' },
+      { text: 'Filter Coffee', sub: 'Rich & Authentic', position: '-bottom-6 -left-6', delay: 1.9, iconType: 'organic' }
+    ]
+  },
+  {
     id: 'salad-bowl',
     title: 'Fresh Salad Bowl',
     image: '/images/slide_salad_bowl.png',
@@ -48,7 +78,7 @@ const SLIDES: Slide[] = [
     tag: 'Rich in Fiber',
     subTag: 'Gut Friendly',
     macros: { protein: '8g', carbs: '22g', fat: '12g' },
-    bgColor: 'from-emerald-500/10 to-teal-500/10 dark:from-emerald-500/5 dark:to-teal-500/5',
+    bgColor: 'from-brand-gold/15 to-brand-gold/5',
     floatCards: [
       { text: 'Rich in Fiber', sub: 'Gut Friendly', position: '-top-4 -right-4 md:-right-8', delay: 0, iconType: 'fiber' },
       { text: 'Low Oil', sub: 'Heart Healthy', position: '-bottom-6 -left-6', delay: 1.5, iconType: 'oil' }
@@ -63,7 +93,7 @@ const SLIDES: Slide[] = [
     tag: 'High Protein',
     subTag: 'Muscle Recovery',
     macros: { protein: '42g', carbs: '35g', fat: '10g' },
-    bgColor: 'from-emerald-500/15 to-primary/10 dark:from-emerald-500/5 dark:to-primary/5',
+    bgColor: 'from-brand-gold/20 to-brand-gold/5',
     floatCards: [
       { text: 'High Protein', sub: '42g Protein', position: '-top-4 -right-4 md:-right-8', delay: 0.5, iconType: 'protein' },
       { text: 'Dietitian Approved', sub: 'Verified Macros', position: '-bottom-6 -left-6', delay: 2, iconType: 'organic' }
@@ -78,70 +108,10 @@ const SLIDES: Slide[] = [
     tag: 'Balanced Nutrition',
     subTag: 'Everyday Energy',
     macros: { protein: '32g', carbs: '40g', fat: '14g' },
-    bgColor: 'from-primary/15 to-teal-500/10 dark:from-primary/5 dark:to-teal-500/5',
+    bgColor: 'from-brand-gold/20 to-brand-gold/5',
     floatCards: [
       { text: 'Balanced Nutrition', sub: 'Calorie Mapped', position: '-top-4 -right-4 md:-right-8', delay: 0.8, iconType: 'kcal' },
       { text: 'Healthy Fats', sub: 'Cold-Pressed Oils', position: '-bottom-6 -left-6', delay: 2.3, iconType: 'oil' }
-    ]
-  },
-  {
-    id: 'lunch-box',
-    title: 'Healthy Lunch Box',
-    image: '/images/slide_lunch_box.png',
-    alt: 'Freshly packed healthy lunch box with mixed sprouts, hummus, whole wheat flatbread and crudites',
-    kcal: '390 kcal',
-    tag: 'Fresh Today',
-    subTag: 'Office Lunch',
-    macros: { protein: '14g', carbs: '55g', fat: '9g' },
-    bgColor: 'from-emerald-500/10 to-amber-500/10 dark:from-emerald-500/5 dark:to-amber-500/5',
-    floatCards: [
-      { text: 'Fresh Today', sub: 'Delivered Daily', position: '-top-4 -right-4 md:-right-8', delay: 1.1, iconType: 'fresh' },
-      { text: 'Low Sodium', sub: 'Light & Clean', position: '-bottom-6 -left-6', delay: 1.8, iconType: 'fiber' }
-    ]
-  },
-  {
-    id: 'fresh-ingredients',
-    title: 'Fresh Ingredients',
-    image: '/images/slide_fresh_ingredients.png',
-    alt: 'Close-up of premium fresh organic kitchen ingredients including olive oil, garlic, and fresh herbs',
-    kcal: '100% Clean',
-    tag: 'Natural Ingredients',
-    subTag: 'Zero Additives',
-    macros: { protein: 'Clean', carbs: 'Pure', fat: 'Natural' },
-    bgColor: 'from-green-500/10 to-emerald-500/10 dark:from-green-500/5 dark:to-emerald-500/5',
-    floatCards: [
-      { text: 'Natural Ingredients', sub: 'Zero Additives', position: '-top-4 -right-4 md:-right-8', delay: 0.3, iconType: 'organic' },
-      { text: '100% Organic', sub: 'Farm Sourced', position: '-bottom-6 -left-6', delay: 1.2, iconType: 'fresh' }
-    ]
-  },
-  {
-    id: 'seasonal-veg',
-    title: 'Seasonal Vegetables',
-    image: '/images/slide_seasonal_veg.png',
-    alt: 'Vibrant assortment of roasted and raw seasonal vegetables showing healthy plant diversity',
-    kcal: '210 kcal',
-    tag: 'Seasonal Veggies',
-    subTag: 'Vitamins Rich',
-    macros: { protein: '6g', carbs: '38g', fat: '3g' },
-    bgColor: 'from-teal-500/10 to-emerald-500/10 dark:from-teal-500/5 dark:to-emerald-500/5',
-    floatCards: [
-      { text: 'Vitamins Rich', sub: 'Seasonal Harvest', position: '-top-4 -right-4 md:-right-8', delay: 0.9, iconType: 'fiber' },
-      { text: 'No Preservatives', sub: 'Cooked Daily', position: '-bottom-6 -left-6', delay: 2.1, iconType: 'organic' }
-    ]
-  },
-  {
-    id: 'fruit-bowl',
-    title: 'Fruit Bowl',
-    image: '/images/slide_fruit_bowl.png',
-    alt: 'Colorful fresh fruit bowl with berries, kiwi, oranges, and mint leaves, high in antioxidants',
-    kcal: '180 kcal',
-    tag: 'Antioxidant Rich',
-    subTag: 'Natural Sweetness',
-    macros: { protein: '3g', carbs: '42g', fat: '1g' },
-    bgColor: 'from-emerald-500/10 to-pink-500/10 dark:from-emerald-500/5 dark:to-pink-500/5',
-    floatCards: [
-      { text: 'Antioxidant Rich', sub: 'Fresh Fruits', position: '-top-4 -right-4 md:-right-8', delay: 0.6, iconType: 'fresh' },
-      { text: 'No Added Sugar', sub: '100% Natural', position: '-bottom-6 -left-6', delay: 1.7, iconType: 'sugar' }
     ]
   }
 ];
@@ -240,11 +210,10 @@ export default function Hero() {
 
   // Auto transition timer logic
   useEffect(() => {
-    const activePause = true; // Temporarily disable auto-slide in cleanup phase
-    if (activePause) return;
+    if (isPaused || reducedMotion) return;
 
     const intervalTime = 30;
-    const totalDuration = 4500;
+    const totalDuration = 3000;
     const step = (intervalTime / totalDuration) * 100;
 
     const timer = setInterval(() => {
@@ -258,7 +227,7 @@ export default function Hero() {
     }, intervalTime);
 
     return () => clearInterval(timer);
-  }, [isPaused, isHovered, nextSlide, currentIndex]);
+  }, [nextSlide, isPaused, reducedMotion]);
 
   // Floating animation configuration
   const floatAnimation = (delay: number, prefersReduced: boolean): any => {
@@ -277,7 +246,7 @@ export default function Hero() {
   };
 
   const renderIcon = (type: string) => {
-    const baseClass = 'p-1.5 rounded-lg bg-emerald-500/10 text-emerald-600 block shrink-0';
+    const baseClass = 'p-1.5 rounded-lg bg-brand-gold/10 text-brand-gold block shrink-0';
     switch (type) {
       case 'fiber':
         return (
@@ -342,12 +311,12 @@ export default function Hero() {
   };
 
   return (
-    <Section bg="white" className="relative overflow-hidden pt-10 md:pt-16 lg:pt-20 pb-16 md:pb-24 lg:pb-28">
+    <Section bg="dark" className="relative overflow-hidden pt-10 md:pt-16 lg:pt-20 pb-16 md:pb-24 lg:pb-28">
       {/* Premium ambient grid background with organic radial blurs (Apple & Stripe inspired) */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(oklch(0.93_0.01_145)_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-70" />
-      <div className="absolute top-[-5%] right-[-5%] -z-10 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,_oklch(0.42_0.13_145_/_0.08)_0%,transparent_70%)] blur-3xl" />
-      <div className="absolute bottom-[-5%] left-[-5%] -z-10 h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,_oklch(0.55_0.14_145_/_0.06)_0%,transparent_70%)] blur-3xl" />
-      <div className="absolute top-[25%] left-[20%] -z-10 h-[350px] w-[350px] rounded-full bg-[radial-gradient(circle,_oklch(0.95_0.10_135_/_0.04)_0%,transparent_70%)] blur-3xl" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(oklch(0.24_0.015_76)_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-70" />
+      <div className="absolute top-[-5%] right-[-5%] -z-10 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,_oklch(0.77_0.17_76_/_0.08)_0%,transparent_70%)] blur-3xl" />
+      <div className="absolute bottom-[-5%] left-[-5%] -z-10 h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,_oklch(0.77_0.17_76_/_0.05)_0%,transparent_70%)] blur-3xl" />
+      <div className="absolute top-[25%] left-[20%] -z-10 h-[350px] w-[350px] rounded-full bg-[radial-gradient(circle,_oklch(0.77_0.17_76_/_0.04)_0%,transparent_70%)] blur-3xl" />
 
       {/* Dynamic Slide Background Accent Glow */}
       <div className={cn(
@@ -365,12 +334,12 @@ export default function Hero() {
           <div className="order-1 space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start">
             {/* Small Trust Badge */}
             <MotionWrapper animation="fade-up">
-              <span className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 hover:bg-emerald-500/15 border border-emerald-500/20 px-3.5 py-1 text-xs font-semibold tracking-wide text-emerald-800 dark:text-emerald-300 transition-all duration-300">
+              <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold/10 hover:bg-brand-gold/15 border border-brand-gold/20 px-3.5 py-1 text-xs font-semibold tracking-wide text-brand-gold transition-all duration-300">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-gold opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-gold"></span>
                 </span>
-                Trusted by 5,000+ Health Enthusiasts in Kochi
+                A Calm, Cozy Food Spot in Kakkanad, Kochi
               </span>
             </MotionWrapper>
 
@@ -378,11 +347,11 @@ export default function Hero() {
             <MotionWrapper animation="fade-up" className="space-y-5">
               <Typography
                 variant="h1"
-                className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl leading-[1.08] text-foreground font-sans"
+                className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7.5xl leading-[1.08] text-white font-sans"
               >
-                Clean Eating. <br />
-                <span className="text-primary font-black bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">
-                  Delivered Daily.
+                Café Serenity. <br />
+                <span className="text-brand-gold font-black bg-gradient-to-r from-brand-gold to-amber-500 bg-clip-text text-transparent">
+                  Healthy & Everyday Food.
                 </span>
               </Typography>
             </MotionWrapper>
@@ -394,26 +363,24 @@ export default function Hero() {
               {/* Supporting Paragraph */}
               <Typography
                 variant="body-large"
-                className="text-base sm:text-lg leading-relaxed text-muted-foreground max-w-xl font-normal opacity-95 mx-auto lg:mx-0"
+                className="text-base sm:text-lg leading-relaxed text-stone-300 max-w-xl font-normal opacity-95 mx-auto lg:mx-0"
               >
-                FSSAI-certified portion-controlled healthy meal boxes cooked fresh and delivered daily across Kochi. Experience the best diet meal delivery in Kochi with home and office desk drops.
+                A calm, affordable food spot in Kakkanad serving healthy portion-balanced diet plans, fresh breakfast favourites, and everyday café food.
               </Typography>
 
               {/* Spacing and CTA Button Hierarchy */}
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2 w-full max-w-md mx-auto lg:mx-0">
-                {/* Primary CTA */}
-                <button
-                  onClick={() => openCheckout()}
-                  className="group flex h-12 w-full sm:w-auto items-center justify-center gap-2.5 rounded-full bg-primary px-8 text-sm font-bold text-primary-foreground shadow-[0_4px_14px_rgba(26,79,53,0.25)] hover:shadow-[0_6px_20px_rgba(26,79,53,0.35)] hover:bg-primary/95 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 touch-manipulation active:scale-[0.98] hover:-translate-y-0.5 cursor-pointer"
-                >
-                  Order Now
-                </button>
-                {/* Secondary CTA */}
                 <Link
-                  href="/meal-plans"
-                  className="flex h-12 w-full sm:w-auto items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur-sm px-8 text-sm font-semibold text-foreground hover:bg-secondary hover:text-foreground transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 touch-manipulation hover:-translate-y-0.5 active:scale-[0.98]"
+                  href="#healthy-meals"
+                  className="flex h-12 w-full sm:w-auto items-center justify-center rounded-full bg-brand-gold px-8 text-sm font-bold text-brand-dark hover:bg-brand-gold/90 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 touch-manipulation hover:-translate-y-0.5 active:scale-[0.98]"
                 >
-                  Explore Meal Plans
+                  Explore Healthy Meals
+                </Link>
+                <Link
+                  href="#cafe-menu"
+                  className="flex h-12 w-full sm:w-auto items-center justify-center rounded-full border border-stone-850 bg-stone-900/40 hover:bg-stone-900 px-8 text-sm font-semibold text-stone-200 hover:text-white transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 touch-manipulation hover:-translate-y-0.5 active:scale-[0.98]"
+                >
+                  View Café Menu
                 </Link>
               </div>
             </MotionWrapper>
@@ -444,7 +411,7 @@ export default function Hero() {
             )} />
             
             {/* Main Visual Image Frame */}
-            <div className="w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl border border-border/80 bg-muted relative p-2 bg-gradient-to-b from-white to-secondary/35 dark:from-card dark:to-card/20 transition-colors duration-500">
+            <div className="w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl border border-stone-800 bg-stone-900 relative p-2 bg-gradient-to-b from-stone-900 to-stone-950 transition-colors duration-500">
               <div className="w-full h-full rounded-[2rem] overflow-hidden relative bg-neutral-100 dark:bg-neutral-900">
                 <AnimatePresence initial={false} mode="wait">
                   <motion.div
@@ -476,17 +443,17 @@ export default function Hero() {
                   <motion.div
                     key={`${currentIndex}-float-benefit`}
                     className={cn(
-                      "absolute z-20 max-w-[190px] p-3 rounded-2xl border border-white/20 dark:border-border/40 bg-white/80 dark:bg-card/85 backdrop-blur-md shadow-lg flex items-center gap-2.5 transition-all duration-300 hover:scale-105 active:scale-95",
+                      "absolute z-20 max-w-[190px] p-3 rounded-2xl border border-stone-850 bg-brand-dark/95 backdrop-blur-md shadow-lg flex items-center gap-2.5 transition-all duration-300 hover:scale-105 active:scale-95 text-stone-200",
                       card.position
                     )}
                     {...floatAnimation(card.delay, reducedMotion)}
                   >
                     {renderIcon(card.iconType)}
                     <div className="space-y-0.5 min-w-0">
-                      <span className="block text-xs font-extrabold text-foreground leading-tight tracking-tight truncate">
+                      <span className="block text-xs font-extrabold text-stone-100 leading-tight tracking-tight truncate">
                         {card.text}
                       </span>
-                      <span className="block text-[9px] text-muted-foreground font-bold uppercase tracking-wider truncate">
+                      <span className="block text-[9px] text-brand-gold font-bold uppercase tracking-wider truncate">
                         {card.sub}
                       </span>
                     </div>
@@ -498,45 +465,45 @@ export default function Hero() {
             {/* Floating Nutrition Card 2 (Bottom-Left Detail Card) */}
             <motion.div
               key={`${currentIndex}-float-macros`}
-              className="absolute -bottom-6 -left-6 rounded-2xl border border-white/20 dark:border-border/40 bg-white/80 dark:bg-card/85 backdrop-blur-md p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)] max-w-[210px] space-y-3.5 transition-all duration-300 hover:scale-105 active:scale-95 md:block hidden z-20"
+              className="absolute -bottom-6 -left-6 rounded-2xl border border-stone-850 bg-brand-dark/95 backdrop-blur-md p-4 shadow-xl max-w-[210px] space-y-3.5 transition-all duration-300 hover:scale-105 active:scale-95 text-stone-200 md:block hidden z-20"
               {...floatAnimation(SLIDES[currentIndex].floatCards[1].delay, reducedMotion)}
             >
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[9px] font-black text-emerald-800 dark:text-emerald-300 uppercase tracking-widest">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-gold/10 px-2.5 py-0.5 text-[9px] font-black text-brand-gold uppercase tracking-widest">
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-gold animate-pulse" aria-hidden="true" />
                 Dietitian Verified
               </span>
               <div className="space-y-1">
-                <span className="block text-xs font-extrabold text-foreground tracking-tight">
+                <span className="block text-xs font-extrabold text-stone-100 tracking-tight">
                   {SLIDES[currentIndex].title}
                 </span>
-                <span className="block text-[10px] text-muted-foreground font-semibold">
+                <span className="block text-[10px] text-stone-400 font-semibold">
                   Calories: {SLIDES[currentIndex].kcal}
                 </span>
               </div>
               
               {/* Macro elements grid */}
-              <div className="grid grid-cols-3 gap-2 text-center text-[10px] font-black border-t border-border/80 pt-2.5">
+              <div className="grid grid-cols-3 gap-2 text-center text-[10px] font-black border-t border-stone-800 pt-2.5">
                 <div>
-                  <span className="block text-muted-foreground text-[8px] font-medium uppercase tracking-wider mb-0.5">
+                  <span className="block text-stone-400 text-[8px] font-medium uppercase tracking-wider mb-0.5">
                     Prot
                   </span>
-                  <span className="inline-flex rounded-full bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 px-1.5 py-0.5">
+                  <span className="inline-flex rounded-full bg-brand-gold/20 text-brand-gold px-1.5 py-0.5">
                     {SLIDES[currentIndex].macros.protein}
                   </span>
                 </div>
                 <div>
-                  <span className="block text-muted-foreground text-[8px] font-medium uppercase tracking-wider mb-0.5">
+                  <span className="block text-stone-400 text-[8px] font-medium uppercase tracking-wider mb-0.5">
                     Carb
                   </span>
-                  <span className="inline-flex rounded-full bg-amber-500/15 text-amber-800 dark:text-amber-300 px-1.5 py-0.5">
+                  <span className="inline-flex rounded-full bg-brand-gold/20 text-brand-gold px-1.5 py-0.5">
                     {SLIDES[currentIndex].macros.carbs}
                   </span>
                 </div>
                 <div>
-                  <span className="block text-muted-foreground text-[8px] font-medium uppercase tracking-wider mb-0.5">
+                  <span className="block text-stone-400 text-[8px] font-medium uppercase tracking-wider mb-0.5">
                     Fat
                   </span>
-                  <span className="inline-flex rounded-full bg-blue-500/15 text-blue-800 dark:text-blue-300 px-1.5 py-0.5">
+                  <span className="inline-flex rounded-full bg-brand-gold/20 text-brand-gold px-1.5 py-0.5">
                     {SLIDES[currentIndex].macros.fat}
                   </span>
                 </div>
@@ -549,7 +516,7 @@ export default function Hero() {
             {/* Previous Button */}
             <button
               onClick={prevSlide}
-              className="p-2 rounded-full border border-border bg-white/60 dark:bg-card/60 backdrop-blur-sm text-foreground hover:bg-secondary transition-all duration-300 hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary shrink-0"
+              className="p-2 rounded-full border border-stone-800 bg-stone-900/60 text-stone-200 hover:bg-stone-850 hover:text-white transition-all duration-300 hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-gold shrink-0"
               aria-label="Previous slide"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
@@ -585,32 +552,12 @@ export default function Hero() {
             {/* Next Button */}
             <button
               onClick={nextSlide}
-              className="p-2 rounded-full border border-border bg-white/60 dark:bg-card/60 backdrop-blur-sm text-foreground hover:bg-secondary transition-all duration-300 hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary shrink-0"
+              className="p-2 rounded-full border border-stone-800 bg-stone-900/60 text-stone-200 hover:bg-stone-850 hover:text-white transition-all duration-300 hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-gold shrink-0"
               aria-label="Next slide"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
               </svg>
-            </button>
-
-            {/* Minimal divider */}
-            <div className="w-px h-4 bg-border/60 self-center mx-0.5" />
-
-            {/* Play/Pause Button */}
-            <button
-              onClick={togglePlayPause}
-              className="p-2 rounded-full border border-border bg-white/60 dark:bg-card/60 backdrop-blur-sm text-foreground hover:bg-secondary transition-all duration-300 hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary shrink-0"
-              aria-label={isPaused ? "Play slide show" : "Pause slide show"}
-            >
-              {isPaused ? (
-                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              ) : (
-                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-                </svg>
-              )}
             </button>
           </div>
         </div>

@@ -82,7 +82,7 @@ export interface SocialLinks {
 export interface ContactDetails {
   phone: string;
   whatsapp: string;
-  email: string;
+  email?: string;
   address: {
     street: string;
     locality: string;

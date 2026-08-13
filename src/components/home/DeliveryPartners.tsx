@@ -115,13 +115,13 @@ export default function DeliveryPartners() {
   return (
     <Section bg="white" className="relative border-t border-border overflow-hidden">
       {/* Background visual details to match premium design */}
-      <div className="absolute top-0 right-0 -z-10 h-[300px] w-[300px] rounded-full bg-primary/5 blur-3xl" />
-      <div className="absolute bottom-0 left-0 -z-10 h-[250px] w-[250px] rounded-full bg-emerald-600/5 blur-3xl" />
+      <div className="absolute top-0 right-0 -z-10 h-[300px] w-[300px] rounded-full bg-brand-gold/5 blur-3xl" />
+      <div className="absolute bottom-0 left-0 -z-10 h-[250px] w-[250px] rounded-full bg-brand-gold/5 blur-3xl" />
 
       <Container className="space-y-16">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <Typography variant="badge-label" className="tracking-widest text-[11px]">
+          <Typography variant="badge-label" className="tracking-widest text-[11px] text-brand-gold">
             Order Online
           </Typography>
           <Typography variant="h2" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">

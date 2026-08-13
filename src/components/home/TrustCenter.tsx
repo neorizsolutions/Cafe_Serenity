@@ -17,8 +17,8 @@ interface FAQItem {
 const FAQ_BY_CATEGORY: Record<string, FAQItem[]> = {
   general: [
     {
-      question: 'Is Alakapuri a restaurant?',
-      answer: 'No. We are a dietitian-designed healthy meal subscription platform operating FSSAI hubs.'
+      question: 'Is Café Serenity a restaurant?',
+      answer: 'Yes! We are a calm, cozy food spot in Kakkanad offering fresh everyday café breakfast favourites and premium, dietitian-designed healthy meal subscriptions.'
     },
     {
       question: 'Are there long-term contracts?',
@@ -130,7 +130,7 @@ export default function TrustCenter() {
             Verified Standards
           </Typography>
           <Typography variant="h2" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
-            Alakapuri Trust & Safety Center
+            Café Serenity Trust & Safety Center
           </Typography>
           <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium opacity-90">
             Review kitchen sanitation guidelines, dietitian-approved parameters, and flexible policies.
@@ -159,8 +159,8 @@ export default function TrustCenter() {
                   onClick={() => setActiveCategory(cat.key)}
                   className={`group/btn h-10 px-4 rounded-xl text-xs font-bold text-left capitalize transition-all border flex items-center justify-between shrink-0 ${
                     activeCategory === cat.key
-                      ? 'bg-primary text-primary-foreground border-primary shadow-sm'
-                      : 'border-border/60 bg-card text-muted-foreground hover:text-foreground hover:border-primary/20'
+                      ? 'bg-brand-gold text-brand-dark border-brand-gold shadow-sm'
+                      : 'border-border/60 bg-card text-muted-foreground hover:text-foreground hover:border-brand-gold/25'
                   }`}
                 >
                   <span>{cat.label}</span>
@@ -185,9 +185,9 @@ export default function TrustCenter() {
                 key={`${activeCategory}-${idx}`}
                 className="group border border-border/60 bg-card rounded-2xl p-5 [&_summary::-webkit-details-marker]:hidden"
               >
-                <summary className="flex cursor-pointer items-center justify-between font-bold text-foreground outline-none hover:text-primary transition-colors focus:ring-2 focus:ring-primary/20 focus:rounded-lg">
+                <summary className="flex cursor-pointer items-center justify-between font-bold text-foreground outline-none hover:text-brand-gold transition-colors focus:ring-2 focus:ring-brand-gold/25 focus:rounded-lg">
                   <span className="text-sm font-bold leading-snug tracking-tight">{faq.question}</span>
-                  <span className="ml-1.5 shrink-0 transition duration-300 group-open:-rotate-180 text-muted-foreground group-hover:text-primary">
+                  <span className="ml-1.5 shrink-0 transition duration-300 group-open:-rotate-180 text-muted-foreground group-hover:text-brand-gold">
                     <svg className="h-4 w-4 stroke-current" fill="none" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
@@ -201,7 +201,7 @@ export default function TrustCenter() {
           </div>
         </div>
 
-        {/* 2. Expanded Kitchen & Ingredient Guidelines Grid */}
+        {/* 2. Pillars of Trust */}
         <div className="space-y-8">
           <div className="text-center space-y-2">
             <Typography variant="h3" className="text-xl font-bold text-foreground tracking-tight">
@@ -216,7 +216,7 @@ export default function TrustCenter() {
             <MotionWrapper animation="fade-up">
               <div className="group/guideline p-6 rounded-2xl border border-border/60 bg-card shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between h-full space-y-4">
                 <div className="space-y-4">
-                  <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shadow-sm transition-transform duration-300 group-hover/guideline:scale-105">
+                  <div className="h-10 w-10 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center shadow-sm transition-transform duration-300 group-hover/guideline:scale-105">
                     <svg className="h-5 w-5 stroke-current fill-none" strokeWidth="2.0" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
                     </svg>
@@ -232,7 +232,7 @@ export default function TrustCenter() {
             <MotionWrapper animation="fade-up">
               <div className="group/guideline p-6 rounded-2xl border border-border/60 bg-card shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between h-full space-y-4">
                 <div className="space-y-4">
-                  <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shadow-sm transition-transform duration-300 group-hover/guideline:scale-105">
+                  <div className="h-10 w-10 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center shadow-sm transition-transform duration-300 group-hover/guideline:scale-105">
                     <svg className="h-5 w-5 stroke-current fill-none" strokeWidth="2.0" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18m-9-9h18M5.3 5.3l13.4 13.4M5.3 18.7L18.7 5.3" />
                   </svg>
@@ -248,7 +248,7 @@ export default function TrustCenter() {
             <MotionWrapper animation="fade-up">
               <div className="group/guideline p-6 rounded-2xl border border-border/60 bg-card shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between h-full space-y-4">
                 <div className="space-y-4">
-                  <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shadow-sm transition-transform duration-300 group-hover/guideline:scale-105">
+                  <div className="h-10 w-10 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center shadow-sm transition-transform duration-300 group-hover/guideline:scale-105">
                     <svg className="h-5 w-5 stroke-current fill-none" strokeWidth="2.0" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25" />
                     </svg>
@@ -264,7 +264,7 @@ export default function TrustCenter() {
             <MotionWrapper animation="fade-up">
               <div className="group/guideline p-6 rounded-2xl border border-border/60 bg-card shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between h-full space-y-4">
                 <div className="space-y-4">
-                  <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shadow-sm transition-transform duration-300 group-hover/guideline:scale-105">
+                  <div className="h-10 w-10 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center shadow-sm transition-transform duration-300 group-hover/guideline:scale-105">
                     <svg className="h-5 w-5 stroke-current fill-none" strokeWidth="2.0" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
                     </svg>
@@ -280,7 +280,7 @@ export default function TrustCenter() {
             <MotionWrapper animation="fade-up">
               <div className="group/guideline p-6 rounded-2xl border border-border/60 bg-card shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between h-full space-y-4">
                 <div className="space-y-4">
-                  <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shadow-sm transition-transform duration-300 group-hover/guideline:scale-105">
+                  <div className="h-10 w-10 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center shadow-sm transition-transform duration-300 group-hover/guideline:scale-105">
                     <svg className="h-5 w-5 stroke-current fill-none" strokeWidth="2.0" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9 0h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75M19.5 18.75v-9m0 9h1.5m-1.5-9h1.5M18 5.25h1.5a1.5 1.5 0 011.5 1.5v3h-3v-4.5zM3 13.5h13.5m0-4.5H4.5A1.5 1.5 0 003 10.5v3.75" />
                     </svg>
@@ -296,7 +296,7 @@ export default function TrustCenter() {
             <MotionWrapper animation="fade-up">
               <div className="group/guideline p-6 rounded-2xl border border-border/60 bg-card shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between h-full space-y-4">
                 <div className="space-y-4">
-                  <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shadow-sm transition-transform duration-300 group-hover/guideline:scale-105">
+                  <div className="h-10 w-10 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center shadow-sm transition-transform duration-300 group-hover/guideline:scale-105">
                     <svg className="h-5 w-5 stroke-current fill-none" strokeWidth="2.0" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
                     </svg>
@@ -312,17 +312,17 @@ export default function TrustCenter() {
         </div>
 
         {/* 3. Food Safety & License Area */}
-        <div className="rounded-3xl border border-primary/10 bg-white/70 dark:bg-card/75 p-8 text-center space-y-4 max-w-2xl mx-auto shadow-[0_8px_30px_rgb(0,0,0,0.015)] hover:shadow-[0_8px_30px_rgb(16,185,129,0.03)] hover:border-emerald-500/20 transition-all duration-500 group relative">
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-emerald-500/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+        <div className="rounded-3xl border border-brand-gold/15 bg-white/70 dark:bg-card/75 p-8 text-center space-y-4 max-w-2xl mx-auto shadow-sm hover:shadow-md hover:border-brand-gold/25 transition-all duration-500 group relative">
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-brand-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
 
-          <h4 className="text-xs font-bold uppercase tracking-widest text-primary">
+          <h4 className="text-xs font-bold uppercase tracking-widest text-brand-gold">
             Licensed Safety Standards
           </h4>
           <p className="text-xs leading-relaxed text-muted-foreground max-w-md mx-auto font-medium">
             FSSAI certified operations and safety-registered kitchen guidelines.
           </p>
           <div className="inline-flex items-center gap-2 rounded-xl bg-background px-5 py-2 text-xs font-extrabold text-foreground border border-border/80 shadow-sm mt-2">
-            <svg className="h-4 w-4 text-primary shrink-0 animate-pulse" fill="none" strokeWidth="3.0" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <svg className="h-4 w-4 text-brand-gold shrink-0 animate-pulse" fill="none" strokeWidth="3.0" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
             </svg>
             <span>FSSAI License: {CONTACT_DETAILS.fssaiNumber}</span>
@@ -343,11 +343,11 @@ export default function TrustCenter() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto text-center z-10">
             <button
               onClick={() => openCheckout()}
-              className="group/channel relative p-6 rounded-2xl border border-border/60 bg-card hover:bg-secondary/35 hover:-translate-y-1 transition-all duration-300 space-y-3 block hover:border-primary/20 cursor-pointer w-full text-center"
+              className="group/channel relative p-6 rounded-2xl border border-border/60 bg-card hover:bg-secondary/35 hover:-translate-y-1 transition-all duration-300 space-y-3 block hover:border-brand-gold/25 cursor-pointer w-full text-center"
             >
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-emerald-500/5 opacity-0 group-hover/channel:opacity-100 transition-opacity duration-300 pointer-events-none -z-10" />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-gold/5 to-transparent opacity-0 group-hover/channel:opacity-100 transition-opacity duration-300 pointer-events-none -z-10" />
               
-              <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mx-auto shadow-sm transition-transform duration-300 group-hover/channel:scale-105">
+              <div className="h-10 w-10 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center mx-auto shadow-sm transition-transform duration-300 group-hover/channel:scale-105">
                 <svg className="h-5 w-5 stroke-current fill-none" strokeWidth="2.0" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -358,11 +358,11 @@ export default function TrustCenter() {
             
             <a
               href="tel:+919876543210"
-              className="group/channel relative p-6 rounded-2xl border border-border/60 bg-card hover:bg-secondary/35 hover:-translate-y-1 transition-all duration-300 space-y-3 block hover:border-primary/20"
+              className="group/channel relative p-6 rounded-2xl border border-border/60 bg-card hover:bg-secondary/35 hover:-translate-y-1 transition-all duration-300 space-y-3 block hover:border-brand-gold/25"
             >
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-emerald-500/5 opacity-0 group-hover/channel:opacity-100 transition-opacity duration-300 pointer-events-none -z-10" />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-gold/5 to-transparent opacity-0 group-hover/channel:opacity-100 transition-opacity duration-300 pointer-events-none -z-10" />
               
-              <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mx-auto shadow-sm transition-transform duration-300 group-hover/channel:scale-105">
+              <div className="h-10 w-10 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center mx-auto shadow-sm transition-transform duration-300 group-hover/channel:scale-105">
                 <svg className="h-5 w-5 stroke-current fill-none" strokeWidth="2.0" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.802-5.14-4.118-6.944-6.944l1.293-.97c.362-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                 </svg>
@@ -372,18 +372,20 @@ export default function TrustCenter() {
             </a>
             
             <a
-              href="mailto:support@alakapurimeals.com"
-              className="group/channel relative p-6 rounded-2xl border border-border/60 bg-card hover:bg-secondary/35 hover:-translate-y-1 transition-all duration-300 space-y-3 block hover:border-primary/20"
+              href={CONTACT_DETAILS.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/channel relative p-6 rounded-2xl border border-border/60 bg-card hover:bg-secondary/35 hover:-translate-y-1 transition-all duration-300 space-y-3 block hover:border-brand-gold/25"
             >
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-emerald-500/5 opacity-0 group-hover/channel:opacity-100 transition-opacity duration-300 pointer-events-none -z-10" />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-gold/5 to-transparent opacity-0 group-hover/channel:opacity-100 transition-opacity duration-300 pointer-events-none -z-10" />
               
-              <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mx-auto shadow-sm transition-transform duration-300 group-hover/channel:scale-105">
+              <div className="h-10 w-10 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center mx-auto shadow-sm transition-transform duration-300 group-hover/channel:scale-105">
                 <svg className="h-5 w-5 stroke-current fill-none" strokeWidth="2.0" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 9.75a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM21.361 11c-.463 0-.895-.195-1.217-.537l-3.322-3.528A.75.75 0 0117.38 5.75h2.12v-.375a2.25 2.25 0 00-2.25-2.25h-9a2.25 2.25 0 00-2.25 2.25V18a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-3.375H19.5a1.875 1.875 0 011.875 1.875v.375c0 .345-.28.625-.625.625H16.5a1.125 1.125 0 01-1.125-1.125v-1.5a1.125 1.125 0 011.125-1.125h4.861z" />
                 </svg>
               </div>
-              <h4 className="text-xs font-bold text-foreground">Email Support</h4>
-              <p className="text-[10px] text-muted-foreground leading-normal font-medium">Response: 12-24 hours</p>
+              <h4 className="text-xs font-bold text-foreground">WhatsApp Chat</h4>
+              <p className="text-[10px] text-muted-foreground leading-normal font-medium">Response: Within minutes</p>
             </a>
 
             <div className="relative p-6 rounded-2xl border border-dashed border-border/80 bg-card/60 space-y-3 flex flex-col justify-center items-center min-h-[140px]">

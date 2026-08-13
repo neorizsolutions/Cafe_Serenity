@@ -334,7 +334,7 @@ function generateMarkdownReports(results) {
   // 1. README.md
   const readmeContent = `# Automated QA Testing Suite
 
-This directory contains the automated Visual, Functional, Accessibility, SEO, Performance, and Responsive reports for the **Alakapuri Healthy Meals** global layouts and navigation elements.
+This directory contains the automated Visual, Functional, Accessibility, SEO, Performance, and Responsive reports for the **Café Serenity** global layouts and navigation elements.
 
 ## Folder Structure
 - [screenshots/](screenshots/): Holds the screenshot captures across all viewports and interactive states.
@@ -472,7 +472,7 @@ ${getTableRows(results.performance)}
   // 7. TEST_SUMMARY.md
   const summaryContent = `# Final Test Summary - Navigation & Layout QA
 
-A consolidated summary of all verification tests completed on the Alakapuri Healthy Meals global navigation elements.
+A consolidated summary of all verification tests completed on the Café Serenity global navigation elements.
 
 ## Execution Summary Table
 

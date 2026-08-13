@@ -122,6 +122,114 @@ const PLAN_OPTIONS = [
     carbs: 'Dynamic Carbs',
     fat: 'Dynamic Fat',
     imageSrc: '/images/category_custom.png'
+  },
+  {
+    id: 'idli-vada-combo',
+    title: 'Idli Vada Combo',
+    description: 'Two soft steamed idli and one crispy medu vada served fresh.',
+    pricePerMeal: 40,
+    badge: 'Morning Classic',
+    calories: 'Light & Clean',
+    protein: 'Idli',
+    carbs: 'Vada',
+    fat: 'Sambar',
+    imageSrc: '/images/slide_cafe_breakfast.png'
+  },
+  {
+    id: 'idli',
+    title: 'Steamed Idli (3 pcs)',
+    description: 'Piping hot, feather-light steamed rice cakes served with chutney and sambar.',
+    pricePerMeal: 30,
+    badge: 'Breakfast Favourite',
+    calories: 'Fresh',
+    protein: 'Soft Rice Cakes',
+    carbs: 'Sambar',
+    fat: 'Chutney',
+    imageSrc: '/images/slide_cafe_breakfast.png'
+  },
+  {
+    id: 'vada',
+    title: 'Crispy Medu Vada (2 pcs)',
+    description: 'Golden-fried, crispy black-lentil donuts spiced with ginger and curry leaves.',
+    pricePerMeal: 30,
+    badge: 'Breakfast Favourite',
+    calories: 'Fresh',
+    protein: 'Lentils',
+    carbs: 'Ginger',
+    fat: 'Curry Leaves',
+    imageSrc: '/images/slide_cafe_breakfast.png'
+  },
+  {
+    id: 'pongal',
+    title: 'Ghee Ven Pongal',
+    description: 'Traditional slow-cooked rice and yellow lentil mash tempered with ghee, pepper and cashews.',
+    pricePerMeal: 40,
+    badge: 'Morning Special',
+    calories: 'Warm Comfort',
+    protein: 'Lentils',
+    carbs: 'Rice',
+    fat: 'Ghee',
+    imageSrc: '/images/slide_cafe_breakfast.png'
+  },
+  {
+    id: 'kichadi',
+    title: 'Rava Kichadi',
+    description: 'Savory semolina porridge cooked with fresh local garden vegetables.',
+    pricePerMeal: 35,
+    badge: 'Breakfast Classic',
+    calories: 'Light & Clean',
+    protein: 'Semolina',
+    carbs: 'Veggies',
+    fat: 'Ghee',
+    imageSrc: '/images/slide_cafe_breakfast.png'
+  },
+  {
+    id: 'upma',
+    title: 'Classic Rava Upma',
+    description: 'Comforting semolina breakfast dish cooked with onions, ginger, and curry leaves.',
+    pricePerMeal: 30,
+    badge: 'Simple Comfort',
+    calories: 'Light & Clean',
+    protein: 'Semolina',
+    carbs: 'Onions',
+    fat: 'Ginger',
+    imageSrc: '/images/slide_cafe_breakfast.png'
+  },
+  {
+    id: 'kesari',
+    title: 'Ghee Rava Kesari',
+    description: 'Sweet roasted semolina dessert flavored with green cardamom and saffron.',
+    pricePerMeal: 30,
+    badge: 'Sweet Morning',
+    calories: 'Pure Ghee',
+    protein: 'Semolina',
+    carbs: 'Sugar',
+    fat: 'Ghee',
+    imageSrc: '/images/slide_cafe_breakfast.png'
+  },
+  {
+    id: 'coffee',
+    title: 'Filter Coffee',
+    description: 'Authentic strong South Indian chicory-blended filter coffee.',
+    pricePerMeal: 15,
+    badge: 'Classic Brew',
+    calories: 'Fresh Milk',
+    protein: 'Filter Coffee',
+    carbs: 'Chicory',
+    fat: 'Brewed',
+    imageSrc: '/images/slide_cafe_coffee.png'
+  },
+  {
+    id: 'tea',
+    title: 'Kochi Cardamom Tea',
+    description: 'Freshly brewed milk tea infused with green cardamom and ginger.',
+    pricePerMeal: 12,
+    badge: 'Classic Brew',
+    calories: 'Fresh Milk',
+    protein: 'Cardamom',
+    carbs: 'Tea leaves',
+    fat: 'Brewed',
+    imageSrc: '/images/slide_cafe_coffee.png'
   }
 ];
 
@@ -273,7 +381,7 @@ function CheckoutContent() {
       setPaymentState('verifying');
       
       setTimeout(() => {
-        const orderId = `ALKP-${Math.floor(100000 + Math.random() * 900000)}-KC`;
+        const orderId = `SRNT-${Math.floor(100000 + Math.random() * 900000)}-KC`;
         const transactionId = `TXN-${Math.floor(10000000 + Math.random() * 90000000)}-KC`;
         const invoiceNum = `INV-2026-${Math.floor(1000 + Math.random() * 9000)}`;
 
@@ -671,8 +779,8 @@ export default function CheckoutPage() {
       <Container>
         <Suspense fallback={
           <div className="max-w-md mx-auto text-center space-y-4 py-20">
-            <Loader2 className="h-8 w-8 text-primary animate-spin mx-auto" />
-            <p className="text-xs text-muted-foreground font-semibold">Loading Alakapuri Checkout...</p>
+            <Loader2 className="h-8 w-8 text-brand-gold animate-spin mx-auto" />
+            <p className="text-xs text-muted-foreground font-semibold">Loading Café Serenity Checkout...</p>
           </div>
         }>
           <CheckoutContent />

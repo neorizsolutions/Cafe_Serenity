@@ -4,8 +4,8 @@ import Typography from '@/components/common/Typography';
 import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
-  title: 'Refund & Freeze Policies | Alakapuri Healthy Meals',
-  description: 'Learn about Alakapuri 12h freeze credit policy, vacation subscription lockouts, and credit rollovers.',
+  title: 'Refund & Freeze Policies | Café Serenity',
+  description: 'Learn about Café Serenity 12h freeze credit policy, vacation subscription lockouts, and credit rollovers.',
 });
 
 export default function RefundPolicyPage() {
@@ -17,7 +17,7 @@ export default function RefundPolicyPage() {
             Refund & Subscription Freeze Policy
           </Typography>
           <Typography variant="body-large" className="text-muted-foreground">
-            Last updated: July 2026
+            Last updated: August 2026
           </Typography>
         </div>
 

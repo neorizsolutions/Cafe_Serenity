@@ -101,14 +101,14 @@ export function PaymentMethodCard({ methodId, activeMethod, onClick, logo, label
       onClick={onClick}
       className={`p-4 rounded-2xl border text-center flex flex-col items-center justify-center h-22 transition-all relative ${
         isActive 
-          ? 'border-primary bg-primary/[0.03] scale-102 shadow-sm' 
+          ? 'border-brand-gold bg-brand-gold/[0.03] scale-102 shadow-sm' 
           : 'border-border bg-background hover:bg-secondary/40'
       }`}
     >
       <div className="flex items-center justify-center shrink-0">{logo}</div>
       <span className="text-[9px] font-black uppercase text-foreground/80 mt-1 tracking-wider">{label}</span>
       {isActive && (
-        <span className="absolute top-2 right-2 h-4 w-4 bg-primary rounded-full flex items-center justify-center text-white">
+        <span className="absolute top-2 right-2 h-4 w-4 bg-brand-gold rounded-full flex items-center justify-center text-brand-dark">
           <Check className="h-2.5 w-2.5 stroke-[3.5]" />
         </span>
       )}
@@ -134,7 +134,7 @@ export function PaymentForm({
     <div className="bg-muted/20 border border-border rounded-3xl p-6 min-h-[200px] flex flex-col justify-center animate-fade-in">
       {paymentState === 'processing' && (
         <div className="flex flex-col justify-center items-center py-6 space-y-3">
-          <Loader2 className="h-8 w-8 text-primary animate-spin" />
+          <Loader2 className="h-8 w-8 text-brand-gold animate-spin" />
           <p className="text-xs text-foreground font-black uppercase tracking-widest animate-pulse">
             Processing Payment...
           </p>
@@ -144,7 +144,7 @@ export function PaymentForm({
 
       {paymentState === 'verifying' && (
         <div className="flex flex-col justify-center items-center py-6 space-y-3">
-          <ShieldCheck className="h-10 w-10 text-emerald-500 animate-bounce" />
+          <ShieldCheck className="h-10 w-10 text-brand-gold animate-bounce" />
           <p className="text-xs text-foreground font-black uppercase tracking-widest animate-pulse">
             Verifying Transaction...
           </p>
@@ -162,7 +162,7 @@ export function PaymentForm({
                 placeholder="e.g. name@okhdfcbank"
                 value={paymentForm.upiId}
                 onChange={e => onChange({ upiId: e.target.value })}
-                className={`w-full h-11 rounded-xl border bg-background px-4 text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-primary ${errors.upiId ? 'border-destructive' : 'border-border'}`}
+                className={`w-full h-11 rounded-xl border bg-background px-4 text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-brand-gold ${errors.upiId ? 'border-destructive' : 'border-border'}`}
               />
               {errors.upiId ? (
                 <p className="text-[10px] text-destructive font-bold">{errors.upiId}</p>
@@ -193,7 +193,7 @@ export function PaymentForm({
                   placeholder="4321 8765 0928 1729"
                   value={paymentForm.cardNum}
                   onChange={e => onChange({ cardNum: e.target.value.replace(/\D/g, '') })}
-                  className={`w-full h-11 rounded-xl border bg-background px-4 text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-primary ${errors.cardNum ? 'border-destructive' : 'border-border'}`}
+                  className={`w-full h-11 rounded-xl border bg-background px-4 text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-brand-gold ${errors.cardNum ? 'border-destructive' : 'border-border'}`}
                 />
                 {errors.cardNum && <p className="text-[10px] text-destructive font-bold">{errors.cardNum}</p>}
               </div>
@@ -207,7 +207,7 @@ export function PaymentForm({
                     placeholder="MM/YY"
                     value={paymentForm.cardExpiry}
                     onChange={e => onChange({ cardExpiry: e.target.value })}
-                    className={`w-full h-11 rounded-xl border bg-background px-4 text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-primary ${errors.cardExpiry ? 'border-destructive' : 'border-border'}`}
+                    className={`w-full h-11 rounded-xl border bg-background px-4 text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-brand-gold ${errors.cardExpiry ? 'border-destructive' : 'border-border'}`}
                   />
                   {errors.cardExpiry && <p className="text-[10px] text-destructive font-bold">{errors.cardExpiry}</p>}
                 </div>
@@ -220,7 +220,7 @@ export function PaymentForm({
                     placeholder="***"
                     value={paymentForm.cardCvv}
                     onChange={e => onChange({ cardCvv: e.target.value.replace(/\D/g, '') })}
-                    className={`w-full h-11 rounded-xl border bg-background px-4 text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-primary ${errors.cardCvv ? 'border-destructive' : 'border-border'}`}
+                    className={`w-full h-11 rounded-xl border bg-background px-4 text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-brand-gold ${errors.cardCvv ? 'border-destructive' : 'border-border'}`}
                   />
                   {errors.cardCvv && <p className="text-[10px] text-destructive font-bold">{errors.cardCvv}</p>}
                 </div>
@@ -243,7 +243,7 @@ export function PaymentForm({
                     key={b.id}
                     type="button"
                     onClick={() => onChange({ netBank: b.id })}
-                    className={`p-2.5 text-center text-[10px] font-black border rounded-xl transition-all ${paymentForm.netBank === b.id ? 'border-primary bg-primary/5 text-primary' : 'border-border bg-background'}`}
+                    className={`p-2.5 text-center text-[10px] font-black border rounded-xl transition-all ${paymentForm.netBank === b.id ? 'border-brand-gold bg-brand-gold/10 text-brand-gold' : 'border-border bg-background'}`}
                   >
                     {b.label}
                   </button>
@@ -276,7 +276,7 @@ export function PaymentForm({
 
           <button
             type="submit"
-            className="w-full flex h-11 items-center justify-center rounded-xl bg-primary text-primary-foreground font-black text-xs uppercase tracking-widest shadow-md hover:bg-primary/95 transition-all"
+            className="w-full flex h-11 items-center justify-center rounded-xl bg-brand-gold text-brand-dark font-black text-xs uppercase tracking-widest shadow-md hover:bg-brand-gold/90 transition-all"
           >
             <span>Pay Now (₹{grandTotal})</span>
           </button>
@@ -301,7 +301,7 @@ export function OrderSuccessCard({
 }: OrderSuccessCardProps) {
   return (
     <div className="bg-card border border-border rounded-3xl p-8 text-center space-y-6 shadow-sm animate-fade-in">
-      <div className="mx-auto h-20 w-20 rounded-full bg-emerald-100 dark:bg-emerald-950/40 text-emerald-600 flex items-center justify-center border border-emerald-500/10 shadow-inner">
+      <div className="mx-auto h-20 w-20 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center border border-brand-gold/20 shadow-inner">
         <CheckCircle2 className="h-10 w-10 stroke-[2.5]" />
       </div>
 
@@ -310,11 +310,11 @@ export function OrderSuccessCard({
           ✅ Order Confirmed
         </Typography>
         <p className="text-xs leading-relaxed text-muted-foreground max-w-md mx-auto font-medium">
-          Thank you for choosing Alakapuri Healthy Meals. Your subscription box order has been verified.
+          Thank you for choosing Café Serenity. Your order has been verified.
         </p>
       </div>
 
-      {/* Structured Details Summary Grid */}
+      {/* Details Summary Grid */}
       <div className="grid grid-cols-2 gap-4 text-left border border-border rounded-2xl p-4 bg-muted/20 text-xs font-semibold">
         <div>
           <span className="text-muted-foreground text-[8px] uppercase tracking-wider block">Customer</span>
@@ -330,7 +330,7 @@ export function OrderSuccessCard({
         </div>
         <div>
           <span className="text-muted-foreground text-[8px] uppercase tracking-wider block">Total Paid</span>
-          <span className="text-primary font-black">₹{grandTotal}</span>
+          <span className="text-brand-gold font-black">₹{grandTotal}</span>
         </div>
         <div>
           <span className="text-muted-foreground text-[8px] uppercase tracking-wider block">Payment Method</span>
@@ -338,7 +338,7 @@ export function OrderSuccessCard({
         </div>
         <div>
           <span className="text-muted-foreground text-[8px] uppercase tracking-wider block">Estimated Delivery</span>
-          <span className="text-emerald-700 dark:text-emerald-300 font-extrabold">{orderInfo.deliveryDate}</span>
+          <span className="text-brand-gold font-extrabold">{orderInfo.deliveryDate}</span>
         </div>
       </div>
     </div>
@@ -402,7 +402,7 @@ export function InvoiceTable({
           </div>
           <div className="flex justify-between text-foreground font-black text-sm pt-2 border-t border-border/40">
             <span className="uppercase tracking-widest text-[10px]">Grand Total</span>
-            <span className="text-primary text-base">₹{grandTotal}</span>
+            <span className="text-brand-gold text-base">₹{grandTotal}</span>
           </div>
         </div>
       </div>
@@ -427,7 +427,7 @@ export function InvoicePreview({
   form, orderInfo, activePlanObj, quantity, rawSubtotal, deliveryFee, gstAmount, grandTotal, paymentMethod
 }: InvoicePreviewProps) {
   return (
-    <div id="alakapuri-print-invoice" className="bg-card border border-border rounded-3xl p-6 md:p-8 shadow-sm space-y-6 text-xs text-foreground font-semibold leading-relaxed relative overflow-hidden print-invoice-sheet bg-white dark:bg-card">
+    <div id="serenity-print-invoice" className="bg-card border border-border rounded-3xl p-6 md:p-8 shadow-sm space-y-6 text-xs text-foreground font-semibold leading-relaxed relative overflow-hidden print-invoice-sheet bg-white dark:bg-card">
       
       {/* Printable CSS Page Styles for browser print engine */}
       <style dangerouslySetInnerHTML={{__html: `
@@ -437,10 +437,10 @@ export function InvoicePreview({
             background: white !important;
             color: black !important;
           }
-          #alakapuri-print-invoice, #alakapuri-print-invoice * {
+          #serenity-print-invoice, #serenity-print-invoice * {
             visibility: visible;
           }
-          #alakapuri-print-invoice {
+          #serenity-print-invoice {
             position: absolute;
             left: 0;
             top: 0;
@@ -457,30 +457,25 @@ export function InvoicePreview({
       `}} />
 
       {/* Watermark */}
-      <div className="absolute top-1/3 left-1/4 -rotate-12 border-4 border-emerald-500/10 text-emerald-500/10 text-3xl font-black uppercase px-6 py-3 rounded-xl pointer-events-none select-none tracking-widest">
+      <div className="absolute top-1/3 left-1/4 -rotate-12 border-4 border-brand-gold/10 text-brand-gold/10 text-3xl font-black uppercase px-6 py-3 rounded-xl pointer-events-none select-none tracking-widest">
         Demo Order
       </div>
 
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-border/80">
         <div className="flex items-center gap-3">
-          <svg className="h-8 w-auto shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="46" stroke="#10B981" strokeWidth="4.5" fill="none"/>
-            <path d="M50 16 C32 30, 32 68, 50 84 C68 68, 68 30, 50 16 Z" fill="#10B981"/>
-            <path d="M50 28 C38 40, 38 62, 50 74 L50 28" fill="#34D399" opacity="0.8"/>
-            <path d="M50 16 L50 84" stroke="#FFFFFF" strokeWidth="2.5"/>
-            <path d="M50 36 L60 28" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round"/>
-            <path d="M50 50 L60 42" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round"/>
-            <path d="M50 64 L58 58" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round"/>
-            <path d="M50 42 L40 34" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round"/>
-            <path d="M50 56 L40 48" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round"/>
+          <svg className="h-8 w-auto shrink-0 text-brand-gold" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="46" stroke="currentColor" strokeWidth="4.5" fill="none" />
+            <path d="M33 52 C33 66, 67 66, 67 52 L67 47 L33 47 Z" fill="currentColor" />
+            <path d="M67 49 C72 49, 74 52, 74 55 C74 58, 72 61, 67 61" stroke="currentColor" strokeWidth="3" fill="none" />
+            <path d="M50 22 C44 32, 56 42, 48 46 C58 39, 48 30, 50 22 Z" fill="currentColor" className="opacity-95" />
           </svg>
           <div>
-            <span className="text-xs font-black tracking-widest text-primary block">ALAKAPURI HEALTHY MEALS</span>
-            <span className="text-[10px] text-muted-foreground block font-bold mt-0.5">Central Kitchen Hub Kakkanad, Kochi</span>
+            <span className="text-xs font-black tracking-widest text-brand-gold block">CAFÉ SERENITY</span>
+            <span className="text-[10px] text-muted-foreground block font-bold mt-0.5">Civil Station Kakkanad, Kochi</span>
           </div>
         </div>
         <div className="text-left sm:text-right">
-          <span className="inline-flex rounded-full bg-emerald-500/10 px-3 py-0.5 text-[8px] font-black text-emerald-600 uppercase tracking-widest border border-emerald-500/20">
+          <span className="inline-flex rounded-full bg-brand-gold/10 px-3 py-0.5 text-[8px] font-black text-brand-gold uppercase tracking-widest border border-brand-gold/20">
             {paymentMethod === 'cod' ? 'COD - PENDING' : 'PAID'}
           </span>
           <span className="block text-[9px] text-muted-foreground font-bold mt-1">GSTIN: 32AABCA1234F1ZX (DUMMY)</span>
@@ -521,8 +516,8 @@ export function InvoicePreview({
 
       {/* Terms & Footer Note */}
       <div className="pt-4 border-t border-dashed border-border/80 text-[9px] text-muted-foreground/80 font-semibold space-y-1.5 text-center">
-        <p>Thank you for choosing Alakapuri Healthy Meals.</p>
-        <p className="text-amber-800 dark:text-amber-300 font-extrabold italic bg-amber-500/5 py-1 px-3 rounded-lg border border-amber-500/10">
+        <p>Thank you for choosing Café Serenity.</p>
+        <p className="text-brand-gold font-extrabold italic bg-brand-gold/5 py-1 px-3 rounded-lg border border-brand-gold/10">
           This invoice is generated for demonstration purposes only. No real shipment or delivery is initiated.
         </p>
       </div>
@@ -562,7 +557,7 @@ export function InvoiceActions({
 
       <button
         onClick={onBackToHome}
-        className="inline-flex h-10 items-center justify-center gap-1.5 rounded-xl bg-primary text-primary-foreground font-black text-xs px-6 uppercase tracking-widest hover:bg-primary/95 transition-all cursor-pointer shadow-sm"
+        className="inline-flex h-10 items-center justify-center gap-1.5 rounded-xl bg-brand-gold text-brand-dark font-black text-xs px-6 uppercase tracking-widest hover:bg-brand-gold/90 transition-all cursor-pointer shadow-sm"
       >
         <Home className="h-4 w-4" />
         <span>Back to Home</span>

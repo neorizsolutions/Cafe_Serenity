@@ -5,7 +5,7 @@ import Typography from '@/components/common/Typography';
 import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
-  title: 'Diet & Healthy Subscription Meal Plans | Alakapuri',
+  title: 'Diet & Healthy Subscription Meal Plans | Café Serenity',
   description: 'Explore dietician-designed subscription programs: weight loss deficit menus, gym high-protein plans, diabetic care, and tech park corporate lunch drops.',
 });
 
@@ -46,7 +46,7 @@ export default function MealPlansPage() {
     {
       title: 'Corporate IT Lunches',
       path: '/meal-plans/corporate',
-      desc: 'On-time tech park drops at Technopark and Infopark desks.',
+      desc: 'On-time tech park drops at Infopark and SmartCity desks.',
       price: '₹199 / meal',
       calories: '450 kcal',
       color: 'bg-orange-500/10 text-orange-700 border-orange-500/20'

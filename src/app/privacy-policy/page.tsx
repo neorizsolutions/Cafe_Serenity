@@ -4,8 +4,8 @@ import Typography from '@/components/common/Typography';
 import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
-  title: 'Privacy Policy | Alakapuri Healthy Meals',
-  description: 'Review the privacy policy parameters of Alakapuri Healthy Meals. Learn how we handle your subscription billing and address details.',
+  title: 'Privacy Policy | Café Serenity',
+  description: 'Review the privacy policy parameters of Café Serenity. Learn how we handle your subscription billing and address details.',
 });
 
 export default function PrivacyPolicyPage() {
@@ -17,28 +17,28 @@ export default function PrivacyPolicyPage() {
             Privacy Policy
           </Typography>
           <Typography variant="body-large" className="text-muted-foreground">
-            Last updated: July 2026
+            Last updated: August 2026
           </Typography>
         </div>
 
         <div className="space-y-4">
           <Typography variant="h3" className="text-sm font-bold text-foreground">1. Information We Collect</Typography>
           <p>
-            We collect basic contact data (name, email address, telephone number) and delivery address markers when you register or communicate with us via WhatsApp to manage your healthy subscription drops.
+            We collect basic contact data (name, telephone number) and delivery address markers when you register or communicate with us via WhatsApp to manage your food delivery drops.
           </p>
         </div>
 
         <div className="space-y-4">
           <Typography variant="h3" className="text-sm font-bold text-foreground">2. Payment & Billing Data</Typography>
           <p>
-            All subscription payments are routed through secure third-party UPI applications (G-Pay, PhonePe, Paytm) and net banking interfaces. We do not store credit card credentials on our servers.
+            All payments are routed through secure third-party UPI applications (G-Pay, PhonePe, Paytm) and net banking interfaces. We do not store credit card credentials on our servers.
           </p>
         </div>
 
         <div className="space-y-4">
           <Typography variant="h3" className="text-sm font-bold text-foreground">3. Information Sharing</Typography>
           <p>
-            Your information is shared strictly with dispatch coordinators and delivery riders to transport meal boxes to your desk. We never sell your personal information to marketing databases.
+            Your information is shared strictly with dispatch coordinators and delivery riders to transport food orders to your desk. We never sell your personal information to marketing databases.
           </p>
         </div>
       </Container>

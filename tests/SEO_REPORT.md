@@ -7,7 +7,7 @@ Validation of heading hierarchy, link formatting, canonical parameters, and stru
 | Test Name | Description / Observations | Status |
 | :--- | :--- | :--- |
 | Single H1 Restriction | The home page contains exactly one <h1> element, compliant with search engine optimization guidelines. | ✔ PASS |
-| Broken/Placeholder Link Scan | Scanned 70 links. Empty placeholders: 0. Broken plans path checks: 0. | ✔ PASS |
+| Broken/Placeholder Link Scan | Scanned 78 links. Empty placeholders: 2. Broken plans path checks: 0. | ❌ FAIL |
 | Footer Local SEO Schema Microdata | Structured Microdata (itemscope + itemtype="http://schema.org/FoodEstablishment") is correctly embedded on the footer container. | ✔ PASS |
 | Semantic Landmarks | Layout utilizes structural elements (`header`, `footer`, `main`, `nav`) to define hierarchy. | ✔ PASS |
 | Internal Linking integrity | All internal routes verified in code. Changed broken plans link checks. | ✔ PASS |

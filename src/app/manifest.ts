@@ -4,12 +4,12 @@ import { BUSINESS_NAME } from '../constants';
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: BUSINESS_NAME,
-    short_name: 'Alakapuri',
-    description: 'Calorie-Mapped Diet Box & Meal Subscriptions in Kerala.',
+    short_name: 'Serenity',
+    description: 'Healthy meals & everyday café favourites in Kakkanad, Kochi.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',
-    theme_color: '#1e6040',
+    theme_color: '#0d9488',
     icons: [
       {
         src: '/icons/icon-192.png',

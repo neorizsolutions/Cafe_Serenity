@@ -5,8 +5,8 @@ import Typography from '@/components/common/Typography';
 import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
-  title: 'Weight Loss & Calorie Deficit Meal Plans | Alakapuri',
-  description: 'Clean, weighed low-carb diet plans cooked fresh daily to manage calorie deficits cleanly. Starts from ₹199/meal. Kochi desk and doorstep drops.',
+  title: 'Weight Loss & Calorie Deficit Meal Plans | Café Serenity',
+  description: 'Clean, weighed low-carb diet plans cooked fresh daily to manage calorie deficits cleanly. Starts from ₹199/meal. Kakkanad desk and doorstep drops.',
 });
 
 export default function WeightLossPlans() {
@@ -51,7 +51,7 @@ export default function WeightLossPlans() {
         <div className="space-y-4 text-xs text-muted-foreground leading-relaxed">
           <Typography variant="h3" className="text-base font-bold text-foreground">Why it Works</Typography>
           <p>
-            Standard diets often cause muscle loss and extreme hunger due to unstructured deficits. Alakapuri Weight Loss plans weigh exactly 120 grams of lean proteins (chicken, paneer, or pulses) matched with clean dietary fiber and low-sodium seasoning.
+            Standard diets often cause muscle loss and extreme hunger due to unstructured deficits. Café Serenity Weight Loss plans weigh exactly 120 grams of lean proteins (chicken, paneer, or pulses) matched with clean dietary fiber and low-sodium seasoning.
           </p>
           <p>
             By omitting refined flours (maida), white sugars, and saturated palm oils, we keep insulin levels stable, preventing the common post-lunch fatigue felt by corporate professionals.

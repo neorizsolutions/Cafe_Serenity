@@ -5,7 +5,7 @@ import Typography from '@/components/common/Typography';
 import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
-  title: 'Diabetic Friendly & Glucose Control Meal Plans | Alakapuri',
+  title: 'Diabetic Friendly & Glucose Control Meal Plans | Café Serenity',
   description: 'Dietician-checked, glucose-safe meal subscriptions cooked using organic low-GI grains and zero refined sugar. Starts from ₹219/meal.',
 });
 

@@ -10,12 +10,10 @@ We preserved references to our core local delivery locations:
 
 | Keyword | Component Location | Status | Preserved Context |
 | --- | --- | --- | --- |
-| **Kochi** | `WhyChooseUs`, `MealExperience`, `Pricing`, `FinalConversion`, `Footer` | ✅ PRESERVED | "...across Kochi & Trivandrum..." |
-| **Trivandrum** | `WhyChooseUs`, `MealExperience`, `Pricing`, `FinalConversion`, `Footer` | ✅ PRESERVED | "...Kochi & TVM office desks..." |
-| **Infopark** | `MealExperience`, `FinalConversion`, `Footer` | ✅ PRESERVED | "...Infopark & Technopark drops..." |
-| **Technopark** | `MealExperience`, `FinalConversion`, `Footer` | ✅ PRESERVED | "...Infopark & Technopark drops..." |
+| **Kochi** | `WhyChooseUs`, `MealExperience`, `Pricing`, `FinalConversion`, `Footer` | ✅ PRESERVED | "...across Kochi..." |
+✅ PRESERVED | "...Kochi  office desks..." |
+| **Infopark** | `MealExperience`, `FinalConversion`, `Footer` | ✅ PRESERVED | "...Infopark &Infopark drops..." |
 | **Kakkanad** | `TrustCenter`, `FinalConversion`, `Footer` | ✅ PRESERVED | "...Kochi Kakkanad..." |
-| **Kazhakkoottam** | `TrustCenter`, `Footer` | ✅ PRESERVED | "...Trivandrum Kazhakkoottam..." |
 
 ---
 

@@ -60,10 +60,7 @@ export function getOrganizationSchema() {
     'name': BUSINESS_NAME,
     'url': SEO_DEFAULTS.baseUrl,
     'logo': `${SEO_DEFAULTS.baseUrl}/logos/logo-main.png`,
-    'sameAs': [
-      'https://instagram.com/alakapurihealthy',
-      'https://facebook.com/alakapurihealthy',
-    ],
+    'sameAs': [],
   };
 }
 

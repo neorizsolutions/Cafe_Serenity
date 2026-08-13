@@ -6,7 +6,6 @@ import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
 import MotionWrapper from '@/components/common/MotionWrapper';
 import { useCheckout } from '@/context/CheckoutContext';
-import { CONTACT_DETAILS } from '@/constants';
 
 interface PricingCardProps {
   title: string;
@@ -23,15 +22,15 @@ function PricingCard({ title, price, description, features, link, popular }: Pri
     <div 
       className={`group relative rounded-3xl border p-6 flex flex-col justify-between h-full gap-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${
         popular 
-          ? 'border-primary bg-primary/[0.01] shadow-[0_8px_30px_rgba(16,185,129,0.04)]' 
-          : 'border-border/60 bg-card hover:border-primary/20 shadow-sm'
+          ? 'border-brand-gold bg-brand-gold/[0.01] shadow-[0_8px_30px_rgba(255,185,0,0.05)]' 
+          : 'border-border/60 bg-card hover:border-brand-gold/25 shadow-sm'
       }`}
     >
       {/* Decorative ambient card glows */}
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none -z-10" />
+      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none -z-10" />
 
       {popular && (
-        <span className="absolute -top-3 left-6 inline-flex rounded-full bg-primary px-3 py-0.5 text-[9px] font-black uppercase tracking-widest text-primary-foreground shadow-sm">
+        <span className="absolute -top-3 left-6 inline-flex rounded-full bg-brand-gold px-3 py-0.5 text-[9px] font-black uppercase tracking-widest text-brand-dark shadow-sm">
           Most Popular Diet
         </span>
       )}
@@ -48,11 +47,11 @@ function PricingCard({ title, price, description, features, link, popular }: Pri
           </p>
         </div>
 
-        {/* Shortened target benefit indicators */}
+        {/* Target benefit indicators */}
         <ul className="space-y-2.5 text-xs font-semibold text-foreground/95" aria-label={`Benefits of ${title}`}>
           {features.map((feat, idx) => (
             <li key={idx} className="flex items-center gap-2">
-              <svg className="h-4.5 w-4.5 text-primary shrink-0 animate-pulse" fill="none" strokeWidth="3.5" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg className="h-4.5 w-4.5 text-brand-gold shrink-0 animate-pulse" fill="none" strokeWidth="3.5" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
               </svg>
               <span>{feat}</span>
@@ -64,7 +63,7 @@ function PricingCard({ title, price, description, features, link, popular }: Pri
       <div className="space-y-2.5 pt-4 border-t border-border/40">
         <button
           onClick={() => openCheckout(title)}
-          className="group/btn flex h-11 items-center justify-center gap-2 rounded-full bg-primary px-4 text-xs font-bold text-primary-foreground shadow hover:bg-primary/95 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+          className="group/btn flex h-11 items-center justify-center gap-2 rounded-full bg-brand-gold px-4 text-xs font-bold text-brand-dark shadow hover:bg-brand-gold/90 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
         >
           <span>Choose Plan</span>
         </button>
@@ -99,16 +98,16 @@ export default function Pricing() {
           </Typography>
         </div>
 
-        {/* Pricing Cards Grid (1 Spotlight + 3 standard configurations) */}
+        {/* Pricing Cards Grid */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 items-stretch">
           {/* Spotlight Column: Value Box */}
-          <div className="group relative rounded-3xl border border-emerald-600/30 bg-emerald-500/[0.02] p-6 flex flex-col justify-between h-full gap-6 shadow-[0_8px_30px_rgba(16,185,129,0.03)] hover:-translate-y-1 transition-all duration-300 hover:shadow-md">
-            <span className="absolute -top-3 left-6 inline-flex rounded-full bg-emerald-600 px-3.5 py-0.5 text-[9px] font-black uppercase tracking-widest text-white shadow-sm animate-pulse">
+          <div className="group relative rounded-3xl border border-brand-gold/30 bg-brand-gold/[0.01] p-6 flex flex-col justify-between h-full gap-6 shadow-[0_8px_30px_rgba(255,185,0,0.03)] hover:-translate-y-1 transition-all duration-300 hover:shadow-md">
+            <span className="absolute -top-3 left-6 inline-flex rounded-full bg-brand-gold px-3.5 py-0.5 text-[9px] font-black uppercase tracking-widest text-brand-dark shadow-sm animate-pulse">
               Value Spotlight
             </span>
             <div className="space-y-4">
               <div>
-                <span className="text-[10px] text-emerald-800 dark:text-emerald-300 uppercase font-black tracking-widest">Everyday Value Box</span>
+                <span className="text-[10px] text-brand-gold uppercase font-black tracking-widest">Everyday Value Box</span>
                 <div className="flex items-baseline gap-1 mt-2">
                   <span className="text-2xl font-black text-foreground">₹69</span>
                   <span className="text-[10px] text-muted-foreground font-bold uppercase tracking-wider">/ Meal</span>
@@ -126,7 +125,7 @@ export default function Pricing() {
                   'No palm oil or MSG'
                 ].map((feat, idx) => (
                   <li key={idx} className="flex items-center gap-2">
-                    <svg className="h-4.5 w-4.5 text-primary shrink-0 animate-pulse" fill="none" strokeWidth="3.5" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg className="h-4.5 w-4.5 text-brand-gold shrink-0 animate-pulse" fill="none" strokeWidth="3.5" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                     <span>{feat}</span>
@@ -138,7 +137,7 @@ export default function Pricing() {
             <div className="space-y-2.5 pt-4 border-t border-border/40">
               <button
                 onClick={() => openCheckout('value-box')}
-                className="group/btn flex h-11 items-center justify-center gap-2 rounded-full bg-primary px-4 text-xs font-bold text-primary-foreground shadow-[0_4px_14px_rgba(26,79,53,0.15)] hover:bg-primary/95 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+                className="group/btn flex h-11 items-center justify-center gap-2 rounded-full bg-brand-gold px-4 text-xs font-bold text-brand-dark shadow hover:bg-brand-gold/90 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
               >
                 <span>Choose Plan</span>
               </button>
@@ -198,22 +197,22 @@ export default function Pricing() {
           </MotionWrapper>
         </div>
 
-        {/* Micro FAQ Accordion Block (Pricing specific details) */}
+        {/* FAQ Accordion Block */}
         <div className="max-w-3xl mx-auto space-y-6 pt-12 border-t border-border/60">
           <div className="text-center space-y-2">
             <Typography variant="h3" className="text-lg font-bold text-foreground tracking-tight">
               Pricing & Billing FAQ
             </Typography>
             <Typography variant="body-regular" className="text-xs text-muted-foreground font-medium">
-              Important details on how Alakapuri meal subscriptions are billed.
+              Important details on how Café Serenity meal subscriptions are billed.
             </Typography>
           </div>
 
           <div className="space-y-4">
             <details className="group border border-border/60 bg-card rounded-2xl p-4 [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex cursor-pointer items-center justify-between font-bold text-foreground outline-none hover:text-primary transition-colors focus:ring-1 focus:ring-primary/20">
+              <summary className="flex cursor-pointer items-center justify-between font-bold text-foreground outline-none hover:text-brand-gold transition-colors focus:ring-1 focus:ring-brand-gold/25">
                 <span className="text-xs sm:text-sm font-bold">What payment methods are supported?</span>
-                <span className="ml-1.5 shrink-0 transition duration-300 group-open:-rotate-180 text-muted-foreground group-hover:text-primary">
+                <span className="ml-1.5 shrink-0 transition duration-300 group-open:-rotate-180 text-muted-foreground group-hover:text-brand-gold">
                   <svg className="h-4 w-4 stroke-current" fill="none" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                   </svg>
@@ -225,9 +224,9 @@ export default function Pricing() {
             </details>
 
             <details className="group border border-border/60 bg-card rounded-2xl p-4 [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex cursor-pointer items-center justify-between font-bold text-foreground outline-none hover:text-primary transition-colors focus:ring-1 focus:ring-primary/20">
+              <summary className="flex cursor-pointer items-center justify-between font-bold text-foreground outline-none hover:text-brand-gold transition-colors focus:ring-1 focus:ring-brand-gold/25">
                 <span className="text-xs sm:text-sm font-bold">Can I swap dishes mid-week?</span>
-                <span className="ml-1.5 shrink-0 transition duration-300 group-open:-rotate-180 text-muted-foreground group-hover:text-primary">
+                <span className="ml-1.5 shrink-0 transition duration-300 group-open:-rotate-180 text-muted-foreground group-hover:text-brand-gold">
                   <svg className="h-4 w-4 stroke-current" fill="none" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                   </svg>
@@ -239,9 +238,9 @@ export default function Pricing() {
             </details>
 
             <details className="group border border-border/60 bg-card rounded-2xl p-4 [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex cursor-pointer items-center justify-between font-bold text-foreground outline-none hover:text-primary transition-colors focus:ring-1 focus:ring-primary/20">
+              <summary className="flex cursor-pointer items-center justify-between font-bold text-foreground outline-none hover:text-brand-gold transition-colors focus:ring-1 focus:ring-brand-gold/25">
                 <span className="text-xs sm:text-sm font-bold">Are there hidden cancellation fees?</span>
-                <span className="ml-1.5 shrink-0 transition duration-300 group-open:-rotate-180 text-muted-foreground group-hover:text-primary">
+                <span className="ml-1.5 shrink-0 transition duration-300 group-open:-rotate-180 text-muted-foreground group-hover:text-brand-gold">
                   <svg className="h-4 w-4 stroke-current" fill="none" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                   </svg>

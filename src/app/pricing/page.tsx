@@ -5,8 +5,8 @@ import Pricing from '@/components/home/Pricing';
 import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
-  title: 'Weekly Menu Pricing & Subscriptions | Alakapuri Healthy Meals',
-  description: 'View Alakapuri everyday ₹69 healthy meal box pricing and weekly or monthly dietitian diet subscriptions starting from ₹199/meal.',
+  title: 'Weekly Menu Pricing & Subscriptions | Café Serenity',
+  description: 'View Café Serenity everyday ₹69 healthy meal box pricing and weekly or monthly dietitian diet subscriptions starting from ₹199/meal.',
 });
 
 export default function PricingPage() {

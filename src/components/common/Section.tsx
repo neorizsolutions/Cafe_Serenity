@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 
 interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
-  bg?: 'white' | 'muted' | 'brand-light' | 'transparent';
+  bg?: 'white' | 'muted' | 'brand-light' | 'transparent' | 'dark';
 }
 
 export default function Section({ children, className, bg = 'transparent', ...props }: SectionProps) {
@@ -12,6 +12,7 @@ export default function Section({ children, className, bg = 'transparent', ...pr
     muted: 'bg-secondary/35 border-y border-border',
     'brand-light': 'bg-primary/5 border-y border-border/60',
     transparent: 'bg-transparent',
+    dark: 'bg-brand-dark text-white border-y border-stone-850',
   };
 
   return (

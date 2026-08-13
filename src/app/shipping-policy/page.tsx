@@ -4,8 +4,8 @@ import Typography from '@/components/common/Typography';
 import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
-  title: 'Shipping & Delivery Policy | Alakapuri Healthy Meals',
-  description: 'Understand Alakapuri transit dispatches, lunch/dinner slot timings, and tech park doorstep guidelines.',
+  title: 'Shipping & Delivery Policy | Café Serenity',
+  description: 'Understand Café Serenity transit dispatches, lunch/dinner slot timings, and tech park doorstep guidelines.',
 });
 
 export default function ShippingPolicyPage() {
@@ -17,7 +17,7 @@ export default function ShippingPolicyPage() {
             Shipping & Delivery Policy
           </Typography>
           <Typography variant="body-large" className="text-muted-foreground">
-            Last updated: July 2026
+            Last updated: August 2026
           </Typography>
         </div>
 
@@ -35,7 +35,7 @@ export default function ShippingPolicyPage() {
         <div className="space-y-4">
           <Typography variant="h3" className="text-sm font-bold text-foreground">2. Office & Tech Park Delivery Guidelines</Typography>
           <p>
-            Our riders carry clearance credentials for major tech hubs (Infopark Kakkanad, Technopark Kazhakkoottam). Boxes are left at coordinates designated by tech park administrations (recep desk, security drop boxes).
+            Our riders carry clearance credentials for major tech hubs (Infopark and SmartCity Kakkanad). Boxes are left at coordinates designated by tech park administrations (recep desk, security drop boxes).
           </p>
         </div>
 

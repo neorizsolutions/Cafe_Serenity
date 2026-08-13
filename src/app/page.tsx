@@ -1,8 +1,10 @@
 import Hero from '@/components/home/Hero';
+import Offerings from '@/components/home/Offerings';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
 import MealExperience from '@/components/home/MealExperience';
 import HowItWorks from '@/components/home/HowItWorks';
 import Pricing from '@/components/home/Pricing';
+import CafeMenu from '@/components/home/CafeMenu';
 import DeliveryPartners from '@/components/home/DeliveryPartners';
 import SocialProof from '@/components/home/SocialProof';
 import TrustCenter from '@/components/home/TrustCenter';
@@ -15,6 +17,9 @@ export default function Page() {
       {/* Homepage Hero Section */}
       <Hero />
 
+      {/* Offerings Selector Section */}
+      <Offerings />
+
       {/* Why Choose Us Benefits Section */}
       <WhyChooseUs />
 
@@ -26,6 +31,9 @@ export default function Page() {
 
       {/* Subscriptions Pricing Section */}
       <Pricing />
+
+      {/* Café Menu Favourites Section */}
+      <CafeMenu />
 
       {/* Our Delivery Partners Section */}
       <DeliveryPartners />
@@ -44,4 +52,3 @@ export default function Page() {
     </>
   );
 }
-

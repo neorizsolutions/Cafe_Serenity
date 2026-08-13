@@ -5,8 +5,8 @@ import TrustCenter from '@/components/home/TrustCenter';
 import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
-  title: 'Alakapuri Help Center & Frequently Asked Questions (FAQ)',
-  description: 'Find answers about our UPI onboarding, delivery areas in Kochi, 12h freeze credit policy, and dietician-approved parameters.',
+  title: 'Help Center & Frequently Asked Questions (FAQ)',
+  description: 'Find answers about our onboarding, delivery areas in Kochi, freeze credit policy, and fresh morning café breakfast.',
 });
 
 export default function FAQPage() {

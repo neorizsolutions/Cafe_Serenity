@@ -5,8 +5,8 @@ import Typography from '@/components/common/Typography';
 import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
-  title: 'Balanced Nutrition & Everyday Meal Boxes | Alakapuri',
-  description: 'Portion-controlled, everyday healthy boxes cooked using fresh local ingredients. Starts from ₹169/meal. Technopark & Infopark deliveries.',
+  title: 'Balanced Nutrition & Everyday Meal Boxes | Café Serenity',
+  description: 'Portion-controlled, everyday healthy boxes cooked using fresh local ingredients. Starts from ₹169/meal. Kakkanad Infopark deliveries.',
 });
 
 export default function BalancedPlans() {
