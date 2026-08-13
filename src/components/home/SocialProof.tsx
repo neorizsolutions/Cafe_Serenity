@@ -5,7 +5,6 @@ import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
 import MotionWrapper from '@/components/common/MotionWrapper';
-import { useCheckout } from '@/context/CheckoutContext';
 import { CONTACT_DETAILS, SEO_DEFAULTS } from '@/constants';
 
 interface ReviewCardProps {
@@ -19,7 +18,7 @@ interface ReviewCardProps {
 
 function ReviewCard({ initials, name, role, plan, rating, text }: ReviewCardProps) {
   return (
-    <div className="group relative rounded-2xl border border-border/60 bg-card p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between gap-5">
+    <div className="group relative rounded-2xl border border-border/60 bg-card p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 active:scale-[0.99] active:border-brand-gold/20 active:bg-secondary/10 flex flex-col justify-between gap-5">
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none -z-10" />
       
       <div className="space-y-3.5">
@@ -37,7 +36,7 @@ function ReviewCard({ initials, name, role, plan, rating, text }: ReviewCardProp
             </svg>
           ))}
         </div>
-        <p className="text-xs leading-relaxed text-foreground/80 font-medium italic">
+        <p className="text-xs leading-relaxed text-foreground/90 font-medium italic">
           &quot;{text}&quot;
         </p>
       </div>
@@ -48,7 +47,7 @@ function ReviewCard({ initials, name, role, plan, rating, text }: ReviewCardProp
         </div>
         <div>
           <span className="block text-xs font-extrabold text-foreground leading-tight">{name}</span>
-          <span className="block text-[8px] text-muted-foreground uppercase tracking-widest font-extrabold mt-0.5">
+          <span className="block text-[11px] text-muted-foreground uppercase tracking-widest font-extrabold mt-0.5">
             {role} • {plan}
           </span>
         </div>
@@ -58,8 +57,6 @@ function ReviewCard({ initials, name, role, plan, rating, text }: ReviewCardProp
 }
 
 export default function SocialProof() {
-  const { openCheckout } = useCheckout();
-
   // Google review rating schemas for SEO crawlers
   const ratingSchema = {
     '@context': 'https://schema.org',
@@ -71,7 +68,7 @@ export default function SocialProof() {
       'priceRange': '₹₹',
       'address': {
         '@type': 'PostalAddress',
-        'addressLocality': CONTACT_DETAILS.address.city,
+        'addressLocality': CONTACT_DETAILS.address.locality,
         'addressCountry': 'IN'
       }
     },
@@ -94,7 +91,7 @@ export default function SocialProof() {
           <Typography variant="h2" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
             Trusted by Busy Professionals & Athletes
           </Typography>
-          <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium opacity-90">
+          <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium">
             How our clean diet boxes help professionals and athletes stay healthy.
           </Typography>
         </div>
@@ -145,12 +142,12 @@ export default function SocialProof() {
             </div>
 
             <div className="pt-2">
-              <button
-                onClick={() => openCheckout('Weight Loss Plan')}
-                className="group inline-flex h-11 items-center justify-center gap-2 rounded-full bg-brand-gold px-6 text-xs font-bold text-brand-dark shadow hover:bg-brand-gold/90 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+              <Link
+                href="/#contact"
+                className="group inline-flex h-11 items-center justify-center gap-2 rounded-full bg-brand-gold px-6 text-xs font-bold text-brand-dark shadow hover:bg-brand-gold/90 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer text-center"
               >
-                <span>Choose Plan</span>
-              </button>
+                <span>Inquire Now</span>
+              </Link>
             </div>
           </div>
         </div>
@@ -290,18 +287,18 @@ export default function SocialProof() {
             Experience verified, clean daily nutrition.
           </Typography>
           <p className="text-xs leading-relaxed text-muted-foreground max-w-lg mx-auto font-medium">
-            Select a plan and subscribe. Pause or reschedule anytime via our support.
+            Contact us to select a plan and subscribe. Pause or reschedule anytime via our support.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2">
-            <button
-              onClick={() => openCheckout()}
-              className="group flex h-11 items-center justify-center gap-2 rounded-full bg-brand-gold px-8 text-xs font-bold text-brand-dark shadow hover:bg-brand-gold/90 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+            <Link
+              href="/#contact"
+              className="group flex h-11 items-center justify-center gap-2 rounded-full bg-brand-gold px-8 text-xs font-bold text-brand-dark shadow hover:bg-brand-gold/90 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer text-center"
             >
-              <span>Order Now</span>
-            </button>
+              <span>Inquire Now</span>
+            </Link>
             <Link
               href="/meal-plans"
-              className="flex h-11 items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur-sm px-8 text-xs font-semibold text-foreground hover:bg-secondary transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+              className="flex h-11 items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur-sm px-8 text-xs font-semibold text-foreground hover:text-white hover:bg-stone-900 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 text-center"
             >
               Configure Plans
             </Link>

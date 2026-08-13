@@ -1,13 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
 import MotionWrapper from '@/components/common/MotionWrapper';
 import { CONTACT_DETAILS } from '@/constants';
 import { getFAQSchema } from '@/utils/seo';
-import { useCheckout } from '@/context/CheckoutContext';
 
 interface FAQItem {
   question: string;
@@ -27,12 +27,12 @@ const FAQ_BY_CATEGORY: Record<string, FAQItem[]> = {
   ],
   ordering: [
     {
-      question: '[Policy Placeholder] What is the daily cutoff time for order changes?',
-      answer: 'Standard pauses require a 12-hour notice prior to delivery.'
+      question: 'What is the daily cutoff time for plan changes?',
+      answer: 'Standard pauses and changes require a 12-hour notice prior to delivery.'
     },
     {
-      question: '[Policy Placeholder] How do I place an order?',
-      answer: 'Choose a plan online and complete configurations via our checkout system.'
+      question: 'How do I start a subscription?',
+      answer: 'Simply contact us via WhatsApp or phone. We will set up your preferences and coordinate directly without any complex online checkout steps.'
     }
   ],
   subscriptions: [
@@ -41,23 +41,23 @@ const FAQ_BY_CATEGORY: Record<string, FAQItem[]> = {
       answer: 'Yes. Check the menu and contact support before 6 PM to swap.'
     },
     {
-      question: '[Policy Placeholder] How do weekly and monthly subscription extensions work?',
+      question: 'How do weekly and monthly subscription extensions work?',
       answer: 'Pausing locks your delivery credits and extends your plan duration.'
     }
   ],
   payments: [
     {
       question: 'Which payment methods are accepted?',
-      answer: 'We accept UPI (Google Pay, PhonePe, Paytm), net banking, and card networks.'
+      answer: 'We accept UPI (Google Pay, PhonePe, Paytm), net banking, and card networks for direct coordination.'
     },
     {
-      question: '[Policy Placeholder] Are auto-renewals enabled?',
+      question: 'Are auto-renewals enabled?',
       answer: 'Auto-renewals are disabled. Renewal alerts are sent via SMS 2 days prior.'
     }
   ],
   delivery: [
     {
-      question: 'Do you deliver to Infopark and Technopark?',
+      question: 'Do you deliver to Infopark?',
       answer: 'Yes. We drop lunch boxes at office receptions and park gates.'
     },
     {
@@ -71,7 +71,7 @@ const FAQ_BY_CATEGORY: Record<string, FAQItem[]> = {
       answer: 'Yes. Select the ₹69 Value Box, Weight Loss, Gym, or Diabetic plans.'
     },
     {
-      question: '[Policy Placeholder] Can I swap meal plan categories mid-month?',
+      question: 'Can I swap meal plan categories mid-month?',
       answer: 'Yes. Subscriptions can be migrated mid-cycle by messaging our dietitian team.'
     }
   ],
@@ -87,11 +87,11 @@ const FAQ_BY_CATEGORY: Record<string, FAQItem[]> = {
   ],
   corporate: [
     {
-      question: '[Policy Placeholder] Do you provide bulk meal plans for office teams?',
+      question: 'Do you provide bulk meal plans for office teams?',
       answer: 'We offer discount brackets and unified billing for corporate teams.'
     },
     {
-      question: '[Policy Placeholder] How do corporate trial weeks work?',
+      question: 'How do corporate trial weeks work?',
       answer: 'Corporate teams can book a 1-day or 3-day menu trial.'
     }
   ],
@@ -101,14 +101,13 @@ const FAQ_BY_CATEGORY: Record<string, FAQItem[]> = {
       answer: 'Reach support via call or email. Open Mon - Sat.'
     },
     {
-      question: '[Policy Placeholder] What is the support response time SLA?',
+      question: 'What is the support response time SLA?',
       answer: 'Phone replies are immediate; emails within 12 hours.'
     }
   ]
 };
 
 export default function TrustCenter() {
-  const { openCheckout } = useCheckout();
   const [activeCategory, setActiveCategory] = useState<string>('general');
   const activeFAQs = FAQ_BY_CATEGORY[activeCategory] || [];
 
@@ -126,7 +125,7 @@ export default function TrustCenter() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <Typography variant="badge-label" className="tracking-widest text-[11px]">
+          <Typography variant="badge-label" className="tracking-widest text-[11px] text-brand-gold">
             Verified Standards
           </Typography>
           <Typography variant="h2" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
@@ -141,7 +140,7 @@ export default function TrustCenter() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left: Category Filters */}
           <div className="lg:col-span-4 space-y-4">
-            <span className="text-[10px] text-muted-foreground uppercase font-black tracking-wider block">FAQ Categories</span>
+            <span className="text-[11px] text-muted-foreground uppercase font-black tracking-wider block">FAQ Categories</span>
             <div className="flex flex-col gap-2 max-h-[420px] overflow-y-auto pr-1">
               {[
                 { key: 'general', label: 'General Info' },
@@ -186,7 +185,7 @@ export default function TrustCenter() {
                 className="group border border-border/60 bg-card rounded-2xl p-5 [&_summary::-webkit-details-marker]:hidden"
               >
                 <summary className="flex cursor-pointer items-center justify-between font-bold text-foreground outline-none hover:text-brand-gold transition-colors focus:ring-2 focus:ring-brand-gold/25 focus:rounded-lg">
-                  <span className="text-sm font-bold leading-snug tracking-tight">{faq.question}</span>
+                  <span className="text-xs sm:text-sm font-bold leading-snug tracking-tight pr-4">{faq.question}</span>
                   <span className="ml-1.5 shrink-0 transition duration-300 group-open:-rotate-180 text-muted-foreground group-hover:text-brand-gold">
                     <svg className="h-4 w-4 stroke-current" fill="none" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
@@ -208,7 +207,7 @@ export default function TrustCenter() {
               Our Six Pillars of Trust
             </Typography>
             <Typography variant="body-regular" className="text-xs text-muted-foreground font-medium">
-              We maintain absolute transparency on how your daily food is prepared, packed, and drop-shipped.
+              We maintain absolute transparency on how your daily food is prepared, packed, and delivered.
             </Typography>
           </div>
 
@@ -322,7 +321,7 @@ export default function TrustCenter() {
             FSSAI certified operations and safety-registered kitchen guidelines.
           </p>
           <div className="inline-flex items-center gap-2 rounded-xl bg-background px-5 py-2 text-xs font-extrabold text-foreground border border-border/80 shadow-sm mt-2">
-            <svg className="h-4 w-4 text-brand-gold shrink-0 animate-pulse" fill="none" strokeWidth="3.0" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <svg className="h-4 w-4 text-brand-gold shrink-0" fill="none" strokeWidth="3.0" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
             </svg>
             <span>FSSAI License: {CONTACT_DETAILS.fssaiNumber}</span>
@@ -341,9 +340,11 @@ export default function TrustCenter() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto text-center z-10">
-            <button
-              onClick={() => openCheckout()}
-              className="group/channel relative p-6 rounded-2xl border border-border/60 bg-card hover:bg-secondary/35 hover:-translate-y-1 transition-all duration-300 space-y-3 block hover:border-brand-gold/25 cursor-pointer w-full text-center"
+            <Link
+              href={CONTACT_DETAILS.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/channel relative p-6 rounded-2xl border border-border/60 bg-card hover:bg-secondary/35 hover:-translate-y-1 transition-all duration-300 space-y-3 block hover:border-brand-gold/25 text-center"
             >
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-gold/5 to-transparent opacity-0 group-hover/channel:opacity-100 transition-opacity duration-300 pointer-events-none -z-10" />
               
@@ -353,8 +354,8 @@ export default function TrustCenter() {
                 </svg>
               </div>
               <h4 className="text-xs font-bold text-foreground">Diet Consultation</h4>
-              <p className="text-[10px] text-muted-foreground leading-normal font-medium">Configure Weekly Program</p>
-            </button>
+              <p className="text-[10px] text-muted-foreground leading-normal font-medium">Inquire via WhatsApp</p>
+            </Link>
             
             <a
               href="tel:+919876543210"

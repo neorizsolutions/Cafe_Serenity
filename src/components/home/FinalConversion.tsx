@@ -5,13 +5,11 @@ import Link from 'next/link';
 import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
-import { useCheckout } from '@/context/CheckoutContext';
 import { CONTACT_DETAILS } from '@/constants';
 
 export default function FinalConversion() {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
-  const { openCheckout } = useCheckout();
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,22 +37,24 @@ export default function FinalConversion() {
             Your Daily Health & Food Spot <br className="hidden sm:inline" />
             Starts with Café Serenity
           </Typography>
-          <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-xl mx-auto font-medium opacity-90">
+          <Typography variant="body-large" className="text-base text-stone-300 leading-relaxed max-w-xl mx-auto font-medium opacity-90">
             Say goodbye to heavy, oily restaurant takeaways and daily ordering fatigue. Let portion-controlled, dietitian-checked boxes fuel your wellness goals.
           </Typography>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <button
-              onClick={() => openCheckout()}
-              className="group flex h-12 items-center justify-center gap-2 rounded-full bg-brand-gold px-8 text-sm font-bold text-brand-dark shadow hover:bg-brand-gold/90 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+            <Link
+              href={CONTACT_DETAILS.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex h-12 items-center justify-center gap-2 rounded-full bg-brand-gold px-8 text-sm font-bold text-brand-dark shadow hover:bg-brand-gold/90 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer text-center"
             >
-              <span>Order Now</span>
-            </button>
+              <span>Inquire via WhatsApp</span>
+            </Link>
             <Link
               href="/meal-plans"
-              className="flex h-12 items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur-sm px-8 text-sm font-semibold text-foreground hover:bg-secondary transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+              className="flex h-12 items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur-sm px-8 text-sm font-semibold text-foreground hover:bg-secondary transition-all duration-300 hover:-translate-y-0.5 active:scale-95 text-center"
             >
-              Explore Pricing Plans
+              Explore Healthy Meals
             </Link>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function FinalConversion() {
             {/* Visual Coverage List */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
               <div className="space-y-3">
-                <span className="flex items-center gap-1.5 text-xs font-extrabold text-foreground">
+                <span className="flex items-center gap-1.5 text-xs font-extrabold text-stone-200">
                   <svg className="h-4 w-4 text-brand-gold shrink-0" fill="none" strokeWidth="2.5" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25s-7.5-4.108-7.5-11.25C4.5 6.358 7.858 3 12 3c4.142 0 7.5 3.358 7.5 7.5z" />
@@ -91,7 +91,7 @@ export default function FinalConversion() {
                 </ul>
               </div>
               <div className="space-y-3">
-                <span className="flex items-center gap-1.5 text-xs font-extrabold text-foreground opacity-85">
+                <span className="flex items-center gap-1.5 text-xs font-extrabold text-stone-200 opacity-85">
                   <svg className="h-4 w-4 text-brand-gold/85 shrink-0" fill="none" strokeWidth="2.5" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -146,7 +146,7 @@ export default function FinalConversion() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.47-5.112-3.758-6.58-6.58l1.293-.97c.362-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H3.5A2.25 2.25 0 001.25 4.5v2.25z" />
                   </svg>
                 </div>
-                <span className="text-xs font-extrabold text-foreground block">Support Hotline</span>
+                <span className="text-xs font-extrabold text-stone-200 block">Support Hotline</span>
                 <a href={`tel:${CONTACT_DETAILS.phone}`} className="text-[10px] text-brand-gold hover:underline block mt-1.5 font-bold">
                   {CONTACT_DETAILS.phone}
                 </a>
@@ -155,10 +155,10 @@ export default function FinalConversion() {
               <div className="group/item p-5 rounded-2xl border border-border/60 bg-card hover:bg-secondary/35 transition-all duration-300 hover:border-brand-gold/25 hover:-translate-y-0.5">
                 <div className="h-8 w-8 rounded-lg bg-brand-gold/10 text-brand-gold flex items-center justify-center shadow-sm mb-3 group-hover/item:scale-105 transition-transform duration-300">
                   <svg className="h-4.5 w-4.5 stroke-current fill-none" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 9.75a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM21.361 11c-.463 0-.895-.195-1.217-.537l-3.322-3.528A.75.75 0 0117.38 5.75h2.12v-.375a2.25 2.25 0 00-2.25-2.25h-9a2.25 2.25 0 00-2.25 2.25V18a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-3.375H19.5a1.875 1.875 0 011.875 1.875v.375c0 .345-.28.625-.625.625H16.5a1.125 1.125 0 01-1.125-1.125v-1.5a1.125 1.125 0 011.125-1.125h4.861z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 9.75a3.375 3.375 0 11-6.75 0 3.375 3.375 0 116.75 0z" />
                   </svg>
                 </div>
-                <span className="text-xs font-extrabold text-foreground block">WhatsApp Support</span>
+                <span className="text-xs font-extrabold text-stone-200 block">WhatsApp Support</span>
                 <a href={CONTACT_DETAILS.whatsapp} target="_blank" rel="noopener noreferrer" className="text-[10px] text-brand-gold hover:underline block mt-1.5 font-bold truncate">
                   Chat Now →
                 </a>
@@ -170,7 +170,7 @@ export default function FinalConversion() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <span className="text-xs font-extrabold text-foreground block">Operations Hours</span>
+                <span className="text-xs font-extrabold text-stone-200 block">Operations Hours</span>
                 <span className="text-[10px] text-muted-foreground block mt-1.5 font-bold">
                   Daily, 5 AM – 3 PM
                 </span>
@@ -183,11 +183,11 @@ export default function FinalConversion() {
             <span className="text-[10px] uppercase font-black text-muted-foreground tracking-widest block">Verified Platform Data</span>
             <div className="flex justify-between items-center text-xs font-extrabold border-b border-border/40 pb-2.5">
               <span className="text-muted-foreground font-medium">Meals Served</span>
-              <span className="text-foreground">50,000+</span>
+              <span className="text-stone-200">50,000+</span>
             </div>
             <div className="flex justify-between items-center text-xs font-extrabold">
               <span className="text-muted-foreground font-medium">Weekly Retention</span>
-              <span className="text-foreground">82%</span>
+              <span className="text-stone-200">82%</span>
             </div>
           </div>
         </div>

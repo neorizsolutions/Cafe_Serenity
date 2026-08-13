@@ -7,7 +7,6 @@ import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
 import MotionWrapper from '@/components/common/MotionWrapper';
 import { cn } from '@/lib/utils';
-import { useCheckout } from '@/context/CheckoutContext';
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -38,7 +37,6 @@ function FeatureCard({ icon, title, description }: FeatureCardProps) {
 }
 
 export default function WhyChooseUs() {
-  const { openCheckout } = useCheckout();
 
   return (
     <Section bg="muted" className="relative border-t border-border overflow-hidden">
@@ -121,7 +119,7 @@ export default function WhyChooseUs() {
                 src="/images/why_choose_prep.png"
                 alt="Professional FSSAI culinary standards kitchen meal prep"
                 fill
-                sizes="(max-w-md) 100vw, 500px"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 500px"
                 loading="lazy"
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
@@ -129,7 +127,7 @@ export default function WhyChooseUs() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent z-10" />
               
               <div className="relative z-20 space-y-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-gold px-2.5 py-0.5 text-[9px] font-black text-brand-dark uppercase tracking-widest">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-gold px-2.5 py-0.5 text-[11px] font-black text-brand-dark uppercase tracking-widest">
                   <span className="h-1.5 w-1.5 rounded-full bg-brand-dark animate-pulse" />
                   Natural Cooking Standard
                 </span>
@@ -164,7 +162,7 @@ export default function WhyChooseUs() {
                   <th scope="col" className="p-4 sm:p-5 text-brand-gold bg-brand-gold/[0.03] border-x border-brand-gold/15">
                     <span className="flex items-center gap-2">
                       Café Serenity Subscriptions
-                      <span className="inline-flex rounded-full bg-brand-gold/15 px-2 py-0.5 text-[8px] font-black text-brand-gold tracking-widest normal-case">
+                      <span className="inline-flex rounded-full bg-brand-gold/15 px-2 py-0.5 text-[11px] font-black text-brand-gold tracking-widest normal-case">
                         RECOMMENDED
                       </span>
                     </span>

@@ -9,7 +9,6 @@ import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
 import MotionWrapper from '@/components/common/MotionWrapper';
 import { cn } from '@/lib/utils';
-import { useCheckout } from '@/context/CheckoutContext';
 
 interface MacroStats {
   protein: string;
@@ -50,7 +49,7 @@ const SLIDES: Slide[] = [
     macros: { protein: 'Idli', carbs: 'Vada', fat: 'Sambar' },
     bgColor: 'from-brand-gold/15 to-orange-500/5',
     floatCards: [
-      { text: 'Fresh Morning Food', sub: 'Served Warm Daily', position: '-top-4 -right-4 md:-right-8', delay: 0.2, iconType: 'fresh' },
+      { text: 'Fresh Morning Food', sub: 'Served Warm Daily', position: 'top-2 right-2 md:-top-4 md:-right-8', delay: 0.2, iconType: 'fresh' },
       { text: 'Affordable Pricing', sub: 'Kakkanad Local Spot', position: '-bottom-6 -left-6', delay: 1.4, iconType: 'organic' }
     ]
   },
@@ -65,7 +64,7 @@ const SLIDES: Slide[] = [
     macros: { protein: 'Coffee', carbs: 'Tea', fat: 'Brewed' },
     bgColor: 'from-brand-gold/20 to-brand-gold/5',
     floatCards: [
-      { text: 'Steaming Hot Tea', sub: 'Everyday Comfort', position: '-top-4 -right-4 md:-right-8', delay: 0.6, iconType: 'fresh' },
+      { text: 'Steaming Hot Tea', sub: 'Everyday Comfort', position: 'top-2 right-2 md:-top-4 md:-right-8', delay: 0.6, iconType: 'fresh' },
       { text: 'Filter Coffee', sub: 'Rich & Authentic', position: '-bottom-6 -left-6', delay: 1.9, iconType: 'organic' }
     ]
   },
@@ -80,7 +79,7 @@ const SLIDES: Slide[] = [
     macros: { protein: '8g', carbs: '22g', fat: '12g' },
     bgColor: 'from-brand-gold/15 to-brand-gold/5',
     floatCards: [
-      { text: 'Rich in Fiber', sub: 'Gut Friendly', position: '-top-4 -right-4 md:-right-8', delay: 0, iconType: 'fiber' },
+      { text: 'Rich in Fiber', sub: 'Gut Friendly', position: 'top-2 right-2 md:-top-4 md:-right-8', delay: 0, iconType: 'fiber' },
       { text: 'Low Oil', sub: 'Heart Healthy', position: '-bottom-6 -left-6', delay: 1.5, iconType: 'oil' }
     ]
   },
@@ -95,7 +94,7 @@ const SLIDES: Slide[] = [
     macros: { protein: '42g', carbs: '35g', fat: '10g' },
     bgColor: 'from-brand-gold/20 to-brand-gold/5',
     floatCards: [
-      { text: 'High Protein', sub: '42g Protein', position: '-top-4 -right-4 md:-right-8', delay: 0.5, iconType: 'protein' },
+      { text: 'High Protein', sub: '42g Protein', position: 'top-2 right-2 md:-top-4 md:-right-8', delay: 0.5, iconType: 'protein' },
       { text: 'Dietitian Approved', sub: 'Verified Macros', position: '-bottom-6 -left-6', delay: 2, iconType: 'organic' }
     ]
   },
@@ -110,14 +109,13 @@ const SLIDES: Slide[] = [
     macros: { protein: '32g', carbs: '40g', fat: '14g' },
     bgColor: 'from-brand-gold/20 to-brand-gold/5',
     floatCards: [
-      { text: 'Balanced Nutrition', sub: 'Calorie Mapped', position: '-top-4 -right-4 md:-right-8', delay: 0.8, iconType: 'kcal' },
+      { text: 'Balanced Nutrition', sub: 'Calorie Mapped', position: 'top-2 right-2 md:-top-4 md:-right-8', delay: 0.8, iconType: 'kcal' },
       { text: 'Healthy Fats', sub: 'Cold-Pressed Oils', position: '-bottom-6 -left-6', delay: 2.3, iconType: 'oil' }
     ]
   }
 ];
 
 export default function Hero() {
-  const { openCheckout } = useCheckout();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [progress, setProgress] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -347,9 +345,9 @@ export default function Hero() {
             <MotionWrapper animation="fade-up" className="space-y-5">
               <Typography
                 variant="h1"
-                className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7.5xl leading-[1.08] text-white font-sans"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7.2xl font-extrabold tracking-tight leading-[1.08] text-white font-sans"
               >
-                Café Serenity. <br />
+                Café Serenity. <br className="hidden sm:inline" />
                 <span className="text-brand-gold font-black bg-gradient-to-r from-brand-gold to-amber-500 bg-clip-text text-transparent">
                   Healthy & Everyday Food.
                 </span>
@@ -359,7 +357,7 @@ export default function Hero() {
 
           {/* Description & CTAs block (order-3 stacks it at the bottom on mobile) */}
           <div className="order-3 space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start mt-6 lg:mt-0">
-            <MotionWrapper animation="fade-up" className="space-y-6 w-full">
+            <MotionWrapper animation="fade-up" className="space-y-6 w-full flex flex-col items-center lg:items-start">
               {/* Supporting Paragraph */}
               <Typography
                 variant="body-large"
@@ -367,6 +365,21 @@ export default function Hero() {
               >
                 A calm, affordable food spot in Kakkanad serving healthy portion-balanced diet plans, fresh breakfast favourites, and everyday café food.
               </Typography>
+
+              {/* Compact Nutrition/Macro Row for Mobile */}
+              <div className="flex lg:hidden items-center justify-center gap-3 flex-wrap text-stone-200 text-[11px] font-bold py-2 px-4 rounded-xl bg-stone-900 border border-stone-800 w-fit mt-4">
+                <span className="text-brand-gold font-extrabold uppercase tracking-wider">{SLIDES[currentIndex].title}</span>
+                <span className="text-stone-700">|</span>
+                <span>{SLIDES[currentIndex].kcal}</span>
+                <span className="text-stone-700">|</span>
+                <span className="text-stone-400">
+                  {SLIDES[currentIndex].id.includes('cafe') ? (
+                    `${SLIDES[currentIndex].macros.protein} • ${SLIDES[currentIndex].macros.carbs} • ${SLIDES[currentIndex].macros.fat}`
+                  ) : (
+                    `Prot: ${SLIDES[currentIndex].macros.protein} / Carb: ${SLIDES[currentIndex].macros.carbs} / Fat: ${SLIDES[currentIndex].macros.fat}`
+                  )}
+                </span>
+              </div>
 
               {/* Spacing and CTA Button Hierarchy */}
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2 w-full max-w-md mx-auto lg:mx-0">
@@ -426,8 +439,8 @@ export default function Hero() {
                       src={SLIDES[currentIndex].image}
                       alt={SLIDES[currentIndex].alt}
                       fill
-                      sizes="(max-w-md) 100vw, 500px"
-                      priority={currentIndex === 0}
+                      sizes="(max-width: 768px) 100vw, 500px"
+                      priority={currentIndex === 0 || currentIndex === 1}
                       className="object-cover transition-transform duration-500"
                     />
                   </motion.div>
@@ -453,7 +466,7 @@ export default function Hero() {
                       <span className="block text-xs font-extrabold text-stone-100 leading-tight tracking-tight truncate">
                         {card.text}
                       </span>
-                      <span className="block text-[9px] text-brand-gold font-bold uppercase tracking-wider truncate">
+                      <span className="block text-[11px] text-brand-gold font-bold uppercase tracking-wider truncate">
                         {card.sub}
                       </span>
                     </div>
@@ -468,7 +481,7 @@ export default function Hero() {
               className="absolute -bottom-6 -left-6 rounded-2xl border border-stone-850 bg-brand-dark/95 backdrop-blur-md p-4 shadow-xl max-w-[210px] space-y-3.5 transition-all duration-300 hover:scale-105 active:scale-95 text-stone-200 md:block hidden z-20"
               {...floatAnimation(SLIDES[currentIndex].floatCards[1].delay, reducedMotion)}
             >
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-gold/10 px-2.5 py-0.5 text-[9px] font-black text-brand-gold uppercase tracking-widest">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-gold/10 px-2.5 py-0.5 text-[11px] font-black text-brand-gold uppercase tracking-widest">
                 <span className="h-1.5 w-1.5 rounded-full bg-brand-gold animate-pulse" aria-hidden="true" />
                 Dietitian Verified
               </span>
@@ -476,15 +489,15 @@ export default function Hero() {
                 <span className="block text-xs font-extrabold text-stone-100 tracking-tight">
                   {SLIDES[currentIndex].title}
                 </span>
-                <span className="block text-[10px] text-stone-400 font-semibold">
+                <span className="block text-[11px] text-stone-400 font-semibold">
                   Calories: {SLIDES[currentIndex].kcal}
                 </span>
               </div>
               
               {/* Macro elements grid */}
-              <div className="grid grid-cols-3 gap-2 text-center text-[10px] font-black border-t border-stone-800 pt-2.5">
+              <div className="grid grid-cols-3 gap-2 text-center text-[11px] font-black border-t border-stone-800 pt-2.5">
                 <div>
-                  <span className="block text-stone-400 text-[8px] font-medium uppercase tracking-wider mb-0.5">
+                  <span className="block text-stone-400 text-[11px] font-medium uppercase tracking-wider mb-0.5">
                     Prot
                   </span>
                   <span className="inline-flex rounded-full bg-brand-gold/20 text-brand-gold px-1.5 py-0.5">
@@ -492,7 +505,7 @@ export default function Hero() {
                   </span>
                 </div>
                 <div>
-                  <span className="block text-stone-400 text-[8px] font-medium uppercase tracking-wider mb-0.5">
+                  <span className="block text-stone-400 text-[11px] font-medium uppercase tracking-wider mb-0.5">
                     Carb
                   </span>
                   <span className="inline-flex rounded-full bg-brand-gold/20 text-brand-gold px-1.5 py-0.5">
@@ -500,7 +513,7 @@ export default function Hero() {
                   </span>
                 </div>
                 <div>
-                  <span className="block text-stone-400 text-[8px] font-medium uppercase tracking-wider mb-0.5">
+                  <span className="block text-stone-400 text-[11px] font-medium uppercase tracking-wider mb-0.5">
                     Fat
                   </span>
                   <span className="inline-flex rounded-full bg-brand-gold/20 text-brand-gold px-1.5 py-0.5">
@@ -516,7 +529,7 @@ export default function Hero() {
             {/* Previous Button */}
             <button
               onClick={prevSlide}
-              className="p-2 rounded-full border border-stone-800 bg-stone-900/60 text-stone-200 hover:bg-stone-850 hover:text-white transition-all duration-300 hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-gold shrink-0"
+              className="flex items-center justify-center min-w-[44px] min-h-[44px] p-2.5 rounded-full border border-stone-800 bg-stone-900/60 text-stone-200 hover:bg-stone-850 hover:text-white transition-all duration-300 hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-gold shrink-0"
               aria-label="Previous slide"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
@@ -552,7 +565,7 @@ export default function Hero() {
             {/* Next Button */}
             <button
               onClick={nextSlide}
-              className="p-2 rounded-full border border-stone-800 bg-stone-900/60 text-stone-200 hover:bg-stone-850 hover:text-white transition-all duration-300 hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-gold shrink-0"
+              className="flex items-center justify-center min-w-[44px] min-h-[44px] p-2.5 rounded-full border border-stone-800 bg-stone-900/60 text-stone-200 hover:bg-stone-850 hover:text-white transition-all duration-300 hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-gold shrink-0"
               aria-label="Next slide"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">

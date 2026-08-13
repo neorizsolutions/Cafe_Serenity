@@ -6,11 +6,9 @@ import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
 import MotionWrapper from '@/components/common/MotionWrapper';
 import { CONTACT_DETAILS } from '@/constants';
-import { MapPin, Clock, Phone, Navigation, ShoppingBag } from 'lucide-react';
-import { useCheckout } from '@/context/CheckoutContext';
+import { MapPin, Clock, Phone, Navigation } from 'lucide-react';
 
 export default function VisitUs() {
-  const { openCheckout } = useCheckout();
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${CONTACT_DETAILS.geo.lat},${CONTACT_DETAILS.geo.lng}`;
   const mapViewUrl = `https://maps.google.com/?q=${CONTACT_DETAILS.geo.lat},${CONTACT_DETAILS.geo.lng}`;
   const embedUrl = `https://maps.google.com/maps?q=${CONTACT_DETAILS.geo.lat},${CONTACT_DETAILS.geo.lng}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
@@ -42,7 +40,7 @@ export default function VisitUs() {
           <Typography variant="h2" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
             Visit Our Central Kitchen & Café
           </Typography>
-          <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium opacity-90">
+          <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium">
             See where the wellness magic happens. Find our central preparation hub coordinates and contact details.
           </Typography>
         </div>
@@ -109,10 +107,10 @@ export default function VisitUs() {
                       <h4 className="text-xs font-extrabold uppercase tracking-widest text-foreground">Contact Number</h4>
                       <a
                         href={`tel:${CONTACT_DETAILS.phone}`}
-                        className="text-xs sm:text-[13px] text-muted-foreground hover:text-brand-gold font-bold transition-colors block"
+                        className="text-xs sm:text-[13px] text-foreground hover:text-brand-gold font-bold transition-colors block"
                         itemProp="telephone"
                       >
-                        +91 98765 43210
+                        +91 93882 62626
                       </a>
                     </div>
                   </div>
@@ -122,16 +120,9 @@ export default function VisitUs() {
 
               {/* Call to action buttons */}
               <div className="flex flex-col sm:flex-row gap-3 pt-8 w-full">
-                <button
-                  onClick={() => openCheckout()}
-                  className="group flex-1 flex h-11 items-center justify-center gap-2 rounded-xl bg-brand-gold text-brand-dark hover:bg-brand-gold/90 text-xs font-extrabold shadow-sm transition-all duration-300 hover:-translate-y-0.5 active:scale-98 cursor-pointer"
-                >
-                  <ShoppingBag className="h-4 w-4" />
-                  <span>Order Now</span>
-                </button>
                 <a
                   href={`tel:${CONTACT_DETAILS.phone}`}
-                  className="flex-1 flex h-11 items-center justify-center gap-2 rounded-xl border border-border bg-background hover:bg-secondary text-foreground text-xs font-bold transition-all duration-300 hover:-translate-y-0.5 active:scale-98"
+                  className="flex-1 flex h-11 items-center justify-center gap-2 rounded-xl border border-border bg-background hover:bg-stone-900/40 text-foreground text-xs font-bold transition-all duration-300 hover:-translate-y-0.5 active:scale-98"
                 >
                   <Phone className="h-3.5 w-3.5" aria-hidden="true" />
                   <span>Call Us</span>
@@ -151,7 +142,7 @@ export default function VisitUs() {
 
           {/* Right Column: Google Map Embed */}
           <div className="lg:col-span-7 flex items-stretch">
-            <MotionWrapper animation="scale" className="relative w-full rounded-3xl border border-border/80 overflow-hidden shadow-md min-h-[350px] lg:min-h-full flex group/map">
+            <MotionWrapper animation="scale" className="relative w-full rounded-3xl border border-border/80 overflow-hidden shadow-md min-h-[220px] sm:min-h-[350px] lg:min-h-full flex group/map">
               {/* Overlay link button to open map */}
               <a
                 href={mapViewUrl}
@@ -174,7 +165,7 @@ export default function VisitUs() {
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full object-cover min-h-[350px] lg:min-h-[450px]"
+                className="w-full h-full object-cover min-h-[220px] sm:min-h-[350px] lg:min-h-[450px]"
               />
             </MotionWrapper>
           </div>

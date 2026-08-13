@@ -6,7 +6,6 @@ import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
 import MotionWrapper from '@/components/common/MotionWrapper';
-import { useCheckout } from '@/context/CheckoutContext';
 
 interface CategoryCardProps {
   imageSrc: string;
@@ -19,7 +18,6 @@ interface CategoryCardProps {
 }
 
 function CategoryCard({ imageSrc, title, description, calories, protein, price }: Omit<CategoryCardProps, 'link'>) {
-  const { openCheckout } = useCheckout();
   return (
     <div className="group rounded-2xl border border-border/60 bg-card overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full hover:-translate-y-1">
       {/* Visual Frame */}
@@ -28,20 +26,20 @@ function CategoryCard({ imageSrc, title, description, calories, protein, price }
           src={imageSrc}
           alt={title}
           fill
-          sizes="(max-w-md) 100vw, 300px"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 300px"
           loading="lazy"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         {/* Nutrition Badges */}
         <div className="absolute top-3 left-3 flex gap-1.5 flex-wrap">
-          <span className="inline-flex items-center gap-1 rounded-full bg-white/90 dark:bg-card/90 backdrop-blur-sm px-2.5 py-0.5 text-[9px] font-extrabold text-foreground uppercase tracking-wider border border-border/40 shadow-sm">
+          <span className="inline-flex items-center gap-1 rounded-full bg-white/90 dark:bg-card/90 backdrop-blur-sm px-2.5 py-0.5 text-[11px] font-extrabold text-foreground uppercase tracking-wider border border-border/40 shadow-sm">
             <svg className="h-2.5 w-2.5 text-brand-gold fill-current animate-pulse" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
             {calories}
           </span>
-          <span className="inline-flex items-center gap-1 rounded-full bg-brand-gold/90 backdrop-blur-sm px-2.5 py-0.5 text-[9px] font-extrabold text-brand-dark uppercase tracking-wider border border-brand-gold/20 shadow-sm">
+          <span className="inline-flex items-center gap-1 rounded-full bg-brand-gold/90 backdrop-blur-sm px-2.5 py-0.5 text-[11px] font-extrabold text-brand-dark uppercase tracking-wider border border-brand-gold/20 shadow-sm">
             <svg className="h-2.5 w-2.5 text-brand-dark stroke-current fill-none" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
@@ -66,16 +64,16 @@ function CategoryCard({ imageSrc, title, description, calories, protein, price }
             <span className="text-[9px] text-muted-foreground block font-bold uppercase tracking-wider leading-none">Starting at</span>
             <span className="text-sm font-black text-foreground block mt-1">{price}</span>
           </div>
-          <button
-            onClick={() => openCheckout(title)}
-            className="group/btn inline-flex h-9 items-center justify-center rounded-full bg-brand-gold px-4 text-xs font-bold text-brand-dark shadow hover:bg-brand-gold/90 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
-            aria-label={`Choose Café Serenity ${title} subscription plan`}
+          <Link
+            href="/#contact"
+            className="group/btn inline-flex h-9 items-center justify-center rounded-full bg-brand-gold px-4 text-xs font-bold text-brand-dark shadow hover:bg-brand-gold/90 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer text-center"
+            aria-label={`Inquire about Café Serenity ${title} plan`}
           >
-            <span>Choose Plan</span>
+            <span>Inquire Now</span>
             <svg className="h-3 w-3 fill-current ml-1 transition-transform duration-300 group-hover/btn:translate-x-0.5" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 10h3l-4 4-4-4h3V8h2v4z" />
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
     </div>
@@ -83,15 +81,13 @@ function CategoryCard({ imageSrc, title, description, calories, protein, price }
 }
 
 export default function MealExperience() {
-  const { openCheckout } = useCheckout();
-
   return (
-    <Section bg="white" className="relative overflow-hidden" id="healthy-meals">
+    <Section bg="white" className="relative overflow-hidden" id="healthy-meals-info">
       <Container className="space-y-24">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <Typography variant="badge-label" className="tracking-widest text-[11px]">
+          <Typography variant="badge-label" className="tracking-widest text-[11px] text-brand-gold">
             Our Culinary Philosophy
           </Typography>
           <Typography variant="h2" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
@@ -110,11 +106,11 @@ export default function MealExperience() {
               src="/images/hero_meal_box.png"
               alt="Café Serenity ₹69 Flagship Value Box"
               fill
-              sizes="(max-w-md) 100vw, 500px"
+              sizes="(max-width: 768px) 100vw, 500px"
               priority
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute top-4 left-4 bg-brand-gold text-brand-dark px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-wider border border-brand-gold/20 shadow-sm animate-pulse z-10">
+            <div className="absolute top-4 left-4 bg-brand-gold text-brand-dark px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider border border-brand-gold/20 shadow-sm animate-pulse z-10">
               Flagship Value Box
             </div>
           </div>
@@ -151,15 +147,15 @@ export default function MealExperience() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <button
-                onClick={() => openCheckout('value-box')}
-                className="group flex h-12 items-center justify-center gap-2 rounded-full bg-brand-gold px-8 text-xs font-bold text-brand-dark shadow hover:bg-brand-gold/90 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer"
+              <Link
+                href="/#contact"
+                className="group flex h-12 items-center justify-center gap-2 rounded-full bg-brand-gold px-8 text-xs font-bold text-brand-dark shadow hover:bg-brand-gold/90 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer text-center"
               >
-                <span>Order Now</span>
-              </button>
+                <span>Inquire Now</span>
+              </Link>
               <Link
                 href="/meal-plans"
-                className="flex h-12 items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur-sm px-8 text-xs font-semibold text-foreground hover:bg-secondary transition-all hover:-translate-y-0.5 active:scale-[0.98]"
+                className="flex h-12 items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur-sm px-8 text-xs font-semibold text-foreground hover:bg-secondary transition-all hover:-translate-y-0.5 active:scale-[0.98] text-center"
               >
                 Explore Plans
               </Link>
@@ -229,7 +225,7 @@ export default function MealExperience() {
         <div className="rounded-3xl border border-brand-gold/15 bg-white/70 dark:bg-card/75 backdrop-blur-md p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center group shadow-sm hover:shadow-md hover:border-brand-gold/30 transition-all duration-500">
           <div className="space-y-5">
             <div className="space-y-2">
-              <Typography variant="badge-label" className="tracking-widest text-[11px]">
+              <Typography variant="badge-label" className="tracking-widest text-[11px] text-brand-gold">
                 Ingredient Integrity
               </Typography>
               <h3 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl">
@@ -252,7 +248,7 @@ export default function MealExperience() {
                   key={i}
                   className="flex items-center gap-2 rounded-xl border border-border/60 bg-secondary/15 px-3.5 py-2.5 transition-all duration-300 hover:border-brand-gold/25 hover:bg-secondary/25"
                 >
-                  <svg className="h-4 w-4 text-brand-gold shrink-0 animate-pulse" fill="none" strokeWidth="3.5" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <svg className="h-4 w-4 text-brand-gold shrink-0" fill="none" strokeWidth="3.5" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>
                   <span>{text}</span>
@@ -268,7 +264,7 @@ export default function MealExperience() {
                 src="/images/ingredient_integrity.png"
                 alt="Café Serenity Raw Organic Ingredient Integrity"
                 fill
-                sizes="(max-w-md) 100vw, 500px"
+                sizes="(max-width: 768px) 100vw, 500px"
                 loading="lazy"
                 className="object-cover transition-transform duration-500"
               />

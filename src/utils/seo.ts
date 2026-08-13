@@ -59,7 +59,7 @@ export function getOrganizationSchema() {
     '@type': 'Organization',
     'name': BUSINESS_NAME,
     'url': SEO_DEFAULTS.baseUrl,
-    'logo': `${SEO_DEFAULTS.baseUrl}/logos/logo-main.png`,
+    'logo': `${SEO_DEFAULTS.baseUrl}/brand/cafe-serenity-logo.svg`,
     'sameAs': [],
   };
 }

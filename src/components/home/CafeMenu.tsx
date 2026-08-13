@@ -90,53 +90,87 @@ export default function CafeMenu() {
           <Typography variant="h2" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
             Morning Favourites Café Menu
           </Typography>
-          <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-xl mx-auto font-medium opacity-90">
+          <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-xl mx-auto font-medium">
             A budget-friendly Kakkanad local spot. Taste simple, fresh, and quick tiffins served hot with authentic filter coffee and tea.
           </Typography>
         </div>
 
-        {/* Menu Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {CAFE_ITEMS.map((item, idx) => (
-            <MotionWrapper key={item.id} animation="fade-up" transition={{ delay: idx * 0.05, duration: 0.4, ease: 'easeOut' }}>
-              <div className="group relative bg-card hover:bg-secondary/20 dark:hover:bg-secondary/5 border border-border/60 hover:border-brand-gold/30 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between h-full">
-                
-                <div className="space-y-4">
-                  {/* Badge & Price Row */}
-                  <div className="flex items-start justify-between">
-                    <div>
-                      {item.tag ? (
-                        <span className="inline-flex items-center rounded-full bg-brand-gold/10 px-2.5 py-0.5 text-[9px] font-bold text-brand-gold uppercase tracking-wider mb-2">
-                          {item.tag}
-                        </span>
-                      ) : (
-                        <div className="h-5" />
-                      )}
-                      <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-brand-gold transition-colors">
-                        {item.name}
-                      </h3>
+        {/* Breakfast & Tiffins Category */}
+        <div className="space-y-6">
+          <div className="border-b border-border/40 pb-2">
+            <h3 className="text-lg font-bold text-brand-gold uppercase tracking-wider">Breakfast & Warm Tiffins</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {CAFE_ITEMS.filter(item => item.id !== 'coffee' && item.id !== 'tea').map((item, idx) => (
+              <MotionWrapper key={item.id} animation="fade-up" transition={{ delay: idx * 0.05, duration: 0.4, ease: 'easeOut' }}>
+                <div className="group relative bg-card hover:bg-secondary/20 dark:hover:bg-secondary/5 border border-border/60 hover:border-brand-gold/30 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between h-full">
+                  <div className="space-y-4">
+                    {/* Badge & Price Row */}
+                    <div className="flex items-start justify-between">
+                      <div>
+                        {item.tag ? (
+                          <span className="inline-flex items-center rounded-full bg-brand-gold/10 px-2.5 py-0.5 text-[11px] font-bold text-brand-gold uppercase tracking-wider mb-2">
+                            {item.tag}
+                          </span>
+                        ) : (
+                          <div className="h-5" />
+                        )}
+                        <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-brand-gold transition-colors">
+                          {item.name}
+                        </h3>
+                      </div>
+                      <span className="text-stone-200 text-base font-extrabold bg-stone-900 px-2.5 py-1 rounded-lg border border-border/40 shrink-0">
+                        ₹{item.price}
+                      </span>
                     </div>
-                    <span className="text-base font-extrabold text-foreground bg-secondary/50 px-2.5 py-1 rounded-lg border border-border/40 shrink-0">
-                      ₹{item.price}
-                    </span>
+
+                    <p className="text-xs text-muted-foreground leading-relaxed font-medium">
+                      {item.description}
+                    </p>
                   </div>
-
-                  <p className="text-xs text-muted-foreground leading-relaxed font-medium">
-                    {item.description}
-                  </p>
                 </div>
+              </MotionWrapper>
+            ))}
+          </div>
+        </div>
 
-                <div className="pt-6">
-                  <Link
-                    href={`/checkout?plan=${encodeURIComponent(item.id)}`}
-                    className="inline-flex h-9 items-center justify-center rounded-full border border-border hover:border-brand-gold/40 bg-background hover:bg-brand-gold/5 px-4 text-xs font-bold text-foreground hover:text-brand-gold transition-all duration-200 w-full"
-                  >
-                    Order Fresh Breakfast
-                  </Link>
+        {/* Hot Beverages Category */}
+        <div className="space-y-6 pt-6">
+          <div className="border-b border-border/40 pb-2">
+            <h3 className="text-lg font-bold text-brand-gold uppercase tracking-wider">Freshly Brewed Hot Beverages</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {CAFE_ITEMS.filter(item => item.id === 'coffee' || item.id === 'tea').map((item, idx) => (
+              <MotionWrapper key={item.id} animation="fade-up" transition={{ delay: idx * 0.05, duration: 0.4, ease: 'easeOut' }}>
+                <div className="group relative bg-card hover:bg-secondary/20 dark:hover:bg-secondary/5 border border-border/60 hover:border-brand-gold/30 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between h-full">
+                  <div className="space-y-4">
+                    {/* Badge & Price Row */}
+                    <div className="flex items-start justify-between">
+                      <div>
+                        {item.tag ? (
+                          <span className="inline-flex items-center rounded-full bg-brand-gold/10 px-2.5 py-0.5 text-[11px] font-bold text-brand-gold uppercase tracking-wider mb-2">
+                            {item.tag}
+                          </span>
+                        ) : (
+                          <div className="h-5" />
+                        )}
+                        <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-brand-gold transition-colors">
+                          {item.name}
+                        </h3>
+                      </div>
+                      <span className="text-stone-200 text-base font-extrabold bg-stone-900 px-2.5 py-1 rounded-lg border border-border/40 shrink-0">
+                        ₹{item.price}
+                      </span>
+                    </div>
+
+                    <p className="text-xs text-muted-foreground leading-relaxed font-medium">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </MotionWrapper>
-          ))}
+              </MotionWrapper>
+            ))}
+          </div>
         </div>
 
         {/* Café Highlights */}
@@ -149,7 +183,7 @@ export default function CafeMenu() {
           </div>
           <Link
             href="#location"
-            className="h-10 px-6 rounded-full bg-brand-gold hover:bg-brand-gold/90 text-xs font-bold text-brand-dark shadow-sm flex items-center justify-center shrink-0 transition-colors"
+            className="h-10 px-6 rounded-full bg-brand-gold hover:bg-brand-gold/90 text-xs font-bold text-brand-dark shadow-sm flex items-center justify-center shrink-0 transition-colors text-center"
           >
             Get Location Directions
           </Link>

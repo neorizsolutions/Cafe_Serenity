@@ -60,14 +60,14 @@ export default function WeightLossPlans() {
 
         <div className="flex gap-4 justify-center pt-4">
           <Link
-            href="/checkout?plan=Weight Loss Plan"
-            className="flex h-11 items-center justify-center rounded-full bg-primary px-8 text-xs font-bold text-primary-foreground shadow hover:bg-primary/95"
+            href="/#contact"
+            className="flex h-11 items-center justify-center rounded-full bg-brand-gold px-8 text-xs font-bold text-brand-dark shadow hover:bg-brand-gold/90"
           >
-            Choose Plan
+            Contact Us
           </Link>
           <Link
             href="/meal-plans"
-            className="flex h-11 items-center justify-center rounded-full border border-border bg-background px-8 text-xs font-semibold text-foreground hover:bg-secondary"
+            className="flex h-11 items-center justify-center rounded-full border border-border bg-background px-8 text-xs font-bold text-foreground hover:text-white hover:bg-stone-900"
           >
             All Plans
           </Link>

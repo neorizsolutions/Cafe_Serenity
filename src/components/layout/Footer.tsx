@@ -35,7 +35,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-16">
         
         {/* Main 5-Column Grid */}
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           
           {/* Column 1: Business Overview */}
           <div className="flex flex-col gap-4">
@@ -57,19 +57,19 @@ export default function Footer() {
             <p className="text-xs sm:text-[13px] leading-relaxed text-stone-300 font-medium">
               Healthy meals & affordable everyday café food served fresh daily in Kakkanad.
             </p>
-            <div className="text-[10px] font-bold uppercase tracking-widest text-stone-300 bg-stone-900/60 px-2.5 py-1 rounded w-fit border border-stone-800">
+            <div className="text-[11px] font-bold uppercase tracking-widest text-stone-300 bg-stone-900/60 px-2.5 py-1 rounded w-fit border border-stone-800">
               FSSAI Lic: <span className="font-extrabold">{CONTACT_DETAILS.fssaiNumber}</span>
             </div>
 
             {/* Mobile App Placeholders */}
             <div className="pt-2 space-y-2.5">
-              <span className="block text-[10px] font-extrabold uppercase tracking-widest text-brand-gold">Mobile App (Soon)</span>
+              <span className="block text-[11px] font-extrabold uppercase tracking-widest text-brand-gold">Mobile App (Soon)</span>
               <div className="flex gap-2">
-                <span className="inline-flex h-8 items-center justify-center rounded-lg bg-stone-900 border border-stone-800 px-3 text-[10px] font-bold text-stone-500 select-none cursor-not-allowed">
-                  App Store
+                <span className="inline-flex h-8 items-center justify-center rounded-lg bg-stone-900 border border-stone-800 px-3 text-[11px] font-bold text-stone-500 select-none cursor-not-allowed" title="Mobile App Coming Soon">
+                  App Store (Soon)
                 </span>
-                <span className="inline-flex h-8 items-center justify-center rounded-lg bg-stone-900 border border-stone-800 px-3 text-[10px] font-bold text-stone-500 select-none cursor-not-allowed">
-                  Google Play
+                <span className="inline-flex h-8 items-center justify-center rounded-lg bg-stone-900 border border-stone-800 px-3 text-[11px] font-bold text-stone-500 select-none cursor-not-allowed" title="Mobile App Coming Soon">
+                  Google Play (Soon)
                 </span>
               </div>
             </div>
@@ -77,7 +77,7 @@ export default function Footer() {
 
           {/* Column 2: Quick Navigation */}
           <div className="flex flex-col gap-4">
-            <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-brand-gold">Quick Navigation</h4>
+            <h4 className="text-[11px] font-extrabold uppercase tracking-widest text-brand-gold">Quick Navigation</h4>
             <nav className="flex flex-col gap-3 text-xs sm:text-[13px] font-semibold" aria-label="Footer Quick Links">
               <Link href="/" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Home Landing</Link>
               <Link href="/pricing" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Weekly Menu</Link>
@@ -91,7 +91,7 @@ export default function Footer() {
 
           {/* Column 3: Meal Categories */}
           <div className="flex flex-col gap-4">
-            <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-brand-gold">Meal Categories</h4>
+            <h4 className="text-[11px] font-extrabold uppercase tracking-widest text-brand-gold">Meal Categories</h4>
             <nav className="flex flex-col gap-3 text-xs sm:text-[13px] font-semibold" aria-label="Footer Meal Links">
               <Link href="/meal-plans/weight-loss" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Weight Loss Deficit</Link>
               <Link href="/meal-plans/high-protein" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">High Protein & Gym</Link>
@@ -105,7 +105,7 @@ export default function Footer() {
 
           {/* Column 4: Support & Policy */}
           <div className="flex flex-col gap-4">
-            <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-brand-gold">Support & Policy</h4>
+            <h4 className="text-[11px] font-extrabold uppercase tracking-widest text-brand-gold">Support & Policy</h4>
             <nav className="flex flex-col gap-3 text-xs sm:text-[13px] font-semibold" aria-label="Footer Policy Links">
               <Link href="/faq" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Concierge Desk</Link>
               <Link href="/faq" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Billing & UPI</Link>
@@ -119,7 +119,7 @@ export default function Footer() {
           {/* Column 5: Location Details */}
           <div className="flex flex-col gap-4 text-xs sm:text-[13px]">
             <div className="space-y-2">
-              <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-brand-gold">Active Service Areas</h4>
+              <h4 className="text-[11px] font-extrabold uppercase tracking-widest text-brand-gold">Active Service Areas</h4>
               <p className="leading-relaxed font-semibold">
                 <span className="font-bold text-stone-100">Kochi:</span> Kakkanad, Infopark, SmartCity, Echamuku, Kunnumpuram, and nearby Civil Station areas
               </p>
@@ -150,7 +150,7 @@ export default function Footer() {
               href={`https://maps.google.com/?q=${CONTACT_DETAILS.geo.lat},${CONTACT_DETAILS.geo.lng}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[10px] font-extrabold text-brand-gold hover:underline hover:text-brand-gold/80 transition-colors w-fit focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5"
+              className="text-[11px] font-extrabold text-brand-gold hover:underline hover:text-brand-gold/80 transition-colors w-fit focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5"
             >
               📍 View Kitchen Map Coordinates →
             </a>
@@ -161,7 +161,7 @@ export default function Footer() {
         {/* Newsletter & Badges Row */}
         <div className="pt-10 border-t border-stone-800 grid grid-cols-1 gap-8 lg:grid-cols-12 items-center">
           <div className="lg:col-span-6 space-y-2">
-            <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-brand-gold">Weekly Nutrition Newsletter</h4>
+            <h4 className="text-[11px] font-extrabold uppercase tracking-widest text-brand-gold">Weekly Nutrition Newsletter</h4>
             <p className="text-xs leading-relaxed text-stone-300 max-w-sm font-medium">
               Subscribe for clean recipes, macro guides, and menu schedules.
             </p>
@@ -179,7 +179,7 @@ export default function Footer() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter email address..."
                   aria-label="Newsletter email subscription"
-                  className="flex-grow h-9 px-3 rounded-lg border border-stone-800 bg-stone-900/60 text-xs font-medium text-stone-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold/20"
+                  className="flex-grow h-9 px-3 rounded-lg border border-stone-800 bg-stone-900/60 text-xs font-medium text-stone-200 placeholder:text-stone-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold/20"
                 />
                 <button
                   type="submit"
