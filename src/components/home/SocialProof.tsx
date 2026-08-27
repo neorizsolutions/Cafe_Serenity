@@ -297,7 +297,7 @@ export default function SocialProof() {
               <span>Inquire Now</span>
             </Link>
             <Link
-              href="/meal-plans"
+              href="/healthy-meals"
               className="flex h-11 items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur-sm px-8 text-xs font-semibold text-foreground hover:text-white hover:bg-stone-900 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 text-center"
             >
               Configure Plans

@@ -81,8 +81,8 @@ export default function Footer() {
             <nav className="flex flex-col gap-3 text-xs sm:text-[13px] font-semibold" aria-label="Footer Quick Links">
               <Link href="/" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Home Landing</Link>
               <Link href="/pricing" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Weekly Menu</Link>
-              <Link href="/meal-plans" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Subscription Plans</Link>
-              <Link href="/meal-plans/corporate" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Corporate Meals</Link>
+              <Link href="/healthy-meals" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Subscription Plans</Link>
+              <Link href="/healthy-meals/corporate" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Corporate Meals</Link>
               <Link href="/about" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">About Our Story</Link>
               <Link href="/faq" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Help Center & FAQ</Link>
               <Link href="/delivery-areas" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Delivery Areas</Link>
@@ -93,13 +93,13 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <h4 className="text-[11px] font-extrabold uppercase tracking-widest text-brand-gold">Meal Categories</h4>
             <nav className="flex flex-col gap-3 text-xs sm:text-[13px] font-semibold" aria-label="Footer Meal Links">
-              <Link href="/meal-plans/weight-loss" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Weight Loss Deficit</Link>
-              <Link href="/meal-plans/high-protein" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">High Protein & Gym</Link>
-              <Link href="/meal-plans/balanced" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Balanced Diet Boxes</Link>
-              <Link href="/meal-plans/diabetic" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Diabetic Friendly</Link>
-              <Link href="/meal-plans/corporate" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Corporate Lunches</Link>
-              <Link href="/meal-plans" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Family Nutrition</Link>
-              <Link href="/meal-plans" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Kids Healthy Grains</Link>
+              <Link href="/healthy-meals/weight-loss" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Weight Loss Deficit</Link>
+              <Link href="/healthy-meals/high-protein" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">High Protein & Gym</Link>
+              <Link href="/healthy-meals/balanced" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Balanced Diet Boxes</Link>
+              <Link href="/healthy-meals/diabetic" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Diabetic Friendly</Link>
+              <Link href="/healthy-meals/corporate" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Corporate Lunches</Link>
+              <Link href="/healthy-meals" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Family Nutrition</Link>
+              <Link href="/healthy-meals" className="hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5">Kids Healthy Grains</Link>
             </nav>
           </div>
 
@@ -229,7 +229,7 @@ export default function Footer() {
               <span>Facebook</span>
             </a>
             <a
-              href="https://linkedin.com"
+              href={SOCIAL_LINKS.linkedin || 'https://linkedin.com/company/cafeserenity'}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-brand-gold transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5"
@@ -241,7 +241,7 @@ export default function Footer() {
               <span>LinkedIn</span>
             </a>
             <a
-              href="https://youtube.com"
+              href={SOCIAL_LINKS.youtube || 'https://youtube.com/@cafeserenity.kochi'}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-brand-gold transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded px-0.5"

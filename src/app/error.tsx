@@ -32,13 +32,13 @@ export default function Error({
         <div className="pt-2 flex justify-center gap-4">
           <button
             onClick={() => reset()}
-            className="flex h-10 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground shadow transition-colors hover:bg-primary/95"
+            className="flex h-11 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground shadow transition-colors hover:bg-primary/95"
           >
             Try Again
           </button>
           <Link
             href="/"
-            className="flex h-10 items-center justify-center rounded-full border border-border bg-background px-6 text-sm font-semibold text-foreground hover:bg-secondary transition-colors"
+            className="flex h-11 items-center justify-center rounded-full border border-border bg-background px-6 text-sm font-semibold text-foreground hover:bg-secondary transition-colors"
           >
             Go Back Home
           </Link>

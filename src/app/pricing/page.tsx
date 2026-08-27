@@ -1,7 +1,7 @@
 import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
-import Pricing from '@/components/home/Pricing';
+import Pricing from '@/components/healthy-meals/PricingSection';
 import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({

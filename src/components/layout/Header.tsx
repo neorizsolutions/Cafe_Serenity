@@ -120,7 +120,7 @@ export default function Header() {
 
           {/* View Menu CTA */}
           <Link
-            href="/#cafe-menu"
+            href="/cafe-menu"
             className="group inline-flex h-9 items-center justify-center gap-1.5 rounded-full bg-brand-gold px-4 lg:px-5 text-xs font-medium text-brand-dark shadow-sm hover:shadow transition-all duration-300 hover:bg-brand-gold/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold active:scale-95 hover:-translate-y-0.5 cursor-pointer"
           >
             <span>View Menu</span>
@@ -138,7 +138,7 @@ export default function Header() {
         <div className="flex items-center gap-3 lg:hidden">
           {/* Optional compact View Menu button on mobile */}
           <Link
-            href="/#cafe-menu"
+            href="/cafe-menu"
             className="hidden min-[360px]:inline-flex h-9 items-center justify-center rounded-full bg-brand-gold px-4 text-[11px] font-medium text-brand-dark shadow-sm hover:bg-brand-gold/90 active:scale-95 transition-all duration-200"
           >
             <span>View Menu</span>
@@ -146,7 +146,7 @@ export default function Header() {
           
           <button
             onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-xl border border-brand-dark/15 bg-white text-brand-dark hover:bg-stone-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold transition-all duration-200"
+            className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-xl border border-brand-dark/15 bg-white text-brand-dark hover:bg-stone-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold transition-all duration-200"
             aria-expanded={isMobileOpen}
             aria-label="Toggle mobile navigation menu"
           >
@@ -234,7 +234,7 @@ export default function Header() {
                 </div>
 
                 <Link
-                  href="/#cafe-menu"
+                  href="/cafe-menu"
                   onClick={() => setIsMobileOpen(false)}
                   className="mt-2 inline-flex h-12 items-center justify-center gap-2.5 rounded-xl bg-brand-gold text-sm font-bold text-brand-dark hover:bg-brand-gold/90 transition-all shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold active:scale-95 cursor-pointer text-center"
                 >

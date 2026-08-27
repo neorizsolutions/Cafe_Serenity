@@ -9,6 +9,20 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/meal-plans',
+        destination: '/healthy-meals',
+        permanent: true,
+      },
+      {
+        source: '/meal-plans/:path*',
+        destination: '/healthy-meals/:path*',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

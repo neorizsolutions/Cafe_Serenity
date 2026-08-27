@@ -6,6 +6,7 @@ import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
 import MotionWrapper from '@/components/common/MotionWrapper';
+import { HEALTHY_MEAL_PLANS } from '@/data/healthy-meals/plans';
 
 interface CategoryCardProps {
   imageSrc: string;
@@ -17,7 +18,7 @@ interface CategoryCardProps {
   link: string;
 }
 
-function CategoryCard({ imageSrc, title, description, calories, protein, price }: Omit<CategoryCardProps, 'link'>) {
+function CategoryCard({ imageSrc, title, description, calories, protein, price, link }: CategoryCardProps) {
   return (
     <div className="group rounded-2xl border border-border/60 bg-card overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full hover:-translate-y-1">
       {/* Visual Frame */}
@@ -65,7 +66,7 @@ function CategoryCard({ imageSrc, title, description, calories, protein, price }
             <span className="text-sm font-black text-foreground block mt-1">{price}</span>
           </div>
           <Link
-            href="/#contact"
+            href={link}
             className="group/btn inline-flex h-9 items-center justify-center rounded-full bg-brand-gold px-4 text-xs font-bold text-brand-dark shadow hover:bg-brand-gold/90 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer text-center"
             aria-label={`Inquire about Café Serenity ${title} plan`}
           >
@@ -80,7 +81,10 @@ function CategoryCard({ imageSrc, title, description, calories, protein, price }
   );
 }
 
-export default function MealExperience() {
+export default function MealExperienceSection() {
+  // We use the 4 core plans for the grid (excluding the everyday value box / balanced plan which is the spotlight)
+  const gridPlans = HEALTHY_MEAL_PLANS.filter(plan => plan.id !== 'balanced');
+
   return (
     <Section bg="white" className="relative overflow-hidden" id="healthy-meals-info">
       <Container className="space-y-24">
@@ -154,7 +158,7 @@ export default function MealExperience() {
                 <span>Inquire Now</span>
               </Link>
               <Link
-                href="/meal-plans"
+                href="/healthy-meals"
                 className="flex h-12 items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur-sm px-8 text-xs font-semibold text-foreground hover:bg-secondary transition-all hover:-translate-y-0.5 active:scale-[0.98] text-center"
               >
                 Explore Plans
@@ -175,49 +179,29 @@ export default function MealExperience() {
           </div>
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            <MotionWrapper animation="fade-up">
-              <CategoryCard
-                imageSrc="/images/category_weight_loss.png"
-                title="Weight Loss Plan"
-                description="Calorie-deficit menu formulated to burn fat and maintain muscle."
-                calories="350 kcal"
-                protein="24g Prot"
-                price="₹199 / Meal"
-              />
-            </MotionWrapper>
-            
-            <MotionWrapper animation="fade-up">
-              <CategoryCard
-                imageSrc="/images/category_high_protein.png"
-                title="High Protein & Gym"
-                description="High-protein boxes to support muscle growth and recovery."
-                calories="600 kcal"
-                protein="45g Prot"
-                price="₹249 / Meal"
-              />
-            </MotionWrapper>
-            
-            <MotionWrapper animation="fade-up">
-              <CategoryCard
-                imageSrc="/images/category_diabetic.png"
-                title="Diabetic Friendly"
-                description="Low-glycemic meals designed to prevent insulin spikes."
-                calories="400 kcal"
-                protein="26g Prot"
-                price="₹219 / Meal"
-              />
-            </MotionWrapper>
-            
-            <MotionWrapper animation="fade-up">
-              <CategoryCard
-                imageSrc="/images/category_corporate.png"
-                title="Corporate Lunch"
-                description="Portion-regulated energy lunches delivered to your office desk."
-                calories="450 kcal"
-                protein="30g Prot"
-                price="₹199 / Meal"
-              />
-            </MotionWrapper>
+            {gridPlans.map((p) => (
+              <MotionWrapper key={p.id} animation="fade-up">
+                <CategoryCard
+                  imageSrc={p.imageSrc || '/images/category_weight_loss.png'}
+                  title={p.title}
+                  description={p.description}
+                  calories={p.calories}
+                  protein={p.protein.replace(' Protein', ' Prot')}
+                  price={p.price.replace(' / meal', ' / Meal')}
+                  link={p.path}
+                />
+              </MotionWrapper>
+            ))}
+          </div>
+
+          {/* View All Healthy Meals Button (touch target >= 44px) */}
+          <div className="text-center pt-4">
+            <Link
+              href="/healthy-meals"
+              className="inline-flex min-h-[44px] px-8 rounded-full bg-brand-gold hover:bg-brand-gold/90 text-xs font-bold text-brand-dark items-center justify-center shadow-sm transition-all duration-300 hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+            >
+              View All Healthy Meals &rarr;
+            </Link>
           </div>
         </div>
 
@@ -248,7 +232,7 @@ export default function MealExperience() {
                   key={i}
                   className="flex items-center gap-2 rounded-xl border border-border/60 bg-secondary/15 px-3.5 py-2.5 transition-all duration-300 hover:border-brand-gold/25 hover:bg-secondary/25"
                 >
-                  <svg className="h-4 w-4 text-brand-gold shrink-0" fill="none" strokeWidth="3.5" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <svg className="h-4.5 w-4.5 text-brand-gold shrink-0" fill="none" strokeWidth="3.5" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>
                   <span>{text}</span>

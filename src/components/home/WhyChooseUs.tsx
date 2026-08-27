@@ -6,7 +6,6 @@ import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
 import MotionWrapper from '@/components/common/MotionWrapper';
-import { cn } from '@/lib/utils';
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -259,7 +258,7 @@ export default function WhyChooseUs() {
           </div>
           <div className="flex flex-col sm:flex-row gap-4 shrink-0 w-full sm:w-auto z-10">
             <Link
-              href="/meal-plans"
+              href="/healthy-meals"
               className="flex h-11 items-center justify-center rounded-full border border-border bg-background px-6 text-xs font-semibold text-foreground hover:bg-secondary transition-all hover:-translate-y-0.5 active:scale-98"
             >
               Explore Plans

@@ -120,7 +120,12 @@ export default function Hero() {
   const [progress, setProgress] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const [reducedMotion, setReducedMotion] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+    return false;
+  });
   const sliderRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef<number | null>(null);
 
@@ -129,7 +134,6 @@ export default function Hero() {
     if (typeof window === 'undefined') return;
 
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setReducedMotion(mediaQuery.matches);
     const motionListener = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
     mediaQuery.addEventListener('change', motionListener);
 
@@ -173,9 +177,7 @@ export default function Hero() {
     setProgress(0);
   };
 
-  const togglePlayPause = () => {
-    setIsPaused((prev) => !prev);
-  };
+
 
   // Keyboard controls
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -228,7 +230,7 @@ export default function Hero() {
   }, [nextSlide, isPaused, reducedMotion]);
 
   // Floating animation configuration
-  const floatAnimation = (delay: number, prefersReduced: boolean): any => {
+  const floatAnimation = (delay: number, prefersReduced: boolean) => {
     if (prefersReduced) return {};
     return {
       animate: {
@@ -237,7 +239,7 @@ export default function Hero() {
       transition: {
         duration: 5,
         repeat: Infinity,
-        ease: 'easeInOut',
+        ease: 'easeInOut' as const,
         delay: delay,
       }
     };
@@ -384,13 +386,13 @@ export default function Hero() {
               {/* Spacing and CTA Button Hierarchy */}
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2 w-full max-w-md mx-auto lg:mx-0">
                 <Link
-                  href="#healthy-meals"
+                  href="/healthy-meals"
                   className="flex h-12 w-full sm:w-auto items-center justify-center rounded-full bg-brand-gold px-8 text-sm font-bold text-brand-dark hover:bg-brand-gold/90 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 touch-manipulation hover:-translate-y-0.5 active:scale-[0.98]"
                 >
                   Explore Healthy Meals
                 </Link>
                 <Link
-                  href="#cafe-menu"
+                  href="/cafe-menu"
                   className="flex h-12 w-full sm:w-auto items-center justify-center rounded-full border border-stone-850 bg-stone-900/40 hover:bg-stone-900 px-8 text-sm font-semibold text-stone-200 hover:text-white transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 touch-manipulation hover:-translate-y-0.5 active:scale-[0.98]"
                 >
                   View Café Menu

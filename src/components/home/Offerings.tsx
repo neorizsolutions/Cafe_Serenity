@@ -16,13 +16,13 @@ export default function Offerings() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <Typography variant="badge-label" className="tracking-widest text-[11px] text-primary">
-            Duo Culinary Offerings
+            Two Food Experiences
           </Typography>
           <Typography variant="h2" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
-            What Can We Serve You?
+            Choose What You&apos;re Looking For
           </Typography>
           <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-xl mx-auto font-medium opacity-90">
-            Enjoy dietitian-planned health subscriptions or grab fresh, budget-friendly café breakfast favourites.
+            Enjoy dietitian-planned health subscriptions or discover our normal café breakfast and lunch classics.
           </Typography>
         </div>
 
@@ -56,7 +56,7 @@ export default function Offerings() {
 
               <div className="pt-8">
                 <Link
-                  href="#healthy-meals"
+                  href="/healthy-meals"
                   className="inline-flex h-11 items-center justify-center rounded-full bg-brand-gold px-6 text-sm font-bold text-brand-dark shadow-sm hover:bg-brand-gold/90 transition-all duration-300 w-full"
                 >
                   Explore Healthy Meals
@@ -94,7 +94,7 @@ export default function Offerings() {
 
               <div className="pt-8">
                 <Link
-                  href="#cafe-menu"
+                  href="/cafe-menu"
                   className="inline-flex h-11 items-center justify-center rounded-full bg-brand-gold px-6 text-sm font-bold text-brand-dark shadow-sm hover:bg-brand-gold/90 transition-all duration-300 w-full"
                 >
                   View Café Menu

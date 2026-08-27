@@ -1,3 +1,6 @@
+export * from './healthy-meals';
+export * from './cafe-menu';
+
 export interface Meal {
   id: string;
   name: string;
@@ -77,6 +80,7 @@ export interface SocialLinks {
   facebook?: string;
   youtube?: string;
   whatsapp?: string;
+  linkedin?: string;
 }
 
 export interface ContactDetails {

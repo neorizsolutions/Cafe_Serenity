@@ -34,10 +34,10 @@ export default function NotFound() {
             Back to Home
           </Link>
           <Link
-            href="/meal-plans"
+            href="/healthy-meals"
             className="flex h-11 items-center justify-center rounded-full border border-border bg-background px-6 text-xs font-semibold text-foreground hover:bg-secondary transition-colors"
           >
-            Explore Meal Plans
+            Explore Healthy Meals
           </Link>
           <Link
             href="/contact"

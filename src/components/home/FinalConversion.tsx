@@ -51,7 +51,7 @@ export default function FinalConversion() {
               <span>Inquire via WhatsApp</span>
             </Link>
             <Link
-              href="/meal-plans"
+              href="/healthy-meals"
               className="flex h-12 items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur-sm px-8 text-sm font-semibold text-foreground hover:bg-secondary transition-all duration-300 hover:-translate-y-0.5 active:scale-95 text-center"
             >
               Explore Healthy Meals
@@ -85,9 +85,9 @@ export default function FinalConversion() {
                   Kochi Hubs
                 </span>
                 <ul className="text-[10px] text-muted-foreground space-y-2 font-medium">
-                  <li className="flex items-center gap-1.5">• Kakkanad Infopark Phase 1 & 2</li>
-                  <li className="flex items-center gap-1.5">• Edappally & Kaloor Transit</li>
-                  <li className="flex items-center gap-1.5">• Vytila & Ernakulam Central</li>
+                  <li className="flex items-center gap-1.5">• Kakkanad (Civil Station)</li>
+                  <li className="flex items-center gap-1.5">• Infopark Phase 1 & 2</li>
+                  <li className="flex items-center gap-1.5">• SmartCity Kochi Corridor</li>
                 </ul>
               </div>
               <div className="space-y-3">
@@ -98,9 +98,9 @@ export default function FinalConversion() {
                   Expanding Soon
                 </span>
                 <ul className="text-[10px] text-muted-foreground space-y-2 font-medium">
-                  <li className="flex items-center gap-1.5">• Trivandrum (Technopark)</li>
-                  <li className="flex items-center gap-1.5">• Kozhikode (Cyberpark)</li>
-                  <li className="flex items-center gap-1.5">• Thrissur & Kannur Zones</li>
+                  <li className="flex items-center gap-1.5">• Kalamassery & HMT Zone</li>
+                  <li className="flex items-center gap-1.5">• Edappally & Kaloor Corridor</li>
+                  <li className="flex items-center gap-1.5">• Aluva & Nedumbassery</li>
                 </ul>
               </div>
             </div>
@@ -125,7 +125,7 @@ export default function FinalConversion() {
               </div>
               <Typography variant="h3" className="text-sm font-bold text-white">Interactive Transit Radar</Typography>
               <p className="text-[10px] text-stone-400 max-w-xs mt-1 leading-relaxed font-medium">
-                Expansion plans underway for other cities in Kerala (Trivandrum, Kozhikode, Thrissur). Map interface will load here.
+                Expansion plans underway for other Kochi transit zones (Kalamassery, Edappally). Map interface will load here.
               </p>
             </div>
           </div>
@@ -214,11 +214,11 @@ export default function FinalConversion() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter email address..."
                 aria-label="Newsletter email address"
-                className="flex-grow h-10 px-4 rounded-full border border-border/80 bg-background/60 text-xs font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold/20"
+                className="flex-grow h-11 px-4 rounded-full border border-border/80 bg-background/60 text-xs font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold/20"
               />
               <button
                 type="submit"
-                className="h-10 px-6 rounded-full bg-brand-gold text-xs font-bold text-brand-dark hover:bg-brand-gold/90 transition-all shadow hover:-translate-y-0.5 active:scale-95"
+                className="h-11 px-6 rounded-full bg-brand-gold text-xs font-bold text-brand-dark hover:bg-brand-gold/90 transition-all shadow hover:-translate-y-0.5 active:scale-95"
               >
                 Subscribe
               </button>

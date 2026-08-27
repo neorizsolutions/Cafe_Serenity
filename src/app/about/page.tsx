@@ -1,4 +1,12 @@
 
+import { constructMetadata } from '@/utils/seo';
+
+export const metadata = constructMetadata({
+  title: 'About Our Story & Nutrition Standards | Café Serenity Kakkanad',
+  description: 'Learn about Café Serenity standards: portion-controlled dietitian-designed meals, 100% cold-pressed local oils, and certified clean kitchen prep in Kochi.',
+  path: '/about',
+});
+
 export default function AboutPage() {
   return (
     <div className="mx-auto w-full max-w-5xl px-6 py-16 md:py-24 space-y-20">

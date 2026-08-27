@@ -103,7 +103,7 @@ export default function HowItWorks() {
           <div className="pt-2 z-10 relative">
             <Link
               href="/how-flexi-freeze-works"
-              className="group inline-flex h-10 items-center justify-center gap-2 rounded-full bg-brand-gold px-6 text-xs font-bold text-brand-dark shadow hover:bg-brand-gold/90 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+              className="group inline-flex h-11 items-center justify-center gap-2 rounded-full bg-brand-gold px-6 text-xs font-bold text-brand-dark shadow hover:bg-brand-gold/90 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
             >
               <span>Learn More</span>
             </Link>

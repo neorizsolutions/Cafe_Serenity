@@ -5,6 +5,7 @@ import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
 import MotionWrapper from '@/components/common/MotionWrapper';
+import { HEALTHY_MEAL_PLANS } from '@/data/healthy-meals/plans';
 
 interface PricingCardProps {
   title: string;
@@ -76,7 +77,10 @@ function PricingCard({ title, price, description, features, link, popular }: Pri
   );
 }
 
-export default function Pricing() {
+export default function PricingSection() {
+  const valueBox = HEALTHY_MEAL_PLANS.find(p => p.id === 'balanced');
+  const regularPlans = HEALTHY_MEAL_PLANS.filter(p => p.id !== 'balanced' && p.id !== 'corporate');
+
   return (
     <Section bg="white" className="relative border-t border-border overflow-hidden" id="healthy-meals">
       <Container className="space-y-24">
@@ -97,100 +101,64 @@ export default function Pricing() {
         {/* Pricing Cards Grid */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4 items-stretch">
           {/* Spotlight Column: Value Box */}
-          <div className="group relative rounded-3xl border border-brand-gold/30 bg-brand-gold/[0.01] p-6 flex flex-col justify-between h-full gap-6 shadow-[0_8px_30px_rgba(255,185,0,0.03)] hover:-translate-y-1 transition-all duration-300 hover:shadow-md mt-4 md:mt-0">
-            <span className="absolute -top-3 left-6 inline-flex rounded-full bg-brand-gold px-3.5 py-0.5 text-[11px] font-black uppercase tracking-widest text-brand-dark shadow-sm animate-pulse">
-              Value Spotlight
-            </span>
-            <div className="space-y-4">
-              <div>
-                <span className="text-[11px] text-brand-gold uppercase font-black tracking-widest">Everyday Value Box</span>
-                <div className="flex items-baseline gap-1 mt-2">
-                  <span className="text-2xl font-black text-foreground">₹69</span>
-                  <span className="text-[11px] text-muted-foreground font-bold uppercase tracking-wider">/ Meal</span>
+          {valueBox && (
+            <div className="group relative rounded-3xl border border-brand-gold/30 bg-brand-gold/[0.01] p-6 flex flex-col justify-between h-full gap-6 shadow-[0_8px_30px_rgba(255,185,0,0.03)] hover:-translate-y-1 transition-all duration-300 hover:shadow-md mt-4 md:mt-0">
+              <span className="absolute -top-3 left-6 inline-flex rounded-full bg-brand-gold px-3.5 py-0.5 text-[11px] font-black uppercase tracking-widest text-brand-dark shadow-sm animate-pulse">
+                Value Spotlight
+              </span>
+              <div className="space-y-4">
+                <div>
+                  <span className="text-[11px] text-brand-gold uppercase font-black tracking-widest">Everyday Value Box</span>
+                  <div className="flex items-baseline gap-1 mt-2">
+                    <span className="text-2xl font-black text-foreground">₹69</span>
+                    <span className="text-[11px] text-muted-foreground font-bold uppercase tracking-wider">/ Meal</span>
+                  </div>
+                  <p className="text-[11px] leading-relaxed text-muted-foreground/90 mt-2.5 font-medium">
+                    Portion-weighed, low-oil everyday lunches delivered across Kochi.
+                  </p>
                 </div>
-                <p className="text-[11px] leading-relaxed text-muted-foreground/90 mt-2.5 font-medium">
-                  Portion-weighed, low-oil everyday lunches delivered across Kochi.
-                </p>
+
+                <ul className="space-y-2.5 text-xs font-bold text-foreground/90" aria-label="Value box features">
+                  {(valueBox.features || []).map((feat, idx) => (
+                    <li key={idx} className="flex items-center gap-2">
+                      <svg className="h-4.5 w-4.5 text-brand-gold shrink-0" fill="none" strokeWidth="3.5" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
+                      <span>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              <ul className="space-y-2.5 text-xs font-bold text-foreground/90" aria-label="Value box features">
-                {[
-                  'Portion-scaled macros',
-                  'Regulated local oils',
-                  'Clean FSSAI standards',
-                  'No palm oil or MSG'
-                ].map((feat, idx) => (
-                  <li key={idx} className="flex items-center gap-2">
-                    <svg className="h-4.5 w-4.5 text-brand-gold shrink-0" fill="none" strokeWidth="3.5" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                    <span>{feat}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="space-y-2.5 pt-4 border-t border-border/40">
+                <Link
+                  href="/#contact"
+                  className="group/btn flex h-11 items-center justify-center gap-2 rounded-full bg-brand-gold px-4 text-xs font-bold text-brand-dark shadow hover:bg-brand-gold/90 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer text-center"
+                >
+                  <span>Inquire Now</span>
+                </Link>
+                <Link
+                  href="/healthy-meals"
+                  className="flex h-11 items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur-sm px-4 text-xs font-semibold text-foreground hover:bg-secondary transition-all duration-300 hover:-translate-y-0.5 active:scale-95 text-center"
+                >
+                  All Plans
+                </Link>
+              </div>
             </div>
+          )}
 
-            <div className="space-y-2.5 pt-4 border-t border-border/40">
-              <Link
-                href="/#contact"
-                className="group/btn flex h-11 items-center justify-center gap-2 rounded-full bg-brand-gold px-4 text-xs font-bold text-brand-dark shadow hover:bg-brand-gold/90 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer text-center"
-              >
-                <span>Inquire Now</span>
-              </Link>
-              <Link
-                href="/meal-plans"
-                className="flex h-11 items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur-sm px-4 text-xs font-semibold text-foreground hover:bg-secondary transition-all duration-300 hover:-translate-y-0.5 active:scale-95 text-center"
-              >
-                All Plans
-              </Link>
-            </div>
-          </div>
-
-          <MotionWrapper animation="fade-up">
-            <PricingCard
-              title="Weight Loss Deficit"
-              price="₹199"
-              description="Low-carb deficit menu formulated to burn fat cleanly."
-              features={[
-                '350-400 kcal target',
-                '24g lean protein focus',
-                'Low glycemic indexes',
-                'Dietitian scaled menu'
-              ]}
-              link="/meal-plans/weight-loss"
-            />
-          </MotionWrapper>
-
-          <MotionWrapper animation="fade-up">
-            <PricingCard
-              title="High Protein & Gym"
-              price="₹249"
-              description="High-protein muscle support meals cooked with local oils."
-              features={[
-                '550-600 kcal target',
-                '45g clean protein focus',
-                'Complex carb loading',
-                'Recovery diet verified'
-              ]}
-              link="/meal-plans/high-protein"
-              popular
-            />
-          </MotionWrapper>
-
-          <MotionWrapper animation="fade-up">
-            <PricingCard
-              title="Diabetic Friendly"
-              price="₹219"
-              description="Glucose-safe meals avoiding simple sugars and high-GI grains."
-              features={[
-                '400 kcal glycemic scale',
-                'Insulin friendly grains',
-                'Zero refined sugar',
-                'Clinical fiber indexes'
-              ]}
-              link="/meal-plans/diabetic"
-            />
-          </MotionWrapper>
+          {regularPlans.map((p) => (
+            <MotionWrapper key={p.id} animation="fade-up">
+              <PricingCard
+                title={p.title}
+                price={p.price.split(' ')[0]} // Get just "₹199" or "₹249"
+                description={p.description.split('. ')[0]} // Take first sentence of description
+                features={p.features || []}
+                link={p.path}
+                popular={p.popular}
+              />
+            </MotionWrapper>
+          ))}
         </div>
 
         {/* FAQ Accordion Block */}
@@ -209,13 +177,13 @@ export default function Pricing() {
               <summary className="flex cursor-pointer items-center justify-between font-bold text-foreground outline-none hover:text-brand-gold transition-colors focus:ring-1 focus:ring-brand-gold/25">
                 <span className="text-xs sm:text-[13px] md:text-sm font-bold leading-snug pr-4">How can I subscribe to healthy meals?</span>
                 <span className="ml-1.5 shrink-0 transition duration-300 group-open:-rotate-180 text-muted-foreground group-hover:text-brand-gold">
-                  <svg className="h-4 w-4 stroke-current" fill="none" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                  <svg className="h-4.5 w-4.5 stroke-current" fill="none" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                   </svg>
                 </span>
               </summary>
               <p className="mt-3 text-foreground/80 leading-relaxed text-[11px] font-medium border-t border-border/40 pt-3">
-                Simply click "Inquire Now" or contact us via WhatsApp/call. We will coordinate your diet schedule, delivery timings, and preferences directly.
+                Simply click &quot;Inquire Now&quot; or contact us via WhatsApp/call. We will coordinate your diet schedule, delivery timings, and preferences directly.
               </p>
             </details>
 
@@ -223,7 +191,7 @@ export default function Pricing() {
               <summary className="flex cursor-pointer items-center justify-between font-bold text-foreground outline-none hover:text-brand-gold transition-colors focus:ring-1 focus:ring-brand-gold/25">
                 <span className="text-xs sm:text-[13px] md:text-sm font-bold leading-snug pr-4">Can I swap dishes mid-week?</span>
                 <span className="ml-1.5 shrink-0 transition duration-300 group-open:-rotate-180 text-muted-foreground group-hover:text-brand-gold">
-                  <svg className="h-4 w-4 stroke-current" fill="none" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                  <svg className="h-4.5 w-4.5 stroke-current" fill="none" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                   </svg>
                 </span>
@@ -237,7 +205,7 @@ export default function Pricing() {
               <summary className="flex cursor-pointer items-center justify-between font-bold text-foreground outline-none hover:text-brand-gold transition-colors focus:ring-1 focus:ring-brand-gold/25">
                 <span className="text-xs sm:text-[13px] md:text-sm font-bold leading-snug pr-4">Are there custom pricing for corporate group meal drops?</span>
                 <span className="ml-1.5 shrink-0 transition duration-300 group-open:-rotate-180 text-muted-foreground group-hover:text-brand-gold">
-                  <svg className="h-4 w-4 stroke-current" fill="none" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                  <svg className="h-4.5 w-4.5 stroke-current" fill="none" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                   </svg>
                 </span>

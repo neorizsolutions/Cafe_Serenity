@@ -55,7 +55,7 @@ export default function DeliveryAreasPage() {
           </p>
           <a
             href={`tel:${CONTACT_DETAILS.phone}`}
-            className="inline-flex h-10 items-center justify-center rounded-full bg-primary px-6 font-bold text-primary-foreground hover:bg-primary/95 transition-colors shadow"
+            className="inline-flex h-11 items-center justify-center rounded-full bg-primary px-6 font-bold text-primary-foreground hover:bg-primary/95 transition-colors shadow"
           >
             Check Address via Call
           </a>
