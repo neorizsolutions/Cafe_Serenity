@@ -6,8 +6,8 @@ import { constructMetadata } from '@/utils/seo';
 import { CONTACT_DETAILS } from '@/constants';
 
 export const metadata = constructMetadata({
-  title: 'Contact Café Serenity | Support Concierge Kakkanad',
-  description: 'Reach our healthy meal & café support desk via WhatsApp or calls. Kitchen details for Kakkanad, Kochi.',
+  title: 'Contact Café Serenity | Kakkanad',
+  description: 'Reach our café team via WhatsApp or calls. Kitchen details for Kakkanad, Kochi.',
 });
 
 export default function ContactPage() {
@@ -17,10 +17,10 @@ export default function ContactPage() {
         <div className="space-y-4 text-center">
           <Typography variant="badge-label">Get in Touch</Typography>
           <Typography variant="h1" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
-            Contact Support Concierge
+            Contact Us
           </Typography>
           <Typography variant="body-large" className="text-muted-foreground">
-            Have questions about customized dietitian grids or our morning café menu? Let&apos;s talk.
+            Have questions about our portion-conscious meals or morning café menu? Let&apos;s talk.
           </Typography>
         </div>
 
@@ -31,8 +31,8 @@ export default function ContactPage() {
             className="p-6 rounded-2xl border border-border bg-card hover:bg-secondary/35 transition-colors space-y-2 block"
           >
             <span className="text-2xl block">🥗</span>
-            <span className="text-xs font-bold text-foreground block">Diet Plans</span>
-            <span className="text-[10px] text-primary font-bold block">Explore Healthy Choices</span>
+            <span className="text-xs font-bold text-foreground block">Healthy Choices</span>
+            <span className="text-[10px] text-primary font-bold block">Explore Options</span>
           </Link>
           <a
             href={`tel:${CONTACT_DETAILS.phone}`}

@@ -3,88 +3,88 @@ import { HealthyMealPlan } from '@/types';
 export const HEALTHY_MEAL_PLANS: HealthyMealPlan[] = [
   {
     id: 'weight-loss',
-    title: 'Weight Loss Deficit',
-    description: 'Low carbohydrate deficit program mapped to clean fat loss goals. Formulated to burn fat and maintain muscle.',
+    title: 'Weight Loss',
+    description: 'A lighter everyday food choice that remains enjoyable and satisfying. Wholesome ingredients prepared thoughtfully without feeling restrictive.',
     price: '₹199 / meal',
-    calories: '350 kcal',
-    protein: '24g Protein',
+    calories: '~350 kcal',
+    protein: '~24g Protein',
     color: 'bg-amber-500/10 text-amber-700 border-amber-500/20',
     path: '/healthy-choices/weight-loss',
     imageSrc: '/images/category_weight_loss.png',
     features: [
-      '350-400 kcal target',
-      '24g lean protein focus',
-      'Low glycemic indexes',
-      'Dietitian scaled menu'
+      'Lighter portions',
+      'Wholesome ingredients',
+      'Satisfying meals',
+      'Simple everyday choices'
     ]
   },
   {
     id: 'high-protein',
-    title: 'High Protein & Gym',
-    description: 'Muscle recovery and gym fuel cooked with cold-pressed coconut oils. High-protein boxes to support muscle growth and recovery.',
+    title: 'High Protein',
+    description: 'More protein through real, familiar food. We use chicken, eggs, paneer, and pulses to provide satisfying portions for an active day.',
     price: '₹249 / meal',
-    calories: '600 kcal',
-    protein: '45g Protein',
+    calories: '~600 kcal',
+    protein: '45g+ Protein',
     color: 'bg-blue-500/10 text-blue-700 border-blue-500/20',
     path: '/healthy-choices/high-protein',
     imageSrc: '/images/category_high_protein.png',
     popular: true,
     features: [
-      '550-600 kcal target',
-      '45g clean protein focus',
-      'Complex carb loading',
-      'Recovery diet verified'
+      'Protein from real food',
+      'Satisfying portions',
+      'Freshly prepared',
+      'Perfect for active days'
     ]
   },
   {
     id: 'balanced',
-    title: 'Balanced Diet Boxes',
-    description: 'Everyday healthy box for stable energy, clean grains, and low sodium.',
+    title: 'Balanced',
+    description: 'A simple, satisfying everyday meal with familiar ingredients. Perfectly portioned so you feel full without the heaviness.',
     price: '₹169 / meal',
-    calories: '450 kcal',
-    protein: '30g Protein',
+    calories: '~450 kcal',
+    protein: '~30g Protein',
     color: 'bg-emerald-500/10 text-emerald-700 border-emerald-500/20',
     path: '/healthy-choices/balanced',
     imageSrc: '/images/category_balanced.png',
     features: [
-      'Portion-scaled macros',
-      'Regulated local oils',
-      'Clean FSSAI standards',
-      'No palm oil or MSG'
+      'Familiar ingredients',
+      'Balanced portions',
+      'Freshly prepared',
+      'Satisfying everyday meal'
     ]
   },
   {
     id: 'diabetic',
     title: 'Diabetic Friendly',
-    description: 'Glucose-safe diabetic care menus omitting simple sugars. Low-glycemic meals designed to prevent insulin spikes.',
+    description: 'Thoughtfully prepared food with mindful ingredients and balanced portions. A simple choice with no unnecessary added sugar.',
     price: '₹219 / meal',
-    calories: '400 kcal',
-    protein: '26g Protein',
+    calories: '~400 kcal',
+    protein: '~26g Protein',
     color: 'bg-purple-500/10 text-purple-700 border-purple-500/20',
     path: '/healthy-choices/diabetic',
     imageSrc: '/images/category_diabetic.png',
     features: [
-      '400 kcal glycemic scale',
-      'Insulin friendly grains',
-      'Zero refined sugar',
-      'Clinical fiber indexes'
+      'Mindful ingredients',
+      'Balanced portions',
+      'No added sugar',
+      'Simple preparation'
     ]
   },
   {
     id: 'corporate',
-    title: 'Corporate IT Lunches',
-    description: 'Portion-regulated energy lunches tailored for corporate teams and IT professionals in Kakkanad.',
+    title: 'Corporate Meals',
+    description: 'Practical, fresh everyday meals for teams. Enjoy familiar, thoughtful food with convenient group planning directly with our café.',
     price: '₹199 / meal',
-    calories: '450 kcal',
-    protein: '30g Protein',
+    calories: '~450 kcal',
+    protein: '~30g Protein',
     color: 'bg-orange-500/10 text-orange-700 border-orange-500/20',
     path: '/healthy-choices/corporate',
     imageSrc: '/images/category_corporate.png',
     features: [
-      'Portion-regulated macros',
-      'Perfect for office lunches',
-      'Sustainable hot box packaging',
-      'No post-lunch fatigue seasoning'
+      'Practical for teams',
+      'Familiar food',
+      'Freshly prepared',
+      'Easy coordination'
     ]
   }
 ];

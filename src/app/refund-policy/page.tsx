@@ -5,7 +5,7 @@ import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
   title: 'Refund & Cancellation Policies | Café Serenity',
-  description: 'Learn about Café Serenity cancellation policy and subscription details.',
+  description: 'Learn about Café Serenity cancellation policy and café guidelines.',
   path: '/refund-policy',
 });
 
@@ -23,9 +23,9 @@ export default function RefundPolicyPage() {
         </div>
 
         <div className="space-y-4">
-          <Typography variant="h3" className="text-sm font-bold text-foreground">1. Subscription Cancellation</Typography>
+          <Typography variant="h3" className="text-sm font-bold text-foreground">1. Order Cancellation</Typography>
           <p>
-            Subscribers can request plan cancellations at any time by contacting our team. We do not offer direct bank refunds for active plan cancellations. However, any remaining balance or value stays locked in your account indefinitely and can be activated for future plans or transferred to another local resident.
+            Customers can request cancellations for pre-booked meals by contacting our team. We do not offer direct bank refunds for active orders that are already in preparation. However, any remaining balance stays locked in your account and can be activated for future orders.
           </p>
         </div>
 

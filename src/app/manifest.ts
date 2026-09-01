@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: 'Healthy choices & everyday café favourites in Kakkanad, Kochi.',
     start_url: '/',
     display: 'standalone',
-    background_color: '#ffffff',
-    theme_color: '#0d9488',
+    background_color: '#F7F4EE',
+    theme_color: '#6E8064',
     icons: [
       {
         src: '/icons/icon-192.png',

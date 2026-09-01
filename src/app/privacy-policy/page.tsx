@@ -5,7 +5,7 @@ import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
   title: 'Privacy Policy | Café Serenity',
-  description: 'Review the privacy policy parameters of Café Serenity. Learn how we handle your subscription setup and inquiry details.',
+  description: 'Review the privacy policy parameters of Café Serenity. Learn how we handle your contact inquiries and café orders.',
 });
 
 export default function PrivacyPolicyPage() {
@@ -24,21 +24,21 @@ export default function PrivacyPolicyPage() {
         <div className="space-y-4">
           <Typography variant="h3" className="text-sm font-bold text-foreground">1. Information We Collect</Typography>
           <p>
-            We collect basic contact data (name, telephone number) when you communicate with us via WhatsApp or phone calls to coordinate your plan setup.
+            We collect basic contact data (name, telephone number) when you communicate with us via WhatsApp or phone calls for general inquiries or menu information.
           </p>
         </div>
 
         <div className="space-y-4">
-          <Typography variant="h3" className="text-sm font-bold text-foreground">2. Subscription Coordination</Typography>
+          <Typography variant="h3" className="text-sm font-bold text-foreground">2. Payment Security</Typography>
           <p>
-            We do not collect, process, or store any payment or billing details on this website. All subscriptions are coordinated directly via external contact channels (such as phone calls or WhatsApp).
+            We do not collect, process, or store any online payment or billing details on this website. All financial transactions are handled securely at the café or via verified UPI endpoints during delivery.
           </p>
         </div>
 
         <div className="space-y-4">
           <Typography variant="h3" className="text-sm font-bold text-foreground">3. Information Sharing</Typography>
           <p>
-            Your information is used strictly to coordinate your subscription plan and menus. We never sell your personal information to marketing databases.
+            Your information is used strictly to communicate regarding your orders or inquiries. We never sell your personal information to marketing databases.
           </p>
         </div>
       </Container>

@@ -36,89 +36,47 @@ function StepCard({ number, title, description }: StepCardProps) {
 export default function HowItWorks() {
   return (
     <Section bg="muted" className="relative border-t border-border overflow-hidden">
-      <Container className="space-y-24">
+      <Container className="space-y-16">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <Typography variant="badge-label" className="tracking-widest text-[11px]">
-            Your Nutrition Path
+          <Typography variant="badge-label" className="tracking-widest text-[11px] text-brand-gold">
+            How It Works
           </Typography>
           <Typography variant="h2" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
-            Simple Subscriptions, Effortless Daily Plans
+            A Simple Food Experience
           </Typography>
           <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium opacity-90">
-            No checkout forms or long-term contracts. Manage your diet flexibly.
+            No complicated forms or sign-ups. Just good food, prepared fresh, and ready when you need it.
           </Typography>
         </div>
 
-        {/* Four Steps Stepper Grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Three Steps Stepper Grid */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 max-w-5xl mx-auto">
           <MotionWrapper animation="fade-up">
             <StepCard
               number="01"
-              title="Select Your Wellness Goal"
-              description="Choose our ₹69 Value Box or target specialized plans."
+              title="Explore Our Food"
+              description="Browse our everyday café favourites or explore our nutritionist-guided healthy choices."
             />
           </MotionWrapper>
 
-          <MotionWrapper animation="fade-up">
+          <MotionWrapper animation="fade-up" transition={{ delay: 0.1 }}>
             <StepCard
               number="02"
-              title="Inquire & Personalize"
-              description="We help you select the ideal meal plan and set up your schedule."
+              title="Find What You Like"
+              description="Whether it's a hot morning dosa or a clean weekday lunch, find exactly what fits your day."
             />
           </MotionWrapper>
 
-          <MotionWrapper animation="fade-up">
+          <MotionWrapper animation="fade-up" transition={{ delay: 0.2 }}>
             <StepCard
               number="03"
-              title="Daily Kitchen Preparation"
-              description="Meals are portion-scaled, prepared fresh daily, and macro-labeled."
-            />
-          </MotionWrapper>
-
-          <MotionWrapper animation="fade-up">
-            <StepCard
-              number="04"
-              title="Enjoy Fresh Meals"
-              description="Collect your fresh meal boxes from our Kakkanad café or coordinate convenient pickup."
+              title="Talk To Us"
+              description="Reach out directly via WhatsApp or drop by our Kakkanad café. We prepare it fresh for you."
             />
           </MotionWrapper>
         </div>
-
-        {/* Personalized Routine Presets */}
-        <div className="space-y-8">
-          <div className="text-center space-y-2">
-            <Typography variant="h3" className="text-xl font-bold text-foreground tracking-tight">
-              Pre-Configured Dietary Presets
-            </Typography>
-            <Typography variant="body-regular" className="text-xs text-muted-foreground font-medium">
-              We scale nutrition variables matching specific lifestyles and metabolic requirements.
-            </Typography>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto text-center font-bold text-xs">
-            {[
-              { title: 'Office Corporate Teams', desc: 'Dietitian-approved options for office teams.' },
-              { title: 'Low Glycemic Sugar Control', desc: 'Insulin-friendly glycemic plans.' },
-              { title: 'Calorie Deficit Weight Loss', desc: 'Portion-controlled deficit weight-loss.' },
-              { title: 'Athletic High Protein Grains', desc: 'High-protein recovery boxes.' },
-              { title: 'Kids Balanced Growth Box', desc: 'Nutrient-rich growth boxes for kids.' },
-              { title: 'Senior Heart Healthy', desc: 'Easy-to-digest wholesome nutrients.' },
-              { title: 'Wholesome Healthy Family', desc: 'Balanced meals for whole families.' },
-              { title: 'Flexible Custom Custom Presets', desc: 'Custom schedules matching your dietary needs.' }
-            ].map((preset, idx) => (
-              <div 
-                key={idx} 
-                className="group/preset p-4 border border-border/60 rounded-2xl bg-card shadow-sm hover:shadow-md transition-all duration-300 hover:border-brand-gold/25 hover:-translate-y-0.5 flex flex-col justify-center gap-1"
-              >
-                <span className="block text-[11px] font-black text-foreground">{preset.title.split(' ').slice(1).join(' ') || preset.title}</span>
-                <span className="block text-[9px] text-muted-foreground font-medium">{preset.desc}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
       </Container>
     </Section>
   );

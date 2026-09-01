@@ -26,7 +26,7 @@ export default function WhyChooseUs() {
     {
       num: '02',
       title: 'Food for Different Days',
-      description: 'Whether you want a portion-conscious, balanced meal from our Healthy Choices subscriptions or feel like enjoying one of our classic everyday Café Menu dishes, there is something made for you.',
+      description: 'Whether you want a portion-conscious, balanced meal from our Healthy Choices menu or feel like enjoying one of our classic everyday Café Menu dishes, there is something made for you.',
     },
     {
       num: '03',

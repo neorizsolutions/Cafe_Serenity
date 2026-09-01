@@ -5,7 +5,7 @@ import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
   title: 'Terms & Conditions | Café Serenity',
-  description: 'Understand the terms of service of Café Serenity subscription structures, menu plans, and Kakkanad café guidelines.',
+  description: 'Understand the terms of service of Café Serenity, our menu plans, and Kakkanad café guidelines.',
 });
 
 export default function TermsAndConditionsPage() {
@@ -22,23 +22,23 @@ export default function TermsAndConditionsPage() {
         </div>
 
         <div className="space-y-4">
-          <Typography variant="h3" className="text-sm font-bold text-foreground">1. Subscription Plans</Typography>
+          <Typography variant="h3" className="text-sm font-bold text-foreground">1. Café Orders & Pre-Bookings</Typography>
           <p>
-            By subscribing to weekly or monthly diet plans, you agree to coordinate and confirm setup details upfront. All subscription details are finalized and verified before the first meal preparation occurs.
+            By ordering from our Healthy Choices menu, you agree to coordinate and confirm pickup or delivery details upfront. Large orders or multi-day plans are finalized and verified before the first meal preparation occurs.
           </p>
         </div>
 
         <div className="space-y-4">
-          <Typography variant="h3" className="text-sm font-bold text-foreground">2. Subscription Menu & Schedule</Typography>
+          <Typography variant="h3" className="text-sm font-bold text-foreground">2. Menu & Modifications</Typography>
           <p>
-            Menu preferences and schedules are finalized upon onboarding. Subscribers are responsible for communicating any modifications or dietary preferences to our consulting dietitians directly.
+            Menu preferences and schedules are finalized upon ordering. Customers are responsible for communicating any modifications or dietary preferences to our team directly.
           </p>
         </div>
 
         <div className="space-y-4">
           <Typography variant="h3" className="text-sm font-bold text-foreground">3. Health Warnings & Allergen Disclaimer</Typography>
           <p>
-            While dietitian-reviewed, our meals are cooked in facilities handling nuts, gluten, and eggs. Subscribers with severe clinical allergies must declare parameters on onboarding.
+            While we take utmost care, our meals are cooked in facilities handling nuts, gluten, and eggs. Customers with severe clinical allergies must declare parameters upon ordering.
           </p>
         </div>
       </Container>

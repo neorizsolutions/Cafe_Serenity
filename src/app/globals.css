@@ -44,6 +44,7 @@
   --color-brand-gold: var(--brand-gold);
   --color-brand-cream: var(--brand-cream);
   --color-brand-green: var(--brand-green);
+  --color-brand-cafe: var(--brand-cafe);
 
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
@@ -59,6 +60,7 @@
   --brand-gold: oklch(0.77 0.17 76);
   --brand-cream: oklch(0.98 0.015 80);
   --brand-green: #6E8064;
+  --brand-cafe: #8A6652;
 
   --background: var(--brand-cream);
   --foreground: var(--brand-dark);
@@ -102,6 +104,7 @@
   --card: oklch(0.20 0.012 76);
   --card-foreground: var(--brand-cream);
   --brand-green: #6E8064;
+  --brand-cafe: #7a5844;
   --popover: oklch(0.20 0.012 76);
   --popover-foreground: var(--brand-cream);
   

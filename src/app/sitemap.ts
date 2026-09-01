@@ -8,7 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const actualRoutes = [
     '',
     '/about',
-    '/pricing',
     '/healthy-choices',
     '/healthy-choices/corporate',
     '/healthy-choices/weight-loss',

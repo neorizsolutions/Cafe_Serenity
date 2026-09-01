@@ -5,8 +5,8 @@ import Typography from '@/components/common/Typography';
 import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
-  title: 'Café Serenity Living Blog | Nutrition & Diet Tips',
-  description: 'Read health updates, balanced calorie charts, weight loss recipes, and healthy lifestyle tips from our clinical dietitians.',
+  title: 'Café Serenity Living Blog | Food & Café News',
+  description: 'Read food stories, café updates, and clean eating tips from the Café Serenity team.',
 });
 
 export default function BlogPage() {
@@ -20,7 +20,7 @@ export default function BlogPage() {
           Café Serenity Blog
         </Typography>
         <Typography variant="body-large" className="text-sm text-muted-foreground leading-relaxed">
-          Our in-house clinical dietitians are assembling a catalog of clean local recipes, metabolic health guides, and workout nutrition advice. Stay tuned!
+          Our kitchen team is assembling a catalog of clean local recipes, café news, and food stories. Stay tuned!
         </Typography>
         <div className="pt-4">
           <Link

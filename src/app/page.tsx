@@ -1,12 +1,9 @@
 import Hero from '@/components/home/Hero';
 import Offerings from '@/components/home/Offerings';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
-import MealExperience from '@/components/healthy-choices/MealExperienceSection';
 import HowItWorks from '@/components/home/HowItWorks';
-import Pricing from '@/components/healthy-choices/PricingSection';
+import MealExperience from '@/components/healthy-choices/MealExperienceSection';
 import CafeMenu from '@/components/cafe-menu/CafeMenuSection';
-import DeliveryPartners from '@/components/home/DeliveryPartners';
-import SocialProof from '@/components/home/SocialProof';
 import TrustCenter from '@/components/home/TrustCenter';
 import VisitUs from '@/components/home/VisitUs';
 import FinalConversion from '@/components/home/FinalConversion';
@@ -23,25 +20,16 @@ export default function Page() {
       {/* Why Choose Us Benefits Section */}
       <WhyChooseUs />
 
-      {/* Meal Experience & Categories Section */}
-      <MealExperience />
-
-      {/* Subscription Timeline & Stepper Section */}
+      {/* How It Works (Restaurant Journey) */}
       <HowItWorks />
 
-      {/* Subscriptions Pricing Section */}
-      <Pricing />
+      {/* Healthy Choices Showcase */}
+      <MealExperience />
 
       {/* Café Menu Favourites Section */}
       <CafeMenu />
 
-      {/* Our Delivery Partners Section */}
-      <DeliveryPartners />
-
-      {/* Social Proof & Customer Reviews Section */}
-      <SocialProof />
-
-      {/* Trust & Safety Center (FAQ & Hygiene) */}
+      {/* Trust & Kitchen Safety Center */}
       <TrustCenter />
 
       {/* Visit Us / Location Section */}
