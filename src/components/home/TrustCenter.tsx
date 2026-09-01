@@ -22,47 +22,13 @@ const FAQ_BY_CATEGORY: Record<string, FAQItem[]> = {
     },
     {
       question: 'Are there long-term contracts?',
-      answer: 'No. Subscribe weekly or monthly. Pause, resume, or cancel anytime via support call or email.'
-    }
-  ],
-  ordering: [
-    {
-      question: 'What is the daily cutoff time for plan changes?',
-      answer: 'Standard pauses and changes require a 12-hour notice prior to delivery.'
-    },
-    {
-      question: 'How do I start a subscription?',
-      answer: 'Simply contact us via WhatsApp or phone. We will set up your preferences and coordinate directly without any complex online checkout steps.'
+      answer: 'No. Subscribe weekly or monthly. Modify preferences or cancel anytime via support call or email.'
     }
   ],
   subscriptions: [
     {
-      question: 'Can I swap menu items during my subscription?',
-      answer: 'Yes. Check the menu and contact support before 6 PM to swap.'
-    },
-    {
-      question: 'How do weekly and monthly subscription extensions work?',
-      answer: 'Pausing locks your delivery credits and extends your plan duration.'
-    }
-  ],
-  payments: [
-    {
-      question: 'Which payment methods are accepted?',
-      answer: 'We accept UPI (Google Pay, PhonePe, Paytm), net banking, and card networks for direct coordination.'
-    },
-    {
-      question: 'Are auto-renewals enabled?',
-      answer: 'Auto-renewals are disabled. Renewal alerts are sent via SMS 2 days prior.'
-    }
-  ],
-  delivery: [
-    {
-      question: 'Do you deliver to Infopark?',
-      answer: 'Yes. We drop lunch boxes at office receptions and park gates.'
-    },
-    {
-      question: 'What are the daily delivery hours?',
-      answer: 'Lunch is delivered 11:30 AM - 1:15 PM; dinner 6:30 PM - 8:15 PM.'
+      question: 'How do I start a subscription?',
+      answer: 'Simply contact us via WhatsApp or phone. We will set up your preferences directly.'
     }
   ],
   meal_plans: [
@@ -88,7 +54,7 @@ const FAQ_BY_CATEGORY: Record<string, FAQItem[]> = {
   corporate: [
     {
       question: 'Do you provide bulk meal plans for office teams?',
-      answer: 'We offer discount brackets and unified billing for corporate teams.'
+      answer: 'We offer discount brackets and unified subscription coordination for corporate teams.'
     },
     {
       question: 'How do corporate trial weeks work?',
@@ -144,18 +110,16 @@ export default function TrustCenter() {
             <div className="flex flex-col gap-2 max-h-[420px] overflow-y-auto pr-1">
               {[
                 { key: 'general', label: 'General Info' },
-                { key: 'ordering', label: 'Ordering Policies' },
                 { key: 'subscriptions', label: 'Subscriptions' },
-                { key: 'payments', label: 'Payments' },
-                { key: 'delivery', label: 'Delivery' },
                 { key: 'meal_plans', label: 'Meal Plans' },
                 { key: 'nutrition', label: 'Nutrition & Ingredients' },
-                { key: 'corporate', label: 'Corporate Orders' },
+                { key: 'corporate', label: 'Corporate Meals' },
                 { key: 'support', label: 'Customer Support' }
               ].map((cat) => (
                 <button
                   key={cat.key}
                   onClick={() => setActiveCategory(cat.key)}
+                  suppressHydrationWarning
                   className={`group/btn h-10 px-4 rounded-xl text-xs font-bold text-left capitalize transition-all border flex items-center justify-between shrink-0 ${
                     activeCategory === cat.key
                       ? 'bg-brand-gold text-brand-dark border-brand-gold shadow-sm'
@@ -207,7 +171,7 @@ export default function TrustCenter() {
               Our Six Pillars of Trust
             </Typography>
             <Typography variant="body-regular" className="text-xs text-muted-foreground font-medium">
-              We maintain absolute transparency on how your daily food is prepared, packed, and delivered.
+              We maintain absolute transparency on how your food is prepared and managed.
             </Typography>
           </div>
 
@@ -234,7 +198,7 @@ export default function TrustCenter() {
                   <div className="h-10 w-10 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center shadow-sm transition-transform duration-300 group-hover/guideline:scale-105">
                     <svg className="h-5 w-5 stroke-current fill-none" strokeWidth="2.0" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18m-9-9h18M5.3 5.3l13.4 13.4M5.3 18.7L18.7 5.3" />
-                  </svg>
+                    </svg>
                   </div>
                   <Typography variant="h3" className="text-base font-bold text-foreground tracking-tight">Ingredient Quality</Typography>
                   <p className="text-xs text-muted-foreground leading-relaxed font-medium">
@@ -280,13 +244,13 @@ export default function TrustCenter() {
               <div className="group/guideline p-6 rounded-2xl border border-border/60 bg-card shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between h-full space-y-4">
                 <div className="space-y-4">
                   <div className="h-10 w-10 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center shadow-sm transition-transform duration-300 group-hover/guideline:scale-105">
-                    <svg className="h-5 w-5 stroke-current fill-none" strokeWidth="2.0" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9 0h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75M19.5 18.75v-9m0 9h1.5m-1.5-9h1.5M18 5.25h1.5a1.5 1.5 0 011.5 1.5v3h-3v-4.5zM3 13.5h13.5m0-4.5H4.5A1.5 1.5 0 003 10.5v3.75" />
+                    <svg className="h-5 w-5 stroke-current fill-none" strokeWidth="2.0" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <Typography variant="h3" className="text-base font-bold text-foreground tracking-tight">Transit Delivery</Typography>
+                  <Typography variant="h3" className="text-base font-bold text-foreground tracking-tight">Fresh Daily Prep</Typography>
                   <p className="text-xs text-muted-foreground leading-relaxed font-medium">
-                    Coordinated routes, office desk drops, and temperature-controlled packaging.
+                    Prepared fresh daily at our Kakkanad café to ensure maximum nutrition and taste.
                   </p>
                 </div>
               </div>
@@ -296,13 +260,13 @@ export default function TrustCenter() {
               <div className="group/guideline p-6 rounded-2xl border border-border/60 bg-card shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between h-full space-y-4">
                 <div className="space-y-4">
                   <div className="h-10 w-10 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center shadow-sm transition-transform duration-300 group-hover/guideline:scale-105">
-                    <svg className="h-5 w-5 stroke-current fill-none" strokeWidth="2.0" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                    <svg className="h-5 w-5 stroke-current fill-none" strokeWidth="2.0" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                     </svg>
                   </div>
-                  <Typography variant="h3" className="text-base font-bold text-foreground tracking-tight">Flexible Subscriptions</Typography>
+                  <Typography variant="h3" className="text-base font-bold text-foreground tracking-tight">Consulting Dietitians</Typography>
                   <p className="text-xs text-muted-foreground leading-relaxed font-medium">
-                    Pause deliveries on travel days and roll over credits instantly.
+                    Meal plans designed and portion-weighed under consulting dietitian supervision.
                   </p>
                 </div>
               </div>

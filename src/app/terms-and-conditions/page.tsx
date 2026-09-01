@@ -5,7 +5,7 @@ import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
   title: 'Terms & Conditions | Café Serenity',
-  description: 'Understand the terms of service of Café Serenity subscription structures, pause credit rollouts, and office delivery gates.',
+  description: 'Understand the terms of service of Café Serenity subscription structures, menu plans, and Kakkanad café guidelines.',
 });
 
 export default function TermsAndConditionsPage() {
@@ -22,16 +22,16 @@ export default function TermsAndConditionsPage() {
         </div>
 
         <div className="space-y-4">
-          <Typography variant="h3" className="text-sm font-bold text-foreground">1. Subscription Plans & Payments</Typography>
+          <Typography variant="h3" className="text-sm font-bold text-foreground">1. Subscription Plans</Typography>
           <p>
-            By subscribing to weekly or monthly diet plans, you agree to submit full payments upfront. All billing transactions are verified before the first kitchen dispatch occurs.
+            By subscribing to weekly or monthly diet plans, you agree to coordinate and confirm setup details upfront. All subscription details are finalized and verified before the first meal preparation occurs.
           </p>
         </div>
 
         <div className="space-y-4">
-          <Typography variant="h3" className="text-sm font-bold text-foreground">2. Delivery Coordination</Typography>
+          <Typography variant="h3" className="text-sm font-bold text-foreground">2. Subscription Menu & Schedule</Typography>
           <p>
-            Meals are dropped at office receptions, security gates, or doorstep hubs. The subscriber is responsible for coordinating with building gate rules. Café Serenity is not responsible for boxes lost after hub hand-off.
+            Menu preferences and schedules are finalized upon onboarding. Subscribers are responsible for communicating any modifications or dietary preferences to our consulting dietitians directly.
           </p>
         </div>
 

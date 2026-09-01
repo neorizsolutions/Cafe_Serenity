@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
@@ -45,7 +44,7 @@ export default function HowItWorks() {
             Your Nutrition Path
           </Typography>
           <Typography variant="h2" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
-            Simple Subscriptions, Effortless Daily Delivery
+            Simple Subscriptions, Effortless Daily Plans
           </Typography>
           <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium opacity-90">
             No checkout forms or long-term contracts. Manage your diet flexibly.
@@ -65,8 +64,8 @@ export default function HowItWorks() {
           <MotionWrapper animation="fade-up">
             <StepCard
               number="02"
-              title="Coordinate Onboarding Setup"
-              description="We coordinate delivery locations, times, and digital billing."
+              title="Inquire & Personalize"
+              description="We help you select the ideal meal plan and set up your schedule."
             />
           </MotionWrapper>
 
@@ -81,33 +80,10 @@ export default function HowItWorks() {
           <MotionWrapper animation="fade-up">
             <StepCard
               number="04"
-              title="Contactless Office Dispatch"
-              description="Fresh meal boxes are delivered directly to your desk."
+              title="Enjoy Fresh Meals"
+              description="Collect your fresh meal boxes from our Kakkanad café or coordinate convenient pickup."
             />
           </MotionWrapper>
-        </div>
-
-        {/* Flexi-Freeze Guarantee Panel */}
-        <div className="rounded-3xl border border-brand-gold/15 bg-white/70 dark:bg-card/75 p-8 text-center space-y-5 max-w-3xl mx-auto shadow-sm group relative overflow-hidden">
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-brand-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
-          
-          <span className="inline-flex rounded-full bg-brand-gold/10 px-3 py-1 text-[9px] font-black text-brand-gold uppercase tracking-widest border border-brand-gold/20 shadow-sm">
-            100% Subscription Protection
-          </span>
-          <Typography variant="h3" className="text-xl font-bold text-foreground tracking-tight">
-            The Café Serenity Flexi-Freeze Guarantee
-          </Typography>
-          <p className="text-xs leading-relaxed text-muted-foreground max-w-lg mx-auto font-medium">
-            Manage your delivery schedules, pause subscriptions, and roll over credits dynamically.
-          </p>
-          <div className="pt-2 z-10 relative">
-            <Link
-              href="/how-flexi-freeze-works"
-              className="group inline-flex h-11 items-center justify-center gap-2 rounded-full bg-brand-gold px-6 text-xs font-bold text-brand-dark shadow hover:bg-brand-gold/90 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
-            >
-              <span>Learn More</span>
-            </Link>
-          </div>
         </div>
 
         {/* Personalized Routine Presets */}
@@ -123,14 +99,14 @@ export default function HowItWorks() {
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto text-center font-bold text-xs">
             {[
-              { title: 'Office Corporate Teams', desc: 'Infopark & Technopark drops.' },
+              { title: 'Office Corporate Teams', desc: 'Dietitian-approved options for office teams.' },
               { title: 'Low Glycemic Sugar Control', desc: 'Insulin-friendly glycemic plans.' },
               { title: 'Calorie Deficit Weight Loss', desc: 'Portion-controlled deficit weight-loss.' },
               { title: 'Athletic High Protein Grains', desc: 'High-protein recovery boxes.' },
               { title: 'Kids Balanced Growth Box', desc: 'Nutrient-rich growth boxes for kids.' },
               { title: 'Senior Heart Healthy', desc: 'Easy-to-digest wholesome nutrients.' },
               { title: 'Wholesome Healthy Family', desc: 'Balanced meals for whole families.' },
-              { title: 'Flexible Custom Custom Presets', desc: 'Custom schedules and routes.' }
+              { title: 'Flexible Custom Custom Presets', desc: 'Custom schedules matching your dietary needs.' }
             ].map((preset, idx) => (
               <div 
                 key={idx} 

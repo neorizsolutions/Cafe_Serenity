@@ -92,7 +92,7 @@ export default function VisitUs() {
                     <div className="space-y-1">
                       <h4 className="text-xs font-extrabold uppercase tracking-widest text-foreground">Business Hours</h4>
                       <div className="text-xs sm:text-[13px] text-muted-foreground font-semibold space-y-0.5">
-                        <span className="block text-brand-gold font-bold">Delivery & Café Hours</span>
+                        <span className="block text-brand-gold font-bold">Café & Kitchen Hours</span>
                         <span className="block">05:00 AM – 03:00 PM</span>
                       </div>
                     </div>

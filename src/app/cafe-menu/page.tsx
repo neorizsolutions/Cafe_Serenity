@@ -77,6 +77,7 @@ export default function CafeMenuPage() {
                 aria-label="Search menu items"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                suppressHydrationWarning
                 className="w-full h-11 px-4 pr-10 rounded-full border border-border bg-background text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-all"
               />
               {searchQuery ? (
@@ -84,6 +85,7 @@ export default function CafeMenuPage() {
                   onClick={() => setSearchQuery('')}
                   className="absolute right-3.5 top-2.5 h-6 w-6 text-muted-foreground hover:text-foreground flex items-center justify-center rounded-full bg-secondary/50"
                   aria-label="Clear search query"
+                  suppressHydrationWarning
                 >
                   <svg className="h-3 w-3 fill-none stroke-current stroke-[2.5]" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -112,6 +114,7 @@ export default function CafeMenuPage() {
                 <button
                   key={filter.id}
                   onClick={() => setVegFilter(filter.id)}
+                  suppressHydrationWarning
                   className={cn(
                     'min-h-[38px] px-5 rounded-full text-xs font-bold transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold',
                     vegFilter === filter.id 
@@ -131,6 +134,7 @@ export default function CafeMenuPage() {
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
+                suppressHydrationWarning
                 className={cn(
                   'min-h-[40px] px-5 rounded-full text-xs font-bold border transition-all shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold',
                   selectedCategory === cat.id
@@ -242,6 +246,7 @@ export default function CafeMenuPage() {
                   setSelectedCategory('all');
                   setVegFilter('all');
                 }}
+                suppressHydrationWarning
                 className="min-h-[44px] px-6 rounded-full border border-border bg-background hover:bg-secondary/40 text-xs font-bold text-foreground transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
               >
                 Reset All Filters
@@ -254,14 +259,14 @@ export default function CafeMenuPage() {
             <div className="space-y-2 text-center md:text-left">
               <h4 className="text-base font-bold text-foreground">Looking for healthier daily diet plans?</h4>
               <p className="text-xs text-muted-foreground max-w-xl leading-relaxed font-medium">
-                Explore Café Serenity portion-scaled, dietitian-approved subscription boxes. Target weight loss deficits, high-protein recovery, or glucose control menus delivered daily in Kakkanad.
+                Explore Café Serenity portion-scaled, dietitian-approved subscription boxes. Target weight loss deficits, high-protein recovery, or glucose control menus prepared daily in Kakkanad.
               </p>
             </div>
-            <Link
-              href="/healthy-meals"
-              className="min-h-[44px] px-6 rounded-full bg-brand-gold hover:bg-brand-gold/90 text-xs font-bold text-brand-dark flex items-center justify-center shrink-0 transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+            <Link 
+              href="/healthy-choices"
+              className="group flex h-11 items-center justify-center gap-1.5 rounded-full bg-brand-gold px-6 text-xs font-bold text-brand-dark shadow hover:bg-brand-gold/90 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 text-center"
             >
-              Explore Healthy Meals →
+              Explore Healthy Choices &rarr;
             </Link>
           </div>
 

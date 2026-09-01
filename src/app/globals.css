@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -44,6 +43,7 @@
   --color-brand-dark: var(--brand-dark);
   --color-brand-gold: var(--brand-gold);
   --color-brand-cream: var(--brand-cream);
+  --color-brand-green: var(--brand-green);
 
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
@@ -58,6 +58,7 @@
   --brand-dark: oklch(0.16 0.01 76);
   --brand-gold: oklch(0.77 0.17 76);
   --brand-cream: oklch(0.98 0.015 80);
+  --brand-green: #6E8064;
 
   --background: var(--brand-cream);
   --foreground: var(--brand-dark);
@@ -100,6 +101,7 @@
   --foreground: var(--brand-cream);
   --card: oklch(0.20 0.012 76);
   --card-foreground: var(--brand-cream);
+  --brand-green: #6E8064;
   --popover: oklch(0.20 0.012 76);
   --popover-foreground: var(--brand-cream);
   
@@ -140,5 +142,680 @@
   }
   html {
     @apply font-sans;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   Hero Section — Phase 2
+   Color palette:
+     #F7F4EE  primary background (warm cream)
+     #EDE7DD  secondary background
+     #1C1C1E  primary dark
+     #6E8064  brand green
+     #B86F52  warm food accent
+   ═══════════════════════════════════════════════════════ */
+
+@layer components {
+  /* Section shell */
+  .hero-section {
+    background-color: #F7F4EE;
+  }
+
+  /* Ambient warm radial overlay */
+  .hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 70% 50%, rgba(110, 128, 100, 0.07) 0%, transparent 60%),
+      radial-gradient(circle at 10% 80%, rgba(184, 111, 82, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Eyebrow label */
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6E8064;
+  }
+
+  /* Main heading */
+  .hero-heading {
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    color: #1C1C1E;
+    font-size: clamp(1.875rem, 5vw, 3.75rem);
+  }
+
+  /* Heading accent span */
+  .hero-heading-accent {
+    color: #B86F52;
+  }
+
+  /* Supporting paragraph */
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #4a4743;
+  }
+  @media (min-width: 640px) {
+    .hero-description {
+      font-size: 1.0625rem;
+    }
+  }
+
+  /* Primary CTA — brand green pill */
+  .hero-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    background-color: #6E8064;
+    color: #ffffff;
+    border: 2px solid #6E8064;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  @media (min-width: 640px) {
+    .hero-cta-primary {
+      width: auto;
+    }
+  }
+  .hero-cta-primary:hover {
+    background-color: #5c6d53;
+    border-color: #5c6d53;
+  }
+  .hero-cta-primary:active {
+    transform: scale(0.98);
+  }
+  .hero-cta-primary:focus-visible {
+    outline: 2px solid #6E8064;
+    outline-offset: 4px;
+  }
+
+  /* Secondary CTA — dark charcoal outline */
+  .hero-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    background-color: transparent;
+    color: #1C1C1E;
+    border: 2px solid #1C1C1E;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  @media (min-width: 640px) {
+    .hero-cta-secondary {
+      width: auto;
+    }
+  }
+  .hero-cta-secondary:hover {
+    background-color: #1C1C1E;
+    color: #F7F4EE;
+  }
+  .hero-cta-secondary:active {
+    transform: scale(0.98);
+  }
+  .hero-cta-secondary:focus-visible {
+    outline: 2px solid #1C1C1E;
+    outline-offset: 4px;
+  }
+
+  /* Category legend row */
+  .hero-legend {
+    border-top: 1px solid rgba(28, 28, 30, 0.1);
+  }
+  .hero-legend-text {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #4a4743;
+  }
+
+  /* Food image frame */
+  .hero-image-frame {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    aspect-ratio: 4 / 5;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow:
+      0 24px 64px rgba(28, 28, 30, 0.12),
+      0 4px 16px rgba(28, 28, 30, 0.06);
+  }
+  @media (min-width: 640px) {
+    .hero-image-frame {
+      max-width: 500px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .hero-image-frame {
+      max-width: none;
+      aspect-ratio: 3 / 4;
+    }
+  }
+
+  /* Bottom gradient scrim over the image */
+  .hero-image-scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(28, 28, 30, 0.38) 0%,
+      rgba(28, 28, 30, 0.04) 40%,
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+
+  /* Caption overlaid on image */
+  .hero-image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.25rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(247, 244, 238, 0.8);
+  }
+
+  /* Decorative ambient glows behind the image */
+  .hero-glow-green {
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 9999px;
+    background-color: #6E8064;
+    filter: blur(3rem);
+    opacity: 0.22;
+    pointer-events: none;
+    z-index: -1;
+  }
+  .hero-glow-accent {
+    position: absolute;
+    bottom: -1.5rem;
+    left: -1.5rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 9999px;
+    background-color: #B86F52;
+    filter: blur(2.5rem);
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   Offerings Section — Phase 3
+   "Choose Your Experience" — two editorial food panels
+   ═══════════════════════════════════════════════════════ */
+
+@layer components {
+  /* Section shell — secondary warm beige background */
+  .offerings-section {
+    background-color: #EDE7DD;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    overflow: hidden;
+  }
+  @media (min-width: 768px) {
+    .offerings-section {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .offerings-section {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
+  }
+
+  /* ── Section header ── */
+  .offerings-header {
+    text-align: center;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3.5rem;
+  }
+  @media (min-width: 1024px) {
+    .offerings-header {
+      margin-bottom: 4rem;
+    }
+  }
+
+  .offerings-eyebrow {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #6E8064;
+    margin-bottom: 1rem;
+  }
+
+  .offerings-heading {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: #1C1C1E;
+    margin-bottom: 1rem;
+  }
+
+  .offerings-subtext {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #5a5450;
+    max-width: 38rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media (min-width: 640px) {
+    .offerings-subtext {
+      font-size: 1.0625rem;
+    }
+  }
+
+  /* ── Two-panel grid ── */
+  .offerings-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .offerings-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem;
+    }
+  }
+
+  /* ── Individual panel ── */
+  .offerings-panel {
+    display: flex;
+    flex-direction: column;
+    background-color: #F7F4EE;
+    border-radius: 1.25rem;
+    padding: 2rem;
+    overflow: hidden;
+    position: relative;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+  }
+  @media (min-width: 640px) {
+    .offerings-panel {
+      padding: 2.25rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .offerings-panel {
+      padding: 2.5rem;
+    }
+  }
+
+  /* Green panel — left border accent */
+  .offerings-panel--green {
+    border-top: 3px solid #6E8064;
+  }
+  /* Accent panel — left border accent */
+  .offerings-panel--accent {
+    border-top: 3px solid #B86F52;
+  }
+
+  .offerings-panel:hover {
+    box-shadow:
+      0 16px 48px rgba(28, 28, 30, 0.08),
+      0 2px 8px rgba(28, 28, 30, 0.04);
+    transform: translateY(-2px);
+  }
+
+  /* ── Panel label (eyebrow inside the panel) ── */
+  .offerings-panel-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .offerings-panel-label--green {
+    color: #6E8064;
+  }
+  .offerings-panel-label--accent {
+    color: #B86F52;
+  }
+
+  /* ── Panel heading ── */
+  .offerings-panel-heading {
+    font-size: clamp(1.375rem, 2.5vw, 1.75rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #1C1C1E;
+    margin-bottom: 0.875rem;
+  }
+
+  /* ── Panel description ── */
+  .offerings-panel-desc {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: #5a5450;
+    margin-bottom: 1.75rem;
+    max-width: 38ch;
+  }
+
+  /* ── Food image frame ── */
+  .offerings-image-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 0.875rem;
+    overflow: hidden;
+    margin-bottom: 1.75rem;
+    flex-shrink: 0;
+  }
+  @media (min-width: 1024px) {
+    .offerings-image-frame {
+      aspect-ratio: 3 / 2;
+    }
+  }
+
+  /* Scrim gradient over image */
+  .offerings-image-scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(28, 28, 30, 0.2) 0%,
+      transparent 50%
+    );
+    pointer-events: none;
+  }
+
+  /* ── CTA links ── */
+  .offerings-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 48px;
+    padding: 0 1.5rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: background-color 0.2s ease, color 0.2s ease,
+                border-color 0.2s ease, transform 0.15s ease;
+    cursor: pointer;
+    width: fit-content;
+    margin-top: auto;
+  }
+  .offerings-cta:active {
+    transform: scale(0.98);
+  }
+
+  /* Green CTA */
+  .offerings-cta--green {
+    background-color: #6E8064;
+    color: #ffffff;
+    border-color: #6E8064;
+  }
+  .offerings-cta--green:hover {
+    background-color: #5c6d53;
+    border-color: #5c6d53;
+  }
+  .offerings-cta--green:focus-visible {
+    outline: 2px solid #6E8064;
+    outline-offset: 4px;
+  }
+
+  /* Accent CTA — dark charcoal with warm border */
+  .offerings-cta--accent {
+    background-color: transparent;
+    color: #1C1C1E;
+    border-color: #B86F52;
+  }
+  .offerings-cta--accent:hover {
+    background-color: #B86F52;
+    color: #ffffff;
+    border-color: #B86F52;
+  }
+  .offerings-cta--accent:focus-visible {
+    outline: 2px solid #B86F52;
+    outline-offset: 4px;
+  }
+
+  /* Arrow icon inside CTA */
+  .offerings-cta-arrow {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+  .offerings-cta:hover .offerings-cta-arrow {
+    transform: translateX(3px);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   WhyChooseUs Section — Phase 4
+   "The Café Serenity Way" — editorial story layout
+   Background: #F7F4EE (warm cream)
+   ═══════════════════════════════════════════════════════ */
+
+@layer components {
+  /* Section shell */
+  .why-section {
+    background-color: #F7F4EE;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    overflow: hidden;
+  }
+  @media (min-width: 768px) {
+    .why-section {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .why-section {
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+    }
+  }
+
+  /* Eyebrow */
+  .why-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #6E8064;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Main heading */
+  .why-heading {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: #1C1C1E;
+  }
+
+  /* Supporting text */
+  .why-subtext {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #5a5450;
+    max-width: 32rem;
+  }
+  @media (min-width: 640px) {
+    .why-subtext {
+      font-size: 1.0625rem;
+    }
+  }
+
+  /* Image wrapper */
+  .why-image-wrapper {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  }
+
+  .why-image-overlay {
+    background: linear-gradient(to top, rgba(247, 244, 230, 0.05), transparent);
+  }
+
+  /* Divider line for pillars section */
+  .why-divider {
+    height: 1px;
+    background-color: rgba(28, 28, 30, 0.08);
+    width: 100%;
+  }
+
+  /* Individual pillar row */
+  .why-pillar-card {
+    border-bottom: 1px solid rgba(28, 28, 30, 0.05);
+    padding-bottom: 2rem;
+  }
+  .why-pillar-card:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  /* Numbers style (editorial focus) */
+  .why-pillar-num {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #B86F52;
+    opacity: 0.85;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+    padding-top: 0.25rem;
+  }
+
+  /* Pillar title */
+  .why-pillar-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #1C1C1E;
+  }
+
+  /* Pillar description */
+  .why-pillar-desc {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #5a5450;
+    max-width: 48ch;
+  }
+
+  /* CTA Link */
+  .why-cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 48px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #6E8064;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    cursor: pointer;
+  }
+  .why-cta-link:hover {
+    color: #5c6d53;
+  }
+  .why-cta-link:focus-visible {
+    outline: 2px solid #6E8064;
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+
+  .why-cta-arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+  .why-cta-link:hover .why-cta-arrow {
+    transform: translateX(4px);
+  }
+
+  /* ── Header CTA Buttons ── */
+  .header-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 1.5rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #6E8064;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    cursor: pointer;
+  }
+  .header-cta-primary:hover {
+    background-color: #5c6d53;
+  }
+  .header-cta-primary:active {
+    transform: scale(0.98);
+  }
+  .header-cta-primary:focus-visible {
+    outline: 2px solid #6E8064;
+    outline-offset: 4px;
+  }
+
+  .mobile-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 1.5rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #6E8064;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    cursor: pointer;
+  }
+  .mobile-cta-primary:hover {
+    background-color: #5c6d53;
+  }
+  .mobile-cta-primary:active {
+    transform: scale(0.98);
+  }
+  .mobile-cta-primary:focus-visible {
+    outline: 2px solid #6E8064;
+    outline-offset: 4px;
   }
 }

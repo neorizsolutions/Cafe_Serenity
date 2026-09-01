@@ -4,8 +4,9 @@ import Typography from '@/components/common/Typography';
 import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
-  title: 'Refund & Freeze Policies | Café Serenity',
-  description: 'Learn about Café Serenity 12h freeze credit policy, vacation subscription lockouts, and credit rollovers.',
+  title: 'Refund & Cancellation Policies | Café Serenity',
+  description: 'Learn about Café Serenity cancellation policy and subscription details.',
+  path: '/refund-policy',
 });
 
 export default function RefundPolicyPage() {
@@ -14,7 +15,7 @@ export default function RefundPolicyPage() {
       <Container className="max-w-2xl space-y-8 text-xs text-muted-foreground leading-relaxed">
         <div className="space-y-4 text-center">
           <Typography variant="h1" className="text-3xl font-extrabold tracking-tight text-foreground">
-            Refund & Subscription Freeze Policy
+            Refund & Cancellation Policy
           </Typography>
           <Typography variant="body-large" className="text-muted-foreground">
             Last updated: August 2026
@@ -22,23 +23,16 @@ export default function RefundPolicyPage() {
         </div>
 
         <div className="space-y-4">
-          <Typography variant="h3" className="text-sm font-bold text-foreground">1. Subscription Freeze (12-Hour Notice)</Typography>
+          <Typography variant="h3" className="text-sm font-bold text-foreground">1. Subscription Cancellation</Typography>
           <p>
-            If you are traveling or eating out, you can pause your daily box delivery. Simply alert our WhatsApp line before 6 PM on the preceding day. We will lock your dispatch schedule and roll your active payment credit over to subsequent days.
+            Subscribers can request plan cancellations at any time by contacting our team. We do not offer direct bank refunds for active plan cancellations. However, any remaining balance or value stays locked in your account indefinitely and can be activated for future plans or transferred to another local resident.
           </p>
         </div>
 
         <div className="space-y-4">
-          <Typography variant="h3" className="text-sm font-bold text-foreground">2. Late Freeze Requests</Typography>
+          <Typography variant="h3" className="text-sm font-bold text-foreground">2. Wholesome Quality Commitment</Typography>
           <p>
-            Freeze requests received after 6 PM on the preceding day cannot be processed, as raw ingredients have been procured and kitchen preps have initialized. The meal will be dispatched as scheduled or can be routed to a friend.
-          </p>
-        </div>
-
-        <div className="space-y-4">
-          <Typography variant="h3" className="text-sm font-bold text-foreground">3. Cancellation & Refunds</Typography>
-          <p>
-            We do not offer direct bank refunds for active plan cancellations. However, your remaining balance credit stays locked in your account indefinitely and can be activated for future plans or transferred to another local resident.
+            If you are not completely satisfied with the quality of your meals, please contact us within 4 hours of receiving the meal. We will review your feedback and coordinate a suitable resolution, such as a credit or replacement.
           </p>
         </div>
       </Container>

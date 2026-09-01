@@ -6,7 +6,7 @@ import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
   title: 'Help Center & Frequently Asked Questions (FAQ)',
-  description: 'Find answers about our onboarding, delivery areas in Kochi, freeze credit policy, and fresh morning café breakfast.',
+  description: 'Find answers about our onboarding, consulting dietitian services, healthy meal plans, and fresh morning café breakfast.',
 });
 
 export default function FAQPage() {
@@ -19,7 +19,7 @@ export default function FAQPage() {
             Frequently Asked Questions
           </Typography>
           <Typography variant="body-large" className="text-sm text-muted-foreground max-w-lg mx-auto">
-            Browse active support categories to understand our kitchen and delivery standards.
+            Browse active support categories to understand our kitchen and meal standards.
           </Typography>
         </Container>
       </Section>

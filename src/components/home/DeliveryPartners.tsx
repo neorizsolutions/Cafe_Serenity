@@ -26,7 +26,7 @@ export default function DeliveryPartners() {
     {
       id: 'swiggy',
       name: 'Swiggy',
-      description: 'Lightning-fast delivery of portion-controlled healthy meals and diet boxes straight to your doorstep.',
+      description: 'Order our classic café breakfast comfortable foods and morning drinks on Swiggy.',
       rating: 4.4,
       reviewsCount: '1,200+ reviews',
       ctaText: 'Order on Swiggy',
@@ -44,7 +44,7 @@ export default function DeliveryPartners() {
     {
       id: 'zomato',
       name: 'Zomato',
-      description: 'Browse our full kitchen menu, check out reviews, and enjoy portion-controlled packaging.',
+      description: 'Browse our full café menu, check verified reviews, and view our morning favourites on Zomato.',
       rating: 4.5,
       reviewsCount: '2,500+ reviews',
       ctaText: 'Order on Zomato',
@@ -122,13 +122,13 @@ export default function DeliveryPartners() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <Typography variant="badge-label" className="tracking-widest text-[11px] text-brand-gold">
-            Order Online
+            Find Us Online
           </Typography>
           <Typography variant="h2" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
-            Our Delivery Partners
+            Where to Find Us
           </Typography>
           <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium opacity-90">
-            Enjoy fresh, calorie-mapped diet boxes delivered daily. Get your portion-controlled healthy meals sent straight to your doorstep.
+            Find Café Serenity morning favourites, breakfast combo specials, and frothed drinks on online directories and food platforms.
           </Typography>
         </div>
 

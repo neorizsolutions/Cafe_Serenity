@@ -1,11 +1,11 @@
 import Container from '@/components/common/Container';
 import Section from '@/components/common/Section';
 import Typography from '@/components/common/Typography';
-import Pricing from '@/components/healthy-meals/PricingSection';
+import Pricing from '@/components/healthy-choices/PricingSection';
 import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
-  title: 'Weekly Menu Pricing & Subscriptions | Café Serenity',
+  title: 'Plan Pricing & Subscriptions | Café Serenity',
   description: 'View Café Serenity everyday ₹69 healthy meal box pricing and weekly or monthly dietitian diet subscriptions starting from ₹199/meal.',
 });
 

@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: BUSINESS_NAME,
     short_name: 'Serenity',
-    description: 'Healthy meals & everyday café favourites in Kakkanad, Kochi.',
+    description: 'Healthy choices & everyday café favourites in Kakkanad, Kochi.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

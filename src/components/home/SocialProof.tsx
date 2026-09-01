@@ -212,7 +212,7 @@ export default function SocialProof() {
               </p>
             </div>
             
-            <div className="grid grid-cols-3 gap-3 text-center text-[10px] font-black text-muted-foreground/60">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center text-[10px] font-black text-muted-foreground/60">
               {[
                 'Partner Gym Kochi',
                 'Fitness Studio Kochi',
@@ -239,7 +239,7 @@ export default function SocialProof() {
               </p>
             </div>
             
-            <div className="grid grid-cols-3 gap-3 text-center text-[10px] font-extrabold text-brand-gold">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center text-[10px] font-extrabold text-brand-gold">
               {[
                 {
                   text: 'FSSAI Certified',
@@ -287,7 +287,7 @@ export default function SocialProof() {
             Experience verified, clean daily nutrition.
           </Typography>
           <p className="text-xs leading-relaxed text-muted-foreground max-w-lg mx-auto font-medium">
-            Contact us to select a plan and subscribe. Pause or reschedule anytime via our support.
+            Contact us to select a plan. Modify menu preferences anytime via support call or email.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2">
             <Link
@@ -297,10 +297,10 @@ export default function SocialProof() {
               <span>Inquire Now</span>
             </Link>
             <Link
-              href="/healthy-meals"
-              className="flex h-11 items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur-sm px-8 text-xs font-semibold text-foreground hover:text-white hover:bg-stone-900 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 text-center"
+              href="/healthy-choices"
+              className="flex h-11 items-center justify-center rounded-full border border-border bg-background px-6 text-xs font-semibold text-foreground hover:bg-secondary transition-all hover:-translate-y-0.5 active:scale-98"
             >
-              Configure Plans
+              Explore Healthy Choices
             </Link>
           </div>
         </div>

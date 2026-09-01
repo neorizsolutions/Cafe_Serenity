@@ -1,67 +1,28 @@
-export * from './healthy-meals';
-export * from './cafe-menu';
-
-export interface Meal {
+export interface HealthyMealPlan {
   id: string;
-  name: string;
+  title: string;
   description: string;
-  image: string;
-  calories: number;
-  protein: number;
-  carbs: number;
-  fat: number;
-  category: Category;
-  tags: string[];
-  allergens?: string[];
-  ingredients?: string[];
-}
-
-export type Category = 'veg' | 'non-veg';
-
-export interface Plan {
-  id: string;
-  name: string;
-  description: string;
-  pricePerMeal: number;
-  startingPrice: number;
-  features: string[];
-  targetAudience: string;
+  price: string;
+  calories: string;
+  protein: string;
+  color: string;
   path: string;
+  imageSrc?: string;
+  features?: string[];
+  tag?: string;
   popular?: boolean;
 }
 
-export interface Review {
+export interface CafeMenuItem {
   id: string;
-  authorName: string;
-  authorRole?: string;
-  content: string;
-  rating: number;
-  goalBadge?: string;
-  avatarUrl?: string;
-}
-
-export interface FAQ {
-  id: string;
-  question: string;
-  answer: string;
-  category: 'delivery' | 'billing' | 'nutrition' | 'general';
-}
-
-export interface Blog {
-  id: string;
-  title: string;
-  slug: string;
-  excerpt: string;
-  content: string;
-  author: {
-    name: string;
-    role: string;
-    avatar?: string;
-  };
-  category: string;
-  publishedAt: string;
-  readTime: string;
-  coverImage: string;
+  name: string;
+  price: number;
+  description: string;
+  tag?: string;
+  category?: 'breakfast' | 'beverage' | 'snack' | 'main';
+  availability?: boolean;
+  imageSrc?: string;
+  isVeg?: boolean;
 }
 
 export interface NavigationItem {

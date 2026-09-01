@@ -32,6 +32,7 @@ export default function Error({
         <div className="pt-2 flex justify-center gap-4">
           <button
             onClick={() => reset()}
+            suppressHydrationWarning
             className="flex h-11 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground shadow transition-colors hover:bg-primary/95"
           >
             Try Again

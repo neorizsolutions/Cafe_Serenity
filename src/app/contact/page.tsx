@@ -27,12 +27,12 @@ export default function ContactPage() {
         {/* Contact Info Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
           <Link
-            href="/healthy-meals"
+            href="/healthy-choices"
             className="p-6 rounded-2xl border border-border bg-card hover:bg-secondary/35 transition-colors space-y-2 block"
           >
             <span className="text-2xl block">🥗</span>
             <span className="text-xs font-bold text-foreground block">Diet Plans</span>
-            <span className="text-[10px] text-primary font-bold block">Configure Meal Plan</span>
+            <span className="text-[10px] text-primary font-bold block">Explore Healthy Choices</span>
           </Link>
           <a
             href={`tel:${CONTACT_DETAILS.phone}`}

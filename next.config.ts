@@ -12,13 +12,23 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/healthy-meals',
+        destination: '/healthy-choices',
+        permanent: true,
+      },
+      {
+        source: '/healthy-meals/:path*',
+        destination: '/healthy-choices/:path*',
+        permanent: true,
+      },
+      {
         source: '/meal-plans',
-        destination: '/healthy-meals',
+        destination: '/healthy-choices',
         permanent: true,
       },
       {
         source: '/meal-plans/:path*',
-        destination: '/healthy-meals/:path*',
+        destination: '/healthy-choices/:path*',
         permanent: true,
       },
     ];

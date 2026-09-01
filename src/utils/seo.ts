@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { SEO_DEFAULTS, CONTACT_DETAILS, BUSINESS_NAME } from '../constants';
+import { SEO_DEFAULTS, BUSINESS_NAME } from '../constants';
 
 interface MetadataProps {
   title?: string;
@@ -53,44 +53,6 @@ export function constructMetadata({
 }
 
 // JSON-LD Structured Data Schema Exporters
-export function getOrganizationSchema() {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    'name': BUSINESS_NAME,
-    'url': SEO_DEFAULTS.baseUrl,
-    'logo': `${SEO_DEFAULTS.baseUrl}/brand/cafe-serenity-logo.svg`,
-    'sameAs': [],
-  };
-}
-
-export function getLocalBusinessSchema(city?: string) {
-  const cityName = city ? ` - ${city}` : '';
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'FoodEstablishment',
-    'name': `${BUSINESS_NAME}${cityName}`,
-    'image': `${SEO_DEFAULTS.baseUrl}/images/hero-display.webp`,
-    'telephone': CONTACT_DETAILS.phone,
-    'email': CONTACT_DETAILS.email,
-    'priceRange': '₹₹',
-    'address': {
-      '@type': 'PostalAddress',
-      'streetAddress': CONTACT_DETAILS.address.street,
-      'addressLocality': city || CONTACT_DETAILS.address.locality,
-      'addressRegion': CONTACT_DETAILS.address.state,
-      'postalCode': CONTACT_DETAILS.address.zipCode,
-      'addressCountry': 'IN',
-    },
-    'geo': {
-      '@type': 'GeoCoordinates',
-      'latitude': CONTACT_DETAILS.geo.lat.toString(),
-      'longitude': CONTACT_DETAILS.geo.lng.toString(),
-    },
-    'url': `${SEO_DEFAULTS.baseUrl}/delivery/${(city || 'kochi').toLowerCase()}`,
-    'fssaiNumber': CONTACT_DETAILS.fssaiNumber,
-  };
-}
 
 export function getBreadcrumbSchema(items: { name: string; path: string }[]) {
   return {
@@ -120,32 +82,3 @@ export function getFAQSchema(faqs: { question: string; answer: string }[]) {
   };
 }
 
-export function getProductSchema(plan: { name: string; description: string; price: number }) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    'name': plan.name,
-    'description': plan.description,
-    'offers': {
-      '@type': 'Offer',
-      'price': plan.price.toString(),
-      'priceCurrency': 'INR',
-      'availability': 'https://schema.org/InStock',
-    },
-  };
-}
-
-export function getArticleSchema(article: { title: string; excerpt: string; slug: string; date: string; author: string }) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    'headline': article.title,
-    'description': article.excerpt,
-    'url': `${SEO_DEFAULTS.baseUrl}/blog/${article.slug}`,
-    'datePublished': article.date,
-    'author': {
-      '@type': 'Person',
-      'name': article.author,
-    },
-  };
-}
