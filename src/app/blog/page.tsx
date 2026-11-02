@@ -6,28 +6,26 @@ import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
   title: 'Café Serenity Living Blog | Food & Café News',
-  description: 'Read food stories, café updates, and clean eating tips from the Café Serenity team.',
+  description: 'Discover the Biriyani collection and everyday snacks at Café Serenity.',
+  path: '/blog',
 });
 
 export default function BlogPage() {
   return (
     <Section bg="white" className="min-h-[70vh] flex items-center justify-center py-16">
       <Container className="max-w-md text-center space-y-6">
-        <span className="inline-flex rounded-full bg-primary/10 px-3 py-0.5 text-xs font-bold text-primary uppercase tracking-widest">
-          Coming Soon
-        </span>
         <Typography variant="h1" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
-          Café Serenity Blog
+          Biriyani & Café Favourites
         </Typography>
         <Typography variant="body-large" className="text-sm text-muted-foreground leading-relaxed">
-          Our kitchen team is assembling a catalog of clean local recipes, café news, and food stories. Stay tuned!
+          Explore eight Biriyani varieties in Half and Full portions, Regular Snacks and Egg Puffs. See our menu for the full collection and prices.
         </Typography>
         <div className="pt-4">
           <Link
-            href="/"
+            href="/cafe-menu"
             className="inline-flex h-11 items-center justify-center rounded-full bg-primary px-6 text-xs font-bold text-primary-foreground hover:bg-primary/95 transition-all shadow"
           >
-            Back to Homepage
+            Explore Our Menu
           </Link>
         </div>
       </Container>

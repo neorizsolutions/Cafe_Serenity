@@ -1,5 +1,6 @@
 import { Geist } from 'next/font/google';
 import './globals.css';
+import './cafe-refinement.css';
 import { constructMetadata } from '@/utils/seo';
 import SkipToContent from '@/components/layout/SkipToContent';
 import Header from '@/components/layout/Header';

@@ -1,5 +1,6 @@
 'use client';
 
+import BrandLogo from '@/components/common/BrandLogo';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -58,23 +59,7 @@ export default function Header() {
           className="flex items-center transition-opacity hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6E8064] focus-visible:ring-offset-2 rounded-lg py-1 shrink-0"
           aria-label={`${BUSINESS_NAME} Home`}
         >
-          {/* Compact Icon Logo - visible on mobile only */}
-          <svg className="h-8 w-8 min-w-[32px] sm:hidden block" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="46" stroke="#6E8064" strokeWidth="5.5" fill="#1C1C1E" />
-            <path d="M38 48v24M32 29v8a6 6 0 0 0 12 0v-8M38 29v8" stroke="#6E8064" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M60 48v24M55 48V32c0-5 2.5-7.5 5-7.5v23.5z" fill="#6E8064" stroke="#6E8064" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-
-          {/* Full Brand Wordmark Logo - hidden on mobile, visible on sm screen and up */}
-          <svg className="h-8 sm:h-9 md:h-10 w-auto sm:block hidden" viewBox="0 0 450 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g transform="translate(10, 10)">
-              <circle cx="40" cy="40" r="38" stroke="#6E8064" strokeWidth="4.5" fill="#1C1C1E" />
-              <path d="M30 38v20M25 22v7a5 5 0 0 0 10 0v-7M30 22v7" stroke="#6E8064" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M48 38v20M44 38V25c0-4 2-6 4-6v19z" fill="#6E8064" stroke="#6E8064" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </g>
-            <text x="110" y="46" fontFamily="var(--font-sans), -apple-system, BlinkMacSystemFont, sans-serif" fontWeight="900" fontSize="25" fill="#1C1C1E" letterSpacing="1.5">CAFÉ SERENITY</text>
-            <text x="110" y="74" fontFamily="var(--font-sans), -apple-system, BlinkMacSystemFont, sans-serif" fontWeight="700" fontSize="12" fill="#6E8064" letterSpacing="5">KAKKANAD</text>
-          </svg>
+          <BrandLogo />
         </Link>
 
         {/* Desktop Nav Links */}

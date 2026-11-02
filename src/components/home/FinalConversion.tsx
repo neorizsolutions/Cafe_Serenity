@@ -15,14 +15,11 @@ export default function FinalConversion() {
 
         {/* Main Invitation Block */}
         <div className="text-center max-w-3xl mx-auto space-y-6">
-          <Typography variant="badge-label" className="tracking-widest text-[11px] text-brand-gold">
-            Visit Us
-          </Typography>
           <Typography variant="h2" className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl text-foreground">
             We&apos;d Love to Serve You
           </Typography>
           <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-xl mx-auto font-medium opacity-90">
-            Whether you&apos;re dropping by for a hot coffee, picking up your daily meal box, or just want to chat about our menu—our doors are open.
+            Visit Café Serenity for Biriyani and everyday snacks, or contact our restaurant to learn more about the menu.
           </Typography>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
@@ -67,10 +64,10 @@ export default function FinalConversion() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <span className="text-sm font-bold text-foreground block mb-2">Opening Hours</span>
+            <span className="text-sm font-bold text-foreground block mb-2">Plan Your Visit</span>
             <span className="text-xs text-muted-foreground block font-medium leading-relaxed">
-              Monday - Saturday<br />
-              5:00 AM - 3:00 PM
+              Contact us for current<br />
+              opening hours
             </span>
           </div>
 

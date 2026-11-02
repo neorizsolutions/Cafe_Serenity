@@ -34,14 +34,11 @@ export default function VisitUs() {
       <Container className="space-y-16">
         {/* Section Title */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <Typography variant="badge-label" className="tracking-widest text-[11px] text-brand-gold">
-            Visit Us
-          </Typography>
           <Typography variant="h2" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
-            Visit Our Central Kitchen & Café
+            Visit Café Serenity
           </Typography>
           <Typography variant="body-large" className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium">
-            See where the wellness magic happens. Find our central preparation hub coordinates and contact details.
+            Get in touch with our restaurant or use the existing directions link to plan your visit.
           </Typography>
         </div>
 
@@ -56,7 +53,6 @@ export default function VisitUs() {
               <div className="space-y-8">
                 {/* Brand / Hub Name */}
                 <div className="space-y-1">
-                  <Typography variant="badge-label" className="text-[10px] tracking-widest text-brand-gold">Central Kitchen Hub</Typography>
                   <Typography variant="h3" className="text-2xl font-black text-foreground tracking-tight" itemProp="name">
                     Café Serenity
                   </Typography>
@@ -92,8 +88,8 @@ export default function VisitUs() {
                     <div className="space-y-1">
                       <h4 className="text-xs font-extrabold uppercase tracking-widest text-foreground">Business Hours</h4>
                       <div className="text-xs sm:text-[13px] text-muted-foreground font-semibold space-y-0.5">
-                        <span className="block text-brand-gold font-bold">Café & Kitchen Hours</span>
-                        <span className="block">05:00 AM – 03:00 PM</span>
+                        <span className="block text-brand-gold font-bold">Contact us for current hours</span>
+                        <span className="block">Please call before your visit.</span>
                       </div>
                     </div>
                   </div>

@@ -22,9 +22,6 @@ export default function Error({
   return (
     <Section bg="muted" className="min-h-screen flex items-center justify-center">
       <Container className="max-w-md text-center space-y-6">
-        <Typography variant="badge-label" className="text-red-600">
-          Application Error
-        </Typography>
         <Typography variant="h2">Something Went Wrong</Typography>
         <Typography variant="body-regular">
           An unexpected error occurred during execution. Please try reloading or reporting this to the system support desk.

@@ -1,11 +1,10 @@
 import { constructMetadata } from '@/utils/seo';
 
 export const metadata = constructMetadata({
-  title: 'Café Menu | South Indian Breakfast & Kerala Favourites',
-  description:
-    'Explore Café Serenity\'s everyday café menu in Kakkanad, Kochi. Fresh South Indian breakfast, Kerala meals, biriyani, snacks, and authentic filter coffee — prepared daily.',
+  title: 'Our Menu — Biriyani & Snacks',
+  description: 'Eight Biriyani varieties, Regular Snacks and Egg Puffs at Café Serenity.',
   path: '/cafe-menu',
-  image: '/images/slide_cafe_breakfast.png',
+  image: '/images/biriyani.png',
 });
 
 export default function CafeMenuLayout({

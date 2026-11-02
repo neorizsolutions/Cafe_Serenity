@@ -10,28 +10,7 @@ const nextConfig: NextConfig = {
     ],
   },
   async redirects() {
-    return [
-      {
-        source: '/healthy-meals',
-        destination: '/healthy-choices',
-        permanent: true,
-      },
-      {
-        source: '/healthy-meals/:path*',
-        destination: '/healthy-choices/:path*',
-        permanent: true,
-      },
-      {
-        source: '/meal-plans',
-        destination: '/healthy-choices',
-        permanent: true,
-      },
-      {
-        source: '/meal-plans/:path*',
-        destination: '/healthy-choices/:path*',
-        permanent: true,
-      },
-    ];
+    return ['/healthy-meals/:path*', '/meal-plans/:path*', '/healthy-choices/:path*'].map((source) => ({ source, destination: '/cafe-menu', permanent: true }));
   },
 };
 
