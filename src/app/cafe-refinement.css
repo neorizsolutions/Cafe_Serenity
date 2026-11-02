@@ -70,9 +70,9 @@
 
 /* Transparent shop logo, aligned to the same content edge as navigation/footer. */
 .brand-lockup { display: inline-flex; align-items: center; justify-content: flex-start; width: 190px; max-width: 100%; padding: 0; background: transparent; }
-.brand-logo-image { display: block; width: 232px; height: 40px; object-fit: cover; object-position: center; }
+.brand-logo-image { display: block; width: 190px; height: 40px; object-fit: cover; object-position: center; }
 .footer-logo .brand-lockup { width: 270px; padding: 0; }
-.footer-logo .brand-logo-image { width: 270px; height: 46px; }
+.footer-logo .brand-logo-image { width: 220px; height: 46px; }
 .footer-logo { background: transparent; padding: 0; border-radius: 0; }
 .footer-columns { align-items: start; }
 .footer-columns > * { min-width: 0; }
@@ -110,3 +110,6 @@
 .not-found-food { position: relative; width: 100%; aspect-ratio: 1.42; }
 @media(min-width:768px) { .not-found-layout { grid-template-columns: 1fr 1fr; gap: 3rem; } }
 @media(max-width:767px) { .not-found-art { max-width: 480px; width: 100%; margin-inline: auto; } }
+
+/* A fine dark edge keeps the supplied gold readable on the cream navbar. */
+header .brand-logo-image { filter: drop-shadow(0 1px 0 #53624A) drop-shadow(0 -0.5px 0 #53624A80); }

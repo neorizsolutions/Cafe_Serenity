@@ -11,18 +11,29 @@ export const SNACK_NAMES = [
 // Until then, MenuCard renders a neutral image placeholder.
 
 export const BIRIYANI_NAMES = ['Hyderabadi Biriyani', 'Thalappakatti Biriyani', 'Chettinad Biriyani', 'Ravuthar Biriyani', 'Ambur Biriyani', 'Dhilli Darbar Biriyani', 'Kozhikode Biriyani', 'Malabar Biriyani'];
+const BIRIYANI_DESCRIPTIONS: Record<string, string> = {
+  "Hyderabadi Biriyani": "Aromatic and richly flavoured, a classic choice for a satisfying Biriyani lunch.",
+  "Thalappakatti Biriyani": "A Tamil Nadu favourite with bold flavour and a character all its own.",
+  "Chettinad Biriyani": "A full-flavoured southern favourite for those who enjoy a more robust Biriyani.",
+  "Ravuthar Biriyani": "A comforting regional favourite with a rich, savoury character.",
+  "Ambur Biriyani": "An inviting Tamil Nadu style, bringing its own flavour to your Biriyani break.",
+  "Dhilli Darbar Biriyani": "A hearty choice with a rich, warming flavour for a leisurely lunch.",
+  "Kozhikode Biriyani": "A Kozhikode favourite that brings the familiar comfort of Kerala Biriyani to your plate.",
+  "Malabar Biriyani": "A coastal Kerala favourite for an aromatic and satisfying meal."
+};
+
 export const CAFE_ITEMS: CafeMenuItem[] = [
   ...BIRIYANI_NAMES.map((name): CafeMenuItem => ({
     id: name.toLowerCase().replaceAll(' ', '-'), name, category: 'biriyani',
     price: 90, portions: { half: 90, full: 150 },
-    description: 'A familiar favourite, prepared with care.',
-    imageSrc: `/images/${name.toLowerCase().replaceAll(' ', '-')}.png`,
+    description: BIRIYANI_DESCRIPTIONS[name],
+    imageSrc: `/images/${name.toLowerCase().replaceAll(' ', '-')}.webp`,
     portionImages: {
-      half: name === 'Hyderabadi Biriyani' ? '/images/hyderabadi-biriyani-half-matched.png' : `/images/${name.toLowerCase().replaceAll(' ', '-')}-half.png`,
-      full: `/images/${name.toLowerCase().replaceAll(' ', '-')}.png`,
+      half: name === 'Hyderabadi Biriyani' ? '/images/hyderabadi-biriyani-half-matched.webp' : `/images/${name.toLowerCase().replaceAll(' ', '-')}-half.webp`,
+      full: `/images/${name.toLowerCase().replaceAll(' ', '-')}.webp`,
     },
   })),
-  ...SNACK_NAMES.map((name): CafeMenuItem => ({ id: name.toLowerCase().replaceAll(' ', '-'), name, category: 'snacks', price: 12, description: name === 'Kesari' ? 'Golden semolina sweet for a little tea-time treat.' : 'A Kerala evening snack for your tea-time break.', imageSrc: name === 'Ela Ada' ? '/images/ela-ada-wrapped.png' : `/images/${name.toLowerCase().replaceAll(' ', '-')}.png` })),
-  { id: 'egg-puffs', name: 'Egg Puffs', category: 'snacks', price: 15, description: 'Golden egg puffs for a quick café bite.', imageSrc: '/images/egg-puffs-menu.png' },
+  ...SNACK_NAMES.map((name): CafeMenuItem => ({ id: name.toLowerCase().replaceAll(' ', '-'), name, category: 'snacks', price: 12, description: name === 'Kesari' ? 'Golden semolina sweet for a little tea-time treat.' : 'A Kerala evening snack for your tea-time break.', imageSrc: name === 'Ela Ada' ? '/images/ela-ada-wrapped.webp' : `/images/${name.toLowerCase().replaceAll(' ', '-')}.webp` })),
+  { id: 'egg-puffs', name: 'Egg Puffs', category: 'snacks', price: 15, description: 'Golden egg puffs for a quick café bite.', imageSrc: '/images/egg-puffs-menu.webp' },
 ];
 export const menuPrice = (item: CafeMenuItem) => item.portions ? `Half ₹${item.portions.half} / Full ₹${item.portions.full}` : `₹${item.price} each`;

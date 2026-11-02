@@ -4,7 +4,7 @@ export const metadata = constructMetadata({
   title: 'Our Menu — Biriyani & Snacks',
   description: 'Eight Biriyani varieties, Regular Snacks and Egg Puffs at Café Serenity.',
   path: '/cafe-menu',
-  image: '/images/biriyani.png',
+  image: '/images/biriyani.webp',
 });
 
 export default function CafeMenuLayout({

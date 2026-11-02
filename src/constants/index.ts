@@ -37,9 +37,9 @@ export const CONTACT_DETAILS: ContactDetails = {
 export const SEO_DEFAULTS = {
   title: 'Café Serenity | Biriyani & Everyday Snacks',
   description: 'Explore eight Biriyani varieties at Café Serenity: Half ₹90, Full ₹150. Regular Snacks ₹12 each and Egg Puffs ₹15 each.',
-  baseUrl: 'https://cafeserenity.com',
+  baseUrl: 'https://cafeserenity.neorizsolutions.com',
   siteName: 'Café Serenity',
-  ogImage: '/images/biriyani.png',
+  ogImage: '/images/biriyani.webp',
   twitterCard: 'summary_large_image',
   robots: 'index, follow',
 };

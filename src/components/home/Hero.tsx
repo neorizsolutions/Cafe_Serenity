@@ -79,7 +79,7 @@ export default function Hero() {
             {/* Editorial image frame */}
             <div className="hero-image-frame">
               <Image
-                src="/images/biriyani.png"
+                src="/images/biriyani.webp"
                 alt="Illustrative biriyani presentation"
                 fill
                 priority
