@@ -1,34 +1,15 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import Container from '@/components/common/Container';
-import Section from '@/components/common/Section';
-import Typography from '@/components/common/Typography';
+import { BIRIYANI_NAMES } from '@/data/cafe-menu/items';
 import { constructMetadata } from '@/utils/seo';
-
-export const metadata = constructMetadata({
-  title: 'Café Serenity Living Blog | Food & Café News',
-  description: 'Discover the Biriyani collection and everyday snacks at Café Serenity.',
-  path: '/blog',
-});
-
-export default function BlogPage() {
-  return (
-    <Section bg="white" className="min-h-[70vh] flex items-center justify-center py-16">
-      <Container className="max-w-md text-center space-y-6">
-        <Typography variant="h1" className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
-          Biriyani & Café Favourites
-        </Typography>
-        <Typography variant="body-large" className="text-sm text-muted-foreground leading-relaxed">
-          Explore eight Biriyani varieties in Half and Full portions, Regular Snacks and Egg Puffs. See our menu for the full collection and prices.
-        </Typography>
-        <div className="pt-4">
-          <Link
-            href="/cafe-menu"
-            className="inline-flex h-11 items-center justify-center rounded-full bg-primary px-6 text-xs font-bold text-primary-foreground hover:bg-primary/95 transition-all shadow"
-          >
-            Explore Our Menu
-          </Link>
-        </div>
-      </Container>
-    </Section>
-  );
+export const metadata = constructMetadata({title:'Food Guide — Biriyani, Snacks & Sweet Treats',description:'Get to know the Biriyani, snacks and sweets on Café Serenity’s menu, compare portions and plan your café visit.',path:'/blog'});
+export default function FoodGuide() {
+  return <><section className="brand-page-intro"><div><h1>Get to know<br /><span>your next favourite.</span></h1><p>A little guide to the food on our menu, from a proper Biriyani lunch to the small pleasures of snack time.</p></div></section>
+    <nav className="guide-jump-links" aria-label="Food guide sections"><a href="#biriyani-guide">The Biriyani collection ↘</a><a href="#portion-guide">Half or Full? ↘</a><a href="#sweet-and-savoury">Snacks & sweets ↘</a></nav>
+    <div className="brand-food-guide">
+      <article id="biriyani-guide" className="guide-article"><div className="guide-image"><Image src="/images/malabar-biriyani.webp" alt="An illustrative plate of Malabar Biriyani" fill sizes="(max-width:767px) 90vw, 45vw" /></div><div><h2>A collection with<br /><span>room to explore.</span></h2><p>Biriyani is the centre of our menu, with eight named styles to choose from. If you have a favourite, start there. If you are curious about another style, the café team can help you decide.</p><p>Our collection brings Hyderabadi, Thalappakatti, Chettinad, Ravuthar, Ambur, Dhilli Darbar, Kozhikode and Malabar together in one place. Each appears separately on the menu, with the same clear Half and Full pricing.</p><ul className="guide-varieties">{BIRIYANI_NAMES.map(name => <li key={name}>{name.replace(' Biriyani','')}</li>)}</ul><Link href="/cafe-menu#category-biriyani" className="brand-inline-link">Explore all eight styles ↗</Link></div></article>
+      <article id="portion-guide" className="guide-portion-article"><div><h2>A smaller lunch?<br /><span>A bigger appetite?</span></h2><p>You choose the portion after choosing the Biriyani. Every style has a Half at ₹90 and a Full at ₹150, so you can compare styles without comparing different price structures.</p><p>The menu’s Half and Full controls switch the illustration and highlight the selected price. They are there to help you explore the options; they do not place an order.</p></div><div className="guide-portion-table"><h3>A simple comparison</h3><dl><div><dt>Half Biriyani</dt><dd>₹90</dd></div><div><dt>Full Biriyani</dt><dd>₹150</dd></div></dl><p>Menu images are illustrative. Ask the team if you need more detail about a serving.</p><Link href="/cafe-menu" className="brand-button">Choose your Biriyani ↗</Link></div></article>
+      <article id="sweet-and-savoury" className="guide-article"><div className="guide-image"><Image src="/images/pazham-pori.webp" alt="Pazham Pori, one of the snacks on our menu" fill sizes="(max-width:767px) 90vw, 45vw" /></div><div><h2>There is more<br /><span>to a little break.</span></h2><p>Some breaks call for something savoury: a Cutlet, Samosa, Parippu Vada or Egg Puff. Others leave room for Kesari, Sukhiyan, Kozhukatta or Ela Ada.</p><p>Our snack collection also includes Vada, Pazham Pori, Bonda, Ulli Vada, Mulaku Bajji, Poricha Pathiri, Egg Bajji and Idli. Browse by name or use the menu filters to explore a smaller selection.</p><p>Regular snacks and sweets are ₹12 per piece. Egg Puffs are ₹15 each. The illustrated plates show the food, rather than a snack bundle at that price.</p><Link href="/cafe-menu#category-snacks" className="brand-inline-link">Find your next snack ↗</Link></div></article>
+      <section className="guide-before-visit"><h2>A note before your visit.</h2><div><p>Opening hours and daily availability are best checked with the café. Call or message us before travelling if you have a particular dish in mind.</p><p>For ingredients, food allergies or dietary preferences, talk directly with the team before choosing. A photograph cannot tell you everything that goes into a dish.</p><Link href="/contact" className="brand-inline-link">Get in touch with the café ↗</Link></div></section>
+    </div></>;
 }

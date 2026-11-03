@@ -1,0 +1,7 @@
+.card { position: relative; width: 100%; max-width: 600px; border-radius: 1.5rem; overflow: hidden; background: #F7F4EE; border: 1px solid #85671F20; box-shadow: 0 16px 40px #40341C0D; }
+.photo { position: relative; aspect-ratio: 1.12; overflow: hidden; isolation: isolate; }
+.previous, .current, .preload { object-fit: contain; }
+.previous { z-index: 0; }
+.current { z-index: 1; }
+.preload { opacity: 0; z-index: -1; pointer-events: none; }
+@media(prefers-reduced-motion:no-preference) { .current { animation: product-reveal .8s ease-out both; } @keyframes product-reveal { from { opacity: 0; } to { opacity: 1; } } }

@@ -1,0 +1,139 @@
+/* Shop-board identity: gold on charcoal, with light content surfaces. */
+:root { --brand-ink: #20211E; --brand-honey: #F8C548; --brand-paper: #FFF9EE; --brand-readable-gold: #705619; }
+.brand-header { position: sticky; top: 0; z-index: 50; background: #20211EF5; backdrop-filter: blur(16px); color: #FFF9EE; border-bottom: 1px solid #F8C54835; }
+.brand-header-inner { max-width: 1280px; margin-inline: auto; padding-inline: 2rem; display: flex; height: 80px; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.brand-home { display: inline-flex; flex-shrink: 0; }
+.brand-header .brand-logo-image { filter: none; }
+.brand-desktop-nav { display: flex; gap: .3rem; align-items: center; }
+.brand-desktop-nav a { display: inline-flex; align-items: center; min-height: 48px; padding: .5rem .9rem; font-size: .875rem; font-weight: 600; color: #E1DED6; position: relative; }
+.brand-desktop-nav a[aria-current=page] { color: #F8C548; }
+.brand-desktop-nav a[aria-current=page]::after { content: ''; position: absolute; bottom: 2px; left: .9rem; right: .9rem; height: 2px; background: #F8C548; }
+.brand-desktop-nav a:hover { color: #F8C548; }
+.brand-nav-cta, .brand-button { display: inline-flex; align-items: center; justify-content: center; gap: 1.5rem; min-height: 48px; padding: .8rem 1.4rem; border: 1px solid #F8C548; border-radius: 99px; background: #F8C548; color: #20211E; font-size: .875rem; font-weight: 700; cursor: pointer; text-align: center; }
+.brand-nav-cta:hover, .brand-button:hover { background: #FAD77D; border-color: #FAD77D; color: #20211E; }
+.brand-menu-toggle { display: none; }
+.brand-header a:focus-visible, .brand-header button:focus-visible { outline: 2px solid #F8C548; outline-offset: 4px; border-radius: 6px; }
+.brand-mobile-nav { position: fixed; top: 64px; left: 0; right: 0; background: #20211E; border-bottom: 1px solid #F8C54845; padding: 1.5rem; display: flex; flex-direction: column; gap: .4rem; z-index: 52; max-height: calc(100svh - 64px); overflow-y: auto; }
+.brand-mobile-nav a { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 48px; padding: .8rem; border-radius: .6rem; color: #FFF9EE; }
+.brand-mobile-nav a[aria-current=page] { background: #F8C54815; color: #F8C548; }
+.brand-mobile-nav .brand-mobile-cta { margin-top: .6rem; background: #F8C548; color: #20211E; font-weight: 700; }
+.brand-menu-backdrop { position: fixed; inset: 64px 0 0; z-index: 51; background: #0008; width: 100%; height: calc(100svh - 64px); }
+.hero-heading-accent { color: #896719; }
+.hero-cta-primary { background: #F8C548; color: #20211E; border-color: #F8C548; }
+.hero-cta-primary:hover { background: #FAD77D; border-color: #FAD77D; }
+.hero-cta-secondary { border-color: #20211E70; color: #20211E; }
+.hero-cta-primary:focus-visible, .hero-cta-secondary:focus-visible { outline-color: #85671F; }
+.portion-selector-highlight { background: #F8C548; }
+.portion-option[aria-pressed=true] { color: #20211E; }
+.portion-option { color: #705619; }
+.portion-size-symbol[data-full=true] { background: #F8C548; }
+.menu-collection-heading::before { background: #D5A62D; }
+.menu-category-link[aria-current=location] { background: #20211E; border-color: #20211E; color: #F8C548; }
+.menu-collection-section { background-color: #FFF9EE; }
+.menu-collection-section:nth-of-type(even) { background-color: #F8F2E6; }
+.serenity-footer { background: radial-gradient(ellipse at 0 0, #80602020, transparent 65%), #20211E; }
+.footer-menu-button { background: #F8C548; color: #20211E; }
+.footer-invitation h2 span { color: #F8C548; }
+.footer-columns h3 { color: #F0D58C; }
+.brand-inline-link { display: inline-flex; align-items: center; gap: 1rem; color: #705619; font-size: .875rem; font-weight: 650; border-bottom: 1px solid #B69A5255; min-height: 44px; padding-block: .5rem; width: fit-content; }
+.brand-inline-link:hover { color: #20211E; border-color: #20211E; }
+.brand-button:focus-visible, .brand-inline-link:focus-visible, .brand-orientation-card:focus-visible { outline: 2px solid #85671F; outline-offset: 5px; }
+.brand-section-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 1.5rem 3rem; margin-bottom: 2rem; }
+.brand-section-heading h2, .brand-portion-guide h2 { font-size: clamp(2rem, 3.7vw, 3.5rem); line-height: 1.12; letter-spacing: -.04em; font-weight: 750; }
+.brand-section-heading h2 span, .brand-portion-guide h2 span { color: #896719; }
+.brand-section-heading > p { max-width: 26rem; color: #625D54; line-height: 1.85; font-size: .95rem; }
+.brand-orientation, .brand-faq-preview { max-width: 1280px; margin-inline: auto; padding: clamp(3rem, 6vw, 5rem) 2rem; }
+.brand-orientation-grid { display: grid; gap: 1.3rem; grid-template-columns: repeat(3,minmax(0,1fr)); }
+.brand-orientation-card { border: 1px solid #B69A5230; border-radius: 1.25rem; overflow: hidden; background: #FFFCF7; display: flex; flex-direction: column; }
+.brand-orientation-photo { aspect-ratio: 1.8; position: relative; background: #F7F4EE; overflow: hidden; }
+.brand-orientation-photo img { object-fit: cover; }
+.brand-orientation-card > div:last-child { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
+.brand-orientation-card h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -.025em; }
+.brand-orientation-card p { font-size: .875rem; line-height: 1.85; color: #625D54; margin-block: .7rem 1.2rem; }
+.brand-orientation-card > div > span { display: flex; justify-content: space-between; color: #705619; font-size: .875rem; font-weight: 650; margin-top: auto; }
+.brand-portion-guide { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; background: #20211E; color: #FFF9EE; padding: clamp(3rem,6vw,5rem) max(2rem,calc((100% - 1216px)/2)); }
+.brand-portion-guide h2 span { color: #F8C548; }
+.brand-portion-guide > div > p { max-width: 30rem; margin: 1.5rem 0 1rem; font-size: .95rem; line-height: 1.9; color: #D6D0C4; }
+.brand-portion-guide .brand-inline-link { color: #F8C548; border-color: #F8C54866; }
+.brand-portion-options { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-content: center; }
+.brand-portion-options > div { padding: 1.6rem; border: 1px solid #F8C54840; border-radius: 1rem; background: #FFF9EE06; }
+.brand-portion-options span { font-size: .875rem; color: #E8D7AA; }
+.brand-portion-options strong { display: block; color: #F8C548; font-size: 3rem; font-weight: 650; letter-spacing: -.04em; margin: .6rem 0; }
+.brand-portion-options p { color: #D6D0C4; font-size: .8rem; line-height: 1.8; }
+.brand-portion-options small { grid-column: 1/-1; color: #BAB4A7; line-height: 1.7; font-size: .75rem; }
+.brand-faq-list { border-top: 1px solid #B69A5240; }
+.brand-faq-list details { border-bottom: 1px solid #B69A5240; }
+.brand-faq-list summary { display: flex; justify-content: space-between; gap: 1.5rem; padding: 1.35rem 0; cursor: pointer; font-size: 1rem; font-weight: 600; list-style: none; line-height: 1.5; }
+.brand-faq-list summary::-webkit-details-marker { display: none; }
+.brand-faq-list summary span { color: #85671F; font-size: 1.4rem; }
+.brand-faq-list details[open] summary span { transform: rotate(45deg); }
+.brand-faq-list details p { padding: 0 3rem 1.5rem 0; color: #625D54; font-size: .9375rem; line-height: 1.9; max-width: 60rem; }
+.brand-faq-list summary:focus-visible { outline: 2px solid #85671F; outline-offset: 4px; }
+.brand-page-intro { padding: 2.5rem 2rem 2rem; background: #F7F0E0; border-bottom: 1px solid #B69A5225; }
+.brand-page-intro > div { max-width: 1120px; margin-inline: auto; }
+.brand-page-intro h1 { font-size: clamp(2.2rem,4.3vw,4rem); letter-spacing: -.045em; font-weight: 800; line-height: 1.07; }
+.brand-page-intro h1 span { color: #896719; }
+.brand-page-intro p { margin-top: 1rem; max-width: 39rem; font-size: 1rem; color: #625D54; line-height: 1.8; }
+.menu-price-note { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; margin-top: 1rem; color: #705619; font-size: .8rem; font-weight: 600; }
+.menu-discovery { background: #FFF9EEF5; border-bottom: 1px solid #B69A5225; padding: 1.3rem 2rem; }
+.menu-discovery-inner, .menu-results-wrap { max-width: 1120px; margin-inline: auto; }
+.menu-discovery-inner { display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: end; justify-content: space-between; }
+.menu-search { flex: 1; min-width: 240px; max-width: 450px; }
+.menu-search label { display: block; margin-bottom: .5rem; font-size: .8rem; color: #625D54; font-weight: 600; }
+.menu-search-field { display: flex; align-items: center; border: 1px solid #B69A5270; border-radius: .8rem; padding: 0 .8rem; background: #FFFCF7; }
+.menu-search-field:focus-within { outline: 2px solid #85671F; outline-offset: 2px; }
+.menu-search-field svg { width: 20px; height: 20px; flex-shrink: 0; color: #85671F; }
+.menu-search-field input { flex: 1; min-width: 0; width: 100%; padding: .85rem .65rem; min-height: 48px; background: transparent; outline: none; font-size: .9375rem; }
+.menu-search-field button { width: 32px; height: 40px; color: #705619; cursor: pointer; }
+.menu-filter-group { display: flex; flex-wrap: wrap; gap: .4rem; }
+.menu-filter-group button { min-height: 44px; border-radius: 99px; padding: .65rem .95rem; color: #705619; border: 1px solid #B69A5240; font-size: .8rem; font-weight: 600; cursor: pointer; }
+.menu-filter-group button[aria-pressed=true] { background: #20211E; color: #F8C548; border-color: #20211E; }
+.menu-filter-group button:hover:not([aria-pressed=true]) { background: #F8C54820; }
+.menu-filter-group button:focus-visible, .menu-search-field button:focus-visible { outline: 2px solid #85671F; outline-offset: 3px; }
+.menu-results-wrap { padding: 1.5rem 0 4rem; }
+.menu-search-status { font-size: .8rem; line-height: 1.8; color: #625D54; margin-bottom: 1.7rem; }
+.menu-results-section { scroll-margin-top: 100px; }
+.menu-results-section + .menu-results-section { padding-top: 3.5rem; margin-top: 3.5rem; border-top: 1px solid #B69A5230; }
+.menu-results-section h2 { font-size: clamp(1.8rem,3vw,2.6rem); font-weight: 750; letter-spacing: -.035em; }
+.menu-results-section .menu-collection-heading p { font-size: .9375rem; line-height: 1.8; color: #625D54; margin: .75rem 0 2rem; }
+.menu-results-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.5rem; }
+.menu-empty { text-align: center; padding: 4rem 1.5rem; border: 1px dashed #B69A5270; border-radius: 1.3rem; background: #FFFCF7; }
+.menu-empty > span { color: #85671F; font-size: 3rem; }
+.menu-empty h2 { font-size: 1.7rem; font-weight: 700; }
+.menu-empty p { margin: .8rem 0 1.5rem; color: #625D54; line-height: 1.8; }
+.brand-help-strip { max-width: 1120px; margin: 0 auto 4rem; padding: 2rem; border-radius: 1.5rem; background: #F4E7C4; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem; }
+.brand-help-strip h2 { font-size: 1.6rem; font-weight: 700; letter-spacing: -.025em; }
+.brand-help-strip p { color: #625D54; margin-top: .6rem; font-size: .9375rem; line-height: 1.8; }
+.brand-help-strip > div:last-child { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+.brand-faq-page { max-width: 960px; margin-inline: auto; padding: 3rem 2rem 5rem; }
+.brand-faq-help { padding-top: 3rem; }
+.brand-faq-help h2 { font-size: 1.8rem; font-weight: 700; }
+.brand-faq-help p { color: #625D54; margin: 1rem 0 1.5rem; line-height: 1.8; }
+.guide-jump-links { max-width: 1120px; margin-inline: auto; padding: 1.5rem 2rem; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; font-size: .875rem; color: #705619; border-bottom: 1px solid #B69A5230; }
+.guide-jump-links a { display: inline-flex; min-height: 44px; align-items: center; }
+.brand-food-guide { max-width: 1184px; margin-inline: auto; padding: 3rem 2rem 5rem; }
+.guide-article, .guide-portion-article { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 3rem; padding-block: 1rem 4rem; scroll-margin-top: 110px; }
+.brand-food-guide h2 { font-size: clamp(2rem,3vw,3rem); font-weight: 750; letter-spacing: -.04em; line-height: 1.12; }
+.brand-food-guide h2 span { color: #896719; }
+.brand-food-guide p { margin-top: 1.2rem; color: #625D54; font-size: .9375rem; line-height: 1.95; }
+.guide-image { position: relative; aspect-ratio: 1; border-radius: 1.5rem; overflow: hidden; background: #F7F4EE; }
+.guide-image img { object-fit: cover; }
+.guide-varieties { display: flex; flex-wrap: wrap; gap: .4rem; margin-block: 1.4rem; }
+.guide-varieties li { padding: .4rem .7rem; border: 1px solid #B69A5240; border-radius: 99px; font-size: .75rem; color: #705619; }
+.guide-portion-article { padding-block: 3rem 4rem; border-top: 1px solid #B69A5230; }
+.guide-portion-table { padding: 2rem; border-radius: 1.25rem; background: #20211E; color: #FFF9EE; }
+.guide-portion-table h3 { color: #F0D58C; font-size: 1rem; font-weight: 600; }
+.guide-portion-table dl > div { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.3rem 0; border-bottom: 1px solid #FFF9EE25; }
+.guide-portion-table dd { font-size: 2.2rem; color: #F8C548; font-weight: 650; }
+.guide-portion-table p { font-size: .8rem; color: #D6D0C4; margin-bottom: 1.4rem; }
+.guide-before-visit { border-top: 1px solid #B69A5230; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding-top: 3rem; }
+.guide-before-visit p:first-child { margin-top: 0; }
+@media(min-width:1200px) { .menu-results-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+@media(max-width:1199px) { .menu-results-wrap { margin-inline: 2rem; } .brand-help-strip { margin-inline: 2rem; } }
+@media(max-width:1023px) { .brand-desktop-nav, .brand-nav-cta { display: none; } .brand-header-inner { height: 64px; padding-inline: 1.5rem; } .brand-menu-toggle { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid #F8C54850; border-radius: .65rem; color: #F8C548; font-size: 1.5rem; cursor: pointer; } }
+@media(min-width:1024px) { .brand-mobile-nav, .brand-menu-backdrop { display: none; } }
+@media(max-width:767px) { .brand-orientation, .brand-faq-preview, .brand-page-intro, .brand-food-guide { padding-inline: 1.5rem; } .brand-orientation-grid { grid-template-columns: 1fr; } .brand-orientation-card { display: grid; grid-template-columns: .8fr 1.2fr; } .brand-orientation-photo { height: 100%; min-height: 200px; aspect-ratio: auto; } .brand-portion-guide { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem; } .brand-portion-options > div { padding: 1.2rem; } .brand-portion-options strong { font-size: 2.5rem; } .menu-discovery { padding-inline: 1.5rem; } .menu-search { max-width: none; } .menu-results-wrap { margin-inline: 1.5rem; } .menu-results-grid { grid-template-columns: 1fr; } .brand-help-strip { margin-inline: 1.5rem; padding: 1.5rem; } .guide-article, .guide-portion-article, .guide-before-visit { grid-template-columns: 1fr; gap: 2rem; } .guide-image { aspect-ratio: 1.35; } .guide-before-visit { gap: 1.5rem; } }
+@media(max-width:420px) { .brand-orientation-card { display: flex; } .brand-orientation-photo { aspect-ratio: 1.9; min-height: 0; height: auto; } .brand-orientation-card > div:last-child { padding: 1.2rem; } }
+@media(prefers-reduced-motion:no-preference) { .brand-button, .brand-nav-cta, .menu-filter-group button { transition: background-color .2s,border-color .2s; } }
+
+.footer-directions { color: #F0D58C; }

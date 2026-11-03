@@ -1,6 +1,7 @@
 import { Geist } from 'next/font/google';
 import './globals.css';
 import './cafe-refinement.css';
+import './brand-theme.css';
 import { constructMetadata } from '@/utils/seo';
 import SkipToContent from '@/components/layout/SkipToContent';
 import Header from '@/components/layout/Header';
@@ -15,7 +16,7 @@ const geistSans = Geist({
 export const metadata = constructMetadata();
 
 export const viewport = {
-  themeColor: '#1c1c1e',
+  themeColor: '#20211E',
   width: 'device-width',
   initialScale: 1.0,
 };

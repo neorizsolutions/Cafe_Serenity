@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import HeroSlideshow from './HeroSlideshow';
 
 
 export default function Hero() {
@@ -76,21 +76,7 @@ export default function Hero() {
             <div aria-hidden="true" className="hero-glow-green" />
             <div aria-hidden="true" className="hero-glow-accent" />
 
-            {/* Editorial image frame */}
-            <div className="hero-image-frame">
-              <Image
-                src="/images/biriyani.webp"
-                alt="Illustrative biriyani presentation"
-                fill
-                priority
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 45vw"
-                className="object-cover"
-                style={{ objectPosition: 'center center' }}
-              />
-
-              {/* Bottom scrim for depth and caption legibility */}
-              <div aria-hidden="true" className="hero-image-scrim" />
-            </div>
+            <HeroSlideshow />
           </div>
 
         </div>

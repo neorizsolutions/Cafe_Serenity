@@ -1,8 +1,9 @@
 import Hero from '@/components/home/Hero';
+import { MenuOrientation, PortionGuide, FAQPreview } from '@/components/home/RestaurantExtras';
 import CafeMenu from '@/components/cafe-menu/CafeMenuSection';
 import AboutSection from '@/components/home/AboutSection';
 import ContactSection from '@/components/home/ContactSection';
-export default function Page() { return <><Hero /><CafeMenu category="biriyani" /><CafeMenu category="snacks" /><AboutSection /><ContactSection /></>; }
+export default function Page() { return <><Hero /><MenuOrientation /><CafeMenu category="biriyani" /><CafeMenu category="snacks" /><PortionGuide /><AboutSection /><FAQPreview /><ContactSection /></>; }
 
 // Previous implementation preserved for reference and possible reactivation.
 // This entire block is disabled; it does not appear on the restaurant website.

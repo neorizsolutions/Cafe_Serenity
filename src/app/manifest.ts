@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: 'Eight Biriyani varieties, Regular Snacks and Egg Puffs.',
     start_url: '/',
     display: 'standalone',
-    background_color: '#F7F4EE',
-    theme_color: '#6E8064',
+    background_color: '#FFF9EE',
+    theme_color: '#20211E',
     icons: [
       {
         src: '/icons/icon-192.png',

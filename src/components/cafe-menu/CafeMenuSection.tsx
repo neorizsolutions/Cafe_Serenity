@@ -13,7 +13,7 @@ export default function CafeMenuSection({ category }: { category: 'biriyani' | '
       <Container className="space-y-10 md:space-y-12">
         <div className="menu-collection-heading flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl space-y-4"><h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">{category === 'biriyani' ? 'Our Biriyani Collection' : 'Kerala Snacks & Quick Bites'}</h2><p className="text-muted-foreground leading-relaxed">{category === 'biriyani' ? 'Eight familiar flavours. Your choice of Half or Full.' : 'Evening tea-time favourites at ₹12 each, and golden Egg Puffs at ₹15.'}</p></div>
-          <Link href={`/cafe-menu#category-${category}`} className="menu-section-link inline-flex min-h-11 items-center gap-3 font-semibold text-[#6E8064]">Explore the menu <span aria-hidden="true">↗</span></Link>
+          <Link href={`/cafe-menu#category-${category}`} className="menu-section-link inline-flex min-h-11 items-center gap-3 font-semibold text-[#85671F]">Explore the menu <span aria-hidden="true">↗</span></Link>
         </div>
         {category === 'biriyani' && <MenuCategoryNav homepage />}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
