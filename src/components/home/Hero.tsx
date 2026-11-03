@@ -1,16 +1,12 @@
-import Link from 'next/link';
-import HeroSlideshow from './HeroSlideshow';
+import HeroJourney from './HeroJourney';
 import styles from './Hero.module.css';
 
 export default function Hero() {
-  return <section className={styles.hero} aria-labelledby="hero-heading">
+  return <HeroJourney>
     <div className={styles.intro}>
-      <h1 id="hero-heading">A little break.<br /><span>A lot of flavour.</span></h1>
-      <p>Biriyani, snacks and sweet little treats.<br className={styles.mobileBreak} /> Find your favourite at Café Serenity.</p>
-      <div className={styles.actions}><Link href="/cafe-menu" id="hero-cta-menu" className="brand-button">Explore Our Menu <span aria-hidden="true">↗</span></Link><Link href="/contact" id="hero-cta-contact" className={styles.contact}>Contact Us <span aria-hidden="true">↗</span></Link></div>
+      <h1 id="hero-heading">Good food.<br />A little time.<br /><span>Serenity.</span></h1>
     </div>
-    <div className={styles.showcase}><HeroSlideshow /></div>
-  </section>;
+  </HeroJourney>;
 }
 
 // Previous implementation preserved for reference and possible reactivation.

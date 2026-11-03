@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/.codex/media-tools/
 /.pnp
 .pnp.*
 .yarn/*

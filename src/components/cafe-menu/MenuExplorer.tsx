@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { CAFE_ITEMS } from '@/data/cafe-menu/items';
 import MenuCard from './MenuCard';
+import MenuCharacter from '@/components/common/MenuCharacter';
 
 const categories = [{ id: 'all', label: 'All favourites' }, { id: 'biriyani', label: 'Biriyani' }, { id: 'snacks', label: 'Snacks & sweets' }, { id: 'sweets', label: 'Something sweet' }] as const;
 const sweetIds = new Set(['kesari', 'sukhiyan', 'kozhukatta', 'ela-ada']);
@@ -20,7 +21,7 @@ export default function MenuExplorer() {
     <div className="menu-results-wrap"><p className="menu-search-status" role="status" aria-live="polite">{needle || category !== 'all' ? `${items.length} ${items.length === 1 ? 'favourite' : 'favourites'} found${needle ? ` for “${query.trim()}”` : ''}.` : 'Take a look around. Choose a portion, find a snack, make it your kind of meal.'}</p>
       {!items.length ? <div className="menu-empty"><span aria-hidden="true">⌕</span><h2>No dishes found this time.</h2><p>Try a shorter name or explore all our favourites.</p><button type="button" className="brand-button" onClick={reset}>Show the full menu <span aria-hidden="true">↗</span></button></div> : ['biriyani', 'snacks'].map(group => {
         const dishes = items.filter(item => item.category === group); if (!dishes.length) return null;
-        return <section key={group} id={`category-${group}`} className="menu-results-section"><div className="menu-collection-heading"><h2>{group === 'biriyani' ? 'A plate of Biriyani' : category === 'sweets' ? 'A little something sweet' : 'Snacks, sweets & little bites'}</h2><p>{group === 'biriyani' ? 'Eight styles. Half or Full. Switch portions to take a closer look.' : 'Savoury favourites and sweet treats, with each-piece prices shown clearly.'}</p></div><div className="menu-results-grid">{dishes.map(item => <MenuCard key={item.id} item={item} />)}</div></section>;
+        return <section key={group} id={`category-${group}`} className="menu-results-section"><div className="menu-category-intro"><div className="menu-collection-heading"><h2>{group === 'biriyani' ? 'A plate of Biriyani' : category === 'sweets' ? 'A little something sweet' : 'Snacks, sweets & little bites'}</h2><p>{group === 'biriyani' ? 'Eight styles. Half or Full. Switch portions to take a closer look.' : 'Savoury favourites and sweet treats, with each-piece prices shown clearly.'}</p></div>{category !== 'sweets' && <div className="menu-category-character"><MenuCharacter kind={group === 'biriyani' ? 'biriyani' : 'vada'} /></div>}</div><div className="menu-results-grid">{dishes.map(item => <MenuCard key={item.id} item={item} />)}</div></section>;
       })}
     </div>
   </>;

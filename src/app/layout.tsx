@@ -2,6 +2,7 @@ import { Geist } from 'next/font/google';
 import './globals.css';
 import './cafe-refinement.css';
 import './brand-theme.css';
+import './dark-theme.css';
 import { constructMetadata } from '@/utils/seo';
 import SkipToContent from '@/components/layout/SkipToContent';
 import Header from '@/components/layout/Header';
@@ -27,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} font-sans h-full antialiased`}>
+    <html lang="en" className={`${geistSans.variable} dark font-sans h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         {/* Accessibility Skip Link */}
         <SkipToContent />

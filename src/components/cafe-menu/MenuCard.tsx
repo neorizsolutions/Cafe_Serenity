@@ -27,7 +27,7 @@ export default function MenuCard({ item }: { item: CafeMenuItem }) {
       </div>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
       <div className="mt-6 border-t border-border/70 pt-5">
-        {item.portions ? <PortionSelector name={item.name} portions={item.portions} selected={selected} onSelect={setSelected} /> : <p className="text-xl font-bold text-[#85671F]">₹{item.price}<span className="ml-2 text-xs font-medium text-muted-foreground">each</span></p>}
+        {item.portions ? <PortionSelector name={item.name} portions={item.portions} selected={selected} onSelect={setSelected} /> : <p className="text-xl font-bold text-primary">₹{item.price}<span className="ml-2 text-xs font-medium text-muted-foreground">each</span></p>}
       </div>
     </article></GlowSurface>
   );

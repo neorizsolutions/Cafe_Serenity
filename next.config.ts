@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Avoid exhausting memory when Windows starts one page worker per CPU.
+  experimental: { cpus: 2 },
   images: {
     remotePatterns: [
       {

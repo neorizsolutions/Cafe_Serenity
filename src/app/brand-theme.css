@@ -99,6 +99,9 @@
 .menu-results-section h2 { font-size: clamp(1.8rem,3vw,2.6rem); font-weight: 750; letter-spacing: -.035em; }
 .menu-results-section .menu-collection-heading p { font-size: .9375rem; line-height: 1.8; color: #625D54; margin: .75rem 0 2rem; }
 .menu-results-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.5rem; }
+.menu-category-intro { display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-bottom: 1rem; }
+.menu-category-character { width: 250px; height: 235px; flex: 0 0 auto; }
+@media(max-width:767px) { .menu-category-intro { flex-direction: column-reverse; align-items: stretch; gap: .75rem; } .menu-category-character { width: 220px; height: 200px; align-self: center; } }
 .menu-empty { text-align: center; padding: 4rem 1.5rem; border: 1px dashed #B69A5270; border-radius: 1.3rem; background: #FFFCF7; }
 .menu-empty > span { color: #85671F; font-size: 3rem; }
 .menu-empty h2 { font-size: 1.7rem; font-weight: 700; }

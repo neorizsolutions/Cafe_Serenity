@@ -1,13 +1,25 @@
-.hero { position: relative; overflow: hidden; background: radial-gradient(ellipse at 50% 95%, #F8C54818, transparent 58%), #FFF9EE; padding: clamp(2rem, 4vw, 3.5rem) 1.5rem 1.5rem; border-bottom: 1px solid #B69A5225; }
-.intro { position: relative; text-align: center; max-width: 850px; margin-inline: auto; z-index: 2; }
-.intro h1 { font-size: clamp(2.6rem, 4.8vw, 4.5rem); font-weight: 800; letter-spacing: -.05em; line-height: 1.03; text-wrap: balance; }
-.intro h1 span { color: #896719; }
-.intro p { margin: 1.1rem auto 0; max-width: 42rem; color: #625D54; font-size: clamp(.95rem, 1.3vw, 1.075rem); line-height: 1.8; }
-.mobileBreak { display: none; }
-.actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .75rem 1.6rem; margin-top: 1.4rem; }
-.contact { display: inline-flex; align-items: center; gap: 1rem; min-height: 48px; color: #29261D; font-size: .875rem; font-weight: 650; padding: .7rem .4rem; border-bottom: 1px solid #B69A5260; }
-.contact:hover { color: #705619; border-color: #705619; }
-.contact:focus-visible { outline: 2px solid #85671F; outline-offset: 4px; }
-.showcase { max-width: 1160px; margin: 1.3rem auto 0; }
-@media(max-width:767px) { .hero { padding: 2.3rem 1.25rem 1.75rem; } .intro h1 { font-size: clamp(2.5rem, 10vw, 3.5rem); } .intro p { font-size: .9375rem; margin-top: 1rem; } .mobileBreak { display: block; } .actions { margin-top: 1.2rem; gap: .6rem 1rem; } .showcase { margin-top: 1.8rem; } }
-@media(prefers-reduced-motion:no-preference) { .intro { animation: hero-intro .7s ease-out both; } @keyframes hero-intro { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } } }
+.hero { position: relative; height: 190svh; background: var(--background); color: var(--foreground); border-bottom: 1px solid var(--border); }
+.panel { position: sticky; top: 80px; height: calc(100svh - 80px); overflow: hidden; background: radial-gradient(ellipse at 78% 62%, #dcae3012, transparent 52%); }
+.inner { max-width: 1440px; height: 100%; margin: auto; padding: clamp(1.5rem, 4vw, 4rem) clamp(1.5rem, 5vw, 5rem); display: grid; grid-template-columns: .9fr 1.1fr; grid-template-rows: 1fr; column-gap: 2rem; }
+.intro { grid-column: 1; grid-row: 1; align-self: center; position: relative; z-index: 2; }
+.intro h1 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(3.6rem, 6.7vw, 7rem); font-weight: 400; line-height: 1.06; letter-spacing: -.055em; }
+.intro h1 span { color: var(--primary); font-style: italic; }
+.character { grid-column: 2; grid-row: 1; align-self: center; min-width: 0; position: relative; }
+.scene { position: relative; width: 100%; aspect-ratio: 10 / 9; background: url('/videos/serenity-tea-character.webp') center / contain no-repeat; mask-image: linear-gradient(to bottom, #000 0%, #000 91%, transparent 100%); }
+.scene:has(.canvas[data-ready=true]) { background-image: none; }
+.canvas { width: 100%; height: auto; display: block; aspect-ratio: 10 / 9; opacity: 0; }
+.canvas[data-ready=true] { opacity: 1; }
+.source { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+@media(max-width:1023px) { .panel { top: 64px; height: calc(100svh - 64px); } .inner { column-gap: 1rem; padding-inline: 2rem; } .intro h1 { font-size: clamp(3.2rem, 6.5vw, 5rem); } }
+@media(max-width:767px) {
+ .hero { height: 190svh; }
+ .inner { padding: 1.25rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .5rem; }
+ .intro { flex: 0 0 auto; text-align: center; }
+ .intro h1 { font-size: clamp(2.35rem, 9.6vw, 3.6rem); line-height: 1.03; }
+ .character { width: min(100%, 400px); flex: 0 0 auto; }
+ .scene { height: min(43svh, 350px); width: auto; max-width: 100%; margin-inline: auto; }
+ .canvas { height: 100%; width: 100%; }
+}
+@media(max-height:650px) and (max-width:767px) { .inner { padding-block: .75rem; gap: .35rem; } .intro h1 { font-size: 2.15rem; } .scene { height: 40svh; } }
+@media(max-height:500px) and (orientation:landscape) { .inner { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; padding: 1rem 2rem; } .intro { text-align: left; } .intro h1 { font-size: 2.3rem; } .character { width: 100%; } .scene { height: min(75svh, 330px); } }
+@media(prefers-reduced-motion:reduce) { .hero { height: auto; } .panel { position: relative; top: 0; } }

@@ -1,9 +1,0 @@
-.stage { position: relative; width: 100%; height: clamp(230px, 23vw, 340px); isolation: isolate; }
-.halo { position: absolute; left: 10%; right: 10%; bottom: -5%; height: 70%; border: 1px solid #D6B86A30; border-radius: 50%; background: radial-gradient(ellipse, #F8C54814, transparent 70%); z-index: -1; }
-.centre, .left, .right { position: absolute; aspect-ratio: 1; border-radius: 50%; overflow: hidden; box-shadow: 0 12px 26px #54401B12; }
-.centre { height: 100%; left: 50%; top: 0; transform: translateX(-50%); z-index: 2; }
-.left { height: 76%; left: 15%; top: 20%; z-index: 1; }
-.right { height: 76%; right: 15%; top: 20%; z-index: 1; }
-.food { object-fit: cover; }
-@media(max-width:767px) { .stage { height: clamp(210px, 54vw, 300px); } .centre { height: 100%; } .left { height: 68%; left: -9%; top: 27%; } .right { height: 68%; right: -9%; top: 27%; } .halo { left: -8%; right: -8%; } }
-@media(prefers-reduced-motion:no-preference) { .centre, .left, .right { animation: plate-appear .85s ease-out both; } @keyframes plate-appear { from { opacity: .25; } to { opacity: 1; } } }
