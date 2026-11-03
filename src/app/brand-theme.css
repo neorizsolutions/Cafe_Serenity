@@ -45,8 +45,8 @@
 .brand-orientation, .brand-faq-preview { max-width: 1280px; margin-inline: auto; padding: clamp(3rem, 6vw, 5rem) 2rem; }
 .brand-orientation-grid { display: grid; gap: 1.3rem; grid-template-columns: repeat(3,minmax(0,1fr)); }
 .brand-orientation-card { border: 1px solid #B69A5230; border-radius: 1.25rem; overflow: hidden; background: #FFFCF7; display: flex; flex-direction: column; }
-.brand-orientation-photo { aspect-ratio: 1.8; position: relative; background: #F7F4EE; overflow: hidden; }
-.brand-orientation-photo img { object-fit: cover; }
+.brand-orientation-photo { aspect-ratio: 1.6; position: relative; background: #F7F4EE; overflow: hidden; }
+.brand-orientation-photo img { object-fit: contain; padding: .65rem; }
 .brand-orientation-card > div:last-child { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
 .brand-orientation-card h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -.025em; }
 .brand-orientation-card p { font-size: .875rem; line-height: 1.85; color: #625D54; margin-block: .7rem 1.2rem; }
@@ -133,7 +133,7 @@
 @media(max-width:1023px) { .brand-desktop-nav, .brand-nav-cta { display: none; } .brand-header-inner { height: 64px; padding-inline: 1.5rem; } .brand-menu-toggle { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid #F8C54850; border-radius: .65rem; color: #F8C548; font-size: 1.5rem; cursor: pointer; } }
 @media(min-width:1024px) { .brand-mobile-nav, .brand-menu-backdrop { display: none; } }
 @media(max-width:767px) { .brand-orientation, .brand-faq-preview, .brand-page-intro, .brand-food-guide { padding-inline: 1.5rem; } .brand-orientation-grid { grid-template-columns: 1fr; } .brand-orientation-card { display: grid; grid-template-columns: .8fr 1.2fr; } .brand-orientation-photo { height: 100%; min-height: 200px; aspect-ratio: auto; } .brand-portion-guide { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem; } .brand-portion-options > div { padding: 1.2rem; } .brand-portion-options strong { font-size: 2.5rem; } .menu-discovery { padding-inline: 1.5rem; } .menu-search { max-width: none; } .menu-results-wrap { margin-inline: 1.5rem; } .menu-results-grid { grid-template-columns: 1fr; } .brand-help-strip { margin-inline: 1.5rem; padding: 1.5rem; } .guide-article, .guide-portion-article, .guide-before-visit { grid-template-columns: 1fr; gap: 2rem; } .guide-image { aspect-ratio: 1.35; } .guide-before-visit { gap: 1.5rem; } }
-@media(max-width:420px) { .brand-orientation-card { display: flex; } .brand-orientation-photo { aspect-ratio: 1.9; min-height: 0; height: auto; } .brand-orientation-card > div:last-child { padding: 1.2rem; } }
+@media(max-width:420px) { .brand-orientation-card { display: flex; } .brand-orientation-photo { aspect-ratio: 1.6; min-height: 0; height: auto; } .brand-orientation-card > div:last-child { padding: 1.2rem; } }
 @media(prefers-reduced-motion:no-preference) { .brand-button, .brand-nav-cta, .menu-filter-group button { transition: background-color .2s,border-color .2s; } }
 
 .footer-directions { color: #F0D58C; }

@@ -1,88 +1,16 @@
 import Link from 'next/link';
 import HeroSlideshow from './HeroSlideshow';
-
+import styles from './Hero.module.css';
 
 export default function Hero() {
-  return (
-    <section
-      aria-label="Welcome to Café Serenity"
-      className="hero-section relative overflow-hidden"
-    >
-      {/* Warm ambient radial overlays — decorative only */}
-      <div aria-hidden="true" className="hero-bg-overlay" />
-
-      <div className="mx-auto w-full max-w-7xl px-6 lg:px-8 relative z-10">
-        <div className="
-          flex flex-col
-          lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start
-          py-8 md:py-8 lg:py-8
-        ">
-
-          {/* ── Left: Text content ── */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left order-1">
-
-            {/* Eyebrow label */}
-
-            {/* H1 — single semantic heading for the page */}
-            <h1 className="hero-heading max-w-[18ch]">
-              Good food,{' '}
-              <span className="hero-heading-accent block">
-                made for everyday.
-              </span>
-            </h1>
-
-            {/* Supporting description */}
-            <p className="hero-description mt-5 mb-8 max-w-[46ch] mx-auto lg:mx-0">
-              Welcome to Café Serenity, a restaurant for eight Biriyani varieties,
-              everyday snacks and golden Egg Puffs.
-            </p>
-
-            {/* CTA row */}
-            <div className="
-              flex flex-col sm:flex-row
-              items-center justify-center lg:justify-start
-              gap-3 sm:gap-4
-              w-full max-w-sm sm:max-w-none mx-auto lg:mx-0
-            ">
-              {/* Primary CTA — Our Menu (brand green) */}
-              <Link
-                href="/cafe-menu"
-                id="hero-cta-menu"
-                className="hero-cta-primary"
-              >
-                Explore Our Menu
-              </Link>
-
-              {/* Secondary CTA — Café Menu (dark charcoal outline) */}
-              <Link
-                href="/contact"
-                id="hero-cta-contact"
-                className="hero-cta-secondary"
-              >
-                Contact Us
-              </Link>
-            </div>
-
-
-          </div>
-
-          {/* ── Right: Food visual ── */}
-          <div className="
-            relative order-2
-            w-full mt-10 lg:mt-0
-            flex items-center justify-center lg:justify-end
-          ">
-            {/* Decorative ambient blurs — aria-hidden, pointer-events-none */}
-            <div aria-hidden="true" className="hero-glow-green" />
-            <div aria-hidden="true" className="hero-glow-accent" />
-
-            <HeroSlideshow />
-          </div>
-
-        </div>
-      </div>
-    </section>
-  );
+  return <section className={styles.hero} aria-labelledby="hero-heading">
+    <div className={styles.intro}>
+      <h1 id="hero-heading">A little break.<br /><span>A lot of flavour.</span></h1>
+      <p>Biriyani, snacks and sweet little treats.<br className={styles.mobileBreak} /> Find your favourite at Café Serenity.</p>
+      <div className={styles.actions}><Link href="/cafe-menu" id="hero-cta-menu" className="brand-button">Explore Our Menu <span aria-hidden="true">↗</span></Link><Link href="/contact" id="hero-cta-contact" className={styles.contact}>Contact Us <span aria-hidden="true">↗</span></Link></div>
+    </div>
+    <div className={styles.showcase}><HeroSlideshow /></div>
+  </section>;
 }
 
 // Previous implementation preserved for reference and possible reactivation.

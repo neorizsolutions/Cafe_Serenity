@@ -40,12 +40,10 @@ export default function HeroSlideshow() {
   const previous = slides.order[(slides.index - 1 + slides.order.length) % slides.order.length];
   const next = slides.order[(slides.index + 1) % slides.order.length];
   const source = (item: typeof current) => item.portionImages?.full ?? item.imageSrc!;
-  return <div ref={region} className={styles.card} aria-label="Our menu favourites">
-    <div className={styles.photo} aria-live="off">
-      <Image src={source(previous)} alt="" fill sizes="(max-width: 767px) 95vw, 48vw" className={styles.previous} />
-      <Image key={current.id} src={source(current)} alt={current.name} fill sizes="(max-width: 767px) 95vw, 48vw" className={styles.current} loading="eager" />
-      <Image src={source(next)} alt="" fill sizes="(max-width: 767px) 95vw, 48vw" className={styles.preload} loading="eager" />
-    </div>
-
+  return <div ref={region} className={styles.stage} aria-label="Our menu favourites">
+    <div className={styles.halo} aria-hidden="true" />
+    <div key={'left-'+previous.id} className={styles.left} aria-hidden="true"><Image src={source(previous)} alt="" fill sizes="(max-width:767px) 36vw, 24vw" className={styles.food} loading="eager" /></div>
+    <div key={current.id} className={styles.centre}><Image src={source(current)} alt={current.name} fill sizes="(max-width:767px) 60vw, 32vw" className={styles.food} loading="eager" /></div>
+    <div key={'right-'+next.id} className={styles.right} aria-hidden="true"><Image src={source(next)} alt="" fill sizes="(max-width:767px) 36vw, 24vw" className={styles.food} loading="eager" /></div>
   </div>;
 }

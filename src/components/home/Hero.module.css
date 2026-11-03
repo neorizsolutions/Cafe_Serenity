@@ -1,0 +1,13 @@
+.hero { position: relative; overflow: hidden; background: radial-gradient(ellipse at 50% 95%, #F8C54818, transparent 58%), #FFF9EE; padding: clamp(2rem, 4vw, 3.5rem) 1.5rem 1.5rem; border-bottom: 1px solid #B69A5225; }
+.intro { position: relative; text-align: center; max-width: 850px; margin-inline: auto; z-index: 2; }
+.intro h1 { font-size: clamp(2.6rem, 4.8vw, 4.5rem); font-weight: 800; letter-spacing: -.05em; line-height: 1.03; text-wrap: balance; }
+.intro h1 span { color: #896719; }
+.intro p { margin: 1.1rem auto 0; max-width: 42rem; color: #625D54; font-size: clamp(.95rem, 1.3vw, 1.075rem); line-height: 1.8; }
+.mobileBreak { display: none; }
+.actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .75rem 1.6rem; margin-top: 1.4rem; }
+.contact { display: inline-flex; align-items: center; gap: 1rem; min-height: 48px; color: #29261D; font-size: .875rem; font-weight: 650; padding: .7rem .4rem; border-bottom: 1px solid #B69A5260; }
+.contact:hover { color: #705619; border-color: #705619; }
+.contact:focus-visible { outline: 2px solid #85671F; outline-offset: 4px; }
+.showcase { max-width: 1160px; margin: 1.3rem auto 0; }
+@media(max-width:767px) { .hero { padding: 2.3rem 1.25rem 1.75rem; } .intro h1 { font-size: clamp(2.5rem, 10vw, 3.5rem); } .intro p { font-size: .9375rem; margin-top: 1rem; } .mobileBreak { display: block; } .actions { margin-top: 1.2rem; gap: .6rem 1rem; } .showcase { margin-top: 1.8rem; } }
+@media(prefers-reduced-motion:no-preference) { .intro { animation: hero-intro .7s ease-out both; } @keyframes hero-intro { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } } }
