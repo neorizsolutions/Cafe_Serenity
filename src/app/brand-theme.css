@@ -84,6 +84,8 @@
 .menu-search-field:focus-within { outline: 2px solid #85671F; outline-offset: 2px; }
 .menu-search-field svg { width: 20px; height: 20px; flex-shrink: 0; color: #85671F; }
 .menu-search-field input { flex: 1; min-width: 0; width: 100%; padding: .85rem .65rem; min-height: 48px; background: transparent; outline: none; font-size: .9375rem; }
+.menu-search-field input::-webkit-search-cancel-button,
+.menu-search-field input::-webkit-search-decoration { -webkit-appearance: none; appearance: none; }
 .menu-search-field button { width: 32px; height: 40px; color: #705619; cursor: pointer; }
 .menu-filter-group { display: flex; flex-wrap: wrap; gap: .4rem; }
 .menu-filter-group button { min-height: 44px; border-radius: 99px; padding: .65rem .95rem; color: #705619; border: 1px solid #B69A5240; font-size: .8rem; font-weight: 600; cursor: pointer; }
@@ -117,7 +119,7 @@
 .brand-food-guide h2 span { color: #896719; }
 .brand-food-guide p { margin-top: 1.2rem; color: #625D54; font-size: .9375rem; line-height: 1.95; }
 .guide-image { position: relative; aspect-ratio: 1; border-radius: 1.5rem; overflow: hidden; background: #F7F4EE; }
-.guide-image img { object-fit: cover; }
+.guide-image img { object-fit: contain; object-position: center; padding: clamp(.75rem, 2vw, 1.5rem); }
 .guide-varieties { display: flex; flex-wrap: wrap; gap: .4rem; margin-block: 1.4rem; }
 .guide-varieties li { padding: .4rem .7rem; border: 1px solid #B69A5240; border-radius: 99px; font-size: .75rem; color: #705619; }
 .guide-portion-article { padding-block: 3rem 4rem; border-top: 1px solid #B69A5230; }
