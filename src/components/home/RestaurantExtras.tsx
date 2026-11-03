@@ -6,7 +6,7 @@ export function MenuOrientation() {
   return <section className="brand-orientation" aria-labelledby="orientation-title"><div className="brand-section-heading"><div><h2 id="orientation-title">What are you<br /><span>in the mood for?</span></h2></div><p>A meal to settle into, a quick savoury bite, or a little sweetness. Find a favourite for your moment.</p></div><div className="brand-orientation-grid">{[
     { title: 'Make it Biriyani.', text: 'Explore eight regional favourites, each with Half and Full portions.', image: 'malabar-biriyani', link: '/cafe-menu#category-biriyani', action: 'Find your plate' },
     { title: 'Make time for a snack.', text: 'Cutlet, Samosa, Vada, Egg Puffs and more for the breaks in between.', image: 'samosa', link: '/cafe-menu#category-snacks', action: 'Explore the snacks' },
-    { title: 'End on something sweet.', text: 'Kesari, Sukhiyan, Kozhukatta and Ela Ada. Familiar little treats.', image: 'kesari', link: '/blog#sweet-and-savoury', action: 'Find a sweet moment' },
+    { title: 'End on something sweet.', text: 'Kesari, Sukhiyan, Kozhukatta and Ela Ada. Familiar little treats.', image: 'kesari', link: '/cafe-menu#category-snacks', action: 'Find a sweet moment' },
   ].map(card => <Link key={card.title} href={card.link} className="brand-orientation-card"><div className="brand-orientation-photo"><Image src={`/images/${card.image}.webp`} alt="" fill sizes="(max-width:767px) 90vw, 30vw" /></div><div><h3>{card.title}</h3><p>{card.text}</p><span>{card.action} <span aria-hidden="true">↗</span></span></div></Link>)}</div></section>;
 }
 
