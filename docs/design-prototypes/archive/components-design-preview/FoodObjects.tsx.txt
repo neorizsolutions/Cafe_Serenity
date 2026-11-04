@@ -1,0 +1,11 @@
+import Image from 'next/image';
+export type FoodObjectKind = 'plate' | 'vada' | 'tea';
+const assets = {
+  plate: { file: 'generated-biriyani.png', label: 'biriyani on a ceramic plate' },
+  vada: { file: 'generated-vada.png', label: 'golden crispy vada' },
+  tea: { file: 'generated-chaaya.png', label: 'glass of milk tea' },
+};
+export default function FoodObject({ kind, className, decorative = false }: { kind: FoodObjectKind; className?: string; decorative?: boolean }) {
+  const asset = assets[kind];
+  return <Image className={className} src={'/images/motion-study/' + asset.file} alt={decorative ? '' : 'AI-generated illustration: ' + asset.label} width={1254} height={1254} sizes="(max-width: 700px) 85vw, 50vw" loading="eager" />;
+}

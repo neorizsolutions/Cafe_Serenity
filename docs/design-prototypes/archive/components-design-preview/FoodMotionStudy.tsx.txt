@@ -1,0 +1,82 @@
+'use client';
+
+import { useRef, useState } from 'react';
+import Link from 'next/link';
+import { AnimatePresence, motion, useMotionValue, useMotionValueEvent, useReducedMotion, useScroll, useSpring, useTransform, type MotionValue } from 'framer-motion';
+import { ArrowDown, ArrowUpRight, MoveLeft, MoveRight } from 'lucide-react';
+import FoodObject from './FoodObjects';
+import styles from './FoodMotionStudy.module.css';
+
+const scenes = [
+  { name: 'Biriyani', eyebrow: '01 / A LITTLE HUNGER', title: ['Good things.', 'Come around.'], copy: 'Eight biriyani varieties. Half or full. Find a little room in your day for your favourite.', price: 'Half ₹90 / Full ₹150', color: '#b9492d', word: 'BIRIYANI', target: .08 },
+  { name: 'Vada', eyebrow: '02 / A LITTLE CRUNCH', title: ['A crisp little', 'interruption.'], copy: 'A familiar favourite, with a rhythm of its own. Vada is part of our ₹12 snacks menu.', price: 'Vada · ₹12 each', color: '#3d5945', word: 'CRUNCH', target: .47 },
+  { name: 'Chaaya', eyebrow: '03 / A LITTLE TIME', title: ['Let the day', 'slow down.'], copy: 'A tea-time moment. A little conversation. A little Serenity.', price: 'Take a little time.', color: '#693a2b', word: 'CHAAYA', target: .84 },
+] as const;
+
+function Plate({ progress }: { progress: MotionValue<number> }) {
+  const x = useTransform(progress, [0, .18, .30, .43, 1], ['8%', '0%', '-8%', '-150%', '-150%']);
+  const y = useTransform(progress, [0, .2, .43, 1], ['4%', '-4%', '-60%', '-60%']);
+  const rotate = useTransform(progress, [0, .22, .43, 1], [-16, 12, 85, 85]);
+  const scale = useTransform(progress, [0, .2, .43, 1], [.88, 1, .45, .45]);
+  const opacity = useTransform(progress, [0, .29, .42, 1], [1, 1, 0, 0]);
+  return <motion.div className={styles.plate} style={{ x, y, rotate, scale, opacity }}><FoodObject kind="plate" /></motion.div>;
+}
+
+function FlyingVada({ progress, index }: { progress: MotionValue<number>; index: number }) {
+  const x = useTransform(progress, [0, .22, .38, .51, .66, .79, 1], index === 0 ? ['-105%', '-80%', '-18%', '-24%', '-10%', '-150%', '-150%'] : index === 1 ? ['115%', '100%', '38%', '27%', '45%', '185%', '185%'] : ['75%', '80%', '10%', '8%', '0%', '-100%', '-100%']);
+  const y = useTransform(progress, [0, .24, .4, .56, .68, .8, 1], index === 0 ? ['-66%', '-55%', '-20%', '-38%', '-20%', '-130%', '-130%'] : index === 1 ? ['-25%', '-45%', '-46%', '-32%', '-15%', '-100%', '-100%'] : ['90%', '95%', '43%', '45%', '35%', '135%', '135%']);
+  const rotate = useTransform(progress, [0, .35, .56, .8, 1], index === 0 ? [-35, 8, -15, -100, -100] : index === 1 ? [30, -20, 15, 120, 120] : [-10, 15, -15, 90, 90]);
+  const scale = useTransform(progress, [0, .26, .4, .62, .78, 1], index === 2 ? [.42, .42, .78, .85, .38, .38] : [.48, .5, 1, 1.02, .4, .4]);
+  const opacity = useTransform(progress, [0, .04, .24, .35, .67, .77, 1], [0, .85, .85, 1, 1, 0, 0]);
+  return <motion.div className={`${styles.vada} ${styles[`vada${index}`]}`} style={{ x, y, rotate, scale, opacity }}><FoodObject kind="vada" decorative={index !== 0} /></motion.div>;
+}
+
+function Tea({ progress, reduced, showSteam }: { progress: MotionValue<number>; reduced: boolean; showSteam: boolean }) {
+  const x = useTransform(progress, [0, .62, .78, .9, 1], ['125%', '125%', '2%', '0%', '-4%']);
+  const y = useTransform(progress, [0, .62, .79, 1], ['100%', '100%', '0%', '-4%']);
+  const rotate = useTransform(progress, [0, .62, .8, 1], [22, 22, -7, 2]);
+  const scale = useTransform(progress, [0, .62, .8, 1], [.5, .5, .94, 1]);
+  const opacity = useTransform(progress, [0, .63, .75, 1], [0, 0, 1, 1]);
+  return <motion.div className={styles.tea} style={{ x, y, rotate, scale, opacity }}><div className={styles.steam} aria-hidden="true">{showSteam && !reduced && [0, 1, 2].map(i=><motion.span key={i} initial={{ opacity: 0, y: 8 }} animate={{ y: [8, -35, -65], x: [0, i % 2 ? 13 : -13, 0], opacity: [0, .2, 0], scaleX: [.7, 1.4, 1] }} transition={{ duration: 3.5, delay: i * .5, ease: 'easeOut' }} />)}</div><FoodObject kind="tea" /></motion.div>;
+}
+
+export default function FoodMotionStudy() {
+  const region = useRef<HTMLElement>(null);
+  const reduced = Boolean(useReducedMotion());
+  const [active, setActive] = useState(0);
+  const { scrollYProgress } = useScroll({ target: region, offset: ['start start', 'end end'] });
+  const smooth = useSpring(scrollYProgress, { stiffness: 65, damping: 24, mass: .65, restDelta: .0001 });
+  const staticProgress = useMotionValue(.08);
+  const progress = reduced ? staticProgress : smooth;
+  useMotionValueEvent(smooth, 'change', value => {
+    if (!reduced) setActive(previous => { const next = value < .335 ? 0 : value < .705 ? 1 : 2; return previous === next ? previous : next; });
+  });
+  const scene = scenes[active];
+  const backgroundColor = useTransform(progress, [0, .25, .43, .61, .80, 1], ['#b9492d', '#b9492d', '#3d5945', '#3d5945', '#693a2b', '#693a2b']);
+  const ghostX = useTransform(progress, [0, 1], ['8%', '-20%']);
+  const floorScale = useTransform(progress, [0, .35, .65, 1], [1, .8, 1.2, .55]);
+  function goTo(index: number) {
+    const next = (index + scenes.length) % scenes.length;
+    if (reduced) { staticProgress.set(scenes[next].target); setActive(next); return; }
+    const section = region.current;
+    if (!section) return;
+    const stage = section.firstElementChild as HTMLElement;
+    const top = section.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: top + (section.offsetHeight - stage.offsetHeight) * scenes[next].target, behavior: 'smooth' });
+  }
+  return <div className={styles.study}>
+    <section ref={region} className={`${styles.journey} ${reduced ? styles.reduced : ''}`} aria-label="Animated journey through biriyani, vada and chaaya">
+      <motion.div className={styles.stage} style={{ backgroundColor }}>
+        <div className={styles.topline}><span>CAFÉ SERENITY / KAKKANAD</span><span>THE LITTLE BREAK COLLECTION</span></div>
+        <motion.div className={styles.ghost} style={{ x: reduced ? 0 : ghostX }} aria-hidden="true"><AnimatePresence mode="popLayout"><motion.span key={scene.word} initial={reduced ? false : { opacity: 0, y: 55 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -55 }} transition={{ duration: reduced ? 0 : .65 }}>{scene.word}</motion.span></AnimatePresence></motion.div>
+        <div className={styles.copy} aria-live="polite"><AnimatePresence mode="popLayout"><motion.div key={scene.name} initial={reduced ? false : { opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} transition={{ duration: reduced ? 0 : .7, ease: [.22, 1, .36, 1] }}><p className={styles.eyebrow}>{scene.eyebrow}</p><h1>{scene.title[0]}<br /><em>{scene.title[1]}</em></h1><p className={styles.description}>{scene.copy}</p><p className={styles.price}>{scene.price}</p><Link href="/cafe-menu" className={styles.menuLink}>Find your favourite <ArrowUpRight size={17} aria-hidden="true" /></Link></motion.div></AnimatePresence></div>
+        <div className={styles.objects}><motion.div className={styles.entrance} initial={reduced ? false : { opacity: 0, y: 70, scale: .7, rotate: -10 }} animate={{ opacity: 1, y: 0, scale: 1, rotate: 0 }} transition={{ duration: reduced ? 0 : 1.25, ease: [.16, 1, .3, 1] }}><motion.div className={styles.floor} style={{ scaleX: reduced ? 1 : floorScale }} /><Plate progress={progress} />{[0, 1, 2].map(i=><FlyingVada key={i} index={i} progress={progress} />)}<Tea progress={progress} reduced={reduced} showSteam={active === 2} /></motion.div></div>
+        <div className={styles.bottom}><div className={styles.sceneCount}><span>0{active + 1}</span><span>/ 03<br />{scene.name}</span></div><nav className={styles.sceneNav} aria-label="Jump to a food scene">{scenes.map((item, i)=><button key={item.name} type="button" aria-current={active === i ? 'step' : undefined} onClick={()=>goTo(i)}><span>0{i+1}</span>{item.name}</button>)}</nav><div className={styles.next}><button type="button" aria-label="Previous scene" onClick={()=>goTo(active-1)}><MoveLeft size={18} /></button><button type="button" aria-label="Next scene" onClick={()=>goTo(active+1)}><MoveRight size={18} /></button></div></div>
+        {!reduced && <div className={styles.scrollNote}><ArrowDown size={14} aria-hidden="true" /><span>SCROLL. LET THE FOOD MOVE.</span></div>}
+        <p className={styles.disclosure}>Motion concept · AI-generated food illustrations · Not actual café product photos.</p>
+      </motion.div>
+    </section>
+    <section className={styles.after}><div><p className={styles.eyebrow}>THAT’S A LITTLE SERENITY.</p><h2>From a little hunger<br /><em>to a little pause.</em></h2></div><p>Biriyani for lunch. Vada for a snack break. A tea-time moment to slow things down.</p><Link href="/cafe-menu">Explore the café menu <ArrowUpRight size={20} /></Link></section>
+    <section className={styles.credits} aria-labelledby="asset-credits"><h2 id="asset-credits">Made for movement</h2><p>Three AI-generated, transparent food illustrations created for this animation study: a biriyani plate, a vada and a glass of milk tea. These are illustrative assets, not photographs of Café Serenity’s actual food or portions. The vada illustration is repeated; steam and shadows are animated effects. Tea availability and pricing are not claimed.</p><Link href="/">Return to the current homepage ↗</Link></section>
+  </div>;
+}

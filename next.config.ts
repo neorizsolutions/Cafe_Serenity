@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ["127.0.0.1"],
   // Avoid exhausting memory when Windows starts one page worker per CPU.
   experimental: { cpus: 2 },
   images: {

@@ -1,0 +1,55 @@
+.preview{color:#fff2d4;isolation:isolate;background:#294b3b}
+.preview *{box-sizing:border-box}
+.journey{height:310svh;position:relative}
+.stage{position:sticky;top:80px;height:calc(100svh - 80px);min-height:500px;overflow:hidden;isolation:isolate}
+.copy{position:absolute;left:8%;width:44%;top:50%;transform:translateY(-50%);z-index:5}
+.chapters{height:250px;position:relative}
+.chapter{position:absolute;inset:0;will-change:transform,opacity}
+.chapter h1{margin:0;font-size:clamp(65px,8.2vw,126px);font-weight:850;line-height:.9;letter-spacing:-.065em}
+.chapter h1 em{font-family:Georgia,serif;font-weight:400;letter-spacing:-.075em}
+.visual{position:absolute;right:2%;top:50%;width:min(53vw,76svh);height:min(53vw,76svh);transform:translateY(-50%);pointer-events:none}
+.food{position:absolute;inset:0;display:grid;place-items:center;will-change:transform,opacity;filter:drop-shadow(0 24px 16px #1d130f35)}
+.food img{display:block;width:100%;height:auto;object-fit:contain}
+.vada img{width:45%}.tea img{width:94%}.plate img{width:100%}
+.steam{position:absolute;left:38%;width:24%;height:24%;top:8%;pointer-events:none}
+.steam span{position:absolute;bottom:0;left:10%;width:20%;height:65%;border-radius:50%;background:linear-gradient(transparent,#fff2d45c,transparent);filter:blur(9px);animation:steam 4s ease-in-out infinite}
+.steam span:nth-child(2){left:42%;animation-delay:-1.3s}.steam span:nth-child(3){left:70%;animation-delay:-2.6s}
+@keyframes steam{0%{transform:translate(0,15px) scaleX(.6);opacity:0}35%{opacity:.5}100%{transform:translate(10px,-45px) scaleX(1.8);opacity:0}}
+.controls{position:absolute;bottom:24px;right:5%;display:flex;gap:8px;z-index:10;opacity:.65}
+.controls:hover,.controls:focus-within{opacity:1}
+.controls button{display:grid;place-items:center;min-width:44px;min-height:44px;background:transparent;color:inherit;border:1px solid #fff2d440;border-radius:50%;cursor:pointer}
+.controls button:hover{background:#fff2d414}.controls button:focus-visible{outline:3px solid currentColor;outline-offset:4px}
+.accessibleNote{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.reduced{height:auto}.reduced .stage{position:relative;top:0}
+@media(max-width:1023px){.stage{top:64px;height:calc(100svh - 64px)}.copy{left:7%;width:44%}.chapters{height:190px}.chapter h1{font-size:clamp(60px,8vw,85px)}.visual{width:50vw;height:50vw;right:0}}
+@media(max-width:700px){.journey{height:290svh}.stage{min-height:590px}.copy{left:7%;width:86%;top:13%;transform:none;text-align:center}.chapters{height:160px}.chapter h1{font-size:clamp(60px,18vw,84px)}.visual{left:50%;right:auto;top:62%;width:min(90vw,49svh);height:min(90vw,49svh);transform:translate(-50%,-50%)}.controls{bottom:22px;right:7%;gap:5px}.controls button{min-width:40px;min-height:40px}}
+@media(max-width:700px) and (max-height:740px){.copy{top:10%}.chapter h1{font-size:58px}.visual{top:61%;width:min(84vw,46svh);height:min(84vw,46svh)}}
+@media(prefers-reduced-motion:reduce){.preview *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* Three 35%-wide silhouettes fit the 38%-wide triangle with breathing room. */
+.vada img{width:44%}
+
+.teaScene{position:absolute;inset:0;will-change:transform,opacity;filter:drop-shadow(0 20px 14px #1d130f30)}
+.glassArtwork{position:absolute;left:15%;top:16%;width:70%;aspect-ratio:1220/1289}
+.glassArtwork img{display:block;width:100%;height:auto}
+.liquidLayer{position:absolute;inset:0;will-change:clip-path,opacity}
+.pourEffects{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.teaVapour{filter:blur(.55px)}
+/* Align the generated empty silhouette with the original full glass's alpha bounds. */
+.glassArtwork .emptyGlass{position:absolute;left:8.2%;top:.5%;width:84.4%;height:98.8%;opacity:.7}
+.glassArtwork{left:7.5%;top:8%;width:85%}
+.glassArtwork .emptyGlass{opacity:1}
+
+.biriyaniBuild{position:absolute;inset:0;will-change:transform,opacity}
+.biriyaniLayer{position:absolute;inset:0;display:grid;place-items:center;will-change:transform,opacity}
+.biriyaniLayer img{display:block;width:100%;height:auto;filter:drop-shadow(0 12px 10px #23130925)}
+.rice img{width:88%;filter:drop-shadow(0 3px 3px #3d210e25)}
+.chicken img{width:40%;filter:drop-shadow(0 7px 4px #3d210e45)}
+.garnish img{width:24%;filter:drop-shadow(0 3px 2px #26331640)}
+.biriyaniVapour{position:absolute;inset:0;width:100%;height:100%;filter:blur(3px);pointer-events:none}
+
+.rice img{width:82%}
+
+.chicken img{width:35%}
+
+.biriyaniMain{position:absolute;inset:0;transform:translateY(-4%) scale(.92);transform-origin:center}
+.sides img{width:26%;filter:drop-shadow(0 8px 5px #30140955)}
