@@ -3,8 +3,8 @@ import BrandLogo from '@/components/common/BrandLogo';
 import { CONTACT_DETAILS, BUSINESS_NAME } from '@/constants';
 
 export default function Footer() {
-  return <footer className="serenity-footer" aria-label="Site footer"><div className="mx-auto max-w-7xl px-6 lg:px-8">
-    <div className="footer-invitation"><h2>A good meal.<br /><span>A little serenity.</span></h2><Link href="/cafe-menu" className="serenity-button footer-menu-button">Find your favourite <span aria-hidden="true">↗</span></Link></div>
+  return <footer className="serenity-footer editorial" aria-label="Site footer"><div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="footer-invitation"><div><h2>A good meal.<br /><span>A little serenity.</span></h2></div><Link href="/cafe-menu" className="serenity-button footer-menu-button">Find your favourite <span aria-hidden="true">↗</span></Link></div>
     <div className="footer-columns">
       <div><Link href="/" aria-label={BUSINESS_NAME+' home'} className="footer-logo"><BrandLogo /></Link><p className="mt-6 max-w-xs text-sm leading-7 text-stone-300">Biriyani for your lunch break. Kerala snacks for your tea break. Familiar favourites, here in Kakkanad.</p></div>
       <nav aria-label="Footer navigation"><h3>Make yourself at home</h3>{[['Home','/'],['Our Menu','/cafe-menu'],['About us','/about'],['Food Guide','/blog'],['Contact','/contact'],['FAQs','/faq']].map(([label,href])=><Link key={href} href={href}>{label}<span aria-hidden="true">↗</span></Link>)}</nav>

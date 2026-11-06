@@ -26,16 +26,16 @@
 html, body { background: var(--background); color: var(--foreground); }
 ::selection { background: #f8c548; color: #191b16; }
 .brand-header, .brand-mobile-nav { background: #151713f7; border-color: var(--border); }
-.serenity-footer { background: radial-gradient(ellipse at 0 0, #a47b1712, transparent 65%), #10120e; }
+.serenity-footer { background: #151713; }
 .menu-collection-section, .menu-collection-section:nth-of-type(even), .brand-page-intro,
 .serenity-about, .serenity-contact, .cafe-not-found { background-color: var(--background); border-color: var(--border); }
-.brand-page-intro, .serenity-contact { background-color: var(--dark-surface); }
+.brand-page-intro { background-color: var(--dark-surface); }
 .brand-orientation-card, .about-feature, .about-local-story, .about-visit-panel,
 .contact-action, .contact-location, .menu-empty { background: var(--card); border-color: var(--border); }
 .brand-orientation-photo, .guide-image { background-color: var(--dark-raised); }
-.brand-portion-guide, .guide-portion-table { background: #10130f; }
+.brand-portion-guide, .guide-portion-table { background: #151713; }
 .brand-portion-options > div { background: var(--card); border-color: var(--border); }
-.brand-help-strip, .location-art, .location-art span { background: #29291d; }
+.brand-help-strip { background: #29291d; }
 .menu-discovery { background: #1c1f19f7; border-color: var(--border); }
 .menu-search-field { background: #11140f; border-color: #666349; }
 .menu-search-field input { color: var(--foreground); caret-color: var(--primary); }
@@ -54,7 +54,7 @@ html, body { background: var(--background); color: var(--foreground); }
 .brand-section-heading h2 span, .brand-page-intro h1 span,
 .about-story h1 span, .about-story h2 span, .about-food-story h2 span,
 .contact-intro h1 span, .contact-intro h2 span, .brand-food-guide h2 span,
-.not-found-copy h1 span { color: var(--primary); }
+.not-found-copy h1 span { color: inherit; }
 .brand-section-heading > p, .brand-orientation-card p, .brand-page-intro p,
 .brand-faq-list details p, .brand-faq-help p, .brand-food-guide p, .brand-help-strip p,
 .menu-search label, .menu-search-status, .menu-results-section .menu-collection-heading p,

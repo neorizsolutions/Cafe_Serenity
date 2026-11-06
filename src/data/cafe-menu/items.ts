@@ -27,13 +27,9 @@ export const CAFE_ITEMS: CafeMenuItem[] = [
     id: name.toLowerCase().replaceAll(' ', '-'), name, category: 'biriyani',
     price: 90, portions: { half: 90, full: 150 },
     description: BIRIYANI_DESCRIPTIONS[name],
-    imageSrc: `/images/${name.toLowerCase().replaceAll(' ', '-')}.webp`,
-    portionImages: {
-      half: name === 'Hyderabadi Biriyani' ? '/images/hyderabadi-biriyani-half-matched.webp' : `/images/${name.toLowerCase().replaceAll(' ', '-')}-half.webp`,
-      full: `/images/${name.toLowerCase().replaceAll(' ', '-')}.webp`,
-    },
+    imageSrc: `/images/menu-hd/${name.toLowerCase().replaceAll(' ', '-')}.webp`,
   })),
-  ...SNACK_NAMES.map((name): CafeMenuItem => ({ id: name.toLowerCase().replaceAll(' ', '-'), name, category: 'snacks', price: 12, description: name === 'Kesari' ? 'Golden semolina sweet for a little tea-time treat.' : 'A Kerala evening snack for your tea-time break.', imageSrc: name === 'Ela Ada' ? '/images/ela-ada-wrapped.webp' : `/images/${name.toLowerCase().replaceAll(' ', '-')}.webp` })),
-  { id: 'egg-puffs', name: 'Egg Puffs', category: 'snacks', price: 15, description: 'Golden egg puffs for a quick café bite.', imageSrc: '/images/egg-puffs-menu.webp' },
+  ...SNACK_NAMES.map((name): CafeMenuItem => ({ id: name.toLowerCase().replaceAll(' ', '-'), name, category: 'snacks', price: 12, description: name === 'Kesari' ? 'Golden semolina sweet for a little tea-time treat.' : 'A Kerala evening snack for your tea-time break.', imageSrc: `/images/menu-hd/${name.toLowerCase().replaceAll(' ', '-')}.webp` })),
+  { id: 'egg-puffs', name: 'Egg Puffs', category: 'snacks', price: 15, description: 'Golden egg puffs for a quick café bite.', imageSrc: '/images/menu-hd/egg-puffs.webp' },
 ];
 export const menuPrice = (item: CafeMenuItem) => item.portions ? `Half ₹${item.portions.half} / Full ₹${item.portions.full}` : `₹${item.price} each`;

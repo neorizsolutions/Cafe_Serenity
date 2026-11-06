@@ -3,6 +3,7 @@ import './globals.css';
 import './cafe-refinement.css';
 import './brand-theme.css';
 import './dark-theme.css';
+import './editorial.css';
 import { constructMetadata } from '@/utils/seo';
 import SkipToContent from '@/components/layout/SkipToContent';
 import Header from '@/components/layout/Header';

@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   // Avoid exhausting memory when Windows starts one page worker per CPU.
   experimental: { cpus: 2 },
   images: {
+    qualities: [75, 90],
     remotePatterns: [
       {
         protocol: "https",

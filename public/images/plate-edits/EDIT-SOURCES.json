@@ -1,0 +1,226 @@
+[
+  {
+    "id": "malabar-biriyani",
+    "original": "/images/malabar-biriyani.webp",
+    "edited": "/images/plate-edits/malabar-biriyani.webp",
+    "originalSha256": "03a76b8291be955125845473d74215832c8b002cf10237d6e40741ac4901d0d1",
+    "editedSha256": "12dd2129f0fe0805c2c58e3167e230eaa1ef4c4b85cac3f6cd8be623e40883a1"
+  },
+  {
+    "id": "hyderabadi-biriyani",
+    "original": "/images/hyderabadi-biriyani.webp",
+    "edited": "/images/plate-edits/hyderabadi-biriyani.webp",
+    "originalSha256": "6f15660633f1f67a4ed217bb1d753ef275826dde083ab87544c3c2743dcb3406",
+    "editedSha256": "4b79fb24fe68a1f6527a0d8bc3b33c760bab64aad8ee9f30798c9b269dc0d62d"
+  },
+  {
+    "id": "thalappakatti-biriyani-half",
+    "original": "/images/thalappakatti-biriyani-half.webp",
+    "edited": "/images/plate-edits/thalappakatti-biriyani-half.webp",
+    "originalSha256": "368428bf90ba8ef7e3ce03de12696302847122c231cac53dd5ef6d9c9f3cf3bd",
+    "editedSha256": "73a10c589c4c1f9d6055c1225862e86f13a183c4e636e44c49a8a4717b575503"
+  },
+  {
+    "id": "hyderabadi-biriyani-half",
+    "original": "/images/hyderabadi-biriyani-half-matched.webp",
+    "edited": "/images/plate-edits/hyderabadi-biriyani-half.webp",
+    "originalSha256": "ba734be128ef7c0ed862146d2eb76208aae4e0533b8503658a3948160cbbf0b6",
+    "editedSha256": "dad33396f07c2ae6e060af9823d4cf2ad464f29995365788ba0f4711b68a0d68"
+  },
+  {
+    "id": "thalappakatti-biriyani",
+    "original": "/images/thalappakatti-biriyani.webp",
+    "edited": "/images/plate-edits/thalappakatti-biriyani.webp",
+    "originalSha256": "7f2308cf81309588ca8893d108fdab6a056354ab6f53174fbfcfcb687ac15d1b",
+    "editedSha256": "64e1e09dbe2b51a4957de4c4a4345bae4a8587d01a0ed9ac1e83eebae01536f4"
+  },
+  {
+    "id": "chettinad-biriyani",
+    "original": "/images/chettinad-biriyani.webp",
+    "edited": "/images/plate-edits/chettinad-biriyani.webp",
+    "originalSha256": "0d6cd06e1d7bbc101b8d8c9a2eab91a768c93b368e385f4e547f0adc267fa0af",
+    "editedSha256": "f5e727ad417f4ff67c47fc77bcea0a64d75ffdd138018a12bdbad13c1ff21c54"
+  },
+  {
+    "id": "ravuthar-biriyani",
+    "original": "/images/ravuthar-biriyani.webp",
+    "edited": "/images/plate-edits/ravuthar-biriyani.webp",
+    "originalSha256": "c465a0c2592d5ff5a5bfbe463d6ea4c917fccf83f3d95b9bbd250addb73a1fe6",
+    "editedSha256": "8d071797afd1ece947e2c05061c8e6f26162761d69c720afbf28c6a36e8b7e0c"
+  },
+  {
+    "id": "chettinad-biriyani-half",
+    "original": "/images/chettinad-biriyani-half.webp",
+    "edited": "/images/plate-edits/chettinad-biriyani-half.webp",
+    "originalSha256": "9d8c7a297022afe5f18c6acf271d78fd0e685898fdcb1d77cce761ea294664a0",
+    "editedSha256": "73097aa25d9be3d9c5f45c168c111e35c98978108e754d481d76a9a66f406fe7"
+  },
+  {
+    "id": "ravuthar-biriyani-half",
+    "original": "/images/ravuthar-biriyani-half.webp",
+    "edited": "/images/plate-edits/ravuthar-biriyani-half.webp",
+    "originalSha256": "3478e52b03d297cbc1b1827385b72341762f3e5a7f9188a11ef40faad9d3fade",
+    "editedSha256": "a14ed880437ff20a83fcc4e769c397738de0e00c3f37ec25cc858dc2c9fb0314"
+  },
+  {
+    "id": "ambur-biriyani",
+    "original": "/images/ambur-biriyani.webp",
+    "edited": "/images/plate-edits/ambur-biriyani.webp",
+    "originalSha256": "76f5c03351459f85316c96b6a9f8cf8c6347436ebe9bc91bb59770d982da1691",
+    "editedSha256": "5f66a34d043ca6277b33efc8432418669db20ab7804ca650c59cc7b6ce17905f"
+  },
+  {
+    "id": "ambur-biriyani-half",
+    "original": "/images/ambur-biriyani-half.webp",
+    "edited": "/images/plate-edits/ambur-biriyani-half.webp",
+    "originalSha256": "4696fcca85be660b2cafe2622183dbc34d60e7f59b91055db25aae7b77d2b168",
+    "editedSha256": "ccf3b5b0125c00f327b677c4d74cfa855623a52f5c9ca514f1905564e9d04e7c"
+  },
+  {
+    "id": "dhilli-darbar-biriyani-half",
+    "original": "/images/dhilli-darbar-biriyani-half.webp",
+    "edited": "/images/plate-edits/dhilli-darbar-biriyani-half.webp",
+    "originalSha256": "749beb5ce61a43e0bebcaf587644ae9812311809931995a7d6110cd8d5478175",
+    "editedSha256": "62b7d28937ebf0e98a77ad0605f3b21889030b5a40ceaf153e59a2c3d093ede8"
+  },
+  {
+    "id": "kozhikode-biriyani",
+    "original": "/images/kozhikode-biriyani.webp",
+    "edited": "/images/plate-edits/kozhikode-biriyani.webp",
+    "originalSha256": "59177c13ba98005e13b17cc0f9e58a7a3e9a32896934c29cacbd2388c989f762",
+    "editedSha256": "95076d4a545fa22394ccf7b76415900d94b02d1cd129ff7076ed1e0beb9242d3"
+  },
+  {
+    "id": "dhilli-darbar-biriyani",
+    "original": "/images/dhilli-darbar-biriyani.webp",
+    "edited": "/images/plate-edits/dhilli-darbar-biriyani.webp",
+    "originalSha256": "45580b33ea3665932c5a74f90f13ad38eceaf8b83a885e05079498fb49022ad9",
+    "editedSha256": "965aecba63660461fb6fa488a617f8b9b13e947b3d5814f989d0f8862f0c5a9a"
+  },
+  {
+    "id": "kozhikode-biriyani-half",
+    "original": "/images/kozhikode-biriyani-half.webp",
+    "edited": "/images/plate-edits/kozhikode-biriyani-half.webp",
+    "originalSha256": "5a86fb7786cef24dec3347cee29c47384ad053d032f57c7067ae2542e657d1de",
+    "editedSha256": "d63936f9e43fb00ebaa726f4d236b8f9ae0162224598f7d4c62026b0349943d2"
+  },
+  {
+    "id": "malabar-biriyani-half",
+    "original": "/images/malabar-biriyani-half.webp",
+    "edited": "/images/plate-edits/malabar-biriyani-half.webp",
+    "originalSha256": "3b3babd01a0e7fbdd2be819f1130f00ffc2dd11880966282c453def37e5014ec",
+    "editedSha256": "65795ecc4c5f1f221014a5710777adc0fb722aeac8a8bd884bf58f27763b229e"
+  },
+  {
+    "id": "cutlet",
+    "original": "/images/cutlet.webp",
+    "edited": "/images/plate-edits/cutlet.webp",
+    "originalSha256": "43126ac4826331bf1b7317ed758b707a80900fc0bf328ff5c5a660600182d04c",
+    "editedSha256": "cc1b6dd1cdc94f7906da56509cd25ddbcd86cbf6834ac619bf5f2d2fb5464985"
+  },
+  {
+    "id": "vada",
+    "original": "/images/vada.webp",
+    "edited": "/images/plate-edits/vada.webp",
+    "originalSha256": "06f7eb54d8dcb4d4af9a14323118c09b225c24bc2f7fae3b6bc7f9ee927967fc",
+    "editedSha256": "e52d0a2f9231a96a9e1495dfcaeeb1796cd0115d0ed742d21527721a05f77374"
+  },
+  {
+    "id": "samosa",
+    "original": "/images/samosa.webp",
+    "edited": "/images/plate-edits/samosa.webp",
+    "originalSha256": "99cc56793189beef7abd8dd27cf14d7f032dc8c15a9239b2facd869701c27926",
+    "editedSha256": "593de549c62b8dd3f4415cc3b1e053131ecd9adb251036c7ff0dd539344329ee"
+  },
+  {
+    "id": "bonda",
+    "original": "/images/bonda.webp",
+    "edited": "/images/plate-edits/bonda.webp",
+    "originalSha256": "8d23159f4a08ac2e7d0b1a8d4a49e01ec1dd85fc8ac0a7c6d51df6a2e7f051d9",
+    "editedSha256": "9711c94572d1d21c0d5263fa128a7cf0eb566f5957fa6d94f4ba3e8b4738f48e"
+  },
+  {
+    "id": "pazham-pori",
+    "original": "/images/pazham-pori.webp",
+    "edited": "/images/plate-edits/pazham-pori.webp",
+    "originalSha256": "327ae179aa00ebff99be5a8a2bf986e1557c354480291f0aa21bdf26d616ebdc",
+    "editedSha256": "e8abc1e372e5746a1c4b3432aba896554483d90a3507dd208cfaa98f30ea561e"
+  },
+  {
+    "id": "parippu-vada",
+    "original": "/images/parippu-vada.webp",
+    "edited": "/images/plate-edits/parippu-vada.webp",
+    "originalSha256": "b76279b36dbd59c231892faf890f83444d2c802316c7ff70a945b76b13e435c7",
+    "editedSha256": "e65af7736b3cb6ce8d48dab48cb037ed1acf43a40ad67df44dd869b0a72fc0b3"
+  },
+  {
+    "id": "sukhiyan",
+    "original": "/images/sukhiyan.webp",
+    "edited": "/images/plate-edits/sukhiyan.webp",
+    "originalSha256": "71200870d3e2b3b0fb85bae6e4e42a3a82ec9d6e8e42228e5ce5f80fb513e1f2",
+    "editedSha256": "9169fe5bedda9c6f78d45c4dc2bb625c94fbec83e849a3834e703a4012f6aad3"
+  },
+  {
+    "id": "ulli-vada",
+    "original": "/images/ulli-vada.webp",
+    "edited": "/images/plate-edits/ulli-vada.webp",
+    "originalSha256": "221a4f3e47fe7e9cd2e9eb07fa82f1f801c9fc90a882753b1a0620d02723dd41",
+    "editedSha256": "b1aedc0842c58aa0c37ed6e136fb9fdc85f1f1ba44a5deae2ae61ed761223d6e"
+  },
+  {
+    "id": "kozhukatta",
+    "original": "/images/kozhukatta.webp",
+    "edited": "/images/plate-edits/kozhukatta.webp",
+    "originalSha256": "415cc3188ee401a6467eecab0c212003ea5b5149a0b7b8944951218aff7d9697",
+    "editedSha256": "c217c902f47c8f04f258b6d4038fa9acdb03e98cfc44b1b7fe6377f74ea7e4a4"
+  },
+  {
+    "id": "ela-ada",
+    "original": "/images/ela-ada-wrapped.webp",
+    "edited": "/images/plate-edits/ela-ada.webp",
+    "originalSha256": "594ed255f626fdff8bc07b3d427ac001fbf55c3d4acf06b3bf111f6796f12e9a",
+    "editedSha256": "1e26c1b8911ba7e4ba19450f905b622b91879525fc87e312e4898be516fae1d0"
+  },
+  {
+    "id": "mulaku-bajji",
+    "original": "/images/mulaku-bajji.webp",
+    "edited": "/images/plate-edits/mulaku-bajji.webp",
+    "originalSha256": "22d9a4daef9499564a32f7b3c319439261af4f65cc3ca08b28bf612aa8f4252b",
+    "editedSha256": "57de4fb73e984ddad6890ee9788625c44de7f13c1e02dcf533f89cf883abe619"
+  },
+  {
+    "id": "poricha-pathiri",
+    "original": "/images/poricha-pathiri.webp",
+    "edited": "/images/plate-edits/poricha-pathiri.webp",
+    "originalSha256": "5383f67666a1f883da2df9356153ab8e990e8c3a99d991092c82eecd0785036f",
+    "editedSha256": "39aad0d82798644ef55c5f2b83f267f85e2025b838b94f7a9acb80b17718749c"
+  },
+  {
+    "id": "idli",
+    "original": "/images/idli.webp",
+    "edited": "/images/plate-edits/idli.webp",
+    "originalSha256": "227ac51e0743cd136bfd0ae6641b26d5428bdcbb7f00621c5009bfb99de4d572",
+    "editedSha256": "16e039cf77bca4f0e57ab7d83ff26d386484fe4da527440e5c54d82680f9b3ad"
+  },
+  {
+    "id": "kesari",
+    "original": "/images/kesari.webp",
+    "edited": "/images/plate-edits/kesari.webp",
+    "originalSha256": "ec0e376e944337a5e4d547fb967409a4b14ee11ccb0937e5f1ec876a4d4ba5f0",
+    "editedSha256": "45362d6e61724226cd05ae0839590086180a29fd3994eb3189d2cc35eb2f94d0"
+  },
+  {
+    "id": "egg-bajji",
+    "original": "/images/egg-bajji.webp",
+    "edited": "/images/plate-edits/egg-bajji.webp",
+    "originalSha256": "ed818e214c498e10d25bbef9494ff50ec7eb41270543b15f9cd6a3b0da318846",
+    "editedSha256": "51f004e0f2ecf26942dc17996ed7db1f9043577d7384a2d2f8746309a4c88deb"
+  },
+  {
+    "id": "egg-puffs",
+    "original": "/images/egg-puffs-menu.webp",
+    "edited": "/images/plate-edits/egg-puffs.webp",
+    "originalSha256": "4f83bdcc11264bba26b91cdad0862355f8d05c148bbd7cdbbae8438baef4d357",
+    "editedSha256": "46fbe996b3f27c5e2b42b757e0b7af1bdeda0106cea1ecdf1c919372725e19e0"
+  }
+]

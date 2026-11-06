@@ -9,7 +9,7 @@
 .menu-collection-section { background-image: radial-gradient(ellipse at 100% 0%, #C9B78D0c, transparent 55%); }
 .serenity-about { padding: clamp(3rem, 6vw, 6rem) 0; background: #F7F4EE; }
 .about-story h1, .about-story h2, .contact-intro h1, .contact-intro h2 { font-size: clamp(2.3rem, 4.5vw, 4.5rem); line-height: 1.08; font-weight: 800; letter-spacing: -.045em; }
-.about-story h1 span, .about-story h2 span, .contact-intro h1 span, .contact-intro h2 span { color: #88631A; }
+.about-story h1 span, .about-story h2 span, .contact-intro h1 span, .contact-intro h2 span { color: inherit; }
 .about-story p { max-width: 35rem; margin-top: 1.4rem; color: #625D54; font-size: 1rem; line-height: 1.9; }
 .serenity-text-link { display: inline-flex; justify-content: space-between; align-items: center; gap: 2.5rem; padding: .75rem 0; border-bottom: 1px solid #85671F6B; color: #705619; font-weight: 650; min-height: 48px; margin-top: 1.2rem; }
 .serenity-text-link:hover { color: #88631A; border-color: #88631A; }
@@ -17,7 +17,7 @@
 .about-feature { height: 100%; padding: 1.5rem; border: 1px solid #85671F26; background: #FFFFFF80; border-radius: 1rem; }
 .about-feature h3 { margin-top: 1.2rem; font-size: 1.15rem; font-weight: 700; letter-spacing: -.02em; }
 .about-feature p { font-size: .875rem; line-height: 1.8; color: #625D54; margin-top: .6rem; }
-.serenity-contact { padding: clamp(3rem, 6vw, 6rem) 0; background: #FDFCFA; border-top: 1px solid #85671F20; }
+.serenity-contact { padding: clamp(3rem, 6vw, 6rem) 0; background: #151713; border: none; }
 .contact-intro { display: grid; gap: 1.5rem; align-items: end; margin-bottom: 2.5rem; }
 .contact-intro p { font-size: 1rem; line-height: 1.9; color: #625D54; max-width: 26rem; }
 .contact-actions { display: grid; gap: 1rem; }
@@ -36,10 +36,10 @@
 .location-copy h3 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 750; letter-spacing: -.03em; line-height: 1.2; }
 .location-copy address { font-style: normal; margin-top: 1rem; line-height: 1.8; font-size: .875rem; color: #625D54; max-width: 30rem; }
 .location-copy p { margin-top: .8rem; color: #625D54; font-size: .8rem; line-height: 1.7; }
-.serenity-footer { position: relative; background: radial-gradient(ellipse at 0% 0%, #6A541F55, transparent 65%), #20211E; color: #F7F4EE; padding: 3.5rem 0 1.5rem; }
+.serenity-footer { position: relative; background: #151713; color: #F7F4EE; padding: 3.5rem 0 1.5rem; border: none; }
 .footer-invitation { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem; padding-bottom: 3rem; border-bottom: 1px solid #F7F4EE25; }
 .footer-invitation h2 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 650; letter-spacing: -.035em; line-height: 1.15; }
-.footer-invitation h2 span { color: #F0D58C; }
+.footer-invitation h2 span { color: inherit; }
 .serenity-button { display: inline-flex; min-height: 44px; align-items: center; justify-content: space-between; gap: 2.5rem; padding: .8rem 1.6rem; border-radius: 999px; font-size: .875rem; font-weight: 650; }
 .footer-menu-button { background: #F4E7C4; color: #29261D; }
 .footer-menu-button:hover { background: #FFFFFF; }
@@ -82,7 +82,7 @@
 .about-page-details { margin-top: clamp(3rem, 7vw, 6rem); }
 .about-food-story { display: grid; gap: 2rem; border-top: 1px solid #85671F30; padding-top: clamp(2rem, 5vw, 4rem); }
 .about-food-story h2, .about-visit-panel h2 { font-size: clamp(1.9rem, 3.2vw, 3rem); font-weight: 750; line-height: 1.15; letter-spacing: -.04em; }
-.about-food-story h2 span { color: #88631A; }
+.about-food-story h2 span { color: inherit; }
 .about-food-story p, .about-visit-panel p { font-size: .9375rem; line-height: 1.9; color: #625D54; margin-top: 1rem; max-width: 40rem; }
 .about-food-chapters { display: grid; gap: 1.6rem; }
 .about-food-chapters > div + div { padding-top: 1.6rem; border-top: 1px solid #85671F25; }
@@ -97,7 +97,7 @@
 .not-found-layout { display: grid; align-items: center; gap: 2rem; min-height: 480px; }
 .not-found-status { color: #705619; font-size: .8rem; font-weight: 650; margin-bottom: 1.4rem; }
 .not-found-copy h1 { font-size: clamp(2.6rem, 4.7vw, 4.5rem); letter-spacing: -.045em; line-height: 1.08; font-weight: 800; }
-.not-found-copy h1 span { color: #88631A; }
+.not-found-copy h1 span { color: inherit; }
 .not-found-description { max-width: 28rem; color: #625D54; font-size: 1rem; line-height: 1.9; margin-top: 1.5rem; }
 .not-found-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 1.5rem; margin-top: 2rem; }
 .not-found-primary { display: inline-flex; align-items: center; justify-content: space-between; gap: 2rem; min-height: 52px; padding: .8rem 1.5rem; border-radius: 99px; background: #705619; color: white; font-size: .875rem; font-weight: 650; }

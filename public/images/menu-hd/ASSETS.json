@@ -1,0 +1,218 @@
+[
+  {
+    "id": "ambur-biriyani",
+    "composition": "Full regional biriyani portion",
+    "image": "/images/menu-hd/ambur-biriyani.webp",
+    "width": 1263,
+    "height": 1246,
+    "bytes": 713214,
+    "sha256": "b97fd2c6d4b1bdd8bd8848db3f0e14bcca9b62c58221e6b43994b675ec3ea095"
+  },
+  {
+    "id": "bonda",
+    "composition": "Type C: Whole + open cut presentation (revealing interior filling)",
+    "image": "/images/menu-hd/bonda.webp",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 190922,
+    "sha256": "b373ef8a3d1d14fe65496a69892346aff02fedd663a269f69908710cbe20810d"
+  },
+  {
+    "id": "chettinad-biriyani",
+    "composition": "Full regional biriyani portion",
+    "image": "/images/menu-hd/chettinad-biriyani.webp",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 791154,
+    "sha256": "5b34d74e972441845f4534d485d056e33ef4a999b56c7c7fb86d69ab6b310aaf"
+  },
+  {
+    "id": "cutlet",
+    "composition": "Type C: Whole + open cut presentation (revealing interior filling)",
+    "image": "/images/menu-hd/cutlet.webp",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 272874,
+    "sha256": "d8631324c3521ccce6e485eafcaa52505a070ccc1c92350ee204738ef6b9dc57"
+  },
+  {
+    "id": "dhilli-darbar-biriyani",
+    "composition": "Full regional biriyani portion",
+    "image": "/images/menu-hd/dhilli-darbar-biriyani.webp",
+    "width": 1263,
+    "height": 1246,
+    "bytes": 724280,
+    "sha256": "0bce619d9208c871cc2d8c02b0247ec5a5dcf95a3512d3102ce570bbcded236e"
+  },
+  {
+    "id": "egg-bajji",
+    "composition": "Type C: Whole + open cut presentation (revealing interior filling)",
+    "image": "/images/menu-hd/egg-bajji.webp",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 77366,
+    "sha256": "ab86f427559b0f30faec1e856ef656854cb5ffd52f36709a673ec6b0ae8aeb77"
+  },
+  {
+    "id": "egg-puffs",
+    "composition": "Type C: Whole + open cut presentation (revealing interior filling)",
+    "image": "/images/menu-hd/egg-puffs.webp",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 91870,
+    "sha256": "a68843bdc8caca0831f41fecca94a20b3b9f51ae2a2dd6a9f0527c88a4753668"
+  },
+  {
+    "id": "ela-ada",
+    "composition": "Type A: Banana leaf presentation (wrapped + open with filling)",
+    "image": "/images/menu-hd/ela-ada.webp",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 178968,
+    "sha256": "0ad66b94868571a27515a1cfd9bd830705011da76460ffb948137841a104b107"
+  },
+  {
+    "id": "hyderabadi-biriyani",
+    "composition": "Full regional biriyani portion",
+    "image": "/images/menu-hd/hyderabadi-biriyani.webp",
+    "width": 1263,
+    "height": 1246,
+    "bytes": 726068,
+    "sha256": "0ca44a21f7c318800ef8cca13364919002286267b242115b63dae8bf461cc9ed"
+  },
+  {
+    "id": "idli",
+    "composition": "Type B: Two-item presentation (curated balance & texture)",
+    "image": "/images/menu-hd/idli.webp",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 65428,
+    "sha256": "a61d157d9c7557b85b1920acb1c67bb8e07ddb2871c4ff08085ecc9ccc59e772"
+  },
+  {
+    "id": "kesari",
+    "composition": "Type B: Two-item presentation (curated balance & texture)",
+    "image": "/images/menu-hd/kesari.webp",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 156084,
+    "sha256": "7fb3b3645f110a04698a45ea6da5bf9c87b707cab73232e0f42fd98548833a87"
+  },
+  {
+    "id": "kozhikode-biriyani",
+    "composition": "Full regional biriyani portion",
+    "image": "/images/menu-hd/kozhikode-biriyani.webp",
+    "width": 1266,
+    "height": 1242,
+    "bytes": 668086,
+    "sha256": "95cc2a7c019c2c186adac91eb36fa4e6a2deb2218c24f0dedb5f82576a9f8cf2"
+  },
+  {
+    "id": "kozhukatta",
+    "composition": "Type C: Whole + open cut presentation (revealing interior filling)",
+    "image": "/images/menu-hd/kozhukatta.webp",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 138128,
+    "sha256": "fd738f0ed5c4609c47687a3a55b2b5650068e37433ea9502868e73157c11c22c"
+  },
+  {
+    "id": "malabar-biriyani",
+    "composition": "Full regional biriyani portion",
+    "image": "/images/menu-hd/malabar-biriyani.webp",
+    "width": 1261,
+    "height": 1247,
+    "bytes": 777422,
+    "sha256": "a401162c4c1c2b68fd7be2963233f8914872905ceaa4c05d9291be0c361c41c8"
+  },
+  {
+    "id": "mulaku-bajji",
+    "composition": "Type C: Whole + open cut presentation (revealing interior filling)",
+    "image": "/images/menu-hd/mulaku-bajji.webp",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 81170,
+    "sha256": "b64269058d66b6e7792f6b4563fdadd1d064bba2ce3490b32a94eb08f6ba970c"
+  },
+  {
+    "id": "parippu-vada",
+    "composition": "Type D: Authentic crunchy snack bites",
+    "image": "/images/menu-hd/parippu-vada.webp",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 95886,
+    "sha256": "5e69c974e3f569b675183869ffb56ee4c3bc7ddd24ce511d7f03de14f86b5406"
+  },
+  {
+    "id": "pazham-pori",
+    "composition": "Type B: Two-item presentation (curated balance & texture)",
+    "image": "/images/menu-hd/pazham-pori.webp",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 190808,
+    "sha256": "3b2eb5b0c3ff4fe7856b922f36394a9ab946d56727edc7213bc4fcce1ef92934"
+  },
+  {
+    "id": "poricha-pathiri",
+    "composition": "Type B: Two-item presentation (curated balance & texture)",
+    "image": "/images/menu-hd/poricha-pathiri.webp",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 80034,
+    "sha256": "13f786f7001dd49a1d6dee3c2acaa54c5a1a9a1ef919783a67bc2ec440ad3c72"
+  },
+  {
+    "id": "ravuthar-biriyani",
+    "composition": "Full regional biriyani portion",
+    "image": "/images/menu-hd/ravuthar-biriyani.webp",
+    "width": 1275,
+    "height": 1234,
+    "bytes": 610014,
+    "sha256": "84d8ad17a849987364d77ad535b9f3b389437e09d389a9f50bc6bdc820d08b91"
+  },
+  {
+    "id": "samosa",
+    "composition": "Type C: Whole + open cut presentation (revealing interior filling)",
+    "image": "/images/menu-hd/samosa.webp",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 91714,
+    "sha256": "1d7984efbc43448f891ff5a779002399cb3a6d2c1c5f809a865abf60ba91744a"
+  },
+  {
+    "id": "sukhiyan",
+    "composition": "Type C: Whole + open cut presentation (revealing interior filling)",
+    "image": "/images/menu-hd/sukhiyan.webp",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 155498,
+    "sha256": "bf6a48843be092ceb0f2bc90ae45a308384096c7773042fc515af39b8e7b6a91"
+  },
+  {
+    "id": "thalappakatti-biriyani",
+    "composition": "Full regional biriyani portion",
+    "image": "/images/menu-hd/thalappakatti-biriyani.webp",
+    "width": 1269,
+    "height": 1240,
+    "bytes": 645988,
+    "sha256": "4e8dc391aba0e9f342ad836fb4a83bc34588a2c21d800ae916c342ef499f5496"
+  },
+  {
+    "id": "ulli-vada",
+    "composition": "Type D: Authentic crunchy snack bites",
+    "image": "/images/menu-hd/ulli-vada.webp",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 96134,
+    "sha256": "9c3501889cac31cf41cbe1ed1a3488536662c5a485b418eecab4a93c18b40cb4"
+  },
+  {
+    "id": "vada",
+    "composition": "Type B: Two-item presentation (curated balance & texture)",
+    "image": "/images/menu-hd/vada.webp",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 205618,
+    "sha256": "30094d5b9134edb9c37e584e2a88fafe472b88f22cfdbb91235d67548431f444"
+  }
+]

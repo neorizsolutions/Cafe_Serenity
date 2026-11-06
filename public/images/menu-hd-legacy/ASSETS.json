@@ -1,0 +1,242 @@
+[
+  {
+    "id": "hyderabadi-biriyani",
+    "generationMode": "source-referenced",
+    "reference": "/images/hyderabadi-biriyani.webp",
+    "image": "/images/menu-hd/hyderabadi-biriyani.webp",
+    "width": 1263,
+    "height": 1246,
+    "bytes": 726068,
+    "sha256": "0ca44a21f7c318800ef8cca13364919002286267b242115b63dae8bf461cc9ed"
+  },
+  {
+    "id": "ravuthar-biriyani",
+    "generationMode": "source-referenced",
+    "reference": "/images/ravuthar-biriyani.webp",
+    "image": "/images/menu-hd/ravuthar-biriyani.webp",
+    "width": 1275,
+    "height": 1234,
+    "bytes": 610014,
+    "sha256": "84d8ad17a849987364d77ad535b9f3b389437e09d389a9f50bc6bdc820d08b91"
+  },
+  {
+    "id": "thalappakatti-biriyani",
+    "generationMode": "source-referenced",
+    "reference": "/images/thalappakatti-biriyani.webp",
+    "image": "/images/menu-hd/thalappakatti-biriyani.webp",
+    "width": 1269,
+    "height": 1240,
+    "bytes": 645988,
+    "sha256": "4e8dc391aba0e9f342ad836fb4a83bc34588a2c21d800ae916c342ef499f5496"
+  },
+  {
+    "id": "chettinad-biriyani",
+    "generationMode": "fresh composition from dish brief",
+    "reference": "/images/chettinad-biriyani.webp",
+    "image": "/images/menu-hd/chettinad-biriyani.webp",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 791154,
+    "sha256": "5b34d74e972441845f4534d485d056e33ef4a999b56c7c7fb86d69ab6b310aaf"
+  },
+  {
+    "id": "dhilli-darbar-biriyani",
+    "generationMode": "source-referenced",
+    "reference": "/images/dhilli-darbar-biriyani.webp",
+    "image": "/images/menu-hd/dhilli-darbar-biriyani.webp",
+    "width": 1263,
+    "height": 1246,
+    "bytes": 724280,
+    "sha256": "0bce619d9208c871cc2d8c02b0247ec5a5dcf95a3512d3102ce570bbcded236e"
+  },
+  {
+    "id": "ambur-biriyani",
+    "generationMode": "source-referenced",
+    "reference": "/images/ambur-biriyani.webp",
+    "image": "/images/menu-hd/ambur-biriyani.webp",
+    "width": 1263,
+    "height": 1246,
+    "bytes": 713214,
+    "sha256": "b97fd2c6d4b1bdd8bd8848db3f0e14bcca9b62c58221e6b43994b675ec3ea095"
+  },
+  {
+    "id": "kozhikode-biriyani",
+    "generationMode": "source-referenced",
+    "reference": "/images/kozhikode-biriyani.webp",
+    "image": "/images/menu-hd/kozhikode-biriyani.webp",
+    "width": 1266,
+    "height": 1242,
+    "bytes": 668086,
+    "sha256": "95cc2a7c019c2c186adac91eb36fa4e6a2deb2218c24f0dedb5f82576a9f8cf2"
+  },
+  {
+    "id": "malabar-biriyani",
+    "generationMode": "source-referenced",
+    "reference": "/images/malabar-biriyani.webp",
+    "image": "/images/menu-hd/malabar-biriyani.webp",
+    "width": 1261,
+    "height": 1247,
+    "bytes": 777422,
+    "sha256": "a401162c4c1c2b68fd7be2963233f8914872905ceaa4c05d9291be0c361c41c8"
+  },
+  {
+    "id": "cutlet",
+    "generationMode": "source-referenced",
+    "reference": "/images/cutlet.webp",
+    "image": "/images/menu-hd/cutlet.webp",
+    "width": 1262,
+    "height": 1246,
+    "bytes": 690250,
+    "sha256": "d3b16e72bdb678a52806a044c053122f59902bfcace0576eba0b3bea00b47a39"
+  },
+  {
+    "id": "samosa",
+    "generationMode": "source-referenced",
+    "reference": "/images/samosa.webp",
+    "image": "/images/menu-hd/samosa.webp",
+    "width": 1261,
+    "height": 1247,
+    "bytes": 645160,
+    "sha256": "46db45b393db33d006ad16e5197111d778c3dcfbe546e77f050cb451cc769bff"
+  },
+  {
+    "id": "vada",
+    "generationMode": "fresh composition from dish brief",
+    "reference": "/images/vada.webp",
+    "image": "/images/menu-hd/vada.webp",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 718270,
+    "sha256": "17ea9678fee62d5ea1db0259d153ee6b777b580327fa079e4c5b842463258b46"
+  },
+  {
+    "id": "pazham-pori",
+    "generationMode": "source-referenced",
+    "reference": "/images/pazham-pori.webp",
+    "image": "/images/menu-hd/pazham-pori.webp",
+    "width": 1261,
+    "height": 1247,
+    "bytes": 639570,
+    "sha256": "14a5b1fc9b7e2c0de4abced895519fb0801e0eada21d1b4afaffce0396683e6f"
+  },
+  {
+    "id": "parippu-vada",
+    "generationMode": "source-referenced",
+    "reference": "/images/parippu-vada.webp",
+    "image": "/images/menu-hd/parippu-vada.webp",
+    "width": 1261,
+    "height": 1247,
+    "bytes": 633290,
+    "sha256": "54e19dba1b3c51ec7a66aafbbfb74fb8068f5b8708da3f742f1cab2c8640dd50"
+  },
+  {
+    "id": "bonda",
+    "generationMode": "source-referenced",
+    "reference": "/images/bonda.webp",
+    "image": "/images/menu-hd/bonda.webp",
+    "width": 1263,
+    "height": 1245,
+    "bytes": 677926,
+    "sha256": "25bcf27dddd52963252b1aa525ea50d83c1d42f79636c705e547bcaa94912e47"
+  },
+  {
+    "id": "ulli-vada",
+    "generationMode": "source-referenced",
+    "reference": "/images/ulli-vada.webp",
+    "image": "/images/menu-hd/ulli-vada.webp",
+    "width": 1265,
+    "height": 1243,
+    "bytes": 650492,
+    "sha256": "cfb74b5bd28a741c26ee0a24fe4bb241f3b6dedb77192e1742da30d2aad55a23"
+  },
+  {
+    "id": "sukhiyan",
+    "generationMode": "fresh composition from dish brief",
+    "reference": "/images/sukhiyan.webp",
+    "image": "/images/menu-hd/sukhiyan.webp",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 713550,
+    "sha256": "21a3b913887d866f974128d1dfca3987b34e6b5d7d419f32ef8ce3345d4ed57f"
+  },
+  {
+    "id": "ela-ada",
+    "generationMode": "source-referenced",
+    "reference": "/images/ela-ada-wrapped.webp",
+    "image": "/images/menu-hd/ela-ada.webp",
+    "width": 1263,
+    "height": 1246,
+    "bytes": 577926,
+    "sha256": "c01fa2099747610fe1d3004d0e1b065b6f29ae66ecac4b94386605b8ab399c73"
+  },
+  {
+    "id": "mulaku-bajji",
+    "generationMode": "source-referenced",
+    "reference": "/images/mulaku-bajji.webp",
+    "image": "/images/menu-hd/mulaku-bajji.webp",
+    "width": 1261,
+    "height": 1247,
+    "bytes": 600318,
+    "sha256": "f86844e24eea0830b789a8f5878c7728634d7c9eafa5ae826f7285fc4aa574db"
+  },
+  {
+    "id": "kozhukatta",
+    "generationMode": "source-referenced",
+    "reference": "/images/kozhukatta.webp",
+    "image": "/images/menu-hd/kozhukatta.webp",
+    "width": 1261,
+    "height": 1247,
+    "bytes": 528776,
+    "sha256": "9e4f55e15ebfc089c83e3cc52ade1e9d442f07f07a2a3f351d623acab973304b"
+  },
+  {
+    "id": "poricha-pathiri",
+    "generationMode": "source-referenced",
+    "reference": "/images/poricha-pathiri.webp",
+    "image": "/images/menu-hd/poricha-pathiri.webp",
+    "width": 1261,
+    "height": 1247,
+    "bytes": 634116,
+    "sha256": "c6a24f2235f80272138b64c71fc1ab3e4702be2dda1e7c74156dc6fc718625ee"
+  },
+  {
+    "id": "kesari",
+    "generationMode": "fresh composition from dish brief",
+    "reference": "/images/kesari.webp",
+    "image": "/images/menu-hd/kesari.webp",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 660158,
+    "sha256": "c5ca7347fca6f5397cf5da31fdf6a4a0f1399ca912fd8651394982f573c67a13"
+  },
+  {
+    "id": "idli",
+    "generationMode": "source-referenced",
+    "reference": "/images/idli.webp",
+    "image": "/images/menu-hd/idli.webp",
+    "width": 1262,
+    "height": 1246,
+    "bytes": 557578,
+    "sha256": "d4517268e62fea543b89dfa08ae8fd4206c14b4864a64d5e81b1f6e36368cc04"
+  },
+  {
+    "id": "egg-bajji",
+    "generationMode": "source-referenced",
+    "reference": "/images/egg-bajji.webp",
+    "image": "/images/menu-hd/egg-bajji.webp",
+    "width": 1261,
+    "height": 1247,
+    "bytes": 633302,
+    "sha256": "df2869cec5994d737662e7ca59aa9c3dbfc932ba76dcd8c195de859cc519ec73"
+  },
+  {
+    "id": "egg-puffs",
+    "generationMode": "source-referenced",
+    "reference": "/images/egg-puffs-menu.webp",
+    "image": "/images/menu-hd/egg-puffs.webp",
+    "width": 1263,
+    "height": 1246,
+    "bytes": 649042,
+    "sha256": "4312fa304857a5646b10cb47171f4b6c74b33159fba3009883cab449b881edcd"
+  }
+]

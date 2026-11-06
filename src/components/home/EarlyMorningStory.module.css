@@ -1,0 +1,214 @@
+/* ══════════════════════════════════════════════════════════════════════════════════
+   CAFÉ SERENITY — EARLY MORNING STORY SECTION
+   Communicates the 5:00 AM breakfast purpose in the approved dark luxury editorial style.
+   Solid #151713 dark charcoal background, clean typography, breakfast reveal animation.
+   ══════════════════════════════════════════════════════════════════════════════════ */
+
+.section {
+  position: relative;
+  width: 100%;
+  background: #151713;
+  color: #FFF9EE;
+  padding: clamp(4.5rem, 7.5vw, 7rem) clamp(1.25rem, 4vw, 2.5rem);
+  border: none;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+}
+
+/* ── Left Column: Story Content ── */
+.storyCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Primary Editorial Headline */
+.headline {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.4rem, 4.4vw, 4.2rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  color: #FFF9EE !important;
+  margin: 0 0 1.5rem;
+}
+
+.headline em {
+  font-style: italic;
+  font-weight: 400;
+  color: #FFF9EE !important;
+  letter-spacing: -0.035em;
+}
+
+/* Narrative Paragraph */
+.narrative {
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
+  line-height: 1.85;
+  color: #c8c1b2;
+  margin: 0 0 1.75rem;
+  max-width: 32rem;
+}
+
+/* Highlighted Statement */
+.microDetail {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  border-left: 2px solid #F8C548;
+  background: transparent;
+  margin-bottom: 2.25rem;
+  max-width: 32rem;
+}
+
+.microcopy {
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255, 249, 238, 0.95);
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+/* CTA Action */
+.ctaWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: 9999px;
+  background: rgba(248, 197, 72, 0.12);
+  border: 1px solid rgba(248, 197, 72, 0.35);
+  color: #F8C548;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.4);
+}
+
+.ctaButton:hover {
+  background: #F8C548;
+  color: #12140f;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -8px rgba(248, 197, 72, 0.4);
+}
+
+.ctaButton:focus-visible {
+  outline: 2px solid #F8C548;
+  outline-offset: 4px;
+}
+
+.ctaIcon {
+  font-size: 1.05rem;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.ctaButton:hover .ctaIcon {
+  transform: translate(2px, -2px);
+}
+
+/* ── Right Column: Isolated Transparent Cutout Composition ── */
+.visualCol {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cutoutStage {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  aspect-ratio: 915 / 649;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cutoutImage {
+  object-fit: contain;
+  filter: drop-shadow(0 14px 18px rgba(0, 0, 0, 0.45));
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cutoutStage:hover .cutoutImage {
+  transform: scale(1.025) translateY(-3px);
+}
+
+/* Delicate Rising Morning Steam Trails */
+.breakfastSteam {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+  filter: blur(0.4px);
+}
+
+/* ── Responsive Behavior ── */
+@media (max-width: 960px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+
+  .narrative, .microDetail {
+    max-width: 100%;
+  }
+
+  .cutoutStage {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .headline {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .narrative {
+    font-size: 0.98rem;
+    line-height: 1.75;
+    margin-bottom: 1.4rem;
+  }
+
+  .microDetail {
+    padding: 0.65rem 1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .cutoutStage {
+    max-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cutoutImage, .ctaButton, .ctaIcon {
+    transition: none !important;
+  }
+}

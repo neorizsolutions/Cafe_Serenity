@@ -1,0 +1,313 @@
+/* ══════════════════════════════════════════════════════════════════════════════════
+   CAFÉ SERENITY — FEATURED FOOD CARDS (REFINED)
+   Balanced 3-card presentation carrying forward the dark luxury Hero identity.
+   ══════════════════════════════════════════════════════════════════════════════════ */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.25rem, 2.2vw, 2rem);
+  align-items: stretch;
+  width: 100%;
+}
+
+/* ── Individual Card Container ── */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+  padding: clamp(1.25rem, 2vw, 1.6rem);
+  border-radius: 1.85rem;
+  color: #FFF2D4;
+  text-decoration: none;
+  background: #141712;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+}
+
+/* Palette Variations for Each Collection */
+.card[data-collection='biriyani'] {
+  background: 
+    radial-gradient(ellipse at 50% 10%, rgba(185, 73, 45, 0.28), transparent 70%),
+    linear-gradient(175deg, #241813 0%, #17110e 55%, #100c09 100%);
+  border: 1px solid rgba(220, 115, 75, 0.28);
+  box-shadow: 
+    0 24px 60px -15px rgba(0, 0, 0, 0.8),
+    0 0 35px rgba(185, 73, 45, 0.08),
+    inset 0 1px 0 rgba(220, 115, 75, 0.22);
+}
+
+.card[data-collection='savouries'] {
+  background: 
+    radial-gradient(ellipse at 50% 10%, rgba(41, 75, 59, 0.3), transparent 70%),
+    linear-gradient(175deg, #17241d 0%, #111a14 55%, #0c120e 100%);
+  border: 1px solid rgba(85, 160, 115, 0.26);
+  box-shadow: 
+    0 24px 60px -15px rgba(0, 0, 0, 0.8),
+    0 0 35px rgba(41, 75, 59, 0.08),
+    inset 0 1px 0 rgba(85, 160, 115, 0.2);
+}
+
+.card[data-collection='sweets'] {
+  background: 
+    radial-gradient(ellipse at 50% 10%, rgba(165, 105, 60, 0.26), transparent 70%),
+    linear-gradient(175deg, #231c15 0%, #18130e 55%, #100d0a 100%);
+  border: 1px solid rgba(215, 145, 85, 0.26);
+  box-shadow: 
+    0 24px 60px -15px rgba(0, 0, 0, 0.8),
+    0 0 35px rgba(165, 105, 60, 0.08),
+    inset 0 1px 0 rgba(215, 145, 85, 0.2);
+}
+
+/* Hover Dynamics */
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(248, 197, 72, 0.45);
+  box-shadow: 
+    0 36px 85px -18px rgba(0, 0, 0, 0.95),
+    0 0 45px rgba(248, 197, 72, 0.15),
+    inset 0 1px 0 rgba(248, 197, 72, 0.35);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--primary, #F8C548);
+  outline-offset: 5px;
+}
+
+/* ── Photographic Stage ── */
+.art {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 13;
+  border-radius: 1.35rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 70%), #0c0e0b;
+  border: 1px solid rgba(255, 242, 212, 0.08);
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Atmospheric Glow Behind Food Plate */
+.pedestalGlow {
+  position: absolute;
+  width: 72%;
+  height: 72%;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(28px);
+  opacity: 0.9;
+}
+
+.pedestalGlow[data-collection='biriyani'] {
+  background: rgba(185, 73, 45, 0.35);
+}
+
+.pedestalGlow[data-collection='savouries'] {
+  background: rgba(41, 75, 59, 0.42);
+}
+
+.pedestalGlow[data-collection='sweets'] {
+  background: rgba(165, 105, 60, 0.38);
+}
+
+/* Main Singular Hero Food Image */
+.mainFood {
+  position: relative;
+  width: 86%;
+  height: 86%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainFood img {
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 20px 22px rgba(0, 0, 0, 0.55));
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Full Bleed Photographic Trio Compositions */
+.card[data-collection='savouries'] .mainFood,
+.card[data-collection='sweets'] .mainFood {
+  width: 100%;
+  height: 100%;
+}
+
+.card[data-collection='savouries'] .mainFood img {
+  object-fit: cover;
+  object-position: center 60%;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.65));
+}
+
+.card[data-collection='sweets'] .mainFood img {
+  object-fit: cover;
+  object-position: center center;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.65));
+}
+
+.card:hover .mainFood img {
+  transform: scale(1.045);
+}
+
+/* Atmospheric Vignette on Photo Cards */
+.photoVignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  border-radius: 1.35rem;
+  box-shadow: 
+    inset 0 0 28px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Biriyani Balanced Side Accompaniments (Raita & Pickle) */
+.sideRaita {
+  position: absolute;
+  width: 25%;
+  height: 25%;
+  right: 5%;
+  bottom: 5%;
+  z-index: 3;
+}
+
+.sidePickle {
+  position: absolute;
+  width: 23%;
+  height: 23%;
+  left: 5%;
+  bottom: 5%;
+  z-index: 3;
+}
+
+.sideRaita img,
+.sidePickle img {
+  object-fit: contain;
+  filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.55));
+}
+
+/* ── Content & Typography ── */
+.copy {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.4rem 0.4rem 0.4rem;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary, #F8C548);
+  margin: 0 0 0.45rem;
+  opacity: 0.92;
+}
+
+.heading {
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(1.85rem, 2.4vw, 2.35rem);
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: #FFF2D4;
+  margin: 0 0 0.55rem;
+}
+
+.heading em {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  color: var(--primary, #F8C548);
+  font-weight: 400;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: rgba(255, 242, 212, 0.72);
+  margin: 0 0 1.25rem;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 242, 212, 0.12);
+  font-size: 0.82rem;
+  font-weight: 650;
+  color: #FFF2D4;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.linkIcon {
+  font-size: 1.15rem;
+  color: var(--primary, #F8C548);
+  transition: transform 0.25s ease;
+}
+
+.card:hover .link {
+  color: #FFFFFF;
+  border-color: rgba(248, 197, 72, 0.35);
+}
+
+.card:hover .linkIcon {
+  transform: translate(3px, -3px);
+}
+
+/* ── Responsive Adaptations ── */
+@media (max-width: 1023px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .card {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.35rem;
+  }
+  .art {
+    aspect-ratio: 16 / 13;
+  }
+  .copy {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.15rem;
+    border-radius: 1.5rem;
+  }
+  .art {
+    aspect-ratio: 16 / 12;
+    border-radius: 1.15rem;
+  }
+  .heading {
+    font-size: 1.85rem;
+  }
+  .subtitle {
+    font-size: 0.82rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .mainFood img,
+  .linkIcon {
+    transition: none !important;
+    transform: none !important;
+  }
+}
