@@ -12,7 +12,7 @@ function Ingredient({ progress, kind, index = 0 }: { progress: MotionValue<numbe
   const scale = useTransform(progress, p => biriyaniPose(p, kind, index).scale);
   const opacity = useTransform(progress, p => biriyaniPose(p, kind, index).opacity);
   return <motion.div data-biriyani-ingredient={`${kind}-${index}`} className={`${styles.biriyaniLayer} ${styles[kind]}`} style={{ x, y, rotate, scale, opacity }}>
-    <Image src={kind === 'rice' ? '/images/motion-study/biriyani-layer-masala-rice.png' : kind === 'chicken' ? '/images/motion-study/biriyani-layer-dum-chicken.png' : index === 0 ? '/images/motion-study/biriyani-side-pickle.png' : '/images/motion-study/biriyani-side-raita.png'} alt="" width={1254} height={1254} sizes={kind === 'rice' ? '(max-width:700px) 80vw, 50vw' : '(max-width:700px) 35vw, 22vw'} loading="eager" />
+    <Image src={kind === 'rice' ? '/images/motion-study/biriyani-layer-masala-rice.webp' : kind === 'chicken' ? '/images/motion-study/biriyani-layer-dum-chicken.webp' : index === 0 ? '/images/motion-study/biriyani-side-pickle.webp' : '/images/motion-study/biriyani-side-raita.webp'} alt="" width={1254} height={1254} sizes={kind === 'rice' ? '(max-width:700px) 80vw, 50vw' : '(max-width:700px) 35vw, 22vw'} loading="eager" />
   </motion.div>;
 }
 
@@ -25,7 +25,7 @@ export default function BiriyaniBuild({ progress, reduced }: { progress: MotionV
   const steamOpacity = useTransform(progress, [.95, .98, 1], [0, reduced ? 0 : .3, reduced ? 0 : .3]);
   const steamY = useTransform(progress, [.95, 1], [8, -8]);
   return <motion.div className={styles.biriyaniBuild} data-biriyani-build style={{ x, y, rotate, scale, opacity }}>
-    <div className={styles.biriyaniMain}><div className={styles.biriyaniLayer}><Image src="/images/motion-study/biriyani-layer-bowl.png" alt="" width={1254} height={1254} sizes="(max-width:700px) 85vw, 53vw" loading="eager" /></div>
+    <div className={styles.biriyaniMain}><div className={styles.biriyaniLayer}><Image src="/images/motion-study/biriyani-layer-bowl.webp" alt="" width={1254} height={1254} sizes="(max-width:700px) 85vw, 53vw" loading="eager" /></div>
     <Ingredient kind="rice" progress={progress} />
     {[0, 1].map(index => <Ingredient key={`chicken-${index}`} kind="chicken" index={index} progress={progress} />)}
     </div>

@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { CONTACT_DETAILS } from '@/constants';
 import styles from './AboutSection.module.css';
@@ -16,19 +15,15 @@ export default function AboutSection() {
       <section className={styles.morning} aria-labelledby="about-morning">
         <div>
           <h2 id="about-morning">For the early risers</h2>
-          <p>Some mornings start well before the rest of the city wakes up. For people heading to work or getting an early start, there’s the comfort of steamed idlis and medu vada with coconut chutney and sambar.</p>
+          <p>Some mornings start well before the rest of the city wakes up. For anyone heading to a first shift or getting a head start on the day, breakfast can be a moment to sit down before moving on.</p>
         </div>
-        <figure>
-          <Image
-            src="/images/cutouts/breakfast-story-cutout.webp"
-            alt="Illustration of idlis, medu vada, sambar and coconut chutney on a banana leaf"
-            width={915}
-            height={649}
-            sizes="(max-width: 720px) 85vw, 480px"
-            className={styles.foodImage}
-          />
-          <figcaption>Breakfast illustration</figcaption>
-        </figure>
+        <div className={styles.breakfastFeature}>
+          <h3>Idli &amp; medu vada</h3>
+          <p>Soft steamed idli, crisp medu vada, coconut chutney and warm sambar. Make time for a cup of chaaya if you can.</p>
+          <Link href="/cafe-menu#collection-savouries" className={styles.link}>
+            Browse breakfast favourites <span aria-hidden="true">↗</span>
+          </Link>
+        </div>
       </section>
 
       <section className={styles.food} aria-labelledby="about-food">

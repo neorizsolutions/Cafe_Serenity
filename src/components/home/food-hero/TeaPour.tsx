@@ -28,9 +28,9 @@ export default function TeaPour({ progress, reduced }: { progress: MotionValue<n
   const steamY = useTransform(progress, [.55, .67], [5, -8]);
   return <motion.div className={styles.teaScene} data-tea-pour style={{ x, y, rotate, opacity }}>
     <div className={styles.glassArtwork}>
-      <motion.div className={styles.liquidLayer} style={{ opacity: emptyOpacity }}><Image className={styles.emptyGlass} src="/images/motion-study/hero-chaaya-empty.png" alt="" width={1118} height={1407} sizes="(max-width:700px) 65vw, 38vw" loading="eager" /></motion.div>
-      <motion.div className={styles.liquidLayer} style={{ clipPath }}><Image src="/images/motion-study/hero-sculpted-chaaya.png" alt="" width={1220} height={1289} sizes="(max-width:700px) 65vw, 38vw" loading="eager" /></motion.div>
-      <motion.div className={styles.liquidLayer} style={{ opacity: fullOpacity }}><Image src="/images/motion-study/hero-sculpted-chaaya.png" alt="" width={1220} height={1289} sizes="(max-width:700px) 65vw, 38vw" loading="eager" /></motion.div>
+      <motion.div className={styles.liquidLayer} style={{ opacity: emptyOpacity }}><Image className={styles.emptyGlass} src="/images/motion-study/hero-chaaya-empty.webp" alt="" width={1118} height={1407} sizes="(max-width:700px) 65vw, 38vw" loading="eager" /></motion.div>
+      <motion.div className={styles.liquidLayer} style={{ clipPath }}><Image src="/images/motion-study/hero-sculpted-chaaya.webp" alt="" width={1220} height={1289} sizes="(max-width:700px) 65vw, 38vw" loading="eager" /></motion.div>
+      <motion.div className={styles.liquidLayer} style={{ opacity: fullOpacity }}><Image src="/images/motion-study/hero-sculpted-chaaya.webp" alt="" width={1220} height={1289} sizes="(max-width:700px) 65vw, 38vw" loading="eager" /></motion.div>
     </div>
     <svg className={styles.pourEffects} viewBox="0 0 100 100" fill="none" aria-hidden="true">
       <defs><linearGradient id="serenity-tea-stream" x1="0%" y1="0%" x2="100%" y2="0%"><stop stopColor="#a66732" /><stop offset=".4" stopColor="#dfaa65" /><stop offset=".7" stopColor="#d79a50" /><stop offset="1" stopColor="#ad6e34" /></linearGradient></defs>

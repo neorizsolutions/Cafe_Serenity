@@ -14,7 +14,7 @@ const CARDS = [
     dish: 'Malabar Biriyani',
     description: 'Eight regional biriyani varieties.',
     href: '/cafe-menu#category-biriyani',
-    images: ['/images/menu-hd/malabar-biriyani.webp', '/images/motion-study/biriyani-side-raita.png', '/images/motion-study/biriyani-side-pickle.png'],
+    images: ['/images/menu-hd/malabar-biriyani.webp', '/images/motion-study/biriyani-side-raita.webp', '/images/motion-study/biriyani-side-pickle.webp'],
   },
   {
     kind: 'savouries',

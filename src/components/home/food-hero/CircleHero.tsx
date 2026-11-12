@@ -32,7 +32,7 @@ function DispersingVada({ progress, index }: { progress: MotionValue<number>; in
   const scale = useTransform(progress, p => vadaPose(p, index).scale);
   const opacity = useTransform(progress, p => vadaPose(p, index).opacity);
   return <motion.div data-vada={index} className={`${styles.food} ${styles.vada}`} style={{ x, y, rotate, scale, opacity, zIndex: index === 2 ? 3 : index === 0 ? 2 : 1 }}>
-    <Image src="/images/motion-study/hero-circle-vada.png" alt="" width={1254} height={1254} sizes="(max-width: 700px) 38vw, 24vw" loading="eager" />
+    <Image src="/images/motion-study/hero-circle-vada.webp" alt="" width={1254} height={1254} sizes="(max-width: 700px) 38vw, 24vw" loading="eager" fetchPriority="high" />
   </motion.div>;
 }
 export default function CircleHero({ forceReducedMotion = false }: { forceReducedMotion?: boolean }) {
@@ -40,13 +40,19 @@ export default function CircleHero({ forceReducedMotion = false }: { forceReduce
   const prefersReducedMotion = useReducedMotion();
   const reduced = forceReducedMotion || Boolean(prefersReducedMotion);
   const [active, setActive] = useState(0);
+  const [loadedThrough, setLoadedThrough] = useState(0);
   const { scrollYProgress } = useScroll({ target: region, offset: ['start start', 'end end'] });
   // The same food beats are scrubbed directly by scroll position: no timer or inertia.
   const scrollProgress = useTransform(scrollYProgress, FOOD_TOUR_TIMES, FOOD_TOUR_VALUES);
   const still = useMotionValue(.11);
   const progress = reduced ? still : scrollProgress;
   useMotionValueEvent(progress, 'change', value => {
-    setActive(value < .32 ? 0 : value < .74 ? 1 : 2);
+    const next = value < .32 ? 0 : value < .74 ? 1 : 2;
+    if (next !== active) setActive(next);
+
+    // Mount each later scene ahead of its entrance and keep it ready for reverse scrolling.
+    const upcoming = value >= .5 ? 2 : value > .115 ? 1 : 0;
+    if (upcoming > loadedThrough) setLoadedThrough(upcoming);
   });
   const backgroundColor = useTransform(progress, [0, .21, .43, .62, .84, 1], ['#294b3b', '#294b3b', '#573426', '#573426', '#ac3f25', '#ac3f25']);
   function goTo(index: number) {
@@ -61,8 +67,8 @@ export default function CircleHero({ forceReducedMotion = false }: { forceReduce
         <div className={styles.copy}><div className={styles.chapters}>{chapters.map((_, index) => <Chapter key={index} index={index} progress={progress} active={active === index} />)}</div></div>
         <div className={styles.visual} aria-hidden="true">
           {[0, 1, 2].map(index => <DispersingVada key={index} progress={progress} index={index} />)}
-          <TeaPour progress={progress} reduced={reduced} />
-          <BiriyaniBuild progress={progress} reduced={reduced} />
+          {loadedThrough >= 1 && <TeaPour progress={progress} reduced={reduced} />}
+          {loadedThrough >= 2 && <BiriyaniBuild progress={progress} reduced={reduced} />}
         </div>
         {reduced && <nav className={styles.controls} aria-label="Food scenes">
           <button type="button" aria-label="Previous food scene" onClick={() => goTo(active - 1)}><ChevronLeft size={18} /></button>

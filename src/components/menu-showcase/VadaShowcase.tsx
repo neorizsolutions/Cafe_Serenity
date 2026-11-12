@@ -65,7 +65,7 @@ export default function VadaShowcase({
             />
           ) : (
             <Image
-              src="/images/motion-study/hero-circle-vada.png"
+              src="/images/motion-study/hero-circle-vada.webp"
               alt="Sculpted golden Medu Vada with transparent background over deep forest pedestal"
               fill
               priority

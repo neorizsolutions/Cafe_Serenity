@@ -106,38 +106,15 @@
 .menu-empty > span { color: #85671F; font-size: 3rem; }
 .menu-empty h2 { font-size: 1.7rem; font-weight: 700; }
 .menu-empty p { margin: .8rem 0 1.5rem; color: #625D54; line-height: 1.8; }
-.brand-help-strip { max-width: 1120px; margin: 0 auto 4rem; padding: 2rem; border-radius: 1.5rem; background: #F4E7C4; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem; }
-.brand-help-strip h2 { font-size: 1.6rem; font-weight: 700; letter-spacing: -.025em; }
-.brand-help-strip p { color: #625D54; margin-top: .6rem; font-size: .9375rem; line-height: 1.8; }
-.brand-help-strip > div:last-child { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
 .brand-faq-page { max-width: 960px; margin-inline: auto; padding: 3rem 2rem 5rem; }
 .brand-faq-help { padding-top: 3rem; }
 .brand-faq-help h2 { font-size: 1.8rem; font-weight: 700; }
 .brand-faq-help p { color: #625D54; margin: 1rem 0 1.5rem; line-height: 1.8; }
-.guide-jump-links { max-width: 1120px; margin-inline: auto; padding: 1.5rem 2rem; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; font-size: .875rem; color: #705619; border-bottom: 1px solid #B69A5230; }
-.guide-jump-links a { display: inline-flex; min-height: 44px; align-items: center; }
-.brand-food-guide { max-width: 1184px; margin-inline: auto; padding: 3rem 2rem 5rem; }
-.guide-article, .guide-portion-article { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 3rem; padding-block: 1rem 4rem; scroll-margin-top: 110px; }
-.brand-food-guide h2 { font-size: clamp(2rem,3vw,3rem); font-weight: 750; letter-spacing: -.04em; line-height: 1.12; }
-.brand-food-guide h2 span { color: #FFF9EE; }
-.brand-food-guide p { margin-top: 1.2rem; color: #625D54; font-size: .9375rem; line-height: 1.95; }
-.guide-image { position: relative; aspect-ratio: 1; border-radius: 1.5rem; overflow: hidden; background: #F7F4EE; }
-.guide-image img { object-fit: contain; object-position: center; padding: clamp(.75rem, 2vw, 1.5rem); }
-.guide-varieties { display: flex; flex-wrap: wrap; gap: .4rem; margin-block: 1.4rem; }
-.guide-varieties li { padding: .4rem .7rem; border: 1px solid #B69A5240; border-radius: 99px; font-size: .75rem; color: #705619; }
-.guide-portion-article { padding-block: 3rem 4rem; border-top: 1px solid #B69A5230; }
-.guide-portion-table { padding: 2rem; border-radius: 1.25rem; background: #20211E; color: #FFF9EE; }
-.guide-portion-table h3 { color: #F0D58C; font-size: 1rem; font-weight: 600; }
-.guide-portion-table dl > div { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.3rem 0; border-bottom: 1px solid #FFF9EE25; }
-.guide-portion-table dd { font-size: 2.2rem; color: #F8C548; font-weight: 650; }
-.guide-portion-table p { font-size: .8rem; color: #D6D0C4; margin-bottom: 1.4rem; }
-.guide-before-visit { border-top: 1px solid #B69A5230; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding-top: 3rem; }
-.guide-before-visit p:first-child { margin-top: 0; }
 @media(min-width:1200px) { .menu-results-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } }
-@media(max-width:1199px) { .menu-results-wrap { margin-inline: 2rem; } .brand-help-strip { margin-inline: 2rem; } }
+@media(max-width:1199px) { .menu-results-wrap { margin-inline: 2rem; } }
 @media(max-width:1023px) { :root { --site-header-height: 64px; } .brand-desktop-nav, .brand-nav-cta { display: none; } .brand-header-inner { padding-inline: 1.5rem; } .brand-menu-toggle { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid #F8C54850; border-radius: .65rem; color: #F8C548; font-size: 1.5rem; cursor: pointer; } }
 @media(min-width:1024px) { .brand-mobile-nav, .brand-menu-backdrop { display: none; } }
-@media(max-width:767px) { .brand-orientation, .brand-faq-preview, .brand-page-intro, .brand-food-guide { padding-inline: 1.5rem; } .brand-orientation-grid { grid-template-columns: 1fr; } .brand-orientation-card { display: grid; grid-template-columns: .8fr 1.2fr; } .brand-orientation-photo { height: 100%; min-height: 200px; aspect-ratio: auto; } .brand-portion-guide { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem; } .brand-portion-options > div { padding: 1.2rem; } .brand-portion-options strong { font-size: 2.5rem; } .menu-discovery { padding-inline: 1.5rem; } .menu-search { max-width: none; } .menu-results-wrap { margin-inline: 1.5rem; } .menu-results-grid { grid-template-columns: 1fr; } .brand-help-strip { margin-inline: 1.5rem; padding: 1.5rem; } .guide-article, .guide-portion-article, .guide-before-visit { grid-template-columns: 1fr; gap: 2rem; } .guide-image { aspect-ratio: 1.35; } .guide-before-visit { gap: 1.5rem; } }
+@media(max-width:767px) { .brand-orientation, .brand-faq-preview, .brand-page-intro { padding-inline: 1.5rem; } .brand-orientation-grid { grid-template-columns: 1fr; } .brand-orientation-card { display: grid; grid-template-columns: .8fr 1.2fr; } .brand-orientation-photo { height: 100%; min-height: 200px; aspect-ratio: auto; } .brand-portion-guide { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem; } .brand-portion-options > div { padding: 1.2rem; } .brand-portion-options strong { font-size: 2.5rem; } .menu-discovery { padding-inline: 1.5rem; } .menu-search { max-width: none; } .menu-results-wrap { margin-inline: 1.5rem; } .menu-results-grid { grid-template-columns: 1fr; } }
 @media(max-width:420px) { .brand-orientation-card { display: flex; } .brand-orientation-photo { aspect-ratio: 1.6; min-height: 0; height: auto; } .brand-orientation-card > div:last-child { padding: 1.2rem; } }
 @media(prefers-reduced-motion:no-preference) { .brand-button, .brand-nav-cta, .menu-filter-group button { transition: background-color .2s,border-color .2s; } }
 

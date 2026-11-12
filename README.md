@@ -29,7 +29,7 @@ Open [the local site](http://127.0.0.1:3000/). For a production preview, run `np
 
 ## Approved hero
 
-`src/components/home/Hero.tsx` renders the shared `CircleHero` under `src/components/home/food-hero/`. The same component appears on `/design-preview`. The sequence is Vada disassembly, Chaaya pouring, then Kerala biriyani assembly. Motion tracks the scroll position, holds when scrolling stops and reverses when scrolling upward. Reduced-motion users get static scene controls.
+`src/components/home/Hero.tsx` renders the shared `CircleHero` under `src/components/home/food-hero/`. The same component appears on `/design-preview`. The sequence is Vada disassembly, Chaaya pouring, then Kerala biriyani assembly. Motion tracks the scroll position, holds when scrolling stops and reverses when scrolling upward. Reduced-motion users get static scene controls. The live layers use transparent WebP exports under `public/images/motion-study/`. The original PNGs are retained, and later scenes load ahead of their scroll entrances.
 
 For below-hero work, preserve the hero artwork, copy, semantic H1, mobile sizing, header height and matching backgrounds. The back-to-top control stays hidden while the hero is visible.
 

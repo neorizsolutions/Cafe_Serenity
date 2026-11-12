@@ -58,22 +58,13 @@
   align-items: center;
 }
 
-.morning figure {
-  margin: 0;
+.breakfastFeature {
+  padding-block: 0.75rem;
 }
 
-.foodImage {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 25rem;
-  object-fit: contain;
-}
-
-.morning figcaption {
-  text-align: center;
-  color: #d3cabb;
-  font-size: 0.8rem;
+.breakfastFeature h3 {
+  color: var(--primary, #f8c548);
+  font-size: clamp(1.9rem, 4vw, 2.9rem);
 }
 
 .chapters {
@@ -107,9 +98,5 @@
   .morning,
   .chapters {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .foodImage {
-    max-height: 18rem;
   }
 }
