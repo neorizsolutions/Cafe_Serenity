@@ -1,7 +1,7 @@
 import AboutSection from '@/components/home/AboutSection';
 import { constructMetadata } from '@/utils/seo';
 export const metadata = constructMetadata({title:'About Café Serenity | Kakkanad',description:'Biriyani, Kerala snacks and everyday café favourites in Kakkanad, Kochi.',path:'/about'});
-export default function AboutPage(){ return <AboutSection standalone />; }
+export default function AboutPage(){ return <AboutSection />; }
 
 
 // Previous implementation preserved for reference and possible reactivation.

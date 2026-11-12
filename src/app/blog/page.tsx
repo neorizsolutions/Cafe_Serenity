@@ -1,15 +1,90 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { BIRIYANI_NAMES } from '@/data/cafe-menu/items';
+import { CAFE_ITEMS } from '@/data/cafe-menu/items';
 import { constructMetadata } from '@/utils/seo';
-export const metadata = constructMetadata({title:'Food Guide — Biriyani, Snacks & Sweet Treats',description:'Get to know the Biriyani, snacks and sweets on Café Serenity’s menu, compare portions and plan your café visit.',path:'/blog'});
+import styles from './FoodGuide.module.css';
+
+export const metadata = constructMetadata({
+  title: 'Food Guide — Biriyani, Snacks & Sweets',
+  description: 'Find a biriyani to try, compare Half and Full portions, and get to know Café Serenity’s Kerala tea-time favourites.',
+  path: '/blog',
+});
+
+const biriyanis = CAFE_ITEMS.filter((item) => item.category === 'biriyani');
+const portions = biriyanis[0]?.portions;
+
 export default function FoodGuide() {
-  return <><section className="brand-page-intro editorial"><div><h1>Get to know<br /><span>your next favourite.</span></h1><p>Biriyani, portions and Kerala tea-time favourites.</p></div></section>
-    <nav className="guide-jump-links editorial-guide-nav" aria-label="Food guide sections"><a href="#biriyani-guide">The Biriyani collection ↘</a><a href="#portion-guide">Half or Full? ↘</a><a href="#sweet-and-savoury">Snacks & sweets ↘</a></nav>
-    <div className="brand-food-guide editorial">
-      <article id="biriyani-guide" className="guide-article"><div className="guide-image"><Image quality={90} src="/images/menu-hd/malabar-biriyani.webp" alt="An illustrative plate of Malabar Biriyani" fill sizes="(max-width:767px) 90vw, 45vw" /></div><div><h2>A collection with<br /><span>room to explore.</span></h2><p>Eight styles of Biriyani, each available in Half or Full. Start with a favourite or ask us to help you choose.</p><ul className="guide-varieties">{BIRIYANI_NAMES.map(name => <li key={name}>{name.replace(' Biriyani','')}</li>)}</ul><Link href="/cafe-menu#category-biriyani" className="brand-inline-link">Explore all eight styles ↗</Link></div></article>
-      <article id="portion-guide" className="guide-portion-article"><div><h2>A smaller lunch?<br /><span>A bigger appetite?</span></h2><p>Half ₹90. Full ₹150. The same prices across every Biriyani on our menu.</p></div><div className="guide-portion-table"><h3>A simple comparison</h3><dl><div><dt>Half Biriyani</dt><dd>₹90</dd></div><div><dt>Full Biriyani</dt><dd>₹150</dd></div></dl><p>Menu images are illustrative. Ask the team if you need more detail about a serving.</p><Link href="/cafe-menu" className="brand-button">Choose your Biriyani ↗</Link></div></article>
-      <article id="sweet-and-savoury" className="guide-article"><div className="guide-image"><Image quality={90} src="/images/menu-hd/pazham-pori.webp" alt="Pazham Pori, one of the snacks on our menu" fill sizes="(max-width:767px) 90vw, 45vw" /></div><div><h2>There is more<br /><span>to a little break.</span></h2><p>Some breaks call for something savoury: a Cutlet, Samosa, Parippu Vada or Egg Puff. Others leave room for Kesari, Sukhiyan, Kozhukatta or Ela Ada.</p><p>Regular snacks and sweets are ₹12 per piece. Egg Puffs are ₹15 each. The illustrated plates show the food, rather than a snack bundle at that price.</p><Link href="/cafe-menu#category-snacks" className="brand-inline-link">Find your next snack ↗</Link></div></article>
-      <section className="guide-before-visit"><h2>A note before your visit.</h2><div><p>Opening hours and daily availability are best checked with the café. Call or message us before travelling if you have a particular dish in mind.</p><p>For ingredients, food allergies or dietary preferences, talk directly with the team before choosing. A photograph cannot tell you everything that goes into a dish.</p><Link href="/contact" className="brand-inline-link">Get in touch with the café ↗</Link></div></section>
-    </div></>;
+  return (
+    <div className={styles.guide}>
+      <header className={styles.intro}>
+        <h1>Food Guide</h1>
+        <p>Find a biriyani for lunch or something to have with your chaaya.</p>
+        <nav aria-label="Food guide sections" className={styles.jumpLinks}>
+          <a href="#biriyani-guide">Biriyani</a>
+          <a href="#portion-guide">Half or Full</a>
+          <a href="#sweet-and-savoury">Snacks and sweets</a>
+        </nav>
+      </header>
+
+      <section id="biriyani-guide" className={styles.feature} aria-labelledby="biriyani-title">
+        <div>
+          <h2 id="biriyani-title">Which biriyani should I try?</h2>
+          <p>Start with Malabar or Kozhikode for a Kerala favourite. Try Hyderabadi for an aromatic, richly flavoured lunch, or Chettinad if you prefer a more robust flavour.</p>
+          <details className={styles.varieties}>
+            <summary>Compare all eight varieties</summary>
+            <dl>
+              {biriyanis.map((dish) => (
+                <div key={dish.id}>
+                  <dt>{dish.name}</dt>
+                  <dd>{dish.description}</dd>
+                </div>
+              ))}
+            </dl>
+          </details>
+          <Link href="/cafe-menu#category-biriyani" className={styles.link}>Browse Biriyani <span aria-hidden="true">↗</span></Link>
+        </div>
+        <Image
+          className={styles.foodImage}
+          src="/images/menu-hd/malabar-biriyani.webp"
+          alt="Illustration of Malabar Biriyani"
+          width={480}
+          height={420}
+          sizes="(max-width: 720px) 85vw, 440px"
+        />
+      </section>
+
+      <section id="portion-guide" className={styles.section} aria-labelledby="portion-title">
+        <h2 id="portion-title">Half or Full?</h2>
+        <p>Choose Half for a lighter lunch or to leave room for a snack. Choose Full when biriyani is the main meal and you want a larger serving. Both sizes are available for every variety.</p>
+        {portions && (
+          <dl className={styles.prices}>
+            <div><dt>Half Biriyani</dt><dd>₹{portions.half}</dd></div>
+            <div><dt>Full Biriyani</dt><dd>₹{portions.full}</dd></div>
+          </dl>
+        )}
+      </section>
+
+      <section id="sweet-and-savoury" className={styles.section} aria-labelledby="snack-title">
+        <h2 id="snack-title">What goes well with chaaya?</h2>
+        <div className={styles.snacks}>
+          <div>
+            <h3>Something savoury</h3>
+            <p>Try Parippu Vada for a crisp lentil bite, Samosa for flaky pastry, or Egg Puffs when you want a more filling snack.</p>
+            <Link href="/cafe-menu#collection-savouries" className={styles.link}>Browse Savouries <span aria-hidden="true">↗</span></Link>
+          </div>
+          <div>
+            <h3>Something sweet</h3>
+            <p>Try Ela Ada for a steamed banana-leaf parcel, Kozhukatta for a soft rice dumpling, or Kesari for a semolina sweet.</p>
+            <Link href="/cafe-menu#collection-sweets" className={styles.link}>Browse Sweets <span aria-hidden="true">↗</span></Link>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.section} aria-labelledby="visit-title">
+        <h2 id="visit-title">Have a dish in mind?</h2>
+        <p>Call or message the café to check what’s available today, confirm opening hours, or ask about ingredients and allergens.</p>
+        <Link href="/contact" className={styles.link}>Contact the café <span aria-hidden="true">↗</span></Link>
+      </section>
+    </div>
+  );
 }

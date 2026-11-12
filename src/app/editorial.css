@@ -159,7 +159,7 @@
 .editorial .footer-columns { padding-block: 3.5rem; gap: 4rem; }
 .editorial .footer-columns h3 { text-transform: uppercase; letter-spacing: .16em; font-size: .65rem; color: #f8c548; }
 .editorial .footer-columns nav a { font-size: .85rem; padding-block: .7rem; }
-.editorial .footer-phone { font-family: var(--editorial-serif); font-size: 1.8rem; font-weight: 400; color: #f8c548; }
+.editorial .footer-phone { font-family: var(--font-sans), sans-serif; font-variant-numeric: lining-nums; font-weight: 500; }
 .editorial .footer-bottom { color: #b7b1a3; border-top: 1px solid rgba(255, 242, 212, 0.07); }
 /* Scoped affordances and responsive composition */
 .editorial a:focus-visible, .editorial-chapter:focus-visible, .editorial-product button:focus-visible, .editorial-guide-nav a:focus-visible { outline: 2px solid #f8c548; outline-offset: 5px; }

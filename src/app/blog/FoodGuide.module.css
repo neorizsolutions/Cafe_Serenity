@@ -1,0 +1,133 @@
+.guide {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: clamp(3rem, 7vw, 6rem) clamp(1.25rem, 5vw, 3.5rem);
+  background: var(--background);
+  color: #fff2d4;
+}
+
+.guide h1,
+.guide h2,
+.guide h3 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.guide h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+}
+
+.guide h2 {
+  font-size: clamp(2rem, 4.6vw, 3.55rem);
+}
+
+.guide h3 {
+  font-size: clamp(1.45rem, 3vw, 2rem);
+}
+
+.guide p,
+.varieties dd {
+  max-width: 59ch;
+  margin: 0.85rem 0 0;
+  color: #d3cabb;
+  line-height: 1.7;
+}
+
+.jumpLinks,
+.prices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.6rem;
+  margin-top: 1.15rem;
+}
+
+.jumpLinks a,
+.link,
+.varieties summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 44px;
+  color: var(--primary, #f8c548);
+  font-weight: 600;
+}
+
+.jumpLinks a:hover,
+.link:hover,
+.varieties summary:hover {
+  color: #fff2d4;
+}
+
+.feature,
+.section {
+  margin-top: clamp(3rem, 8vw, 6.5rem);
+  scroll-margin-top: 6rem;
+}
+
+.feature,
+.snacks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 5vw, 4rem);
+}
+
+.feature {
+  align-items: center;
+}
+
+.foodImage {
+  width: 100%;
+  height: auto;
+  max-height: 26rem;
+  object-fit: contain;
+}
+
+.varieties {
+  margin-top: 0.7rem;
+}
+
+.varieties summary {
+  display: list-item;
+  padding-block: 0.7rem;
+  cursor: pointer;
+}
+
+.varieties dl {
+  display: grid;
+  gap: 1rem;
+  margin-block: 0.5rem 1.15rem;
+}
+
+.varieties dt,
+.prices dt {
+  font-weight: 600;
+}
+
+.varieties dd,
+.prices dd {
+  margin: 0;
+}
+
+.prices dd {
+  color: var(--primary, #f8c548);
+  font-size: 1.4rem;
+}
+
+.snacks {
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 720px) {
+  .feature,
+  .snacks {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .foodImage {
+    max-height: 18rem;
+  }
+}

@@ -2,7 +2,7 @@ import { CafeMenuItem } from '@/types';
 
 // Kerala tea-time snacks, all priced at ₹12 each.
 export const SNACK_NAMES = [
-  'Cutlet', 'Vada', 'Samosa', 'Pazham Pori', 'Bonda',
+  'Cutlet', 'Vada', 'Samosa', 'Pazham Pori',
   'Parippu Vada', 'Ulli Vada', 'Sukhiyan',
   'Kozhukatta', 'Ela Ada', 'Mulaku Bajji',
   'Poricha Pathiri', 'Egg Bajji', 'Idli', 'Kesari',

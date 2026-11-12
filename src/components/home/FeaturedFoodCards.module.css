@@ -1,12 +1,7 @@
-/* ══════════════════════════════════════════════════════════════════════════════════
-   CAFÉ SERENITY — FEATURED FOOD CARDS (REFINED)
-   Balanced 3-card presentation carrying forward the dark luxury Hero identity.
-   ══════════════════════════════════════════════════════════════════════════════════ */
-
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(1.25rem, 2.2vw, 2rem);
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 0 clamp(2rem, 6vw, 6rem);
   align-items: stretch;
   width: 100%;
 }
@@ -31,10 +26,17 @@
   outline-offset: 5px;
 }
 
+.card[data-collection='biriyani'] {
+  grid-row: span 2;
+  align-self: start;
+}
+
 .art {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 13;
+  max-width: 32rem;
+  align-self: center;
 }
 
 .layer {
@@ -42,15 +44,9 @@
   aspect-ratio: 1;
 }
 
-.layer img,
-.singleDish img {
+.layer img {
   object-fit: contain;
   filter: drop-shadow(0 12px 12px rgb(0 0 0 / 42%));
-}
-
-.singleDish {
-  position: absolute;
-  inset: 7%;
 }
 
 .layer[data-slot='main'] {
@@ -146,47 +142,95 @@
   transform: translate(3px, -3px);
 }
 
-/* ── Responsive Adaptations ── */
-@media (max-width: 1023px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  .card {
-    display: grid;
-    grid-template-columns: 0.95fr 1.05fr;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 0;
-  }
-  .art {
-    aspect-ratio: 16 / 13;
-  }
-  .copy {
-    padding: 0.5rem;
-  }
+.card:not([data-collection='biriyani']) .copy {
+  padding: 1.15rem 0 1.35rem;
 }
 
-@media (max-width: 640px) {
-  .card {
-    display: flex;
-    flex-direction: column;
-    padding: 0 0 0.65rem;
+.card:not([data-collection='biriyani']) .heading {
+  font-family: Georgia, serif;
+  margin-bottom: 1rem;
+}
 
+.card:not([data-collection='biriyani']) .link {
+  min-height: 44px;
+  padding-top: 0;
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 1.25rem;
   }
+
+  .card[data-collection='biriyani'] {
+    grid-row: auto;
+  }
+
   .art {
-    aspect-ratio: 16 / 12;
-
-  }
-  .heading {
-    font-size: 1.85rem;
+    max-width: 30rem;
+    align-self: center;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .card,
   .linkIcon {
-    transition: none !important;
-    transform: none !important;
+    transition: none;
   }
+
+  .card:hover .linkIcon {
+    transform: none;
+  }
+}
+
+.menuList {
+  list-style: none;
+  margin: 0 0 0.35rem;
+  padding: 0;
+}
+
+.menuList li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.35rem 0;
+  border-top: 1px solid rgb(255 242 212 / 12%);
+}
+
+.menuList li span:last-child {
+  color: var(--primary, #f8c548);
+  font-variant-numeric: tabular-nums;
+}
+.portions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 0 0 1rem;
+}
+
+.portions div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.portions dd {
+  margin: 0;
+  color: var(--primary, #f8c548);
+  font-weight: 650;
+}
+
+
+.dishName {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.dishImage {
+  width: 52px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 0.35rem;
+  flex-shrink: 0;
 }

@@ -1,8 +1,6 @@
 import Hero from '@/components/home/Hero';
 import EarlyMorningStory from '@/components/home/EarlyMorningStory';
-import { MenuOrientation, PortionGuide, FAQPreview } from '@/components/home/RestaurantExtras';
-import AboutSection from '@/components/home/AboutSection';
-import ContactSection from '@/components/home/ContactSection';
+import { MenuOrientation, HomeVisit } from '@/components/home/RestaurantExtras';
 
 export default function Page() {
   return (
@@ -10,10 +8,7 @@ export default function Page() {
       <Hero />
       <EarlyMorningStory />
       <MenuOrientation />
-      <PortionGuide />
-      <AboutSection />
-      <FAQPreview />
-      <ContactSection />
+      <HomeVisit />
     </>
   );
 }

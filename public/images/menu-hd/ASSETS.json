@@ -9,15 +9,6 @@
     "sha256": "b97fd2c6d4b1bdd8bd8848db3f0e14bcca9b62c58221e6b43994b675ec3ea095"
   },
   {
-    "id": "bonda",
-    "composition": "Type C: Whole + open cut presentation (revealing interior filling)",
-    "image": "/images/menu-hd/bonda.webp",
-    "width": 1024,
-    "height": 1024,
-    "bytes": 190922,
-    "sha256": "b373ef8a3d1d14fe65496a69892346aff02fedd663a269f69908710cbe20810d"
-  },
-  {
     "id": "chettinad-biriyani",
     "composition": "Full regional biriyani portion",
     "image": "/images/menu-hd/chettinad-biriyani.webp",
@@ -28,12 +19,12 @@
   },
   {
     "id": "cutlet",
-    "composition": "Type C: Whole + open cut presentation (revealing interior filling)",
     "image": "/images/menu-hd/cutlet.webp",
-    "width": 1024,
-    "height": 1024,
-    "bytes": 272874,
-    "sha256": "d8631324c3521ccce6e485eafcaa52505a070ccc1c92350ee204738ef6b9dc57"
+    "width": 1200,
+    "height": 1200,
+    "bytes": 387270,
+    "sha256": "10f6cb027f7543b88cd4f579e8300666775629ef4083616cf0a55ba6e34f82fa",
+    "composition": "One piece, isolated with transparent background"
   },
   {
     "id": "dhilli-darbar-biriyani",
@@ -46,30 +37,30 @@
   },
   {
     "id": "egg-bajji",
-    "composition": "Type C: Whole + open cut presentation (revealing interior filling)",
+    "composition": "One piece, isolated with transparent background",
     "image": "/images/menu-hd/egg-bajji.webp",
-    "width": 1024,
-    "height": 1024,
-    "bytes": 77366,
-    "sha256": "ab86f427559b0f30faec1e856ef656854cb5ffd52f36709a673ec6b0ae8aeb77"
+    "width": 1200,
+    "height": 1200,
+    "bytes": 227562,
+    "sha256": "ded6d41403ff4d3d0a4feb3a6aed4eeab91bddb8d6cc6aaf46b7ed9258afdd38"
   },
   {
     "id": "egg-puffs",
-    "composition": "Type C: Whole + open cut presentation (revealing interior filling)",
+    "composition": "One piece, isolated with transparent background",
     "image": "/images/menu-hd/egg-puffs.webp",
-    "width": 1024,
-    "height": 1024,
-    "bytes": 91870,
-    "sha256": "a68843bdc8caca0831f41fecca94a20b3b9f51ae2a2dd6a9f0527c88a4753668"
+    "width": 1200,
+    "height": 1200,
+    "bytes": 252568,
+    "sha256": "54e62dced0d0c1bd242a9db4556137abcbacfadfd23b7c3c0a1951e33a66b6ae"
   },
   {
     "id": "ela-ada",
-    "composition": "Type A: Banana leaf presentation (wrapped + open with filling)",
     "image": "/images/menu-hd/ela-ada.webp",
-    "width": 1024,
-    "height": 1024,
-    "bytes": 178968,
-    "sha256": "0ad66b94868571a27515a1cfd9bd830705011da76460ffb948137841a104b107"
+    "width": 1200,
+    "height": 1200,
+    "bytes": 149904,
+    "sha256": "0e7d633079586592e03596c8f6b152298b62a19dbd4b108d8459542a319166e7",
+    "composition": "One piece, isolated with transparent background"
   },
   {
     "id": "hyderabadi-biriyani",
@@ -82,21 +73,21 @@
   },
   {
     "id": "idli",
-    "composition": "Type B: Two-item presentation (curated balance & texture)",
     "image": "/images/menu-hd/idli.webp",
-    "width": 1024,
-    "height": 1024,
-    "bytes": 65428,
-    "sha256": "a61d157d9c7557b85b1920acb1c67bb8e07ddb2871c4ff08085ecc9ccc59e772"
+    "width": 1200,
+    "height": 1200,
+    "bytes": 232736,
+    "sha256": "1562ef71bcc6ee4c09c10ff0a1150cce1b7cf2cca26119934895657bb1837574",
+    "composition": "One piece, isolated with transparent background"
   },
   {
     "id": "kesari",
-    "composition": "Type B: Two-item presentation (curated balance & texture)",
     "image": "/images/menu-hd/kesari.webp",
-    "width": 1024,
-    "height": 1024,
-    "bytes": 156084,
-    "sha256": "7fb3b3645f110a04698a45ea6da5bf9c87b707cab73232e0f42fd98548833a87"
+    "width": 1200,
+    "height": 1200,
+    "bytes": 261086,
+    "sha256": "6c40facaa234c835e3783cc8e692981b2273c48a46db6606d6d79ff55ccf6254",
+    "composition": "One piece, isolated with transparent background"
   },
   {
     "id": "kozhikode-biriyani",
@@ -109,12 +100,12 @@
   },
   {
     "id": "kozhukatta",
-    "composition": "Type C: Whole + open cut presentation (revealing interior filling)",
     "image": "/images/menu-hd/kozhukatta.webp",
-    "width": 1024,
-    "height": 1024,
-    "bytes": 138128,
-    "sha256": "fd738f0ed5c4609c47687a3a55b2b5650068e37433ea9502868e73157c11c22c"
+    "width": 1200,
+    "height": 1200,
+    "bytes": 133520,
+    "sha256": "4d04bb96e2dbd1339f344e14c0723baaa8e1202b7ae25cf2882cb4860d27f2d3",
+    "composition": "One piece, isolated with transparent background"
   },
   {
     "id": "malabar-biriyani",
@@ -127,39 +118,39 @@
   },
   {
     "id": "mulaku-bajji",
-    "composition": "Type C: Whole + open cut presentation (revealing interior filling)",
     "image": "/images/menu-hd/mulaku-bajji.webp",
-    "width": 1024,
-    "height": 1024,
-    "bytes": 81170,
-    "sha256": "b64269058d66b6e7792f6b4563fdadd1d064bba2ce3490b32a94eb08f6ba970c"
+    "width": 1200,
+    "height": 1200,
+    "bytes": 114152,
+    "sha256": "8b8fdbfab3f02f15d5915c5ffc0cce0cb9822005802cb5f1f1f38d185814e192",
+    "composition": "One piece, isolated with transparent background"
   },
   {
     "id": "parippu-vada",
-    "composition": "Type D: Authentic crunchy snack bites",
     "image": "/images/menu-hd/parippu-vada.webp",
-    "width": 1024,
-    "height": 1024,
-    "bytes": 95886,
-    "sha256": "5e69c974e3f569b675183869ffb56ee4c3bc7ddd24ce511d7f03de14f86b5406"
+    "width": 1200,
+    "height": 1200,
+    "bytes": 406324,
+    "sha256": "564f3b12b639e01975d7c7e7de444907eebd5d6a0227f7e042e1eb9dc950e693",
+    "composition": "One piece, isolated with transparent background"
   },
   {
     "id": "pazham-pori",
-    "composition": "Type B: Two-item presentation (curated balance & texture)",
+    "composition": "One piece, isolated with transparent background",
     "image": "/images/menu-hd/pazham-pori.webp",
-    "width": 1024,
-    "height": 1024,
-    "bytes": 190808,
-    "sha256": "3b2eb5b0c3ff4fe7856b922f36394a9ab946d56727edc7213bc4fcce1ef92934"
+    "width": 1200,
+    "height": 1200,
+    "bytes": 116892,
+    "sha256": "719d3bf0b4e0aa4df3c56f2e528d885056159f6600160dc0c1daa72c556855fd"
   },
   {
     "id": "poricha-pathiri",
-    "composition": "Type B: Two-item presentation (curated balance & texture)",
     "image": "/images/menu-hd/poricha-pathiri.webp",
-    "width": 1024,
-    "height": 1024,
-    "bytes": 80034,
-    "sha256": "13f786f7001dd49a1d6dee3c2acaa54c5a1a9a1ef919783a67bc2ec440ad3c72"
+    "width": 1200,
+    "height": 1200,
+    "bytes": 310694,
+    "sha256": "bbeb594baead64e87d8e3937f12bf14b8783f271bef1b029f9e58b4e6ecc77bd",
+    "composition": "One piece, isolated with transparent background"
   },
   {
     "id": "ravuthar-biriyani",
@@ -172,21 +163,21 @@
   },
   {
     "id": "samosa",
-    "composition": "Type C: Whole + open cut presentation (revealing interior filling)",
     "image": "/images/menu-hd/samosa.webp",
-    "width": 1024,
-    "height": 1024,
-    "bytes": 91714,
-    "sha256": "1d7984efbc43448f891ff5a779002399cb3a6d2c1c5f809a865abf60ba91744a"
+    "width": 1200,
+    "height": 1200,
+    "bytes": 210606,
+    "sha256": "fdd1dc0195047ae36412cbbc451d3ebe0f395feaebcaf08d4a246e92de923ec9",
+    "composition": "One piece, isolated with transparent background"
   },
   {
     "id": "sukhiyan",
-    "composition": "Type C: Whole + open cut presentation (revealing interior filling)",
     "image": "/images/menu-hd/sukhiyan.webp",
-    "width": 1024,
-    "height": 1024,
-    "bytes": 155498,
-    "sha256": "bf6a48843be092ceb0f2bc90ae45a308384096c7773042fc515af39b8e7b6a91"
+    "width": 1200,
+    "height": 1200,
+    "bytes": 350972,
+    "sha256": "31708d0e1b6124a1b209502057e12f5994fc2206ddf9fa2219942f877089e32b",
+    "composition": "One piece, isolated with transparent background"
   },
   {
     "id": "thalappakatti-biriyani",
@@ -199,20 +190,20 @@
   },
   {
     "id": "ulli-vada",
-    "composition": "Type D: Authentic crunchy snack bites",
     "image": "/images/menu-hd/ulli-vada.webp",
-    "width": 1024,
-    "height": 1024,
-    "bytes": 96134,
-    "sha256": "9c3501889cac31cf41cbe1ed1a3488536662c5a485b418eecab4a93c18b40cb4"
+    "width": 1200,
+    "height": 1200,
+    "bytes": 394916,
+    "sha256": "49347faababa2485a2a968d249331b0badb5bf43dcdbcf3a9eed55c4dc1d91fd",
+    "composition": "One piece, isolated with transparent background"
   },
   {
     "id": "vada",
-    "composition": "Type B: Two-item presentation (curated balance & texture)",
     "image": "/images/menu-hd/vada.webp",
-    "width": 1024,
-    "height": 1024,
-    "bytes": 205618,
-    "sha256": "30094d5b9134edb9c37e584e2a88fafe472b88f22cfdbb91235d67548431f444"
+    "width": 1200,
+    "height": 1200,
+    "bytes": 331030,
+    "sha256": "7448177d5753c4f6375d1cbd1d3b8b0698a32c407af818ca87fabf325f2a7616",
+    "composition": "One piece, isolated with transparent background"
   }
 ]

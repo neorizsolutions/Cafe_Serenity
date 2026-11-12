@@ -4,7 +4,7 @@ export const FAQS = [
  { question: 'What Biriyani varieties are available?', answer: BIRIYANI_NAMES.join(', ') + '. Check with the café for today’s availability.' },
  { question: 'What are the Half and Full Biriyani prices?', answer: menuPrice(CAFE_ITEMS[0]) + ' for every variety. The menu lets you switch between the two portion illustrations.' },
  { question: 'What snacks and sweets are on the menu?', answer: SNACK_NAMES.join(', ') + ' and Egg Puffs.' },
- { question: 'How much does a snack cost?', answer: 'Regular snacks and sweets are ₹12 each. Egg Puffs are ₹15 each. The price is per piece, rather than for the plate shown in the image.' },
+ { question: 'How much does a snack cost?', answer: 'Regular snacks and sweets are ₹12 each. Egg Puffs are ₹15 each. Snack and sweet prices are per piece.' },
  { question: 'Where can I find Café Serenity?', answer: `${CONTACT_DETAILS.address.street}, ${CONTACT_DETAILS.address.locality}, ${CONTACT_DETAILS.address.city}, ${CONTACT_DETAILS.address.state} ${CONTACT_DETAILS.address.zipCode}. Use the directions link on our Contact page to plan your visit.` },
  { question: 'What are your opening hours?', answer: 'Please call or message the café for current opening hours before you visit. You can reach us at ' + CONTACT_DETAILS.phone + '.' },
  { question: 'How do I check whether a dish is available today?', answer: 'Use our WhatsApp link or call the café team. The website shows our menu range; the team can confirm the items available for your visit.' },

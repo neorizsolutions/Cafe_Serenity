@@ -11,8 +11,8 @@ const source = await readFile(new URL('./items.ts', import.meta.url), 'utf8');
 const { outputText } = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext } });
 const { CAFE_ITEMS } = await import(`data:text/javascript;base64,${Buffer.from(outputText).toString('base64')}`);
 
-test('all 24 dishes have detailed transparent imagery; portions and prices are preserved', async () => {
-  assert.equal(CAFE_ITEMS.length, 24);
+test('all 23 dishes have detailed transparent imagery; portions and prices are preserved', async () => {
+  assert.equal(CAFE_ITEMS.length, 23);
   const counts = { biriyani: 0, savouries: 0, sweets: 0 };
   const hashes = new Set();
   for (const item of CAFE_ITEMS) {
@@ -33,8 +33,8 @@ test('all 24 dishes have detailed transparent imagery; portions and prices are p
       assert.equal(item.price, item.id === 'egg-puffs' ? 15 : 12);
     }
   }
-  assert.equal(hashes.size, 24);
-  assert.deepEqual(counts, { biriyani: 8, savouries: 12, sweets: 4 });
+  assert.equal(hashes.size, 23);
+  assert.deepEqual(counts, { biriyani: 8, savouries: 11, sweets: 4 });
 });
 
 test('plate edits retain a verifiable, untouched original for every serving image', async () => {

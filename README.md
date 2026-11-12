@@ -19,10 +19,10 @@ Open [the local site](http://127.0.0.1:3000/). For a production preview, run `np
 
 | Area | Where to look |
 | --- | --- |
-| Home `/` | `src/app/page.tsx` composes the hero, early-morning breakfast story, featured food, portion guide, About, FAQ preview and contact. |
-| Home sections | `EarlyMorningStory.tsx` and its CSS module own the breakfast story and its reversible scroll assembly. Its five independently generated transparent food layers are the `generated-*.webp` files in `public/images/cutouts/breakfast-assembly/`. `RestaurantExtras.tsx` owns the featured section wrapper, portion guide and FAQ preview. `FeaturedFoodCards.tsx` and its CSS module own the scroll-linked collection cards, with a three-layer Biriyani assembly and single-dish Savouries and Sweets previews. All are under `src/components/home/`. |
+| Home `/` | `src/app/page.tsx` composes the hero, early-morning breakfast story, menu highlights with Biriyani portions, and a visit section with directions, contact links and FAQs. |
+| Home sections | `EarlyMorningStory.tsx` and its CSS module own the breakfast story and its reversible scroll assembly. Its five independently generated transparent food layers are the `generated-*.webp` files in `public/images/cutouts/breakfast-assembly/`. `RestaurantExtras.tsx` owns the menu section and the homepage visit section. `FeaturedFoodCards.tsx` and its CSS module own the scroll-linked collection cards, with a three-layer Biriyani assembly and priced Savouries and Sweets menu previews. All are under `src/components/home/`. |
 | Café menu `/cafe-menu` | `src/app/cafe-menu/page.tsx` and `src/components/cafe-menu/`. Search, collection filters, Half/Full prices and the larger image viewer are already implemented. |
-| About and Contact | `/about` and `/contact` share `AboutSection.tsx` and `ContactSection.tsx` with Home. Scope home-specific changes to Home. |
+| About and Contact | `/about` and `/contact` use `AboutSection.tsx` and `ContactSection.tsx`. The homepage has its own visit section. |
 | Food Guide and FAQ | `/blog` is the food guide. `/faq` uses `src/data/faqs.ts`, which also feeds the homepage preview. |
 | Shared layout and styles | `src/app/layout.tsx`, `src/components/layout/`, and `globals.css`, `cafe-refinement.css`, `brand-theme.css`, `dark-theme.css`, and `editorial.css` in `src/app/`. |
 | Redirects and image config | `next.config.ts`. Preserve legacy redirects and the archived healthy-meals code, prototypes, and original media. |
@@ -37,7 +37,7 @@ For below-hero work, preserve the hero artwork, copy, semantic H1, mobile sizing
 
 - Menu facts, prices and image paths come from `src/data/cafe-menu/items.ts`. Presentation collections come from `src/data/cafe-menu/collections.ts`. Biriyani costs ₹90 Half and ₹150 Full. Most snacks and sweets cost ₹12, with Egg Puffs at ₹15. Both biriyani portions use the same Full image.
 - Contact and navigation constants live in `src/constants/index.ts`. The café is near Civil Station, Echamuku, Kunnumpuram, Kakkanad, Kochi, Kerala 682030. Phone is 093882 62626. [WhatsApp](https://wa.me/919388262626)
-- The active dish artwork lives in `public/images/menu-hd/` with 24 WebP images and an asset manifest in `ASSETS.json`. Keep each illustration matched to its dish and show the entire charcoal plate with transparent edges. The generated artwork is illustrative. See the [menu artwork notes](docs/design-prototypes/menu-clarity-2026-11-05.md) and [review sheet](docs/design-prototypes/menu-clarity-review.jpg).
+- The active dish artwork lives in `public/images/menu-hd/` with 23 active WebP images and an asset manifest in `ASSETS.json`. Show each snack or sweet as a single piece on a transparent background. Biriyani keeps its full charcoal plate and transparent surround. The generated artwork is illustrative. See the [menu artwork notes](docs/design-prototypes/menu-clarity-2026-11-05.md) and [review sheet](docs/design-prototypes/menu-clarity-review.jpg).
 - Use charcoal, brand gold `#F8C548`, warm cream and the existing green, tea brown and terracotta accents. Keep food prominent and copy concise.
 
 ## Verify changes

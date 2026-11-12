@@ -1,50 +1,52 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import { BUSINESS_NAME, CONTACT_DETAILS } from '@/constants';
 import { FAQS } from '@/data/faqs';
 import FeaturedFoodCards from './FeaturedFoodCards';
+import styles from './RestaurantExtras.module.css';
 
 export function MenuOrientation() {
   return (
-    <section className="editorial-chapters" aria-labelledby="orientation-title">
-      <div className="editorial-section-heading">
+    <section className={styles.section} aria-labelledby="orientation-title">
+      <div className={styles.headingRow}>
         <h2 id="orientation-title">Explore the menu</h2>
         <Link href="/cafe-menu" className="brand-inline-link">
           View full menu <span aria-hidden="true">↗</span>
         </Link>
       </div>
       <FeaturedFoodCards />
+      <p className={styles.imageNote}>Food images are illustrative.</p>
     </section>
   );
 }
 
-export function PortionGuide() {
-  return <section className="editorial-portion" aria-labelledby="portion-guide-title"><div className="editorial-portion-inner">
-    <div className="editorial-portion-art"><Image quality={90} src="/images/menu-hd/kozhikode-biriyani.webp" alt="Illustration of Kozhikode Biriyani" fill sizes="(max-width:767px) 85vw, 45vw" /></div>
-    <div className="editorial-portion-copy"><h2 id="portion-guide-title">Biriyani portions</h2>
-      <div className="editorial-portion-prices"><div><span>Half portion</span><strong>₹90</strong></div><div><span>Full portion</span><strong>₹150</strong></div></div>
-      <Link href="/cafe-menu#category-biriyani" className="brand-inline-link">Explore all eight Biriyanis <span aria-hidden="true">↗</span></Link><small>Prices are per portion. Food images are illustrative.</small>
-    </div>
-  </div></section>;
-}
+export function HomeVisit() {
+  const { address, phone, whatsapp } = CONTACT_DETAILS;
+  const fullAddress = `${address.street}, ${address.locality}, ${address.city}, ${address.state} ${address.zipCode}`;
+  const directions = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(BUSINESS_NAME + ' ' + fullAddress)}`;
+  const visitQuestions = [FAQS[5], FAQS[6]];
 
-export function FAQPreview() {
-  const selected = [FAQS[1], FAQS[5], FAQS[6]];
   return (
-    <section className="brand-faq-preview editorial" aria-labelledby="faq-preview-title">
-      <div className="editorial-faq-preview-inner">
-        <div className="editorial-section-heading">
-          <div>
-            <h2 id="faq-preview-title">Before you visit</h2>
+    <section id="location" className={styles.visit} aria-labelledby="visit-heading">
+      <div className={styles.visitInner}>
+        <div>
+          <h2 id="visit-heading">Visit us in Kakkanad</h2>
+          <address>{fullAddress}</address>
+          <div className={styles.actions}>
+            <a href={directions} className="brand-button">Get directions <span aria-hidden="true">↗</span></a>
+            <a href={`tel:${phone.replace(/\s/g, '')}`}>Call {phone}</a>
+            <a href={whatsapp}>WhatsApp</a>
           </div>
-          <Link href="/faq" className="brand-inline-link">View all FAQs <span aria-hidden="true">↗</span></Link>
+          <Link href="/about" className="brand-inline-link">About Café Serenity <span aria-hidden="true">↗</span></Link>
         </div>
-        <div className="brand-faq-list">
-          {selected.map((faq) => (
-            <details key={faq.question}>
-              <summary>{faq.question}<span className="editorial-faq-plus" aria-hidden="true">+</span></summary>
-              <p>{faq.answer}</p>
+        <div className={styles.questions}>
+          <h3>Before you visit</h3>
+          {visitQuestions.map(({ question, answer }) => (
+            <details key={question}>
+              <summary>{question}</summary>
+              <p>{answer}</p>
             </details>
           ))}
+          <Link href="/faq" className="brand-inline-link">View all FAQs <span aria-hidden="true">↗</span></Link>
         </div>
       </div>
     </section>

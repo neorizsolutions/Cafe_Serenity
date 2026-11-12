@@ -1,18 +1,36 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import MenuExplorer from '@/components/cafe-menu/MenuExplorer';
 import { CONTACT_DETAILS } from '@/constants';
 import { constructMetadata } from '@/utils/seo';
-export const metadata = constructMetadata({title:'Our Menu — Biriyani, Snacks & Sweets',description:'Explore eight Biriyani varieties, snacks and sweets. Half ₹90, Full ₹150, regular snacks ₹12 each and Egg Puffs ₹15.',path:'/cafe-menu'});
+import styles from './CafeMenu.module.css';
+
+export const metadata = constructMetadata({
+  title: 'Our Menu — Biriyani, Snacks & Sweets',
+  description: 'Explore eight Biriyani varieties, Kerala savouries and sweets at Café Serenity.',
+  path: '/cafe-menu',
+});
+
 export default function CafeMenuPage() {
-  return <>
-    <section className="editorial-masthead" aria-labelledby="menu-title"><div className="editorial-masthead-inner">
-      <div className="editorial-masthead-copy"><h1 id="menu-title">Our menu.<br /><em>Your favourites.</em></h1><div className="menu-price-note"><span>Biriyani · Half ₹90 / Full ₹150</span><span>Snacks ₹12 each · Egg Puffs ₹15</span></div></div>
-      <div className="editorial-masthead-art"><div><Image quality={90} src="/images/menu-hd/malabar-biriyani.webp" alt="Illustrative plate of Malabar Biriyani" fill sizes="(max-width:767px) 80vw, 40vw" /></div></div>
-    </div></section>
-    <MenuExplorer />
-    <section className="brand-help-strip editorial"><div><h2>A question before you choose?</h2></div><div><a href={CONTACT_DETAILS.whatsapp} target="_blank" rel="noopener noreferrer" className="brand-button">Ask the café <span aria-hidden="true">↗</span></a><Link href="/faq" className="brand-inline-link">Read our FAQs →</Link></div></section>
-  </>;
+  return (
+    <div className={styles.menu}>
+      <header className={styles.intro}>
+        <h1>Our menu</h1>
+        <p>Eight regional biriyanis in Half and Full portions, with Kerala savouries and sweets for your chaaya break.</p>
+        <Link href="/blog" className={styles.link}>Need help choosing? Read the Food Guide <span aria-hidden="true">↗</span></Link>
+      </header>
+
+      <MenuExplorer />
+
+      <section className={styles.help} aria-labelledby="menu-help-title">
+        <h2 id="menu-help-title">Have a question about a dish?</h2>
+        <p>Ask the café about today’s availability, ingredients, or allergens.</p>
+        <div className={styles.actions}>
+          <a href={CONTACT_DETAILS.whatsapp} className={styles.link}>Ask on WhatsApp <span aria-hidden="true">↗</span></a>
+          <Link href="/faq" className={styles.link}>Read the FAQs <span aria-hidden="true">↗</span></Link>
+        </div>
+      </section>
+    </div>
+  );
 }
 
 // Previous implementation preserved for reference and possible reactivation.

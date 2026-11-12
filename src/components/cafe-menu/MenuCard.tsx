@@ -12,6 +12,7 @@ export default function MenuCard({ item }: { item: CafeMenuItem }) {
   const [previewOpen, setPreviewOpen] = useState(false);
   const preview = useRef<HTMLDialogElement>(null);
   const collection = getMenuCollection(item);
+  const imageSrc = item.imageSrc && (item.portions ? item.imageSrc : item.imageSrc + '?v=single-piece');
   const imageAlt = `${item.name} — ${item.portions ? 'full portion ' : ''}illustration`;
 
   useEffect(() => {
@@ -25,7 +26,7 @@ export default function MenuCard({ item }: { item: CafeMenuItem }) {
   return <article className="editorial-product" data-collection={collection}>
     <div className="editorial-product-photo">
       <button type="button" className="editorial-product-image" onClick={() => setPreviewOpen(true)} aria-label={`View ${item.name} image`} aria-haspopup="dialog">
-        {item.imageSrc ? <Image src={item.imageSrc} alt={imageAlt} fill quality={90} sizes="(max-width:540px) calc(100vw - 100px), (max-width:1100px) calc((100vw - 150px)/2), (max-width:1280px) calc((100vw - 200px)/3), 350px" /> : <span className="editorial-photo-pending">Photo coming soon.</span>}
+        {imageSrc ? <Image src={imageSrc} alt={imageAlt} fill quality={90} sizes="(max-width:540px) calc(100vw - 100px), (max-width:1100px) calc((100vw - 150px)/2), (max-width:1280px) calc((100vw - 200px)/3), 350px" /> : <span className="editorial-photo-pending">Photo coming soon.</span>}
         <span className="menu-image-expand" aria-hidden="true"><Expand size={17} /></span>
       </button>
     </div>
@@ -34,7 +35,7 @@ export default function MenuCard({ item }: { item: CafeMenuItem }) {
       {item.portions && <div className="editorial-product-portions"><PortionSelector name={item.name} portions={item.portions} selected={selected} onSelect={setSelected} /></div>}
     </div>
     <dialog ref={preview} className="menu-image-dialog" aria-label={`${item.name} image preview`} onClose={() => setPreviewOpen(false)} onClick={event => { if (event.target === event.currentTarget) event.currentTarget.close(); }}>
-      {previewOpen && <><div className="menu-image-dialog-heading"><h2>{item.name}</h2><button type="button" onClick={() => preview.current?.close()} aria-label="Close image preview"><X size={22} /></button></div><div className="menu-image-dialog-art">{item.imageSrc && <Image src={item.imageSrc} alt={imageAlt} fill quality={90} sizes="(max-width:767px) 90vw, 1000px" />}</div><p>{item.portions ? `Half ₹${item.portions.half} · Full ₹${item.portions.full}` : `₹${item.price} each`}</p></>}
+      {previewOpen && <><div className="menu-image-dialog-heading"><h2>{item.name}</h2><button type="button" onClick={() => preview.current?.close()} aria-label="Close image preview"><X size={22} /></button></div><div className="menu-image-dialog-art">{imageSrc && <Image src={imageSrc} alt={imageAlt} fill quality={90} sizes="(max-width:767px) 90vw, 1000px" />}</div><p>{item.portions ? `Half ₹${item.portions.half} · Full ₹${item.portions.full}` : `₹${item.price} each`}</p></>}
     </dialog>
   </article>;
 }

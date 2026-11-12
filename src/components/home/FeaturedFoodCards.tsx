@@ -3,7 +3,8 @@
 import { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { easeOut, motion, useReducedMotion, useScroll, useTransform, type MotionValue } from 'framer-motion';
+import { easeOut, motion, useScroll, useTransform, type MotionValue } from 'framer-motion';
+import { CAFE_ITEMS } from '@/data/cafe-menu/items';
 import styles from './FeaturedFoodCards.module.css';
 
 const CARDS = [
@@ -11,27 +12,25 @@ const CARDS = [
     kind: 'biriyani',
     title: 'Biriyani',
     dish: 'Malabar Biriyani',
-    description: 'Eight regional styles, available in Half and Full portions.',
+    description: 'Eight regional biriyani varieties.',
     href: '/cafe-menu#category-biriyani',
     images: ['/images/menu-hd/malabar-biriyani.webp', '/images/motion-study/biriyani-side-raita.png', '/images/motion-study/biriyani-side-pickle.png'],
   },
   {
     kind: 'savouries',
     title: 'Savouries',
-    dish: 'Samosa',
-    description: 'Samosas, medu vada and Kerala cutlets for your chaaya break.',
     href: '/cafe-menu#collection-savouries',
-    image: '/images/menu-hd/samosa.webp',
+    dishIds: ['pazham-pori', 'parippu-vada', 'egg-puffs'],
   },
   {
     kind: 'sweets',
     title: 'Sweets',
-    dish: 'Kesari',
-    description: 'Kesari, kozhukatta and ela ada for a sweet finish.',
     href: '/cafe-menu#collection-sweets',
-    image: '/images/menu-hd/kesari.webp',
+    dishIds: ['ela-ada', 'kozhukatta', 'kesari'],
   },
 ] as const;
+
+const biriyaniPortions = CAFE_ITEMS.find((item) => item.id === 'malabar-biriyani')?.portions;
 
 const placements = [
   { slot: 'main', x: 0, y: 36, angle: -9, start: 0.04 },
@@ -61,7 +60,7 @@ function DishLayer({
       data-slot={placement.slot}
       style={{ opacity, x, y, rotate, scale }}
     >
-      <Image src={src} alt="" fill sizes={placement.slot === 'main' ? '(max-width: 640px) 60vw, 290px' : '120px'} />
+      <Image src={src} alt="" fill sizes={placement.slot === 'main' ? '(max-width: 760px) 65vw, (max-width: 1280px) 37vw, 420px' : '120px'} />
     </motion.div>
   );
 }
@@ -69,10 +68,6 @@ function DishLayer({
 function FeaturedFoodCard({ card }: { card: (typeof CARDS)[number] }) {
   const target = useRef<HTMLAnchorElement>(null);
   const { scrollYProgress } = useScroll({ target, offset: ['start 98%', 'center 52%'] });
-
-  const reduced = useReducedMotion();
-  const { scrollYProgress: driftProgress } = useScroll({ target, offset: ['start end', 'end start'] });
-  const y = useTransform(driftProgress, [0, 1], [10, -8]);
 
   return (
     <Link ref={target} href={card.href} className={styles.card} data-collection={card.kind}>
@@ -82,18 +77,40 @@ function FeaturedFoodCard({ card }: { card: (typeof CARDS)[number] }) {
             <DishLayer key={placement.slot} src={card.images[index]} placement={placement} progress={scrollYProgress} />
           ))}
         </div>
-      ) : (
-        <div className={styles.art}>
-          <motion.div className={styles.singleDish} style={reduced ? undefined : { y }}>
-            <Image src={card.image} alt={`Illustration of ${card.dish}`} fill sizes="(max-width: 640px) 80vw, 360px" />
-          </motion.div>
-        </div>
-      )}
+      ) : null}
       <div className={styles.copy}>
         <h3 className={styles.heading}>{card.title}</h3>
-        <p className={styles.description}>{card.description}</p>
+        {card.kind === 'biriyani' && (
+          <>
+            <p className={styles.description}>{card.description}</p>
+            {biriyaniPortions && (
+              <dl className={styles.portions}>
+                <div><dt>Half</dt><dd>₹{biriyaniPortions.half}</dd></div>
+                <div><dt>Full</dt><dd>₹{biriyaniPortions.full}</dd></div>
+              </dl>
+            )}
+          </>
+        )}
+        {card.kind !== 'biriyani' && (
+          <ul className={styles.menuList}>
+            {card.dishIds.map((id) => {
+              const dish = CAFE_ITEMS.find((item) => item.id === id);
+              return dish && (
+                <li key={id}>
+                  <span className={styles.dishName}>
+                    {dish.imageSrc && (
+                      <Image src={dish.imageSrc} alt="" width={52} height={44} className={styles.dishImage} />
+                    )}
+                    {dish.name}
+                  </span>
+                  <span>₹{dish.price}</span>
+                </li>
+              );
+            })}
+          </ul>
+        )}
         <span className={styles.link}>
-          View dishes <span className={styles.linkIcon} aria-hidden="true">↗</span>
+          View {card.title.toLowerCase()} <span className={styles.linkIcon} aria-hidden="true">↗</span>
         </span>
       </div>
     </Link>

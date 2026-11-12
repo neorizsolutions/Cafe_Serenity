@@ -1,4 +1,8 @@
-# Café Serenity — Refined Menu Visual Collection
+# Café Serenity menu artwork
+
+The active savouries and sweets use one generated food piece per image on a transparent background. The eight Biriyani illustrations show a full serving on a charcoal plate. All images are illustrative.
+
+## Previous collection
 
 Refined 2026-11-06 with controlled presentation variety across all menu cards. Replaces the repetitive 3-on-a-plate formula with intentional art-directed compositions:
 

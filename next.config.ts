@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
   experimental: { cpus: 2 },
   images: {
     qualities: [75, 90],
+    localPatterns: [
+      { pathname: '/**', search: '' },
+      { pathname: '/images/menu-hd/**', search: '?v=single-piece' },
+    ],
     remotePatterns: [
       {
         protocol: "https",
