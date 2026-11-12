@@ -3,136 +3,98 @@
 import { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
+import { easeOut, motion, useReducedMotion, useScroll, useTransform, type MotionValue } from 'framer-motion';
 import styles from './FeaturedFoodCards.module.css';
 
-type Collection = 'biriyani' | 'savouries' | 'sweets';
-
-interface FeaturedCardData {
-  kind: Collection;
-  eyebrow: string;
-  title: string;
-  accent: string;
-  subtitle: string;
-  href: string;
-  action: string;
-  image: string;
-  imageAlt: string;
-  raita?: string;
-  pickle?: string;
-}
-
-const CARDS: FeaturedCardData[] = [
+const CARDS = [
   {
     kind: 'biriyani',
-    eyebrow: 'Signature Feasts',
-    title: 'Make it',
-    accent: 'Biriyani.',
-    subtitle: '8 regional varieties · Half ₹90 / Full ₹150',
+    title: 'Biriyani',
+    dish: 'Malabar Biriyani',
+    description: 'Eight regional styles, available in Half and Full portions.',
     href: '/cafe-menu#category-biriyani',
-    action: 'Explore Biriyani',
-    image: '/images/menu-hd/malabar-biriyani.webp',
-    imageAlt: 'Authentic Malabar Dum Biriyani served in an antique brass handi',
-    raita: '/images/motion-study/biriyani-side-raita.png',
-    pickle: '/images/motion-study/biriyani-side-pickle.png',
+    images: ['/images/menu-hd/malabar-biriyani.webp', '/images/motion-study/biriyani-side-raita.png', '/images/motion-study/biriyani-side-pickle.png'],
   },
   {
     kind: 'savouries',
-    eyebrow: 'Tea-Time Crunch',
-    title: 'A little',
-    accent: 'crunch.',
-    subtitle: 'Samosa, Vada, Cutlet & snacks · ₹12 each',
-    href: '/cafe-menu#category-snacks',
-    action: 'Explore snacks',
-    image: '/images/featured-snacks-trio.png',
-    imageAlt: 'Kerala tea-time snack trio: crispy Samosa, golden Medu Vada, and spiced Cutlet',
+    title: 'Savouries',
+    dish: 'Samosa',
+    description: 'Samosas, medu vada and Kerala cutlets for your chaaya break.',
+    href: '/cafe-menu#collection-savouries',
+    image: '/images/menu-hd/samosa.webp',
   },
   {
     kind: 'sweets',
-    eyebrow: 'Sweet Moments',
-    title: 'Something',
-    accent: 'sweet.',
-    subtitle: 'Kesari, Kozhukatta, Ela Ada · ₹12 each',
+    title: 'Sweets',
+    dish: 'Kesari',
+    description: 'Kesari, kozhukatta and ela ada for a sweet finish.',
     href: '/cafe-menu#collection-sweets',
-    action: 'Explore sweets',
-    image: '/images/featured-sweets-trio.png',
-    imageAlt: 'Kerala traditional sweet trio: saffron Kesari, banana-leaf wrapped Ela Ada, and steamed Kozhukatta',
+    image: '/images/menu-hd/kesari.webp',
   },
-];
+] as const;
 
-function FeaturedFoodCard({ card }: { card: FeaturedCardData }) {
+const placements = [
+  { slot: 'main', x: 0, y: 36, angle: -9, start: 0.04 },
+  { slot: 'left', x: -28, y: 22, angle: -18, start: 0.2 },
+  { slot: 'right', x: 28, y: 24, angle: 16, start: 0.34 },
+] as const;
+
+function DishLayer({
+  src,
+  placement,
+  progress,
+}: {
+  src: string;
+  placement: (typeof placements)[number];
+  progress: MotionValue<number>;
+}) {
+  const range = [placement.start, placement.start + 0.55];
+  const opacity = useTransform(progress, [placement.start, placement.start + 0.24], [0, 1]);
+  const x = useTransform(progress, range, [placement.x, 0], { ease: easeOut });
+  const y = useTransform(progress, range, [placement.y, 0], { ease: easeOut });
+  const rotate = useTransform(progress, range, [placement.angle, 0], { ease: easeOut });
+  const scale = useTransform(progress, range, [0.78, 1], { ease: easeOut });
+
+  return (
+    <motion.div
+      className={styles.layer}
+      data-slot={placement.slot}
+      style={{ opacity, x, y, rotate, scale }}
+    >
+      <Image src={src} alt="" fill sizes={placement.slot === 'main' ? '(max-width: 640px) 60vw, 290px' : '120px'} />
+    </motion.div>
+  );
+}
+
+function FeaturedFoodCard({ card }: { card: (typeof CARDS)[number] }) {
   const target = useRef<HTMLAnchorElement>(null);
-  const reduced = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target, offset: ['start 98%', 'center 52%'] });
 
-  // Restrained, subtle scroll-linked parallax
-  const { scrollYProgress } = useScroll({ target, offset: ['start end', 'end start'] });
-  const y = useTransform(scrollYProgress, [0, 0.45, 1], [16, 0, -10]);
-  const scale = useTransform(scrollYProgress, [0, 0.45, 1], [0.96, 1, 1.02]);
-  const sideY = useTransform(scrollYProgress, [0, 0.45, 1], [20, 0, -14]);
+  const reduced = useReducedMotion();
+  const { scrollYProgress: driftProgress } = useScroll({ target, offset: ['start end', 'end start'] });
+  const y = useTransform(driftProgress, [0, 1], [10, -8]);
 
   return (
     <Link ref={target} href={card.href} className={styles.card} data-collection={card.kind}>
-      {/* ── Food Presentation Stage ── */}
-      <div className={styles.art} role="img" aria-label={card.imageAlt}>
-        {/* Ambient Pedestal Glow matching collection palette */}
-        <div className={styles.pedestalGlow} data-collection={card.kind} aria-hidden="true" />
-
-        {/* Singular Hero Food Object */}
-        <motion.div
-          className={styles.mainFood}
-          style={reduced ? undefined : { y, scale }}
-        >
-          <Image
-            src={card.image}
-            alt={card.imageAlt}
-            fill
-            quality={90}
-            sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 380px"
-          />
-        </motion.div>
-
-        {/* Balanced side accompaniments for Biriyani only */}
-        {card.raita && (
-          <motion.div
-            className={styles.sideRaita}
-            style={reduced ? undefined : { y: sideY }}
-            aria-hidden="true"
-          >
-            <Image src={card.raita} alt="" fill sizes="90px" />
-          </motion.div>
-        )}
-        {card.pickle && (
-          <motion.div
-            className={styles.sidePickle}
-            style={reduced ? undefined : { y: sideY }}
-            aria-hidden="true"
-          >
-            <Image src={card.pickle} alt="" fill sizes="80px" />
-          </motion.div>
-        )}
-
-        {/* Ambient edge vignette for photographic compositions */}
-        {card.kind !== 'biriyani' && (
-          <div className={styles.photoVignette} aria-hidden="true" />
-        )}
-      </div>
-
-      {/* ── Content & Typography ── */}
-      <div className={styles.copy}>
-        <p className={styles.eyebrow}>{card.eyebrow}</p>
-        <h3 className={styles.heading}>
-          {card.title}
-          <br />
-          <em>{card.accent}</em>
-        </h3>
-        <p className={styles.subtitle}>{card.subtitle}</p>
-
-        <div className={styles.link}>
-          <span>{card.action}</span>
-          <span className={styles.linkIcon} aria-hidden="true">
-            ↗
-          </span>
+      {card.kind === 'biriyani' ? (
+        <div className={styles.art} role="img" aria-label={card.dish + ' and accompaniments, illustrated'}>
+          {placements.map((placement, index) => (
+            <DishLayer key={placement.slot} src={card.images[index]} placement={placement} progress={scrollYProgress} />
+          ))}
         </div>
+      ) : (
+        <div className={styles.art}>
+          <motion.div className={styles.singleDish} style={reduced ? undefined : { y }}>
+            <Image src={card.image} alt={`Illustration of ${card.dish}`} fill sizes="(max-width: 640px) 80vw, 360px" />
+          </motion.div>
+        </div>
+      )}
+      <div className={styles.copy}>
+        <h3 className={styles.heading}>{card.title}</h3>
+        <p className={styles.description}>{card.description}</p>
+        <span className={styles.link}>
+          View dishes <span className={styles.linkIcon} aria-hidden="true">↗</span>
+        </span>
       </div>
     </Link>
   );

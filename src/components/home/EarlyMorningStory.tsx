@@ -3,123 +3,99 @@
 import { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, useReducedMotion, useInView } from 'framer-motion';
+import { easeOut, motion, useReducedMotion, useScroll, useTransform, type MotionValue } from 'framer-motion';
 import styles from './EarlyMorningStory.module.css';
 
-export default function EarlyMorningStory() {
-  const containerRef = useRef<HTMLElement>(null);
-  const isInView = useInView(containerRef, { once: true, margin: '-10% 0px' });
-  const reduced = useReducedMotion();
+const ASSEMBLY = '/images/cutouts/breakfast-assembly';
+
+const pieces = [
+  { name: 'back-idli', src: ASSEMBLY + '/generated-idli-back.webp', left: 25, top: 23, width: 30, fromLeft: 4, fromTop: 8, turn: -18, start: 0.08 },
+  { name: 'front-idli', src: ASSEMBLY + '/generated-idli-front.webp', left: 10, top: 43, width: 35, fromLeft: 5, fromTop: 61, turn: 16, start: 0.2 },
+  { name: 'chutney', src: ASSEMBLY + '/generated-chutney.webp', left: 52, top: 9, width: 26, fromLeft: 74, fromTop: 7, turn: 12, start: 0.32 },
+  { name: 'sambar', src: ASSEMBLY + '/generated-sambar.webp', left: 65, top: 34, width: 30, fromLeft: 74, fromTop: 60, turn: -10, start: 0.44 },
+  { name: 'vada', src: ASSEMBLY + '/generated-vada.webp', left: 36, top: 49, width: 32, fromLeft: 39, fromTop: 63, turn: -20, start: 0.56 },
+];
+
+function BreakfastPiece({
+  piece,
+  progress,
+  reduced,
+}: {
+  piece: (typeof pieces)[number];
+  progress: MotionValue<number>;
+  reduced: boolean | null;
+}) {
+  const range = [piece.start, piece.start + 0.42];
+  const opacity = useTransform(progress, [piece.start, piece.start + 0.16], [0, 1], { ease: easeOut });
+  const left = useTransform(progress, range, [piece.fromLeft + '%', piece.left + '%'], { ease: easeOut });
+  const top = useTransform(progress, range, [piece.fromTop + '%', piece.top + '%'], { ease: easeOut });
+  const width = useTransform(progress, range, ['21%', piece.width + '%'], { ease: easeOut });
+  const rotate = useTransform(progress, range, [piece.turn, 0], { ease: easeOut });
 
   return (
-    <section 
-      ref={containerRef}
-      className={styles.section} 
-      aria-labelledby="morning-story-heading"
+    <motion.div
+      className={styles.piece}
+      style={{
+        left: reduced ? piece.left + '%' : left,
+        top: reduced ? piece.top + '%' : top,
+        width: reduced ? piece.width + '%' : width,
+        rotate: reduced ? 0 : rotate,
+        opacity: reduced ? 1 : opacity,
+      }}
     >
+      <Image
+        src={piece.src}
+        alt=""
+        fill
+        sizes="(max-width: 600px) 30vw, 180px"
+        className={styles.cutoutImage}
+      />
+    </motion.div>
+  );
+}
+
+export default function EarlyMorningStory() {
+  const stage = useRef<HTMLDivElement>(null);
+  const reduced = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: stage,
+    offset: ['start 90%', 'center 35%'],
+  });
+
+  return (
+    <section className={styles.section} aria-labelledby="morning-story-heading">
       <div className={styles.container}>
-        {/* Story Text Column */}
         <div className={styles.storyCol}>
-          {/* Primary Editorial Headline */}
-          <motion.h2
-            id="morning-story-heading"
-            className={styles.headline}
-            initial={reduced ? undefined : { opacity: 0, y: 18 }}
-            animate={isInView ? { opacity: 1, y: 0 } : undefined}
-            transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-          >
+          <h2 id="morning-story-heading" className={styles.headline}>
             Your day starts early.
             <br />
-            <motion.em
-              initial={reduced ? undefined : { opacity: 0, y: 10 }}
-              animate={isInView ? { opacity: 1, y: 0 } : undefined}
-              transition={{ duration: 0.65, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            >
-              So do we.
-            </motion.em>
-          </motion.h2>
-
-          {/* Supporting Story Narrative */}
-          <motion.p
-            className={styles.narrative}
-            initial={reduced ? undefined : { opacity: 0, y: 16 }}
-            animate={isInView ? { opacity: 1, y: 0 } : undefined}
-            transition={{ duration: 0.65, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
-          >
+            <em>So do we.</em>
+          </h2>
+          <p className={styles.narrative}>
             For the early risers, the first-shift workers, and everyone starting their day before the city fully wakes. At Café Serenity, a comforting breakfast is ready to be part of your morning.
-          </motion.p>
-
-          {/* Microcopy Highlight Statement */}
-          <motion.div
-            className={styles.microDetail}
-            initial={reduced ? undefined : { opacity: 0, y: 14 }}
-            animate={isInView ? { opacity: 1, y: 0 } : undefined}
-            transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          >
+          </p>
+          <div className={styles.microDetail}>
             <p className={styles.microcopy}>An early start deserves a good breakfast.</p>
-          </motion.div>
-
-          {/* CTA Link */}
-          <motion.div
-            className={styles.ctaWrapper}
-            initial={reduced ? undefined : { opacity: 0, y: 14 }}
-            animate={isInView ? { opacity: 1, y: 0 } : undefined}
-            transition={{ duration: 0.6, delay: 0.38, ease: [0.16, 1, 0.3, 1] }}
-          >
+          </div>
+          <div className={styles.ctaWrapper}>
             <Link href="/cafe-menu" className={styles.ctaButton}>
               <span>Explore our menu</span>
               <span className={styles.ctaIcon} aria-hidden="true">↗</span>
             </Link>
-          </motion.div>
+          </div>
         </div>
 
-        {/* Visual Column: Graceful Breakfast Assembly & Reveal */}
         <div className={styles.visualCol}>
-          <motion.div
+          <div
+            ref={stage}
             className={styles.cutoutStage}
-            initial={reduced ? undefined : { opacity: 0, scale: 0.94, y: 32 }}
-            animate={isInView ? { opacity: 1, scale: 1, y: 0 } : undefined}
-            transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            role="img"
+            aria-label="Illustration of two idlis, a medu vada, and bowls of sambar and coconut chutney"
           >
-            {/* The Master Cutout Composition */}
-            <Image
-              src="/images/cutouts/breakfast-story-cutout.webp"
-              alt="Authentic South Indian breakfast composition: soft steamed idlis, crispy golden medu vada, fresh coconut chutney, and sambar on a banana leaf"
-              fill
-              quality={92}
-              sizes="(max-width: 768px) 92vw, (max-width: 1200px) 48vw, 580px"
-              className={styles.cutoutImage}
-              priority={false}
-            />
-
-            {/* Delicate Rising Morning Steam Trails above hot Idlis and Sambar */}
-            {!reduced && (
-              <motion.svg
-                className={styles.breakfastSteam}
-                viewBox="0 0 100 100"
-                fill="none"
-                initial={{ opacity: 0, y: 6 }}
-                animate={isInView ? { opacity: 0.45, y: -8 } : undefined}
-                transition={{ duration: 1.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                aria-hidden="true"
-              >
-                {/* Steam wisps above Idlis (left) */}
-                <path
-                  d="M26 40 C22 34 30 30 26 23 M34 38 C30 31 38 27 34 20 M42 42 C38 35 46 31 42 24"
-                  stroke="#FFF2D4"
-                  strokeWidth="1.2"
-                  strokeLinecap="round"
-                />
-                {/* Steam wisps above Sambar (right) */}
-                <path
-                  d="M74 44 C70 38 78 34 74 27 M82 46 C78 40 86 36 82 29"
-                  stroke="#FFF2D4"
-                  strokeWidth="1.2"
-                  strokeLinecap="round"
-                />
-              </motion.svg>
-            )}
-          </motion.div>
+            {pieces.map((piece) => (
+              <BreakfastPiece key={piece.name} piece={piece} progress={scrollYProgress} reduced={reduced} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
